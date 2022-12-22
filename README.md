@@ -18,7 +18,7 @@ Use `pipenv` !! https://pipenv.readthedocs.io/en/latest/
 
 Anything less than 100% will fail
 
-`pytest --cov=alan_pytridge`
+`pytest --cov=DJSetFiller`
 
 ## Lint the project
 
