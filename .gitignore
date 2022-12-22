@@ -1,0 +1,8 @@
+.DS_Store
+build/lib/alan_pytridge/__init__.py
+build/lib/alan_pytridge/pint.py
+src/alan_pytridge.egg-info/dependency_links.txt
+src/alan_pytridge.egg-info/PKG-INFO
+src/alan_pytridge.egg-info/SOURCES.txt
+src/alan_pytridge.egg-info/top_level.txt
+Pipfile.lock
