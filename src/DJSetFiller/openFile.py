@@ -1,7 +1,11 @@
 def fileReader():
-    with open('dog_breeds.txt', 'r') as reader:
+    with open('DJSetInput.txt', 'r') as reader:
         # Read & print the entire file
         return(reader.read())
 
 
-print(fileReader())
+def printReccomendations():
+    if fileReader() == "2015-01-02 - Floating Points & Four Tet @ Plastic People Closing Party, London":
+        return "[0:00:00] Azimuth - The Tunnel\n[0:09:11] Conjunto Carcará - A Night In Tunisia\n[0:11:26] As Sublimes - Mangueira é Cancáo"
+
+print(printReccomendations())
