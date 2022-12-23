@@ -1,7 +1,19 @@
+def DJSetInput():
+    DJSet = "2015-01-02 - Floating Points & Four Tet @ Plastic People Closing Party, London"
+    return DJSet
+
+
+
+
 def fileReader():
+    with open('DJSetInput.txt', 'w') as writer:
+        writer.write(DJSetInput())
+        writer.close()
+    
     with open('DJSetInput.txt', 'r') as reader:
         # Read & print the entire file
         return(reader.read())
+
 
 
 def printReccomendations():
