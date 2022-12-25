@@ -1,8 +1,7 @@
 class DJSet:
     def __init__(self, path):
         fileContents = ""
-        with open("DJSetInput.txt", "r") as reader:
-            # Read & print the entire file
+        with open(path) as reader:
             fileContents = reader.read()
 
         if len(fileContents) == 0:
