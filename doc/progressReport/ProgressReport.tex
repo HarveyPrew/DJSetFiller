@@ -1,0 +1,38 @@
+\documentclass[]{article}
+
+%opening
+\title{Tech Project Progress Report}
+\author{Harvey Prewer}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Introduction}
+	 Few options exist for algorithmically finding song recommendations for DJ sets. Building a DJ set by manually searching for songs is very time consuming, so improved, automated, recommendation systems would make this process more efficient. 
+	 The music recommendation application would cater for professional and aspiring DJs and music lovers drawn to radio and DJ sets. The application will take a DJ set identifier as input and output song recommendations. The recommendation algorithm will use collaborative filtering or content based filtering, with MixesDB as the source dataset. It will be  implemented as a python console application.
+\section{Potential Methods}
+	 \subsection{Collaborative-Based Filtering}
+	 \begin{enumerate}
+	 	\item  Input a DJ Setlist to a matrix with the number of plays a song has by a given DJ.
+	 	\item The program looks over DJs who played the songs included in the set, removing from the MixesDB data any tracks that are already in the input DJ set.
+	 	\item Added weight on DJs who've played the most significant majority of songs on the mix, allowing other songs played by them to make up the majority of the recommendations.
+	 \end{enumerate}
+  \subsection{Content-Based Filtering}
+  To implement Content Based Filtering, you would need to:
+ \begin{enumerate}
+ 	\item  Profile the features of all the tracks in MixesDB. Some of these features would need to come from Spotify, as per the medium article. Features specific to your application would be the DJ and/or number of DJs who have played the track and the number of sets the track appears in.
+ 	\item For each track, the features would be converted into a vector.
+ 	\item Take the input DJ Set, that you're recommending for and repeat the same feature analysis as above. The result would be a vector track, which could then be summarised into a single vector for the whole set.
+ \end{enumerate}
+
+\section{Motivation}
+	The hypothesis is that the application will give song recommendations that are both stylistically suitable but aren't necessarily popular (a common trait in most recommendation systems), because of the characteristics of a DJ set. For example, a typical quality of DJ sets is the great lengths the DJ goes to find obscure and unknown songs. Therefore, not prioritising popularity is a desirable trait in a recommendation system for a DJ's music consumption and knowledge, usually being more than the average consumer. 
+	
+	A DJ set can also be described as musical recommendations curated by a person passionate enough about music to make selecting and playing songs their profession or a well-invested hobby. I want to explore if creating a music recommendation system that builds from archives of these personally selected songs would create a pool of more "human" suggestions than what Spotify or other streaming platforms recommends. Another benefit is that what a DJ plays is not limited to a specific format, so my application suggests music on all platforms.
+	
+\section{Research Questions}
+	\subsection{What are the effective methods of automating the recommendation for suitable songs added to a given DJ set?}
+
+\end{document}
