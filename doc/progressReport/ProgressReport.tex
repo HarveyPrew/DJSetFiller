@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%% DOCUMENT PROPERTIES %%%%%%%%%%%%%%%%%
 
 % Thesis details
-\newcommand{\LongTitle}{My Technical Progress Project}
+\newcommand{\LongTitle}{Music Reccomendation System for DJ Sets - Progress Report}
 \newcommand{\Me}{Harvey Prewer}
 
 % Number of document levels
@@ -215,11 +215,11 @@
 \end{titlepage}
 \section{Introduction}
 	 \begin{flushleft}
-	 Few options exist for algorithmically finding song recommendations for DJ sets. Building a DJ set by manually searching for songs is very time consuming, so improved, automated, recommendation systems would make this process more efficient . 
+	 Few options exist for algorithmically finding song recommendations for DJ sets. Building a DJ set by manually searching for songs is very time consuming, so improved, automated, recommendation systems would make this process more efficient. 
 	\end{flushleft}
 
 \begin{flushleft}
-	 The music recommendation application would cater for professional and aspiring DJs, and music lovers drawn to radio and DJ sets. The application will take a DJ set identifier as input and output song recommendations. The recommendation algorithm will use collaborative filtering or content based filtering, with MixesDB as the source dataset. It will be implemented as a python console application.
+	 The music recommendation application would cater for professional and aspiring DJs, and music lovers drawn to radio and DJ sets. The application will take a DJ set identifier as input and output song recommendations. The recommendation algorithm will use collaborative filtering or content based filtering, with MixesDB \footnote{\url{https://www.mixesdb.com/w/Main_Page}} as the source dataset. It will be implemented as a python console application.
 	\end{flushleft}
 \section{Potential Methods}
 	 \subsection{Collaborative-Based Filtering}
@@ -233,7 +233,7 @@
   To implement Content Based Filtering, you would need to:
  \begin{enumerate}
  	
- 	\item  Profile the features of all the tracks in MixesDB. Some of these features would need to come from Spotify, as per the medium article. Features specific to your application would be the DJ and/or number of DJs who have played the track and the number of sets the track appears in.
+ 	\item  Profile the features of all the tracks in MixesDB. Some of these features would need to come from Spotify, as per the medium article \citep{chow_music_2020}.
  	
  	\item For each track, the features would be converted into a vector.
  	
@@ -243,7 +243,7 @@
 
 \section{Motivation}
 
-	The hypothesis is that the application will give song recommendations that are both stylistically suitable but aren't necessarily popular (a common trait in most recommendation systems), because of the characteristics of a DJ set. For example, a typical quality of DJ sets is the great lengths the DJ goes to find obscure and unknown songs. Therefore, not prioritising popularity is a desirable trait in a recommendation system for a DJ's music consumption and knowledge, usually being more than the average consumer. 
+	The hypothesis is that the application will give song recommendations that are both stylistically suitable but aren't necessarily popular (a common trait in most recommendation systems \citep{lesota_analyzing_2021}), because of the characteristics of a DJ set. For example, a typical quality of DJ sets is the great lengths the DJ goes to find obscure and unknown songs. Therefore, not prioritising popularity is a desirable trait in a recommendation system for a DJ's music consumption and knowledge, usually being more than the average consumer. 
 	
 	\begin{flushleft}
 		

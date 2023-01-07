@@ -145,3 +145,6 @@ doc/progressReport/images/University_of_Surrey_coat_of_arms.pdf
 doc/progressReport/ProgressReport.aux
 doc/progressReport/ProgressReport.pdf
 doc/progressReport/ProgressReport.synctex.gz
+*.aux
+*.pdf
+*.gz
