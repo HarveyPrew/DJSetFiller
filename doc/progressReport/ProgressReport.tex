@@ -18,8 +18,8 @@
 %%%%%%%%%%%%%%%%% DOCUMENT PROPERTIES %%%%%%%%%%%%%%%%%
 
 % Thesis details
-\newcommand{\LongTitle}{My Technical Project}
-\newcommand{\Me}{Joe Bloggs, Jr.}
+\newcommand{\LongTitle}{My Technical Progress Project}
+\newcommand{\Me}{Harvey Prewer}
 
 % Number of document levels
 \setcounter{secnumdepth}{4}
@@ -47,6 +47,9 @@
 
 \newcommand{\captionfontsize}{\fontsize{9}{11}\selectfont}
 \renewcommand\captionfont{\captionfontsize\sffamily}
+
+\bibliographystyle{iosrnew.bst}
+
 
 %%%%%%%%%%%%%%%%% TITLES %%%%%%%%%%%%%%%%%
 
@@ -116,7 +119,6 @@
 %%%%%%%%%%%%%%%%% CITATIONS %%%%%%%%%%%%%%%%%
 
 \usepackage[round]{natbib}
-
 \setcitestyle{aysep={ },notesep={: },citesep={;},yysep={,}}
 
 \setlength{\bibhang}{0pt}
@@ -176,16 +178,48 @@
 
 \begin{document}
 
-\maketitle
+\begin{titlepage}
 
+\thispagestyle{empty}
+\hfill\includegraphics[width=50mm]{UniS_Logo.pdf}
+{\sf
+	\centering
+	\null\vfil\vfil
+	{
+		\huge\LongTitle\\
+	}
+	\vfil\vfil\vfil
+	{
+		\Large\Me\\
+	}
+	\vfil\vfil\vfil
+	{
+		\Large{}BMus/BSc Music \& Sound Recording (Tonmeister)\\
+		Technical Project\\
+	}
+	\vfil\vfil
+	{
+		\Large{}Institute of Sound Recording\\
+		University of Surrey\\
+	}
+	\vfil
+	{
+		\Large\MyMonth\today~\MyYear\today\\}
+}
 
+{
+	\includegraphics[width=40mm]{University_of_Surrey_coat_of_arms.pdf}
+	\vspace{-.4in}
+}
+
+\end{titlepage}
 \section{Introduction}
 	 \begin{flushleft}
-	 Few options exist for algorithmically finding song recommendations for DJ sets. Building a DJ set by manually searching for songs is very time consuming, so improved, automated, recommendation systems would make this process more efficient. 
+	 Few options exist for algorithmically finding song recommendations for DJ sets. Building a DJ set by manually searching for songs is very time consuming, so improved, automated, recommendation systems would make this process more efficient . 
 	\end{flushleft}
 
 \begin{flushleft}
-	 The music recommendation application would cater for professional and aspiring DJs and music lovers drawn to radio and DJ sets. The application will take a DJ set identifier as input and output song recommendations. The recommendation algorithm will use collaborative filtering or content based filtering, with MixesDB as the source dataset. It will be  implemented as a python console application.
+	 The music recommendation application would cater for professional and aspiring DJs, and music lovers drawn to radio and DJ sets. The application will take a DJ set identifier as input and output song recommendations. The recommendation algorithm will use collaborative filtering or content based filtering, with MixesDB as the source dataset. It will be implemented as a python console application.
 	\end{flushleft}
 \section{Potential Methods}
 	 \subsection{Collaborative-Based Filtering}
@@ -229,17 +263,17 @@
 	
 	\begin{enumerate}
 		
-		\item \textbf{Spotify }- Find a DJ set on Spotify (not commonly available but labels like !K7 Music releases DJ sets commercially as albums), add that to a playlist, and look at the" Recommended based on the playlist". The main problem with this is that DJ sets on Spotify are few and far between. One can only input a mix one's heard from the radio or a recorded live performance by finding the tracklist and adding the songs into a playlist. The system also finds what other users are listening to, often giving you song recommendations that are usually quite popular and well-known. Spotify has a vast library of music, but a sizable chunk of music played on Spotify you won't find on DJ sets. 
+		\item \textbf{Spotify }- Find a DJ set on Spotify (not commonly available but labels like !K7 Music releases DJ sets commercially as albums), add that to a playlist, and look at the" Recommended based on the playlist". The main problem with this is that DJ sets on Spotify are few and far between. One can only input a mix one's heard from the radio or a recorded live performance by finding the tracklist and adding the songs into a playlist. The system also finds what other users are listening to, often giving you song recommendations that are usually quite popular and well-known. Spotify has a vast library of music, but a sizeable chunk of music played on Spotify you won't find on DJ sets. 
 		
-		\item \textbf{Soundcloud }- When a DJ set gets uploaded to SoundCloud, it usually recommends other DJ sets on its " radio " when getting recommended songs is more desirable. The recommendation system is only limited to what is available on SoundCloud.
+		\item \textbf{SoundCloud }- When a DJ set gets uploaded to SoundCloud, it usually recommends other DJ sets on its " radio " when getting recommended songs is more desirable. The recommendation system is only limited to what is available on SoundCloud.
 	\end{enumerate}
 
 	\subsection{Is this proposed method a suitable solution to the above question?}
 	
-	The use of collaborative filtering is used a lot in recommendation systems amongst different formats. It first came to prevalence by the winner of the Netflix Prize in 2007 and 2008 using the technique extensively. In a 2020 medium article, a song recommendation system for DJs used collaborative filtering to find valid suggestions.
+	The use of collaborative filtering is used a lot in recommendation systems amongst different formats. It first came to prevalence by the winner of the Netflix Prize in 2007 and 2008 using the technique extensively\citep{zhou_large-scale_2008}. In a 2020 medium article, a song recommendation system for DJs used collaborative filtering to find valid suggestions\citep{chow_music_2020}.
 	
 	\begin{flushleft}
-		The advantage content-based filtering has over collaborative filtering is its ability to recommend new and unpopular music, which as mentioned before is desirable for DJs.
+		The advantage content-based filtering has over collaborative filtering is its ability to recommend new and unpopular music, which as mentioned before is desirable for DJs\citep{van_den_oord_deep_2013}.
 	\end{flushleft}
 	
 	
@@ -248,11 +282,6 @@
 	
 \section{Potential Issues}
 A problem will arise when multiple DJs are involved in a DJ set. To solve this, I'll label this DJ set and its track selection as being from both DJs, and this is valid because the fact they are DJing together shows some crossover in taste.
-
-\begin{flushleft}
-	Another issue is debating the "usefulness" of this. It could be too much to ask for one to have favourite DJ mixes or the desire to find songs based on DJ sets you enjoy. I could overcome this by making this a playlist recommender that also uses this dataset. 
-	
-\end{flushleft}
 
 \begin{flushleft}
 	Another limitation is that it will only recommend songs from MixesDB. This small dataset may affect the quality of some suggestions.
@@ -268,10 +297,10 @@ A problem will arise when multiple DJs are involved in a DJ set. To solve this, 
 	The literature review will answer the first and last questions in the literature review.
 \end{flushleft}
 \begin{flushleft}
-	The literature review will explore the best methods used for state-of-the-art music song recommendation systems. This chapter will include mentioning collaborative filtering, content-based filtering and clustering. This part will also discuss the need to use deep learning to expand a recommendation system beyond its database. It will then discuss how a DJ's taste is diverse and diverse listeners are more refrained from using less algorithmic means to find music.
+	The literature review will explore the best methods used for state-of-the-art music song recommendation systems. This chapter will include mentioning collaborative filtering \citep{chow_music_2020}, content-based filtering \citep{chang_building_2021} and clustering\citep{piyush_building_2019}. This part will also discuss the need to use deep learning to expand a recommendation system beyond its database. It will then discuss how a DJ's taste is diverse and diverse listeners are more refrained from using less algorithmic means to find music \citep{anderson_algorithmic_2020}.
 \end{flushleft}
 \begin{flushleft}
-	For the final one, the chapter will discuss other machine learning-aided DJ technologies. An example of this is the source separation stuff found, and it will discuss whether my proposed method can contribute to the problem the other applications are fixing. Then, it will relate to how my approach can be helpful for other DJ-related necessities. 
+	For the final one, the chapter will discuss other machine learning-aided DJ technologies. An example of this is the source separation stuff found \citep{kirn_review_2023}, and it will discuss whether my proposed method can contribute to the problem the other applications are fixing. Then, it will relate to how my approach can be helpful for other DJ-related necessities. 
 \end{flushleft}
 \begin{flushleft}
 	The readings here will determine the answer to the second research question.
@@ -318,6 +347,8 @@ Make a python console application that uses collaborative filtering and MixesdB 
 	\item Chapter 7 - Further Work
 	
 \end{enumerate}
+
+\bibliography{BackgroundReading.bib}
 \end{document}
 
 
