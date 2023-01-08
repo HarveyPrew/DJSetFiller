@@ -247,7 +247,7 @@
 	
 	\begin{flushleft}
 		
-		A DJ set can also be described as musical recommendations curated by a person passionate enough about music to make selecting and playing songs their profession or a well-invested hobby. I want to explore if creating a music recommendation system that builds from archives of these personally selected songs would create a pool of more "human" suggestions than what Spotify or other streaming platforms recommends. Another benefit is that what a DJ plays is not limited to a specific format, so my application suggests music on all platforms.
+		A DJ set can also be described as musical recommendations curated by a person passionate enough about music to make selecting and playing songs their profession or a well-invested hobby. I want to explore if creating a music recommendation system that builds from archives of these personally selected songs would create a pool of more "human" suggestions than what Spotify or other streaming platforms recommends.
 		
 	\end{flushleft}
 	
@@ -270,10 +270,10 @@
 
 	\subsection{Is this proposed method a suitable solution to the above question?}
 	
-	The use of collaborative filtering is used a lot in recommendation systems amongst different formats. It first came to prevalence by the winner of the Netflix Prize in 2007 and 2008 using the technique extensively\citep{zhou_large-scale_2008}. In a 2020 medium article, a song recommendation system for DJs used collaborative filtering to find valid suggestions\citep{chow_music_2020}.
+	The use of collaborative filtering is used a lot in recommendation systems amongst different formats. It first came to prevalence by the winner of the Netflix Prize in 2008 \citep{zhou_large-scale_2008}. In a 2020 medium article, a song recommendation system for DJs used collaborative filtering to find valid suggestions \citep{chow_music_2020}.
 	
 	\begin{flushleft}
-		The advantage content-based filtering has over collaborative filtering is its ability to recommend new and unpopular music, which as mentioned before is desirable for DJs\citep{van_den_oord_deep_2013}.
+		The advantage content-based filtering has over collaborative filtering is its ability to recommend new and unpopular music, which as mentioned before is desirable for DJs  \citep{van_den_oord_deep_2013}. However, content-based filtering uses song which is only on Spotify.
 	\end{flushleft}
 	
 	
@@ -288,19 +288,20 @@ A problem will arise when multiple DJs are involved in a DJ set. To solve this, 
 \end{flushleft}
 
 \begin{flushleft}
-	Another issue is how well the level of cohesiveness matches the suggestions. For example, if a set plays a variety of genres, will the pool of recommendations reach that level of diversity? The application should pick DJs that match the input set's cohesion level. If not, the programme could solve this by capping the number of song suggestions from specific DJs. For example, suppose the input DJ set is House, Techno and Rock songs, but the DJ themselves usually just DJs dance music. In that case, this cap will limit the suggestion pool from House and Techno and, hopefully, let a suitable amount of Rock suggestions be selected. 
+	Another issue is how well the level of cohesiveness matches the suggestions. For example, with collaborative filtering. if a set plays a variety of genres, will the pool of recommendations reach that level of diversity? The application should pick DJs that match the input set's cohesion level. If not, the programme could solve this by capping the number of song suggestions from specific DJs. For example, suppose the input DJ set is House, Techno and Rock songs, but the DJ themselves usually just DJs dance music. In that case, this cap will limit the suggestion pool from House and Techno and, hopefully, let a suitable amount of Rock suggestions be selected. 
 \end{flushleft}
+
 
 	
 \section{Summary of Literature Review}
 \begin{flushleft}
-	The literature review will answer the first and last questions in the literature review.
+	The literature review will answer the first and last of the research questions.
 \end{flushleft}
 \begin{flushleft}
-	The literature review will explore the best methods used for state-of-the-art music song recommendation systems. This chapter will include mentioning collaborative filtering \citep{chow_music_2020}, content-based filtering \citep{chang_building_2021} and clustering\citep{piyush_building_2019}. This part will also discuss the need to use deep learning to expand a recommendation system beyond its database. It will then discuss how a DJ's taste is diverse and diverse listeners are more refrained from using less algorithmic means to find music \citep{anderson_algorithmic_2020}.
+	The literature review will explore the best methods used for state-of-the-art music song recommendation systems. This chapter will include mentioning collaborative filtering \citep{chow_music_2020-1}, content-based filtering \citep{chang_building_2021} and clustering\citep{piyush_building_2019}. This part will also discuss the need to use deep learning to expand a recommendation system beyond its database \citep{chow_music_2020}. It will then discuss how a DJ's taste is diverse and diverse listeners are more refrained from using less algorithmic means to find music \citep{anderson_algorithmic_2020}.
 \end{flushleft}
 \begin{flushleft}
-	For the final one, the chapter will discuss other machine learning-aided DJ technologies. An example of this is the source separation stuff found \citep{kirn_review_2023}, and it will discuss whether my proposed method can contribute to the problem the other applications are fixing. Then, it will relate to how my approach can be helpful for other DJ-related necessities. 
+	For the final one, the chapter will discuss other machine learning-aided DJ technologies. An example of this is the source separation technology used \citep{kirn_review_2023}, and it will discuss whether my proposed method can contribute to the problem the other applications are fixing.
 \end{flushleft}
 \begin{flushleft}
 	The readings here will determine the answer to the second research question.
@@ -314,14 +315,14 @@ A problem will arise when multiple DJs are involved in a DJ set. To solve this, 
 
 
 \section{Outline Experiment Plan}
-Make a python console application that uses collaborative filtering and MixesdB as the source dataset. The input will be a text file of a DJ set you enjoy and the program outputs a text file listing songs similar to the input DJ set.
+Make a python console application that uses collaborative filtering, or content-based filtering, and MixesdB as the source dataset. The input will be a text file of a DJ set you enjoy and the program outputs a text file listing songs similar to the input DJ set.
 
 \begin{flushleft}
 	For testing there is got two methods: 
 \end{flushleft}
 \begin{enumerate}
 	\item First is using spectrogram comparisons of different methods. Spectrograms of the songs in the set list and the recommended songs will be taken. Within the recommended songs it will compare itself amongst the songs in the DJ set concluding which one it’s most similar to. Then there will be a discussion about the overall similarity rating of each song and how well distributed it is amongst the inputted DJ set.
-	\item After this, backtesting will be used. This is when the songs of a said year is inputted, and looked at the recommendations it gives, and it will then compare the recommendations to the songs that were played in DJ sets the year after. This will be a good indication of whether the songs recommended are ones that a DJ would go out and play.
+	\item After this, backtesting will be used. This is when the songs of a said year is inputted, and looked at the recommendations it gives, and it will then compare the recommendations to the songs that were played in DJ sets the year after \citep{olorunnimbe_deep_2022}. This will be a good indication of whether the songs recommended are ones that a DJ would go out and play.
 \end{enumerate}
 
 \section{Chapter Layout of Final Report}
