@@ -4,7 +4,11 @@ import json
 import pandas as pd
 
 
-def create_df_data():
+def create_df():
+    return 0
+
+
+def create_df_data_old():
 
     path = "dataset.json"
 
