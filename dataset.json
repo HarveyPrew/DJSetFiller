@@ -1,0 +1,126 @@
+{
+    {
+        "name": "2016 - Andrew Weatherall - Rainbow Disco Club",
+        "collaborative": "false",
+        "pid": 0,
+        "modified_at": 1493424000,
+        "num_albums": 4,
+        "num_tracks": 4,
+        "num_followers": 0,
+        "num_edits": 0,
+        "duration_ms": 0,
+        "num_artists": 4,
+        "tracks": [
+            {
+                "pos": 0,
+                "artist_name": "DJ Kaos",
+                "track_uri": "spotify:track:6vXcHqE3bYPirOgKlDbN5s",
+                "artist_uri": "spotify:artist:25IdOX2HbRLOCP98XoJujb",
+                "track_name": "Hard To Earn",
+                "album_uri": "spotify:album:2FTY0KmPhio7mEqm8zZsz5",
+                "duration_ms": 0,
+                "album_name": "Hello Spring"  
+            },
+            {
+                "pos": 1,
+                "artist_name": "The Revenge",
+                "track_uri": "spotify:track:2Nm41eGHUpjxSoCfGLTfHO",
+                "artist_uri": "spotify:artist:0zfnbnZrQKJz5nH3kDM78X",
+                "track_name": "MDMF - Original Mix",
+                "album_uri": "spotify:album:5oeZZ16lFWaDpQX8p9xJyZ",
+                "duration_ms": 0,
+                "album_name": "Bugles Of Truth"  
+            },
+            {
+                "pos": 2,
+                "artist_name": "Rhythm Odyssey & Dr Dunks",
+                "track_uri": "spotify:track:5N09CgcKyRhyydKnKp6eOE",
+                "artist_uri": "spotify:artist:2rVHgq0nZEWM6CrlpwEPaH",
+                "track_name": "Fox",
+                "album_uri": "spotify:album:72O89ICZQi69dyJlaWskte",
+                "duration_ms": 0,
+                "album_name": "Celebrate Your Life/Let It Ring"  
+            },
+            {
+                "pos": 3,
+                "artist_name": "Mondowski",
+                "track_uri": "spotify:track:1OapiMeuPp5RmorfzMIwDw",
+                "artist_uri": "spotify:artist:6GX6evjVvKdt3E86c6C5ty",
+                "track_name": "Klub Psycho",
+                "album_uri": "spotify:album:2sR5R38kxOA5DIxj7nkViv",
+                "duration_ms": 0,
+                "album_name": "Klub Psycho"  
+            }
+        ]
+    },
+    
+    {
+        "name": "2016 - Christian Smith @ Sisyphos, Berlin (Tronic Podcast 222)",
+        "collaborative": "false",
+        "pid": 1,
+        "modified_at": 0,
+        "num_albums": 2,
+        "num_tracks": 2,
+        "num_followers": 0,
+        "num_edits": 0,
+        "duration_ms": 0,
+        "num_artists": 2,
+        "tracks": [
+            {
+                "pos": 0,
+                "artist_name": "2pole",
+                "track_uri": "spotify:track:59J7HbzNJbKMYhGe7rywGa",
+                "artist_uri": "spotify:artist:4FPQ76NAjtR1rWJqq4WTLi",
+                "track_name": "Tulipa",
+                "album_uri": "spotify:album:6FIu1bR5U72UhassI2lInq",
+                "duration_ms": 0,
+                "album_name": "Tronica EP"  
+            },
+            {
+                "pos": 1,
+                "artist_name": "A.Paul",
+                "track_uri": "spotify:track:1I7JNe8BDXTzT9Cld4Hzkl",
+                "artist_uri": "spotify:artist:5gEP4hiAzhjMiqMhPkVHCa",
+                "track_name": "Egocentric Predicament",
+                "album_uri": "spotify:album:1gT227acPefOiOofuSlpnP",
+                "duration_ms": 0,
+                "album_name": "Motor City EP"  
+            }
+        ]
+    },
+
+    {
+        "name": "2016 - Harvey Prewer @ Sisyphos, Berlin (Tronic Podcast 222)",
+        "collaborative": "false",
+        "pid": 1,
+        "modified_at": 0,
+        "num_albums": 2,
+        "num_tracks": 2,
+        "num_followers": 0,
+        "num_edits": 0,
+        "duration_ms": 0,
+        "num_artists": 2,
+        "tracks": [
+            {
+                "pos": 0,
+                "artist_name": "2pole",
+                "track_uri": "spotify:track:59J7HbzNJbKMYhGe7rywGa",
+                "artist_uri": "spotify:artist:4FPQ76NAjtR1rWJqq4WTLi",
+                "track_name": "Tulipa",
+                "album_uri": "spotify:album:6FIu1bR5U72UhassI2lInq",
+                "duration_ms": 0,
+                "album_name": "Tronica EP"  
+            },
+            {
+                "pos": 1,
+                "artist_name": "A.Paul",
+                "track_uri": "spotify:track:1I7JNe8BDXTzT9Cld4Hzkl",
+                "artist_uri": "spotify:artist:5gEP4hiAzhjMiqMhPkVHCa",
+                "track_name": "Egocentric Predicament",
+                "album_uri": "spotify:album:1gT227acPefOiOofuSlpnP",
+                "duration_ms": 0,
+                "album_name": "Motor City EP"  
+            }
+        ]
+    }
+}
