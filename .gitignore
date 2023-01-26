@@ -148,3 +148,4 @@ doc/progressReport/ProgressReport.synctex.gz
 *.aux
 *.pdf
 *.gz
+Pipfile.lock
