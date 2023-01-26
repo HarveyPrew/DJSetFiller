@@ -27,3 +27,16 @@ Anything less than 100% will fail
 ## Run continual testing
 
 `ptw`
+
+
+## Setting up mixesDB
+What to get from spotify:
+* artist uri 
+* album uri 
+* album name 
+* total duration
+not included:
+* collaborative
+* pid
+* modified_at
+* num_edits
