@@ -4,12 +4,6 @@ import json
 import pandas as pd
 
 
-def get_data_files(path):
-    filenames = os.listdir(path)
-
-    return filenames
-
-
 def create_df(path):
 
     playlist_col = [
@@ -41,24 +35,20 @@ def create_df(path):
 
     tracks = set()
 
-    data_files = get_data_files(path)
+    f = open(path)
+    js = f.read()
+    f.close()
 
-    for filename in data_files:
-        fullpath = os.sep.join((path, filename))
-        f = open(fullpath)
-        js = f.read()
-        f.close()
+    mpd_slice = json.loads(js)
 
-        mpd_slice = json.loads(js)
+    for playlist in mpd_slice["playlists"]:
+        data_playlists.append([playlist[col] for col in playlist_col])
 
-        for playlist in mpd_slice["playlists"]:
-            data_playlists.append([playlist[col] for col in playlist_col])
-
-            for track in playlist["tracks"]:
-                playlists.append([playlist["pid"], track["track_uri"], track["pos"]])
-                if track["track_uri"] not in tracks:
-                    data_tracks.append([track[col] for col in tracks_col])
-                    tracks.add(track["track_uri"])
+        for track in playlist["tracks"]:
+            playlists.append([playlist["pid"], track["track_uri"], track["pos"]])
+            if track["track_uri"] not in tracks:
+                data_tracks.append([track[col] for col in tracks_col])
+                tracks.add(track["track_uri"])
 
     f = open("input.json")
     js = f.read()
