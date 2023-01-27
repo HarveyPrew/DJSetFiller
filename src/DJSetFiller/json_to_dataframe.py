@@ -4,8 +4,13 @@ import json
 import pandas as pd
 
 
-def create_df():
-    path = "data"
+def get_data_files(path):
+    filenames = os.listdir(path)
+
+    return filenames
+
+
+def create_df(path):
 
     playlist_col = [
         "collaborative",
@@ -30,15 +35,15 @@ def create_df():
     ]
     playlist_test_col = ["name", "num_holdouts", "num_samples", "num_tracks", "pid"]
 
-    filenames = os.listdir(path)
-
     data_playlists = []
     data_tracks = []
     playlists = []
 
     tracks = set()
 
-    for filename in filenames:
+    data_files = get_data_files(path)
+
+    for filename in data_files:
         fullpath = os.sep.join((path, filename))
         f = open(fullpath)
         js = f.read()
@@ -54,6 +59,22 @@ def create_df():
                 if track["track_uri"] not in tracks:
                     data_tracks.append([track[col] for col in tracks_col])
                     tracks.add(track["track_uri"])
+
+    f = open("input.json")
+    js = f.read()
+    f.close()
+    mpd_slice = json.loads(js)
+
+    data_playlists_test = []
+    playlists_test = []
+
+    for playlist in mpd_slice["playlists"]:
+        data_playlists_test.append([playlist.get(col, "") for col in playlist_test_col])
+        for track in playlist["tracks"]:
+            playlists_test.append([playlist["pid"], track["track_uri"], track["pos"]])
+            if track["track_uri"] not in tracks:
+                data_tracks.append([track[col] for col in tracks_col])
+                tracks.add(track["track_uri"])
 
     return data_tracks
 
