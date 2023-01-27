@@ -49,7 +49,13 @@ def create_df():
         for playlist in mpd_slice["playlists"]:
             data_playlists.append([playlist[col] for col in playlist_col])
 
-    return data_playlists
+            for track in playlist["tracks"]:
+                playlists.append([playlist["pid"], track["track_uri"], track["pos"]])
+                if track["track_uri"] not in tracks:
+                    data_tracks.append([track[col] for col in tracks_col])
+                    tracks.add(track["track_uri"])
+
+    return data_tracks
 
 
 def create_df_data_old():
