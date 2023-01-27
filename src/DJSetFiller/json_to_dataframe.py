@@ -7,8 +7,49 @@ import pandas as pd
 def create_df():
     path = "data"
 
+    playlist_col = [
+        "collaborative",
+        "duration_ms",
+        "modified_at",
+        "name",
+        "num_albums",
+        "num_artists",
+        "num_edits",
+        "num_followers",
+        "num_tracks",
+        "pid",
+    ]
+    tracks_col = [
+        "album_name",
+        "album_uri",
+        "artist_name",
+        "artist_uri",
+        "duration_ms",
+        "track_name",
+        "track_uri",
+    ]
+    playlist_test_col = ["name", "num_holdouts", "num_samples", "num_tracks", "pid"]
+
     filenames = os.listdir(path)
-    return filenames
+
+    data_playlists = []
+    data_tracks = []
+    playlists = []
+
+    tracks = set()
+
+    for filename in filenames:
+        fullpath = os.sep.join((path, filename))
+        f = open(fullpath)
+        js = f.read()
+        f.close()
+
+        mpd_slice = json.loads(js)
+
+        for playlist in mpd_slice["playlists"]:
+            data_playlists.append([playlist[col] for col in playlist_col])
+
+    return data_playlists
 
 
 def create_df_data_old():
