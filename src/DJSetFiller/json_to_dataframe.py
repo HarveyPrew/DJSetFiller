@@ -7,7 +7,7 @@ def json_to_list(
     playlist_col, tracks_col, data_playlists, data_tracks, playlists, tracks, mpd_slice
 ):
     for playlist in mpd_slice["playlists"]:
-        data_playlists.append([playlist[col] for col in playlist_col])
+        json_entry_to_list(data_playlists, playlist_col, playlist)
         for track in playlist["tracks"]:
             playlists.append([playlist["pid"], track["track_uri"], track["pos"]])
             if track["track_uri"] not in tracks:
@@ -15,8 +15,8 @@ def json_to_list(
                 tracks.add(track["track_uri"])
 
 
-def json_to_list_entry(data_playlists, playlist_col, playlist):
-    data_playlists.append([playlist[col] for col in playlist_col])
+def json_entry_to_list(empty_list, collection, entry_in_json):
+    empty_list.append([entry_in_json[col] for col in collection])
 
 
 def create_df(path):
