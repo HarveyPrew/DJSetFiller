@@ -1,7 +1,22 @@
 import os
 import json
-
 import pandas as pd
+
+
+def json_to_list(
+    playlist_col, tracks_col, data_playlists, data_tracks, playlists, tracks, mpd_slice
+):
+    for playlist in mpd_slice["playlists"]:
+        data_playlists.append([playlist[col] for col in playlist_col])
+        for track in playlist["tracks"]:
+            playlists.append([playlist["pid"], track["track_uri"], track["pos"]])
+            if track["track_uri"] not in tracks:
+                data_tracks.append([track[col] for col in tracks_col])
+                tracks.add(track["track_uri"])
+
+
+def json_to_list_entry(data_playlists, playlist_col, playlist):
+    data_playlists.append([playlist[col] for col in playlist_col])
 
 
 def create_df(path):
@@ -41,14 +56,15 @@ def create_df(path):
 
     mpd_slice = json.loads(js)
 
-    for playlist in mpd_slice["playlists"]:
-        data_playlists.append([playlist[col] for col in playlist_col])
-
-        for track in playlist["tracks"]:
-            playlists.append([playlist["pid"], track["track_uri"], track["pos"]])
-            if track["track_uri"] not in tracks:
-                data_tracks.append([track[col] for col in tracks_col])
-                tracks.add(track["track_uri"])
+    json_to_list(
+        playlist_col,
+        tracks_col,
+        data_playlists,
+        data_tracks,
+        playlists,
+        tracks,
+        mpd_slice,
+    )
 
     f = open("input.json")
     js = f.read()
@@ -58,13 +74,15 @@ def create_df(path):
     data_playlists_test = []
     playlists_test = []
 
-    for playlist in mpd_slice["playlists"]:
-        data_playlists_test.append([playlist.get(col, "") for col in playlist_test_col])
-        for track in playlist["tracks"]:
-            playlists_test.append([playlist["pid"], track["track_uri"], track["pos"]])
-            if track["track_uri"] not in tracks:
-                data_tracks.append([track[col] for col in tracks_col])
-                tracks.add(track["track_uri"])
+    json_to_list(
+        playlist_test_col,
+        tracks_col,
+        data_playlists_test,
+        data_tracks,
+        playlists_test,
+        tracks,
+        mpd_slice,
+    )
 
     return data_tracks
 
