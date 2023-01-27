@@ -11,7 +11,7 @@ def json_to_list(
         for track in playlist["tracks"]:
             playlists.append([playlist["pid"], track["track_uri"], track["pos"]])
             if track["track_uri"] not in tracks:
-                data_tracks.append([track[col] for col in tracks_col])
+                json_entry_to_list(data_tracks, tracks_col, track)
                 tracks.add(track["track_uri"])
 
 
