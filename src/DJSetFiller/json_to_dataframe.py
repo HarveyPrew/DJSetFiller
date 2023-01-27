@@ -3,7 +3,15 @@ import json
 import pandas as pd
 
 
-def json_to_list(
+def finding_json_files(path):
+    f = open(path)
+    js = f.read()
+    f.close()
+    mpd_slice = json.loads(js)
+    return mpd_slice
+
+
+def json__data_to_list(
     playlist_col, tracks_col, data_playlists, data_tracks, playlists, tracks, mpd_slice
 ):
     for playlist in mpd_slice["playlists"]:
@@ -50,13 +58,9 @@ def create_df(path):
 
     tracks = set()
 
-    f = open(path)
-    js = f.read()
-    f.close()
+    mpd_slice = finding_json_files(path)
 
-    mpd_slice = json.loads(js)
-
-    json_to_list(
+    json__data_to_list(
         playlist_col,
         tracks_col,
         data_playlists,
@@ -66,15 +70,12 @@ def create_df(path):
         mpd_slice,
     )
 
-    f = open("input.json")
-    js = f.read()
-    f.close()
-    mpd_slice = json.loads(js)
+    mpd_slice = finding_json_files("input.json")
 
     data_playlists_test = []
     playlists_test = []
 
-    json_to_list(
+    json__data_to_list(
         playlist_test_col,
         tracks_col,
         data_playlists_test,
