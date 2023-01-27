@@ -5,12 +5,15 @@ import pandas as pd
 
 
 def create_df():
-    return 0
+    path = "data"
+
+    filenames = os.listdir(path)
+    return filenames
 
 
 def create_df_data_old():
 
-    path = "dataset.json"
+    path = "data"
 
     playlist_col = [
         "collaborative",
