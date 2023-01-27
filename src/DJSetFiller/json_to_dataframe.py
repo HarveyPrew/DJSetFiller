@@ -22,6 +22,8 @@ def json__data_to_list(
                 json_entry_to_list(data_tracks, tracks_col, track)
                 tracks.add(track["track_uri"])
 
+    return data_playlists, data_tracks, playlists, track
+
 
 def json_entry_to_list(empty_list, collection, entry_in_json):
     empty_list.append([entry_in_json[col] for col in collection])
