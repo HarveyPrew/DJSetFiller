@@ -1,3 +1,4 @@
+import os
 from DJSetFiller.json_to_dataframe import (
     transform_data_to_collections,
     create_playlist_info,
@@ -118,3 +119,21 @@ def test_create_playlists_test_is_made():
     df_playlists_test = create_playlists_df(playlists_test, track_uri2tid)
 
     assert df_playlists_test is not None
+
+
+def test_file_is_made():
+    (
+        data_playlists,
+        data_tracks,
+        playlists,
+        tracks,
+        data_playlists_test,
+        playlists_test,
+    ) = transform_data_to_collections("data/dataset.json")
+
+    df_tracks = create_tracks_info(data_tracks)
+    df_tracks.to_hdf("df_data/df_tracks.hdf", key="abc")
+
+    filenames = os.listdir("df_data")
+
+    assert "df_tracks.hdf" in filenames

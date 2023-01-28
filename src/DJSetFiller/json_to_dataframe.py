@@ -154,6 +154,8 @@ def transform_data_to_hdf(path):
 
     df_playlists_test = create_playlists_df(playlists_test, track_uri2tid)
 
+    df_tracks.to_hdf("df_data/df_tracks.hdf", key="abc")
+
     return df_playlists_info, df_tracks, df_playlists, df_playlists_test_info, df_playlists_test
 
 

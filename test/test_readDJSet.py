@@ -12,3 +12,4 @@ def test_read_DJ_set_id():
 def test_DJ_set_reccomendation_contains_songs():
     djset = DJSet("DJSetInput.txt")
     assert len(djset.recomendations) > 0
+
