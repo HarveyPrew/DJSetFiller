@@ -104,11 +104,15 @@ def transform_data_to_collections(path):
     )
 
 
-def create_playlist_info(data_playlists):
-    df_playlists_info = pd.DataFrame(data_playlists, columns=playlist_col())
+def set_collab_as_bool(df_playlists_info):
     df_playlists_info["collaborative"] = df_playlists_info["collaborative"].map(
         {"false": False, "true": True}
     )
+    return df_playlists_info
+
+
+def create_playlist_info(data_playlists, playlist_col):
+    df_playlists_info = pd.DataFrame(data_playlists, columns=playlist_col)
 
     return df_playlists_info
 
@@ -135,7 +139,8 @@ def transform_data_to_hdf(path):
         playlists_test,
     ) = transform_data_to_collections("data/dataset.json")
 
-    df_playlists_info = create_playlist_info(data_playlists)
+    df_playlists_info = create_playlist_info(data_playlists, playlist_col())
+    df_playlists_info = set_collab_as_bool(df_playlists_info)
 
     df_tracks = create_tracks_info(data_tracks)
 

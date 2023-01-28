@@ -3,6 +3,7 @@ from DJSetFiller.json_to_dataframe import (
     create_playlist_info,
     create_tracks_info,
     create_playlists_df,
+    playlist_col
 )
 
 
@@ -45,7 +46,7 @@ def test_create_playlist_info():
         playlists_test,
     ) = transform_data_to_collections("data/dataset.json")
 
-    playlist_info = create_playlist_info(data_playlists)
+    playlist_info = create_playlist_info(data_playlists, playlist_col())
 
     assert playlist_info is not None
 
