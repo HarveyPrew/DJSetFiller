@@ -1,6 +1,7 @@
 from DJSetFiller.json_to_dataframe import (
     transform_data_to_collections,
     create_playlist_info,
+    create_tracks_info,
 )
 
 
@@ -44,5 +45,20 @@ def test_create_playlist_info():
     ) = transform_data_to_collections("data/dataset.json")
 
     playlist_info = create_playlist_info(data_playlists)
+
+    assert playlist_info is not None
+
+
+def test_create_tracks_is_made():
+    (
+        data_playlists,
+        data_tracks,
+        playlists,
+        tracks,
+        data_playlists_test,
+        playlists_test,
+    ) = transform_data_to_collections("data/dataset.json")
+
+    playlist_info = create_tracks_info(data_tracks)
 
     assert playlist_info is not None

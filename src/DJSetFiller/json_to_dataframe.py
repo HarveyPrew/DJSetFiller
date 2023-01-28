@@ -113,6 +113,12 @@ def create_playlist_info(data_playlists):
     return df_playlists_info
 
 
+def create_tracks_info(data_tracks):
+    df_tracks = pd.DataFrame(data_tracks, columns=tracks_col())
+    df_tracks["tid"] = df_tracks.index
+    return df_tracks
+
+
 def transform_data_to_hdf(path):
     (
         data_playlists,
@@ -125,7 +131,9 @@ def transform_data_to_hdf(path):
 
     df_playlists_info = create_playlist_info(data_playlists)
 
-    return df_playlists_info
+    df_tracks = create_tracks_info(data_tracks)
+
+    return df_playlists_info, df_tracks
 
 
 def create_df_data_old():
