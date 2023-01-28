@@ -8,6 +8,7 @@ def test_hdf_files_are_read():
         df_playlists_info,
         df_playlists_test,
         df_playlists_test_info,
+        num_tracks
     ) = read_hdf_files()
 
     assert df_tracks is not None
@@ -15,3 +16,4 @@ def test_hdf_files_are_read():
     assert df_playlists_info is not None
     assert df_playlists_test is not None
     assert df_playlists_test_info is not None
+    assert num_tracks is not None
