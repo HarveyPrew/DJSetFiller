@@ -4,12 +4,12 @@
     "playlists" :[   
     {
         "name": "my playlist",
-        "num_holdouts": 2, 
-        "pid": 0, 
-        "num_tracks": 4,
+        "num_holdouts": 1, 
+        "pid": 3, 
+        "num_tracks": 2,
         "tracks": [
             {
-                "pos": 0,
+                "pos": 3,
                 "artist_name": "DJ Kaos",
                 "track_uri": "spotify:track:6vXcHqE3bYPirOgKlDbN5s",
                 "artist_uri": "spotify:artist:25IdOX2HbRLOCP98XoJujb",
@@ -17,19 +17,11 @@
                 "album_uri": "spotify:album:2FTY0KmPhio7mEqm8zZsz5",
                 "duration_ms": 0,
                 "album_name": "Hello Spring"  
-            },
-            {
-                "pos": 1,
-                "artist_name": "The Revenge",
-                "track_uri": "spotify:track:2Nm41eGHUpjxSoCfGLTfHO",
-                "artist_uri": "spotify:artist:0zfnbnZrQKJz5nH3kDM78X",
-                "track_name": "MDMF - Original Mix",
-                "album_uri": "spotify:album:5oeZZ16lFWaDpQX8p9xJyZ",
-                "duration_ms": 0,
-                "album_name": "Bugles Of Truth"  
             }
         ],
-        "num_samples": 2
+        "num_samples": 1
     }
-    ]
+    ],
+    "name": "input.json", 
+    "description": "input playlist"
 }

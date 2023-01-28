@@ -1,4 +1,4 @@
-from DJSetFiller.validation_strategy import read_hdf_files, generate_num_tracks
+from DJSetFiller.validation_strategy import read_hdf_files, generate_num_tracks, generate_val_playlist
 import pandas as pd
 
 
@@ -24,3 +24,13 @@ def test_num_tracks_working():
     num_tracks = generate_num_tracks(df_playlists_info)
 
     assert num_tracks is not None
+
+
+def test_val_playlist_filledout():
+
+    df_playlists_info = pd.read_hdf("df_data/df_playlists_info.hdf")
+    num_tracks = generate_num_tracks(df_playlists_info)
+    df_playlists_test_info = pd.read_hdf('df_data/df_playlists_test_info.hdf')
+    validation_playlists = generate_val_playlist(df_playlists_test_info, num_tracks)
+
+    assert validation_playlists is not None

@@ -27,7 +27,7 @@ def test_data_tracks_is_filled():
     assert "spotify:track:1I7JNe8BDXTzT9Cld4Hzkl" in tracks
 
     assert len(data_playlists_test) == 1
-    assert len(playlists_test) == 2
+    assert len(playlists_test) == 1
 
     assert len(playlists) == 8
     assert playlists[0][0] == 0
