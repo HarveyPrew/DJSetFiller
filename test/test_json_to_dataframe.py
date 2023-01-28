@@ -3,7 +3,8 @@ from DJSetFiller.json_to_dataframe import (
     create_playlist_info,
     create_tracks_info,
     create_playlists_df,
-    playlist_col
+    playlist_col,
+    playlist_test_col,
 )
 
 
@@ -83,3 +84,37 @@ def test_create_playlists_is_made():
     df_playlists = create_playlists_df(playlists, track_uri2tid)
 
     assert df_playlists is not None
+
+
+def test_create_playlist_info_test():
+    (
+        data_playlists,
+        data_tracks,
+        playlists,
+        tracks,
+        data_playlists_test,
+        playlists_test,
+    ) = transform_data_to_collections("data/dataset.json")
+
+    playlist_info_test = create_playlist_info(data_playlists_test, playlist_test_col())
+
+    assert playlist_info_test is not None
+
+
+def test_create_playlists_test_is_made():
+    (
+        data_playlists,
+        data_tracks,
+        playlists,
+        tracks,
+        data_playlists_test,
+        playlists_test,
+    ) = transform_data_to_collections("data/dataset.json")
+
+    df_tracks = create_tracks_info(data_tracks)
+
+    track_uri2tid = df_tracks.set_index("track_uri").tid
+
+    df_playlists_test = create_playlists_df(playlists_test, track_uri2tid)
+
+    assert df_playlists_test is not None

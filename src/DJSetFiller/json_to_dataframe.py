@@ -148,7 +148,13 @@ def transform_data_to_hdf(path):
 
     df_playlists = create_playlists_df(playlists, track_uri2tid)
 
-    return df_playlists_info, df_tracks, df_playlists
+    df_playlists_test_info = create_playlist_info(
+        data_playlists_test, playlist_test_col()
+    )
+
+    df_playlists_test = create_playlists_df(playlists_test, track_uri2tid)
+
+    return df_playlists_info, df_tracks, df_playlists, df_playlists_test_info, df_playlists_test
 
 
 def create_df_data_old():
