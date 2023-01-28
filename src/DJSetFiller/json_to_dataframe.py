@@ -119,6 +119,12 @@ def create_tracks_info(data_tracks):
     return df_tracks
 
 
+def create_playlists_df(playlists, track_uri2tid):
+    df_playlists = pd.DataFrame(playlists, columns=["pid", "tid", "pos"])
+    df_playlists.tid = df_playlists.tid.map(track_uri2tid)
+    return df_playlists
+
+
 def transform_data_to_hdf(path):
     (
         data_playlists,
@@ -133,7 +139,11 @@ def transform_data_to_hdf(path):
 
     df_tracks = create_tracks_info(data_tracks)
 
-    return df_playlists_info, df_tracks
+    track_uri2tid = df_tracks.set_index("track_uri").tid
+
+    df_playlists = create_playlists_df(playlists, track_uri2tid)
+
+    return df_playlists_info, df_tracks, df_playlists
 
 
 def create_df_data_old():
