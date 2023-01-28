@@ -1,4 +1,5 @@
-from DJSetFiller.validation_strategy import read_hdf_files
+from DJSetFiller.validation_strategy import read_hdf_files, generate_num_tracks
+import pandas as pd
 
 
 def test_hdf_files_are_read():
@@ -8,7 +9,6 @@ def test_hdf_files_are_read():
         df_playlists_info,
         df_playlists_test,
         df_playlists_test_info,
-        num_tracks
     ) = read_hdf_files()
 
     assert df_tracks is not None
@@ -16,4 +16,11 @@ def test_hdf_files_are_read():
     assert df_playlists_info is not None
     assert df_playlists_test is not None
     assert df_playlists_test_info is not None
+
+
+def test_num_tracks_working():
+
+    df_playlists_info = pd.read_hdf("df_data/df_playlists_info.hdf")
+    num_tracks = generate_num_tracks(df_playlists_info)
+
     assert num_tracks is not None
