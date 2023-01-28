@@ -87,7 +87,14 @@ def create_df(path):
         mpd_slice,
     )
 
-    return data_tracks
+    return (
+        data_playlists,
+        data_tracks,
+        playlists,
+        tracks,
+        data_playlists_test,
+        playlists_test,
+    )
 
 
 def create_df_data_old():
