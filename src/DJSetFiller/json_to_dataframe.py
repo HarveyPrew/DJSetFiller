@@ -29,9 +29,8 @@ def json_entry_to_list(empty_list, collection, entry_in_json):
     empty_list.append([entry_in_json[col] for col in collection])
 
 
-def create_df(path):
-
-    playlist_col = [
+def playlist_col():
+    return [
         "collaborative",
         "duration_ms",
         "modified_at",
@@ -43,7 +42,10 @@ def create_df(path):
         "num_tracks",
         "pid",
     ]
-    tracks_col = [
+
+
+def tracks_col():
+    return [
         "album_name",
         "album_uri",
         "artist_name",
@@ -52,8 +54,13 @@ def create_df(path):
         "track_name",
         "track_uri",
     ]
-    playlist_test_col = ["name", "num_holdouts", "num_samples", "num_tracks", "pid"]
 
+
+def playlist_test_col():
+    return ["name", "num_holdouts", "num_samples", "num_tracks", "pid"]
+
+
+def transform_data_to_collections(path):
     data_playlists = []
     data_tracks = []
     playlists = []
@@ -63,8 +70,8 @@ def create_df(path):
     mpd_slice = finding_json_files(path)
 
     json__data_to_list(
-        playlist_col,
-        tracks_col,
+        playlist_col(),
+        tracks_col(),
         data_playlists,
         data_tracks,
         playlists,
@@ -78,8 +85,8 @@ def create_df(path):
     playlists_test = []
 
     json__data_to_list(
-        playlist_test_col,
-        tracks_col,
+        playlist_test_col(),
+        tracks_col(),
         data_playlists_test,
         data_tracks,
         playlists_test,
@@ -95,6 +102,30 @@ def create_df(path):
         data_playlists_test,
         playlists_test,
     )
+
+
+def create_playlist_info(data_playlists):
+    df_playlists_info = pd.DataFrame(data_playlists, columns=playlist_col())
+    df_playlists_info["collaborative"] = df_playlists_info["collaborative"].map(
+        {"false": False, "true": True}
+    )
+
+    return df_playlists_info
+
+
+def transform_data_to_hdf(path):
+    (
+        data_playlists,
+        data_tracks,
+        playlists,
+        tracks,
+        data_playlists_test,
+        playlists_test,
+    ) = transform_data_to_collections("data/dataset.json")
+
+    df_playlists_info = create_playlist_info(data_playlists)
+
+    return df_playlists_info
 
 
 def create_df_data_old():

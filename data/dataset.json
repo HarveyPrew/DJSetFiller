@@ -4,7 +4,7 @@
     "playlists" :
     [ {   
         "name": "2016 - Andrew Weatherall - Rainbow Disco Club",
-        "collaborative": "false",
+        "collaborative": "true",
         "pid": 0,
         "modified_at": 1493424000,
         "num_albums": 4,
