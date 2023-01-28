@@ -6,6 +6,7 @@ from DJSetFiller.json_to_dataframe import (
     create_playlists_df,
     playlist_col,
     playlist_test_col,
+    transform_data_to_hdf,
 )
 
 
@@ -121,7 +122,7 @@ def test_create_playlists_test_is_made():
     assert df_playlists_test is not None
 
 
-def test_file_is_made():
+def test_df_data_is_made():
     (
         data_playlists,
         data_tracks,
@@ -137,3 +138,15 @@ def test_file_is_made():
     filenames = os.listdir("df_data")
 
     assert "df_tracks.hdf" in filenames
+
+
+def test_df_playlists_is_made():
+    transform_data_to_hdf("data/dataset.json")
+
+    filenames = os.listdir("df_data")
+
+    assert "df_tracks.hdf" in filenames
+    assert "df_playlists.hdf" in filenames
+    assert "df_playlists_info.hdf" in filenames
+    assert "df_playlists_test.hdf" in filenames
+    assert "df_playlists_test_info.hdf" in filenames
