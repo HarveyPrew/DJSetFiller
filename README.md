@@ -46,11 +46,10 @@ not included:
 
 
 
-# recsys2018
-The code was adapt from [RecSys 2018](https://github.com/VasiliyRubtsov/recsys2018)
-The third place solution in RecSys Challenge 2018 by Avito team.
+# Usage
+The code was adapted from [the third place solution in RecSys Challenge 2018](https://github.com/VasiliyRubtsov/recsys2018).
 
-To start it is necessary folder 'data' with data in json and input.json file.
+To start it is necessary to have a folder 'data' with data in json and an input.json file.
 
 The order of execution:
 1) json_to_dataframe.ipynb
