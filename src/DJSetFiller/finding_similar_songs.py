@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+from scipy.sparse import coo_matrix
 
 
 def read_data_set():
@@ -21,10 +22,14 @@ def collab_filter(song_id, user_song_df, num_songs=5):
 
     user_song_refined = user_song_df
 
-    count_series = user_song_df.groupby(["user_nums", "spotify_id"]).size()
-    plays = count_series.to_frame(name="plays").reset_index()
+    # count_series = user_song_df.groupby(["user_nums", "song_nums"]).size()
+    # user_plays = count_series.to_frame(name="plays").reset_index()
+    # plays = user_plays["plays"]
 
+    plays = user_song_refined["size"]
     user_nums = user_song_refined.user_nums
     song_nums = user_song_refined.song_nums
 
-    return song_nums, user_nums, plays
+    B = coo_matrix((plays, (song_nums, user_nums))).tocsr()
+
+    return song_nums, user_nums, plays, B
