@@ -7,10 +7,11 @@ def test_find_db_exists():
 
 
 def test_find_song_attributes():
-    song_nums, user_nums, plays, B = collab_filter(
+    song_nums, user_nums, plays, B, model = collab_filter(
         "6vXcHqE3bYPirOgKlDbN5s", read_data_set()
     )
     assert song_nums is not None
     assert user_nums is not None
     assert plays is not None
     assert B is not None
+    assert model is not None

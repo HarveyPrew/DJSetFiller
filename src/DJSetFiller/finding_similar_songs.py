@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from scipy.sparse import coo_matrix
+from implicit.als import AlternatingLeastSquares
 
 
 def read_data_set():
@@ -32,4 +33,6 @@ def collab_filter(song_id, user_song_df, num_songs=5):
 
     B = coo_matrix((plays, (song_nums, user_nums))).tocsr()
 
-    return song_nums, user_nums, plays, B
+    model = AlternatingLeastSquares(factors=30)
+
+    return song_nums, user_nums, plays, B, model
