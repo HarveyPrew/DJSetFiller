@@ -8,7 +8,7 @@ def test_find_db_exists():
 
 def test_find_song_attributes():
     song_nums, user_nums, plays, B, model, songs_inds = collab_filter(
-        "53TFvcQoCYaGytR1HezNlL", read_data_set()
+        "53jsOPHYPvyKjKW8kWtHVz", read_data_set()
     )
     assert song_nums is not None
     assert user_nums is not None
