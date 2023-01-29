@@ -19,4 +19,12 @@ def collab_filter(song_id, user_song_df, num_songs=5):
 
     song_num = user_song_df[user_song_df.spotify_id == song_id].song_nums.values[0]
 
-    return song_num
+    user_song_refined = user_song_df
+
+    count_series = user_song_df.groupby(["user_nums", "spotify_id"]).size()
+    plays = count_series.to_frame(name="plays").reset_index()
+
+    user_nums = user_song_refined.user_nums
+    song_nums = user_song_refined.song_nums
+
+    return song_nums, user_nums, plays

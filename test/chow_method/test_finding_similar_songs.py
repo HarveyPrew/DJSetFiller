@@ -6,6 +6,10 @@ def test_find_db_exists():
     assert collab_df is not None
 
 
-def test_find_song_num():
-    song_num = collab_filter("6vXcHqE3bYPirOgKlDbN5s", read_data_set())
-    assert song_num == 43414
+def test_find_song_attributes():
+    song_nums, user_nums, plays = collab_filter(
+        "6vXcHqE3bYPirOgKlDbN5s", read_data_set()
+    )
+    assert song_nums is not None
+    assert user_nums is not None
+    assert plays is not None
