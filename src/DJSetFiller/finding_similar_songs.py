@@ -43,3 +43,10 @@ def collab_filter(song_id, user_song_df, num_songs=5):
     # filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
 
     return song_nums, user_nums, plays, B, model, songs_inds, filtered_df
+
+
+def run_function(song_id, user_song_df, num_songs=5):
+    try:
+        collab_filter(song_id, user_song_df, num_songs=5)
+    except IndexError:
+        return "Programme not working"
