@@ -27,7 +27,7 @@ def collab_filter(song_id, user_song_df, num_songs=5):
     user_nums = user_song_refined.user_nums
     song_nums = user_song_refined.song_nums
 
-    B = coo_matrix((plays, (song_nums, user_nums))).tocsr()
+    B = coo_matrix((plays, (user_nums, song_nums))).tocsr()
 
     model = AlternatingLeastSquares(factors=30)
 

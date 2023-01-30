@@ -19,7 +19,7 @@ def test_find_db_exists():
 
 def test_programme_not_working():
     function = run_function("3gCiJLZj4PJfhWXzwnV7FR", read_data_set())
-    assert function == "Programme not working"
+    assert function != "Programme not working"
 
 
 def test_function_working():
