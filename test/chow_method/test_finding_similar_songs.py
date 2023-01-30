@@ -11,6 +11,8 @@ from DJSetFiller.finding_similar_songs import (
 def test_len_of_arrays_same():
     songs_inds = simple_collab_filter()
     assert songs_inds is not None
+    assert 2 in songs_inds
+    assert 4 in songs_inds
 
 
 def test_find_db_exists():
@@ -40,3 +42,12 @@ def test_size_is_found():
 def test_hard_code():
     output = hard_coded_output()
     assert output is not None
+
+
+def test_tuple_extration():
+    tuples_list = [("id_1", "score_1"), ("id_2", "score_2"), ("id_3", "score_3")]
+    songs_inds = [tup[0] for tup in tuples_list]
+
+    assert "id_1" in songs_inds
+    assert "id_2" in songs_inds
+    assert "score_1" not in songs_inds

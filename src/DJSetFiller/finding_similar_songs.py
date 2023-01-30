@@ -33,9 +33,9 @@ def collab_filter(song_id, user_song_df, num_songs=5):
 
     model.fit(B)
     songs_inds = model.similar_items(song_num, N=num_songs)
-    songs_inds = [tup[0] for tup in songs_inds]
+    song_id_recs = songs_inds[0]
 
-    filtered_df = user_song_df[user_song_df.song_nums.isin(songs_inds)]
+    filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
     filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
 
     return filtered_df
@@ -151,7 +151,7 @@ def simple_collab_filter():
 
     model.fit(B)
     songs_inds = model.similar_items(2, N=6)
-    return songs_inds
+    return songs_inds[0]
 
 
 def hard_coded_output():
