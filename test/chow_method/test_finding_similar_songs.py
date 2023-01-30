@@ -3,7 +3,13 @@ from DJSetFiller.finding_similar_songs import (
     collab_filter,
     run_function,
     matrix_size,
+    simple_collab_filter,
 )
+
+
+def test_len_of_arrays_same():
+    songs_inds = simple_collab_filter()
+    assert songs_inds is not None
 
 
 def test_find_db_exists():

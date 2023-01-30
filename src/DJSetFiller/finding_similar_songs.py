@@ -23,11 +23,7 @@ def collab_filter(song_id, user_song_df, num_songs=5):
 
     user_song_refined = user_song_df
 
-    count_series = user_song_df.groupby(["user_nums", "song_nums"]).size()
-    user_plays = count_series.to_frame(name="plays").reset_index()
-    plays = user_plays["plays"]
-
-    plays = user_song_refined["size"]
+    plays = user_song_refined['size']
     user_nums = user_song_refined.user_nums
     song_nums = user_song_refined.song_nums
 
@@ -61,3 +57,17 @@ def matrix_size(user_song_df):
     num_songs = len(B.nonzero()[0]) 
     sparsity = 100*(1 - (num_songs/modelSize))
     return modelSize, num_songs, sparsity
+
+
+def simple_collab_filter():
+    user_nums = [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2]
+    song_nums = [17, 1, 2, 3, 4, 5, 6, 17, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 4, 2, 9, 15, 16]
+    size = [2, 2, 3, 2, 3, 2, 2, 2, 2, 3, 2, 3, 2, 2, 1, 1, 2, 1, 1, 1, 1, 3, 3, 2, 1, 1]
+
+    B = coo_matrix((size, (user_nums, song_nums))).tocsr()
+
+    model = AlternatingLeastSquares(factors=100)
+
+    model.fit(B)
+    songs_inds = model.similar_items(2, N=6)
+    return songs_inds
