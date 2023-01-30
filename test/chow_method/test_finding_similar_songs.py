@@ -4,6 +4,7 @@ from DJSetFiller.finding_similar_songs import (
     run_function,
     matrix_size,
     simple_collab_filter,
+    hard_coded_output,
 )
 
 
@@ -34,3 +35,8 @@ def test_size_is_found():
     assert matrixSize is not None
     assert num_songs is not None
     assert sparsity is not None
+
+
+def test_hard_code():
+    output = hard_coded_output()
+    assert output is not None
