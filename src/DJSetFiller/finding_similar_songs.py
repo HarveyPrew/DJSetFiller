@@ -23,9 +23,9 @@ def collab_filter(song_id, user_song_df, num_songs=5):
 
     user_song_refined = user_song_df
 
-    # count_series = user_song_df.groupby(["user_nums", "song_nums"]).size()
-    # user_plays = count_series.to_frame(name="plays").reset_index()
-    # plays = user_plays["plays"]
+    count_series = user_song_df.groupby(["user_nums", "song_nums"]).size()
+    user_plays = count_series.to_frame(name="plays").reset_index()
+    plays = user_plays["plays"]
 
     plays = user_song_refined["size"]
     user_nums = user_song_refined.user_nums
@@ -40,9 +40,9 @@ def collab_filter(song_id, user_song_df, num_songs=5):
     songs_inds = [tup[0] for tup in songs_inds]
 
     filtered_df = user_song_df[user_song_df.song_nums.isin(songs_inds)]
-    # filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
+    filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
 
-    return song_nums, user_nums, plays, B, model, songs_inds, filtered_df
+    return filtered_df
 
 
 def run_function(song_id, user_song_df, num_songs=5):
@@ -50,3 +50,14 @@ def run_function(song_id, user_song_df, num_songs=5):
         collab_filter(song_id, user_song_df, num_songs=5)
     except IndexError:
         return "Programme not working"
+
+
+def matrix_size(user_song_df):
+    plays = user_song_df["size"]
+    user_nums = user_song_df.user_nums
+    song_nums = user_song_df.song_nums
+    B = coo_matrix((plays, (song_nums, user_nums))).tocsr()
+    modelSize = B.shape[0] * B.shape[1]
+    num_songs = len(B.nonzero()[0]) 
+    sparsity = 100*(1 - (num_songs/modelSize))
+    return modelSize, num_songs, sparsity
