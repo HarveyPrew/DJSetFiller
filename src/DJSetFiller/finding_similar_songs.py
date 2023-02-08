@@ -71,13 +71,3 @@ def simple_collab_filter():
     model.fit(B)
     songs_inds = model.similar_items(2, N=6)
     return songs_inds[0]
-
-
-def hard_coded_output():
-    songs_inds = [232, 16278, 2127, 1106, 5197]
-    user_song_df = read_data_set()
-    filtered_df = user_song_df[user_song_df.song_nums.isin(songs_inds)]
-
-    filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
-
-    return filtered_df
