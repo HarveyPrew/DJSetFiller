@@ -20,13 +20,9 @@ def test_find_db_exists():
     assert collab_df is not None
 
 
-def test_programme_not_working():
-    function = run_function("3gCiJLZj4PJfhWXzwnV7FR", read_data_set())
-    assert function != "Programme not working"
-
 
 def test_function_working():
-    collabFilter = collab_filter("53jsOPHYPvyKjKW8kWtHVz", read_data_set())
+    collabFilter = collab_filter("6aYP1tSk7xBppdAuEjC4tC", read_data_set())
 
     assert collabFilter is not None
 

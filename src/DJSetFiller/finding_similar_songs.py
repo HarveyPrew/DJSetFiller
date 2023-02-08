@@ -5,7 +5,7 @@ from implicit.als import AlternatingLeastSquares
 
 
 def read_data_set():
-    collab_df = pd.read_csv("data/mixesdb_df_for_recs.csv")
+    collab_df = pd.read_csv("data/dateset_reduced.csv")
     # needed to make the training not take ages
     os.environ["MKL_NUM_THREADS"] = "1"
     return collab_df
@@ -60,90 +60,9 @@ def matrix_size(user_song_df):
 
 
 def simple_collab_filter():
-    user_nums = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
-    ]
-    song_nums = [
-        17,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        17,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        4,
-        2,
-        9,
-        15,
-        16,
-    ]
-    size = [
-        2,
-        2,
-        3,
-        2,
-        3,
-        2,
-        2,
-        2,
-        2,
-        3,
-        2,
-        3,
-        2,
-        2,
-        1,
-        1,
-        2,
-        1,
-        1,
-        1,
-        1,
-        3,
-        3,
-        2,
-        1,
-        1,
-    ]
+    user_nums = [0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,]
+    song_nums = [17,1,2,3,4,5,6,17,1,2,3,4,5,6,7,8,9,10,11,12,13,4,2,9,15,16,]
+    size = [2,2,3,2,3,2,2,2,2,3,2,3,2,2,1,1,2,1,1,1,1,3,3,2,1,1,]
 
     B = coo_matrix((size, (user_nums, song_nums))).tocsr()
 
