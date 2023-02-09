@@ -5,7 +5,7 @@ from implicit.als import AlternatingLeastSquares
 
 
 def read_data_set():
-    collab_df = pd.read_csv("data/dateset_reduced.csv")
+    collab_df = pd.read_csv("data/mixesdb_df_for_recs.csv")
     # needed to make the training not take ages
     os.environ["MKL_NUM_THREADS"] = "1"
     return collab_df

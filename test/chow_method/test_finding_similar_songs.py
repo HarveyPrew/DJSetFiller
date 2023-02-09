@@ -12,7 +12,7 @@ def test_find_db_exists():
 
 
 def test_function_working():
-    collabFilter = collab_filter("6aYP1tSk7xBppdAuEjC4tC", read_data_set())
+    collabFilter = collab_filter("53TFvcQoCYaGytR1HezNlL", read_data_set())
 
     assert collabFilter is not None
 
