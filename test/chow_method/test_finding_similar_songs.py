@@ -1,8 +1,8 @@
 from DJSetFiller.finding_similar_songs import (
     read_data_set,
-    collab_filter,
-    run_function,
-    matrix_size
+    single_song_input_reccomender,
+    multiple_song_input_reccomender,
+    matrix_size,
 )
 
 
@@ -12,7 +12,9 @@ def test_find_db_exists():
 
 
 def test_function_working():
-    collabFilter = collab_filter("6aYP1tSk7xBppdAuEjC4tC", read_data_set())
+    collabFilter = single_song_input_reccomender(
+        "6aYP1tSk7xBppdAuEjC4tC", read_data_set()
+    )
 
     assert collabFilter is not None
 
@@ -32,3 +34,10 @@ def test_tuple_extration():
     assert "id_1" in songs_inds
     assert "id_2" in songs_inds
     assert "score_1" not in songs_inds
+
+
+def test_multiple_song_list():
+    song_ids = ["6aYP1tSk7xBppdAuEjC4tC", "5vXlU52ohBRZb1uUw4GPqA"]
+    collabFilter = multiple_song_input_reccomender(song_ids, read_data_set())
+
+    assert collabFilter is not None

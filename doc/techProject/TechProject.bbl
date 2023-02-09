@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{`#1'}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Bollen et~al.(2010)Bollen, Knijnenburg, Willemsen, and
+  Graus}]{bollen_understanding_2010}
+Bollen, D., Knijnenburg, B.~P., Willemsen, M.~C., and Graus, M. (2010):
+  \enquote{Understanding choice overload in recommender systems}, in
+  \textit{Proceedings of the fourth {ACM} conference on {Recommender} systems},
+  Barcelona Spain: ACM, pp.\ignorespaces 63--70, \doi{10.1145/1864708.1864724}.
+
+\end{thebibliography}

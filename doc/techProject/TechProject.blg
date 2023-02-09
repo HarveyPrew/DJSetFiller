@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: TechProject.aux
+A level-1 auxiliary file: FrontMatter/FrontMatter.aux
+A level-1 auxiliary file: Chapter1/Chapter1.aux
+A level-1 auxiliary file: Chapter2/Chapter2.aux
+A level-1 auxiliary file: Chapter3/Chapter3.aux
+A level-1 auxiliary file: Chapter4/Chapter4.aux
+A level-1 auxiliary file: Chapter5/Chapter5.aux
+A level-1 auxiliary file: Chapter6/Chapter6.aux
+A level-1 auxiliary file: Chapter7/Chapter7.aux
+A level-1 auxiliary file: Chapter8/Chapter8.aux
+A level-1 auxiliary file: BackMatter/BackMatter.aux
+The style file: iosrnew.bst.bst
+Database file #1: BackgroundReading.bib
+You've used 1 entry,
+            2968 wiz_defined-function locations,
+            629 strings with 5443 characters,
+and the built_in function-call counts, 856 in all, are:
+= -- 66
+> -- 36
+< -- 1
++ -- 13
+- -- 13
+* -- 72
+:= -- 124
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 9
+chr.to.int$ -- 2
+cite$ -- 1
+duplicate$ -- 62
+empty$ -- 64
+format.name$ -- 15
+if$ -- 172
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 12
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 27
+preamble$ -- 1
+purify$ -- 8
+quote$ -- 0
+skip$ -- 27
+stack$ -- 0
+substring$ -- 36
+swap$ -- 35
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 9
+warning$ -- 0
+while$ -- 6
+width$ -- 0
+write$ -- 22

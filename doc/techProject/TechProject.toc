@@ -19,3 +19,5 @@
 \contentsline {chapter}{\numberline {6}Results and Discussion}{11}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Further Work}{13}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Conclusions}{15}{chapter.8}%
+\renewcommand {\cftchappresnum }{Appendix~}
+\addtolength {\cftchapnumwidth }{1em}
