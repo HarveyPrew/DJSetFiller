@@ -79,7 +79,7 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
     model.fit(B)
     filtered_dfs = []
 
-    for i, id in enumerate(song_ids):
-        filtered_dfs.append(find_similar_songs(song_ids[i], num_songs, model, user_song_df))
+    for id in song_ids:
+        filtered_dfs.append(find_similar_songs(id, num_songs, model, user_song_df))
 
     return filtered_dfs[0], filtered_dfs[1]
