@@ -13,44 +13,47 @@ A level-1 auxiliary file: Chapter8/Chapter8.aux
 A level-1 auxiliary file: BackMatter/BackMatter.aux
 The style file: iosrnew.bst.bst
 Database file #1: BackgroundReading.bib
-You've used 1 entry,
+Warning--empty journal in ferwerda_personality_nodate
+Warning--empty journal in mcfee_hypergraph_2012
+You've used 8 entries,
             2968 wiz_defined-function locations,
-            629 strings with 5443 characters,
-and the built_in function-call counts, 856 in all, are:
-= -- 66
-> -- 36
-< -- 1
-+ -- 13
-- -- 13
-* -- 72
-:= -- 124
-add.period$ -- 2
-call.type$ -- 1
-change.case$ -- 9
-chr.to.int$ -- 2
-cite$ -- 1
-duplicate$ -- 62
-empty$ -- 64
-format.name$ -- 15
-if$ -- 172
+            683 strings with 7340 characters,
+and the built_in function-call counts, 5974 in all, are:
+= -- 501
+> -- 236
+< -- 9
++ -- 85
+- -- 76
+* -- 495
+:= -- 839
+add.period$ -- 17
+call.type$ -- 8
+change.case$ -- 64
+chr.to.int$ -- 9
+cite$ -- 10
+duplicate$ -- 450
+empty$ -- 454
+format.name$ -- 106
+if$ -- 1245
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 12
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 27
+missing$ -- 84
+newline$ -- 34
+num.names$ -- 34
+pop$ -- 184
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 55
 quote$ -- 0
-skip$ -- 27
+skip$ -- 206
 stack$ -- 0
-substring$ -- 36
-swap$ -- 35
-text.length$ -- 1
+substring$ -- 287
+swap$ -- 252
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 9
-warning$ -- 0
-while$ -- 6
+type$ -- 72
+warning$ -- 2
+while$ -- 43
 width$ -- 0
-write$ -- 22
+write$ -- 108
+(There were 2 warnings)

@@ -53,13 +53,12 @@ def matrix_size(user_song_df):
     return modelSize, num_songs, sparsity
 
 
-def multiple_song_input_reccomender(song_ids, user_song_df, num_songs=2):
+def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
 
-    song_nums = []
-    for song_id in song_ids:
-        song_num = user_song_df[user_song_df.spotify_id == song_id].song_nums.values[0]
-        song_nums.append(song_num)
-    
+    song_ids = []
+    for id in input_songs:
+        song_ids.append(user_song_df[user_song_df.spotify_id == id].song_nums.values[0])
+
     user_song_refined = user_song_df
 
     plays = user_song_refined["size"]
@@ -72,12 +71,16 @@ def multiple_song_input_reccomender(song_ids, user_song_df, num_songs=2):
 
     model.fit(B)
     
-    filtered_dfs = []
-    for song_num in song_nums:
-        songs_inds = model.similar_items(song_num, N=num_songs)
-        song_id_recs = songs_inds[0]
-        filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
-        filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
-        filtered_dfs.append(filtered_df)
-        
-    return filtered_dfs
+    songs_inds_1 = model.similar_items(song_ids[0], N=num_songs)
+    song_id_recs_1 = songs_inds_1[0]
+
+    filtered_df_1 = user_song_df[user_song_df.song_nums.isin(song_id_recs_1)]
+    filtered_df_1.drop_duplicates(subset=["spotify_id"], inplace=True)
+
+    songs_inds_2 = model.similar_items(song_ids[1], N=num_songs)
+    song_id_recs_2 = songs_inds_2[0]
+
+    filtered_df_2 = user_song_df[user_song_df.song_nums.isin(song_id_recs_2)]
+    filtered_df_2.drop_duplicates(subset=["spotify_id"], inplace=True)
+
+    return filtered_df_1, filtered_df_2

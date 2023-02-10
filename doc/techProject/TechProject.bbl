@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{8}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -14,5 +14,51 @@ Bollen, D., Knijnenburg, B.~P., Willemsen, M.~C., and Graus, M. (2010):
   \enquote{Understanding choice overload in recommender systems}, in
   \textit{Proceedings of the fourth {ACM} conference on {Recommender} systems},
   Barcelona Spain: ACM, pp.\ignorespaces 63--70, \doi{10.1145/1864708.1864724}.
+
+\bibitem[{Ferwerda et~al.()Ferwerda, Schedl, and
+  Tkalcic}]{ferwerda_personality_nodate}
+Ferwerda, B., Schedl, M., and Tkalcic, M. (): \enquote{Personality \&
+  {Emotional} {States}: {Understanding} {Users}’ {Music} {Listening}
+  {Needs}}, .
+
+\bibitem[{Gillhofer and Schedl(2015)}]{gillhofer_iron_2015}
+Gillhofer, M. and Schedl, M. (2015): \enquote{Iron {Maiden} {While} {Jogging},
+  {Debussy} for {Dinner}?} in X.~He, S.~Luo, D.~Tao, C.~Xu, J.~Yang, and M.~A.
+  Hasan, eds., \textit{{MultiMedia} {Modeling}}, Lecture {Notes} in {Computer}
+  {Science}, Cham: Springer International Publishing, pp.\ignorespaces
+  380--391, \doi{10.1007/978-3-319-14442-9_44}.
+
+\bibitem[{Kaminskas et~al.(2013)Kaminskas, Ricci, and
+  Schedl}]{kaminskas_location-aware_2013}
+Kaminskas, M., Ricci, F., and Schedl, M. (2013): \enquote{Location-aware music
+  recommendation using auto-tagging and hybrid matching}, in
+  \textit{Proceedings of the 7th {ACM} conference on {Recommender} systems},
+  {RecSys} '13, New York, NY, USA: Association for Computing Machinery,
+  pp.\ignorespaces 17--24, \doi{10.1145/2507157.2507180}.
+
+\bibitem[{McFee and Lanckriet(2012)}]{mcfee_hypergraph_2012}
+McFee, B. and Lanckriet, G. (2012): \enquote{{HYPERGRAPH} {MODELS} {OF}
+  {PLAYLIST} {DIALECTS}}, .
+
+\bibitem[{Rentfrow and Gosling(2003)}]{rentfrow_re_2003}
+Rentfrow, P.~J. and Gosling, S.~D. (2003): \enquote{The do re mi's of everyday
+  life: {The} structure and personality correlates of music preferences},
+  \textit{Journal of Personality and Social Psychology}, 84, pp.\ignorespaces
+  1236--1256, \doi{10.1037/0022-3514.84.6.1236}. Place: US Publisher: American
+  Psychological Association.
+
+\bibitem[{Wang et~al.(2012)Wang, Rosenblum, and Wang}]{wang_context-aware_2012}
+Wang, X., Rosenblum, D., and Wang, Y. (2012): \enquote{Context-aware mobile
+  music recommendation for daily activities}, in \textit{Proceedings of the
+  20th {ACM} international conference on {Multimedia}}, Nara Japan: ACM,
+  pp.\ignorespaces 99--108, \doi{10.1145/2393347.2393368}.
+
+\bibitem[{Zheleva et~al.(2010)Zheleva, Guiver, Mendes~Rodrigues, and
+  Milić-Frayling}]{zheleva_statistical_2010}
+Zheleva, E., Guiver, J., Mendes~Rodrigues, E., and Milić-Frayling, N. (2010):
+  \enquote{Statistical models of music-listening sessions in social media}, in
+  \textit{Proceedings of the 19th international conference on {World} wide
+  web}, {WWW} '10, New York, NY, USA: Association for Computing Machinery,
+  pp.\ignorespaces 1019--1028, \doi{10.1145/1772690.1772794}.
 
 \end{thebibliography}

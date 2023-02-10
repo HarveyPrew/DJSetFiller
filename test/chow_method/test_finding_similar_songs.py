@@ -38,6 +38,7 @@ def test_tuple_extration():
 
 def test_multiple_song_list():
     song_ids = ["6aYP1tSk7xBppdAuEjC4tC", "5vXlU52ohBRZb1uUw4GPqA"]
-    collabFilter = multiple_song_input_reccomender(song_ids, read_data_set())
+    firstSongRecs, secondSongRecs = multiple_song_input_reccomender(song_ids, read_data_set())
 
-    assert collabFilter is not None
+    assert firstSongRecs is not None
+    assert secondSongRecs is not None
