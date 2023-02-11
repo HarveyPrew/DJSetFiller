@@ -93,4 +93,5 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
         filtered_dfs.append(find_similar_songs(id, num_songs, model, user_song_df, i))
         i += 1
 
-    return filtered_dfs[0], filtered_dfs[1]
+    results = pd.concat(filtered_dfs)    
+    return results
