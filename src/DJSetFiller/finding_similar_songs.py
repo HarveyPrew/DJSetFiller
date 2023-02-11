@@ -53,7 +53,14 @@ def matrix_size(user_song_df):
     return modelSize, num_songs, sparsity
 
 
-def find_similar_songs(song_ids, num_songs, model, user_song_df, rec_number):
+def find_similar_songs(song_ids, num_songs, model, user_song_df, i):
+    z = 0
+    rec_number = []
+
+    while z < num_songs:
+        rec_number.append(i)
+        z += 1
+
     songs_inds = model.similar_items(song_ids, N=num_songs)
     song_id_recs = songs_inds[0]
 
@@ -80,23 +87,10 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
     model.fit(B)
     filtered_dfs = []
 
-    rec_number = []
-
     i = 0
 
     for id in song_ids:
+        filtered_dfs.append(find_similar_songs(id, num_songs, model, user_song_df, i))
         i += 1
-        i_str = str(i)
-        z = 0
-
-        while z < num_songs:
-            rec_number.append(i_str)
-            z += 1
-
-        filtered_dfs.append(find_similar_songs(id, num_songs, model, user_song_df, rec_number))
-
-        while z != 0:
-            z -= 1
-            rec_number.pop(z)
 
     return filtered_dfs[0], filtered_dfs[1]
