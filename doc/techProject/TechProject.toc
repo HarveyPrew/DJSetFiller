@@ -6,7 +6,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Machine Learning used in Music Recommendation Systems}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}The need for music recommendation systems}{3}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Collaborative Filtering}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Collaborative Filtering}{3}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Content Based Filtering}{4}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Clustering}{4}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Convoluted Networks}{4}{section.2.5}%
