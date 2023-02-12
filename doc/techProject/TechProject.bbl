@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{13}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -7,6 +7,12 @@
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
+
+\bibitem[{Anderson et~al.(2003)Anderson, Ball, Boley, Greene, Howse, Lemire,
+  and McGrath}]{anderson_racofi_2003}
+Anderson, M., Ball, M., Boley, H., Greene, S., Howse, N., Lemire, D., and
+  McGrath, S. (2003): \enquote{{RACOFI}: {A} {Rule}-{Applying} {Collaborative}
+  {Filtering} {System}}, .
 
 \bibitem[{Bollen et~al.(2010)Bollen, Knijnenburg, Willemsen, and
   Graus}]{bollen_understanding_2010}
@@ -60,6 +66,12 @@ Rentfrow, P.~J. and Gosling, S.~D. (2003): \enquote{The do re mi's of everyday
   \textit{Journal of Personality and Social Psychology}, 84, pp.\ignorespaces
   1236--1256, \doi{10.1037/0022-3514.84.6.1236}. Place: US Publisher: American
   Psychological Association.
+
+\bibitem[{Ricci et~al.(2011)Ricci, Rokach, Shapira, and
+  Kantor}]{ricci_recommender_2011}
+Ricci, F., Rokach, L., Shapira, B., and Kantor, P.~B., eds. (2011):
+  \textit{Recommender {Systems} {Handbook}}, Boston, MA: Springer US,
+  \doi{10.1007/978-0-387-85820-3}.
 
 \bibitem[{Shardanand and Maes(1995)}]{shardanand_social_1995}
 Shardanand, U. and Maes, P. (1995): \enquote{Social information filtering:
