@@ -5,7 +5,7 @@ from implicit.als import AlternatingLeastSquares
 
 
 def read_data_set():
-    collab_df = pd.read_csv("data/dateset_reduced.csv")
+    collab_df = pd.read_csv("data/dataset_reduced.csv")
 
     os.environ["MKL_NUM_THREADS"] = "1"
     return collab_df
@@ -68,11 +68,11 @@ def find_similar_songs(song_ids, num_songs, model, user_song_df, i, input_songs)
 
     filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
     filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
-    filtered_df['Reccomendation Number'] = rec_number
+    filtered_df["Reccomendation Number"] = rec_number
 
-    filtered_df['Type'] = type
-    filtered_df.loc[filtered_df['spotify_id'] == input_songs, 'Type'] = "input"
-    filtered_df.sort_values('Type')
+    filtered_df["Type"] = type
+    filtered_df.loc[filtered_df["spotify_id"] == input_songs, "Type"] = "input"
+    filtered_df.sort_values("Type")
 
     return filtered_df
 
@@ -97,7 +97,9 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
     i = 0
 
     for id in song_ids:
-        filtered_dfs.append(find_similar_songs(id, num_songs, model, user_song_df, i, input_songs[i]))
+        filtered_dfs.append(
+            find_similar_songs(id, num_songs, model, user_song_df, i, input_songs[i])
+        )
         i += 1
 
     results = pd.concat(filtered_dfs)
