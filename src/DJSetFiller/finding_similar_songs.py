@@ -90,7 +90,7 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
     song_nums = user_song_refined.song_nums
 
     B = coo_matrix((plays, (user_nums, song_nums))).tocsr()
-    model = AlternatingLeastSquares(factors=30)
+    model = AlternatingLeastSquares(factors=100)
     model.fit(B)
     filtered_dfs = []
 

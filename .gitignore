@@ -138,3 +138,4 @@ doc/progressReport/images/University_of_Surrey_coat_of_arms.pdf
 *.gz
 Pipfile.lock
 *.hdf
+src/DJSetFiller/spotifyConstants.py

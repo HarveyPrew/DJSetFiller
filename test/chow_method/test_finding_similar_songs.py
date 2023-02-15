@@ -13,7 +13,7 @@ def test_find_db_exists():
 
 def test_function_working():
     collabFilter = single_song_input_reccomender(
-        "6aYP1tSk7xBppdAuEjC4tC", read_data_set()
+        "5vXlU52ohBRZb1uUw4GPqA", read_data_set()
     )
 
     assert collabFilter is not None
@@ -37,7 +37,7 @@ def test_tuple_extration():
 
 
 def test_multiple_song_list():
-    song_ids = ["6aYP1tSk7xBppdAuEjC4tC", "5vXlU52ohBRZb1uUw4GPqA"]
+    song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     results = multiple_song_input_reccomender(song_ids, read_data_set())
 
     assert results is not None
