@@ -34,7 +34,11 @@ def single_song_input_reccomender(song_id, user_song_df, num_songs=5):
 
     filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
     filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
-    return filtered_df
+
+    song_attributes = track_analysis_from_pandas(filtered_df)
+    concatenated = pd.concat([filtered_df, song_attributes])
+
+    return concatenated
 
 
 def run_function(song_id, user_song_df, num_songs=5):

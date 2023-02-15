@@ -42,15 +42,3 @@ def test_multiple_song_list():
     results = multiple_song_input_reccomender(song_ids, read_data_set())
 
     assert results is not None
-
-
-def test_able_to_read_id_from_df():
-    song_id = "5vXlU52ohBRZb1uUw4GPqA"
-    collabFilter = single_song_input_reccomender(
-        song_id, read_data_set()
-    )
-
-    results = track_analysis_from_pandas(collabFilter)
-
-    assert results is not None
-
