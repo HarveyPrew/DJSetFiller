@@ -4,5 +4,6 @@ from DJSetFiller.QuickStart import (
 
 
 def test_quickstart_occurs():
-    quickstart = quickStart()
+    id = "5vXlU52ohBRZb1uUw4GPqA"
+    quickstart = quickStart(id)
     assert quickstart is not None
