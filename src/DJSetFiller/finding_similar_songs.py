@@ -1,3 +1,5 @@
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 import pandas as pd
 import os
 from scipy.sparse import coo_matrix
@@ -12,7 +14,7 @@ def read_data_set():
 
 
 def single_song_input_reccomender(song_id, user_song_df, num_songs=5):
-
+  
     song_num = user_song_df[user_song_df.spotify_id == song_id].song_nums.values[0]
 
     user_song_refined = user_song_df
@@ -31,7 +33,6 @@ def single_song_input_reccomender(song_id, user_song_df, num_songs=5):
 
     filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
     filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
-
     return filtered_df
 
 
@@ -54,6 +55,7 @@ def matrix_size(user_song_df):
 
 
 def find_similar_songs(song_ids, num_songs, model, user_song_df, i, input_songs):
+
     z = 0
     rec_number = []
     type = []
@@ -104,3 +106,13 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
 
     results = pd.concat(filtered_dfs)
     return results
+
+
+def track_analysis_from_pandas(filtered_df):
+    reccomendedSongs = filtered_df
+    auth_manager = SpotifyClientCredentials()
+    sp = spotipy.Spotify(auth_manager=auth_manager)
+
+    analysis = sp.audio_features(reccomendedSongs.iloc[0]["spotify_id"])
+
+    return analysis
