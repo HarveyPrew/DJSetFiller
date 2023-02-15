@@ -4,6 +4,7 @@ import pandas as pd
 import os
 from scipy.sparse import coo_matrix
 from implicit.als import AlternatingLeastSquares
+pd.options.mode.chained_assignment = None  # default='warn'
 
 
 def read_data_set():
