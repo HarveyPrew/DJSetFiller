@@ -119,4 +119,5 @@ def track_analysis_from_pandas(filtered_df):
     for id in filtered_df.index:
         analysis += sp.audio_features(reccomendedSongs["spotify_id"][id])
 
-    return analysis
+    df = pd.DataFrame.from_dict(analysis)
+    return df
