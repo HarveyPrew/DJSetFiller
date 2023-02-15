@@ -113,6 +113,9 @@ def track_analysis_from_pandas(filtered_df):
     auth_manager = SpotifyClientCredentials()
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
-    analysis = sp.audio_features(reccomendedSongs.iloc[0]["spotify_id"])
+    analysis = []
+
+    for id in filtered_df.index:
+        analysis += sp.audio_features(reccomendedSongs["spotify_id"][id])
 
     return analysis
