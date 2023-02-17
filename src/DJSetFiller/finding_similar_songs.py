@@ -15,7 +15,7 @@ def read_data_set():
 
 
 def single_song_input_reccomender(song_id, user_song_df, num_songs=5):
-  
+
     song_num = user_song_df[user_song_df.spotify_id == song_id].song_nums.values[0]
 
     user_song_refined = user_song_df
@@ -34,9 +34,10 @@ def single_song_input_reccomender(song_id, user_song_df, num_songs=5):
 
     filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
     filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
+    fdf_reset = filtered_df.reset_index()
 
     song_attributes = track_analysis_from_pandas(filtered_df)
-    concatenated = pd.concat([filtered_df, song_attributes])
+    concatenated = pd.concat([fdf_reset, song_attributes], axis=1)
 
     return concatenated
 
@@ -124,4 +125,15 @@ def track_analysis_from_pandas(filtered_df):
         analysis += sp.audio_features(reccomendedSongs["spotify_id"][id])
 
     df = pd.DataFrame.from_dict(analysis)
-    return df
+
+    newDf = df.drop(["id"], axis=1)
+    return newDf
+
+
+def track_analysis_from_array(song_id):
+    auth_manager = SpotifyClientCredentials()
+    sp = spotipy.Spotify(auth_manager=auth_manager)
+
+    analysis = sp.audio_features(song_id)
+
+    return analysis
