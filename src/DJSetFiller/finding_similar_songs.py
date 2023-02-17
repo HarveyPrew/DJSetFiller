@@ -34,12 +34,10 @@ def single_song_input_reccomender(song_id, user_song_df, num_songs=5):
 
     filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
     filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
-    fdf_reset = filtered_df.reset_index()
 
-    song_attributes = track_analysis_from_pandas(filtered_df)
-    concatenated = pd.concat([fdf_reset, song_attributes], axis=1)
-
-    return concatenated
+    whole_df = track_analysis_from_pandas(filtered_df)
+    
+    return whole_df
 
 
 def run_function(song_id, user_song_df, num_songs=5):
@@ -115,19 +113,19 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
 
 
 def track_analysis_from_pandas(filtered_df):
-    reccomendedSongs = filtered_df
+    reccomendedSongs = filtered_df.reset_index()
     auth_manager = SpotifyClientCredentials()
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
     analysis = []
 
-    for id in filtered_df.index:
+    for id in reccomendedSongs.index:
         analysis += sp.audio_features(reccomendedSongs["spotify_id"][id])
 
-    df = pd.DataFrame.from_dict(analysis)
+    song_features = pd.DataFrame.from_dict(analysis).drop(["id", "analysis_url", "track_href", "uri", "type"], axis=1)
 
-    newDf = df.drop(["id"], axis=1)
-    return newDf
+    features_plus_recs = pd.concat([reccomendedSongs, song_features], axis=1)
+    return features_plus_recs
 
 
 def track_analysis_from_array(song_id):
