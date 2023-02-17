@@ -79,8 +79,9 @@ def find_similar_songs(song_ids, num_songs, model, user_song_df, i, input_songs)
     filtered_df["Type"] = type
     filtered_df.loc[filtered_df["spotify_id"] == input_songs, "Type"] = "input"
     filtered_df.sort_values("Type")
+    whole_df = track_analysis_from_pandas(filtered_df)
 
-    return filtered_df
+    return whole_df
 
 
 def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
