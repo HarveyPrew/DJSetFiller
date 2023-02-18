@@ -16,45 +16,45 @@ Database file #1: BackgroundReading.bib
 Warning--empty journal in anderson_racofi_2003
 Warning--empty journal in ferwerda_personality_nodate
 Warning--empty journal in mcfee_hypergraph_2012
-You've used 13 entries,
+You've used 14 entries,
             2968 wiz_defined-function locations,
-            722 strings with 8658 characters,
-and the built_in function-call counts, 9500 in all, are:
-= -- 777
-> -- 403
-< -- 14
-+ -- 147
-- -- 131
-* -- 797
-:= -- 1358
-add.period$ -- 26
-call.type$ -- 13
-change.case$ -- 106
-chr.to.int$ -- 14
-cite$ -- 16
-duplicate$ -- 709
-empty$ -- 720
-format.name$ -- 176
-if$ -- 1964
+            728 strings with 8946 characters,
+and the built_in function-call counts, 9869 in all, are:
+= -- 811
+> -- 413
+< -- 15
++ -- 151
+- -- 134
+* -- 820
+:= -- 1424
+add.period$ -- 28
+call.type$ -- 14
+change.case$ -- 112
+chr.to.int$ -- 15
+cite$ -- 17
+duplicate$ -- 738
+empty$ -- 749
+format.name$ -- 180
+if$ -- 2036
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 133
-newline$ -- 49
-num.names$ -- 57
-pop$ -- 294
+missing$ -- 137
+newline$ -- 52
+num.names$ -- 61
+pop$ -- 305
 preamble$ -- 1
-purify$ -- 93
+purify$ -- 98
 quote$ -- 0
-skip$ -- 321
+skip$ -- 333
 stack$ -- 0
-substring$ -- 428
-swap$ -- 391
+substring$ -- 440
+swap$ -- 401
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 114
+type$ -- 123
 warning$ -- 3
-while$ -- 68
+while$ -- 71
 width$ -- 0
-write$ -- 166
+write$ -- 176
 (There were 3 warnings)

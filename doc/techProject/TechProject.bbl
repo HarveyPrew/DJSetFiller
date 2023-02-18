@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{14}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -7,6 +7,11 @@
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
+
+\bibitem[{AIcrowd(2023)}]{aicrowd_aicrowd_2023}
+AIcrowd (2023): \enquote{{AIcrowd} {\textbar} {Spotify} {Million} {Playlist}
+  {Dataset} {Challenge} {\textbar} {Challenges}},
+  \urlprefix\url{https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge}.
 
 \bibitem[{Anderson et~al.(2003)Anderson, Ball, Boley, Greene, Howse, Lemire,
   and McGrath}]{anderson_racofi_2003}

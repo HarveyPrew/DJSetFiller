@@ -59,23 +59,19 @@ def matrix_size(user_song_df):
 
 
 def find_similar_songs(song_ids, num_songs, model, user_song_df, i, input_songs):
-
     z = 0
     rec_number = []
     type = []
-
     while z < num_songs:
         rec_number.append(i)
         type.append("output")
         z += 1
 
     song_id_recs = similar_song_generator(song_ids, num_songs, model)
+    df_with_type = type_implementation(user_song_df, song_id_recs, rec_number, input_songs, type)
+    results = track_analysis_from_pandas(df_with_type)
 
-    filtered_df = type_implementation(user_song_df, song_id_recs, rec_number, input_songs, type)
-
-    whole_df = track_analysis_from_pandas(filtered_df)
-
-    return whole_df
+    return results
 
 
 def similar_song_generator(song_ids, num_songs, model):
@@ -94,6 +90,7 @@ def type_implementation(user_song_df, song_id_recs, rec_number, input_songs, typ
     filtered_df.sort_values("Type")
     return filtered_df
 
+
 def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
 
     song_ids = []
@@ -106,9 +103,9 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
     user_nums = user_song_refined.user_nums
     song_nums = user_song_refined.song_nums
 
-    B = coo_matrix((plays, (user_nums, song_nums))).tocsr()
+    matrix = coo_matrix((plays, (user_nums, song_nums))).tocsr()
     model = AlternatingLeastSquares(factors=100)
-    model.fit(B)
+    model.fit(matrix)
     filtered_dfs = []
 
     i = 0

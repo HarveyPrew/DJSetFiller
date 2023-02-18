@@ -5,7 +5,25 @@
 \chapter{Hypothesis}
 
 
-Yoo whats happening.
+The hypothesis is that the application will give song recommendations that are both stylistically
+suitable but aren’t necessarily popular. Its common for a DJ, having a diverse taste, to go into
+great lengths to find obscure and unknown songs. Therefore, not prioritising popularity is a
+desirable trait in a recommendation system for a DJ’s music consumption and knowledge, usually
+being more than the average consumer. Its a common trait in most music recommendation
+systems to prioritise popularity. Building a recommendation system for a dataset of DJ sets
+will hopefully give these suitable suggestions
+
+A DJ set can also be described as musical recommendations curated by a person passionate
+enough about music to make selecting and playing songs their profession or a well-invested
+hobby. This application should explore if creating a music recommendation system that builds
+from archives of these personally selected songs would create a pool of more "human"
+suggestions than what Spotify or other streaming platforms recommends.
+
+For simplicity sake, I won't use any deep learning implementation.
+
+My system will dish out a pool of reccomendation's through collaborative filtering (Alternating Least Sqaures will be used), and then audio features will be found through the api and the application will select the most similar songs to the input collection. 
+
+Spotify features gives a lot of information about the song (bpm, key, danciness, etc.). Through these many attributes, I will create a weighted vector thing prioritsing elements tbat are important for DJing (bpm, key, danciness, signature).
 
 
 
