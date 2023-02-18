@@ -69,9 +69,22 @@ def find_similar_songs(song_ids, num_songs, model, user_song_df, i, input_songs)
         type.append("output")
         z += 1
 
+    song_id_recs = similar_song_generator(song_ids, num_songs, model)
+
+    filtered_df = type_implementation(user_song_df, song_id_recs, rec_number, input_songs, type)
+
+    whole_df = track_analysis_from_pandas(filtered_df)
+
+    return whole_df
+
+
+def similar_song_generator(song_ids, num_songs, model):
     songs_inds = model.similar_items(song_ids, N=num_songs)
     song_id_recs = songs_inds[0]
+    return song_id_recs
 
+
+def type_implementation(user_song_df, song_id_recs, rec_number, input_songs, type):
     filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
     filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
     filtered_df["Reccomendation Number"] = rec_number
@@ -79,10 +92,7 @@ def find_similar_songs(song_ids, num_songs, model, user_song_df, i, input_songs)
     filtered_df["Type"] = type
     filtered_df.loc[filtered_df["spotify_id"] == input_songs, "Type"] = "input"
     filtered_df.sort_values("Type")
-    whole_df = track_analysis_from_pandas(filtered_df)
-
-    return whole_df
-
+    return filtered_df
 
 def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
 
