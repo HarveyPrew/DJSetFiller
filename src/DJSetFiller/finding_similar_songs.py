@@ -143,3 +143,9 @@ def track_analysis_from_array(song_id):
     analysis = sp.audio_features(song_id)
 
     return analysis
+
+
+def song_features_matrix(inital_suggestions):
+
+    song_nums = inital_suggestions.song_nums
+    B = coo_matrix((plays, (song_nums, user_nums))).tocsr()

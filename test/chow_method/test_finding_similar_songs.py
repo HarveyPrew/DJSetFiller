@@ -3,8 +3,8 @@ from DJSetFiller.finding_similar_songs import (
     single_song_input_reccomender,
     multiple_song_input_reccomender,
     matrix_size,
-    track_analysis_from_pandas,
-    track_analysis_from_array
+    track_analysis_from_array,
+    song_features_matrix
 )
 
 
@@ -50,3 +50,8 @@ def test_song_attribute():
     results = track_analysis_from_array(song_id)
 
     assert results is not None
+
+def test_matrix_returing():
+    song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
+    initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
+    

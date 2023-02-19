@@ -25,7 +25,9 @@ Collaborative filtering works by taking a matrix of users and items where some f
 
 The first known use of collaborative filtering is with Goldberg's Tapestry system, a mailing list filter where users collectively decide which type of emails get the most importance \citep{goldberg_using_1992}. The first instance of collaborative filtering being used was with a system called \textit{Ringo} where users would enter in music they rated and would get recommendation's pulled from similar users \citep{shardanand_social_1995}. 
 
-\textit{Ringo} and many of the first music recommendation systems that use collaborative filtering uses explicit feedback for its data. Explicit feedback is when the system asks a user for some form of measurement about the likeability of said product.
+\textit{Ringo} and many of the first music recommendation systems that use collaborative filtering uses explicit feedback for its data. Explicit feedback is when the system asks a user for some form of measurement about the likeability of said product. \citep{celma_recommendation_2010}
+
+An example of explicit feedback being used is in the RACOFI (Rule-Applying Collaborative Filtering) system. Ratings are used to find recommendations through collaborative filtering and then the application apply logic rules to decipher the most suitable recommendations further.\citep{anderson_racofi_2003}.
 
 \begin{figure}
 \includegraphics[scale=0.65]{images/collaborative_filtering}
@@ -36,7 +38,7 @@ The first known use of collaborative filtering is with Goldberg's Tapestry syste
 
 \textbf{Talk about this paper that uses filtering and added rules \citep{anderson_racofi_2003}}
 
-The two diffrent approaches used for data finding with Collaborative Filtering is Neighbourhood-based and Model-based. 
+The two different approaches used for data finding with Collaborative Filtering is Neighbourhood-based and Model-based. 
 \begin{itemize}
 	\item \textbf{Neighbourhood-based:} Previous ratings from user-item matrix are used to predict ratings for new items.
 	\item \textbf{Model-based:}  Previous ratings are used to learn a model to predict new ratings.
