@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{19}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -66,6 +66,12 @@ Kaminskas, M., Ricci, F., and Schedl, M. (2013): \enquote{Location-aware music
   \textit{Proceedings of the 7th {ACM} conference on {Recommender} systems},
   {RecSys} '13, New York, NY, USA: Association for Computing Machinery,
   pp.\ignorespaces 17--24, \doi{10.1145/2507157.2507180}.
+
+\bibitem[{Koren et~al.(2009)Koren, Bell, and Volinsky}]{koren_matrix_2009}
+Koren, Y., Bell, R., and Volinsky, C. (2009): \enquote{Matrix {Factorization}
+  {Techniques} for {Recommender} {Systems}}, \textit{Computer}, 42(8),
+  pp.\ignorespaces 30--37, \doi{10.1109/MC.2009.263}. Conference Name:
+  Computer.
 
 \bibitem[{Lemire and Maclachlan(2007)}]{lemire_slope_2007}
 Lemire, D. and Maclachlan, A. (2007): \enquote{Slope {One} {Predictors} for

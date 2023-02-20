@@ -97,6 +97,26 @@ For one to calculate $sim(u , v)$, you'd use Pearson Correlation, Cosine similar
 
 Item based is when the system predict rating of user u for item i rooted from ratings of u for similar items to i. Similarity between two items are affirmed when multiple users rate them alike.
 
+\subsection{Matrix Factorisation}
+
+Matrix factorisation is when you take a sparse matrix and instead of storing each rating for each user, you store features that when multiplied can calculate the rating of said item by said user.
+
+This is really useful for a sparse matrix, which is usually the case for most reccomendation systems, because it shows information that the matrix alone doesnt. Because it factorises the users ratings from features, you can see trends on what groups of users likes and doesnt like. Because it reducing the dimensionality of a given matrix, matrix factorisation requires less processing power than other methods of finding similar items. 
+
+There are different ways of factorising a matrix. An example of one is Singular Value Decomposition (SVD). Heres the equation with U and V being the number of matrices for a given amount dimensions:
+
+\begin{equation}
+	M = U \sum V ^{T}
+\end{equation}
+
+Theres other means to compute M. Least Squares, uses a computational safe way to make sure M doesnt go to off from its original value, whilst stochastic gradient repetitively uses random bits of data to approximate U and V \citep{koren_matrix_2009}. 
+
+When the matrix is split up, the predicted rating can be calculated from the user and item feature vectors. 
+
+\begin{equation}
+	\hat{r} _{u,i} = U _{u} . V _{i}^{T} = \sum_{f=0}^{k} U_{u,f} V_{f, i}
+\end{equation}
+
 For neighbourhood-based, recommendation can either be user-based or item-based. The Ringo system is a good example of user based recommendation's, where it assesses the taste of a user for an item using the ratings of the item from different users. These users with similar rating trends are called neighbours. 
 
 \textbf{Talk about latest music reccomendation system that uses it (recsys one)}
