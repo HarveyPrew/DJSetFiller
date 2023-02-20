@@ -7,20 +7,24 @@
 \contentsline {chapter}{\numberline {2}Machine Learning used in Music Recommendation Systems}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}The need for music recommendation systems}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Collaborative Filtering}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Content Based Filtering}{5}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Clustering}{5}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Convoluted Networks}{5}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Machine Learning used for DJing}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Source Separation}{6}{section.3.1}%
-\contentsline {section}{\numberline {3.2}BPM, key, genre classification}{6}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Beat Tracking}{6}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Hypothesis}{8}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Experiment}{10}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}R-Precision}{10}{subsection.5.0.1}%
-\contentsline {subsection}{\numberline {5.0.2}Recommended Song Clicks}{10}{subsection.5.0.2}%
-\contentsline {subsection}{\numberline {5.0.3}Spotify Features}{11}{subsection.5.0.3}%
-\contentsline {chapter}{\numberline {6}Results and Discussion}{12}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Further Work}{14}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Conclusions}{16}{chapter.8}%
+\contentsline {subsection}{\numberline {2.2.1}Explicit Feedback}{4}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Implicit Feedback}{4}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Item Based}{5}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}User Based}{6}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Content Based Filtering}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Clustering}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Convoluted Networks}{7}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Machine Learning used for DJing}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Source Separation}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}BPM, key, genre classification}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Beat Tracking}{8}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Hypothesis}{10}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Experiment}{12}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}R-Precision}{12}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Recommended Song Clicks}{12}{subsection.5.0.2}%
+\contentsline {subsection}{\numberline {5.0.3}Spotify Features}{13}{subsection.5.0.3}%
+\contentsline {chapter}{\numberline {6}Results and Discussion}{14}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Further Work}{16}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Conclusions}{18}{chapter.8}%
 \renewcommand {\cftchappresnum }{Appendix~}
 \addtolength {\cftchapnumwidth }{1em}
