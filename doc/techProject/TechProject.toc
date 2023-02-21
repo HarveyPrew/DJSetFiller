@@ -12,20 +12,21 @@
 \contentsline {subsection}{\numberline {2.2.3}Item Based}{5}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}User Based}{6}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}Matrix Factorisation}{6}{subsection.2.2.5}%
-\contentsline {section}{\numberline {2.3}Content Based Filtering}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Clustering}{7}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Convoluted Networks}{7}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Machine Learning used for DJing}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Source Separation}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}BPM, key, genre classification}{8}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Beat Tracking}{8}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Hypothesis}{10}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Experiment}{12}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}R-Precision}{12}{subsection.5.0.1}%
-\contentsline {subsection}{\numberline {5.0.2}Recommended Song Clicks}{12}{subsection.5.0.2}%
-\contentsline {subsection}{\numberline {5.0.3}Spotify Features}{13}{subsection.5.0.3}%
-\contentsline {chapter}{\numberline {6}Results and Discussion}{14}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Further Work}{16}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Conclusions}{18}{chapter.8}%
+\contentsline {subsection}{\numberline {2.2.6}Limitations}{7}{subsection.2.2.6}%
+\contentsline {section}{\numberline {2.3}Content Based Filtering}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Clustering}{9}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Convoluted Networks}{9}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Machine Learning used for DJing}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Source Separation}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2}BPM, key, genre classification}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Beat Tracking}{10}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Hypothesis}{12}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Experiment}{14}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}R-Precision}{14}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Recommended Song Clicks}{14}{subsection.5.0.2}%
+\contentsline {subsection}{\numberline {5.0.3}Spotify Features}{15}{subsection.5.0.3}%
+\contentsline {chapter}{\numberline {6}Results and Discussion}{16}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Further Work}{18}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Conclusions}{20}{chapter.8}%
 \renewcommand {\cftchappresnum }{Appendix~}
 \addtolength {\cftchapnumwidth }{1em}

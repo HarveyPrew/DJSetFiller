@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{21}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -19,6 +19,11 @@ Anderson, M., Ball, M., Boley, H., Greene, S., Howse, N., Lemire, D., and
   McGrath, S. (2003): \enquote{{RACOFI}: {A} {Rule}-{Applying} {Collaborative}
   {Filtering} {System}}, .
 
+\bibitem[{Avery and Zeckhauser(1997)}]{avery_recommender_1997}
+Avery, C. and Zeckhauser, R. (1997): \enquote{Recommender systems for
+  evaluating computer messages}, \textit{Communications of the ACM}, 40(3),
+  pp.\ignorespaces 88--89, \doi{10.1145/245108.245127}.
+
 \bibitem[{Bollen et~al.(2010)Bollen, Knijnenburg, Willemsen, and
   Graus}]{bollen_understanding_2010}
 Bollen, D., Knijnenburg, B.~P., Willemsen, M.~C., and Graus, M. (2010):
@@ -26,18 +31,24 @@ Bollen, D., Knijnenburg, B.~P., Willemsen, M.~C., and Graus, M. (2010):
   \textit{Proceedings of the fourth {ACM} conference on {Recommender} systems},
   Barcelona Spain: ACM, pp.\ignorespaces 63--70, \doi{10.1145/1864708.1864724}.
 
-\bibitem[{Celma(2010{\natexlab{a}})}]{celma_recommendation_2010}
-Celma, O. (2010{\natexlab{a}}): \enquote{The {Recommendation} {Problem}}, in
+\bibitem[{Celma(2010{\natexlab{a}})}]{celma_music_2010}
+Celma, O. (2010{\natexlab{a}}): \textit{Music {Recommendation} and {Discovery}:
+  {The} {Long} {Tail}, {Long} {Fail}, and {Long} {Play} in the {Digital}
+  {Music} {Space}}, Berlin, Heidelberg: Springer,
+  \doi{10.1007/978-3-642-13287-2}.
+
+\bibitem[{Celma(2010{\natexlab{b}})}]{celma_recommendation_2010}
+Celma, O. (2010{\natexlab{b}}): \enquote{The {Recommendation} {Problem}}, in
   O.~Celma, ed., \textit{Music {Recommendation} and {Discovery}: {The} {Long}
   {Tail}, {Long} {Fail}, and {Long} {Play} in the {Digital} {Music} {Space}},
   Berlin, Heidelberg: Springer, pp.\ignorespaces 15--41,
   \doi{10.1007/978-3-642-13287-2_2}.
 
-\bibitem[{Celma(2010{\natexlab{b}})}]{celma_music_2010}
-Celma, A. (2010{\natexlab{b}}): \textit{Music {Recommendation} and {Discovery}:
-  {The} {Long} {Tail}, {Long} {Fail}, and {Long} {Play} in the {Digital}
-  {Music} {Space}}, Berlin, Heidelberg: Springer,
-  \doi{10.1007/978-3-642-13287-2}.
+\bibitem[{Claypool et~al.(1999)Claypool, Gokhale, Miranda, Murnikov, Netes, and
+  Sartin}]{claypool_combining_1999}
+Claypool, M., Gokhale, A., Miranda, T., Murnikov, P., Netes, D., and Sartin, M.
+  (1999): \enquote{Combining {Content}-{Based} and {Collaborative} {Filters} in
+  an {Online} {Newspaper}}, .
 
 \bibitem[{Ferwerda et~al.()Ferwerda, Schedl, and
   Tkalcic}]{ferwerda_personality_nodate}

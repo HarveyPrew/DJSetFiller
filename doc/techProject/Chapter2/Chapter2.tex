@@ -117,10 +117,58 @@ When the matrix is split up, the predicted rating can be calculated from the use
 	\hat{r} _{u,i} = U _{u} . V _{i}^{T} = \sum_{f=0}^{k} U_{u,f} V_{f, i}
 \end{equation}
 
+Looking at the latent factors one can find  similar items using a cosine similarity.
+
+\subsection{Limitations}
+Despite being popular, there are a number of reasons why wouldn't use Collaborative filtering.
+
+\textbf{Sparse Data - }Not every user has listened to every song, far from it. This means in data sets, having a sparsity of around 98-99 \% is very common.
+
+\textbf{Grey sheep - }This is when a user has a unique taste not similar to a lot of other users, making it hard to stem recommendation's from. This a common problem with datasets that are very sparse \citep{claypool_combining_1999}.
+
+\textbf{Cold Start - } When there is new users or items, theres little data associated with them so it makes it challanging to come up with suitable reccomendations based on either the said user or item. The term cold start refers to new items and the term refered to new users is called early raters \citep{avery_recommender_1997}.
+
+\textbf{Popularity Bias - } Another problem with Collaborative Filtering doesnt take into account any information about the item, only users interactions with it. This means that it has a bias towards popular items.
+
+\textbf{Feedback loops - } When users interact with items that are recommended through CF, based on previous user item interactions, it strengthens the initial recommendations more and creates a loop \citep{sanchez-moreno_incorporating_2018}.
+
+
 For neighbourhood-based, recommendation can either be user-based or item-based. The Ringo system is a good example of user based recommendation's, where it assesses the taste of a user for an item using the ratings of the item from different users. These users with similar rating trends are called neighbours. 
 
 \textbf{Talk about latest music reccomendation system that uses it (recsys one)}
 \section{Content Based Filtering}
+
+Content Based Filtering works by looking at the characteristics of a given item and see if it matches the preference of the user. Recommendations do not stem from what other users interact with, it only stems from the given information about the item.
+
+Early uses of content based filtering were text based, becuase of its ease of information extraction. But now with advances in machine learning, more complex platform can be used for extraction like images or audio.
+
+When finding similar items with CB, it simply looks at how similar the attributes of each items is, without introducing any subjective factor, like user behaviour, into its decision making. Thinking of an item being a vector made of its defined values of attributes, we can find the distance between each item. Its common to have these values be numerical. Common ways of caluclating the distance is Euclidean, Manhattan, Chebychev, cosine distance for vectors, and Mahalanobis distance.
+
+\begin{equation}
+	d(x,y) = \sqrt{\sum _{i=1} ^{n}(x_{i} - y_{i})^{2}}
+\end{equation}
+
+\begin{equation}
+	d(x,y) = \sum _{i=1} ^{n} | x_{i} - y_{i} |
+\end{equation}
+
+\begin{equation}
+	d(x,y) = man_{i} = _{1 . . n} | x_{i} - y_{i} |
+\end{equation}
+
+\begin{equation}
+	d(x,y) = \sqrt{ ( x - y )^{ T } S^{ -1 } ( x - y ) }
+\end{equation}
+
+Euclidean, Manhattan and Chebychev distance are used when there is little relationship or correlation between attributes. If there is correlation, its advised to use Mahalanobis distance \citep{celma_recommendation_2010}].
+
+When the attributes arent measured numericlly, one uses a delta function. When two attributes match it equals zero, other wise it equals 1.
+
+\begin{equation}
+	d(x,y) = 
+\end{equation}
+
+
 \textbf{intro of how it works}
 
 \textbf{general history and music history}
