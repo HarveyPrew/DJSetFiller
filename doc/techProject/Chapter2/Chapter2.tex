@@ -4,7 +4,9 @@
 
 \chapter{Machine Learning used in Music Recommendation Systems}
 
+In this chapter Ill be answering the research question:
 
+\textit{What are effective methods for the automated recommendation of songs suitable for adding to a given DJ set} 
 
 \section{The need for music recommendation systems}
 Spotify, SoundCloud, Apple Music and other streaming services gives one access to a library of tens of millions songs. Music Recommendation systems are excellent at fitting a users preference whilst incorporating some level of filtering of an overwhelming amount of songs \citep{bollen_understanding_2010}. 
@@ -30,7 +32,14 @@ Collaborative Filtering guesses users taste by looking at similar user-item conn
 
 Collaborative filtering works by taking a matrix of users and items where some form of interaction is measured. Examples of interaction's could be plays of a song, rating of a movie/product or screen time on an app. In figure 2.1, i represents items, and u is users.
 
-The first known use of collaborative filtering is with Goldberg's Tapestry system, a mailing list filter where users collectively decide which type of emails get the most importance \citep{goldberg_using_1992}. The first instance of collaborative filtering being used was with a system called \textit{Ringo} where users would enter in music they rated and would get recommendation's pulled from similar users \citep{shardanand_social_1995}. 
+The first known use of collaborative filtering is with Goldberg's Tapestry system, a mailing list filter where users collectively decide which type of emails get the most importance \citep{goldberg_using_1992}. The first instance of collaborative filtering being used was with a music based system called \textit{Ringo} where users would enter in music they rated and would get recommendation's pulled from similar users \citep{shardanand_social_1995}. 
+
+Despite evaluations in deep learning and neural networks. Collaborative Filtering is still used today in the state of art reccomendation systems. The winner of recsys playlist continuer challenger in 2018 used a combination of collaborative filtering and deep learning in there submitted model \citep{volkovs_two-stage_2018}.
+
+Collaborative filtering can be divided into three types:
+
+
+
 
 \subsection{Explicit Feedback}
 
@@ -138,9 +147,9 @@ For neighbourhood-based, recommendation can either be user-based or item-based. 
 \textbf{Talk about latest music reccomendation system that uses it (recsys one)}
 \section{Content Based Filtering}
 
-Content Based Filtering works by looking at the characteristics of a given item and see if it matches the preference of the user. Recommendations do not stem from what other users interact with, it only stems from the given information about the item.
+Content Based Filtering works by looking at the characteristics of a given item and see if it matches the preference of the user. Recommendations do not stem from what other users interact with, it only stems from the given information about the item. Its based on finding information about the item and filtering \citep{casey_content-based_2008}, and within the context of music, it recommends songs that has similar information to what the user already enjoys \citep{aucouturier_music_2002} \citep{logan_music_2004}. Theres been a lot of research on extracting the componenets of an audio file of music \citep{ribecky_multi-input_2021} \citep{zhao_musical_2022}. Recent developments have shown successful extractions of genre and structure with the MusicBERT Model \citep{zhu_musicbert_2021}. It's found that midi extraction from songs can aid to give better solutions for less popular songs, helping eliminate the cold start problem \citep{yadav_improved_2022}.
 
-Early uses of content based filtering were text based, becuase of its ease of information extraction. But now with advances in machine learning, more complex platform can be used for extraction like images or audio.
+Early uses of content based filtering were text based, because of its ease of information extraction, An example of this is the PRES system \citep{van_meteren_using_2000}. But now with advances in machine learning, more complex formats can be used for extraction like images or audio. Models like "Xception" have proven successful at extracting audio features from songs \citep{chollet_xception_2017} \citep{singh_robustness_2022}.
 
 When finding similar items with CB, it simply looks at how similar the attributes of each items is, without introducing any subjective factor, like user behaviour, into its decision making. Thinking of an item being a vector made of its defined values of attributes, we can find the distance between each item. Its common to have these values be numerical. Common ways of caluclating the distance is Euclidean, Manhattan, Chebychev, cosine distance for vectors, and Mahalanobis distance.
 
@@ -160,28 +169,45 @@ When finding similar items with CB, it simply looks at how similar the attribute
 	d(x,y) = \sqrt{ ( x - y )^{ T } S^{ -1 } ( x - y ) }
 \end{equation}
 
-Euclidean, Manhattan and Chebychev distance are used when there is little relationship or correlation between attributes. If there is correlation, its advised to use Mahalanobis distance \citep{celma_recommendation_2010}].
+Euclidean, Manhattan and Chebychev distance are used when there is little relationship or correlation between attributes. If there is correlation, its advised to use Mahalanobis distance \citep{celma_recommendation_2010}.
 
-When the attributes arent measured numericlly, one uses a delta function. When two attributes match it equals zero, other wise it equals 1.
+When the attributes aren't measured numericlly, one uses a delta function. When two attributes match it equals zero, other wise it equals 1.
 
 \begin{equation}
-	d(x,y) = 
+	d(x,y) = \omega \sum _{ i = 1 } ^{ n } \delta (x _{i}, y _{i})
 \end{equation}
 
+Content Based Filtering overcomes the problems CF has of being able to rate items that previously havent had any ratings. Its also able to adapt to any changes in the users preference quickly \citep{isinkaye_recommendation_2015}. For users who dont want to share there data they can get suitable reccomendations as well \citep{k_you_2006}.
 
-\textbf{intro of how it works}
+Another methods of comparing includes Clustering. Clustering is when one  groups a collection of data objects, so that some objects clustered together are very similar, while other clustered objects are not alike. Similarity is then evaluated based on chosen parameters \citep{ferretti_clustering_2018}. A popular algorithm is the k-mean cluster where each cluster is representerd by a mean value of the object \citep{han_data_2006}. A recent system that uses clustering uses a altered version to k clustering to limit the randomness in suggestion you usually get with this method \citep{chang_personalized_2017}.
 
-\textbf{general history and music history}
 
-\textbf{Talk about latest music reccomendation system that uses it (recsys one)}
-\section{Clustering}
-\textbf{intro of how it works}
 
-\textbf{general history and music history}
+\subsection{Limitations}
+The cold start and grey sheep problem also occur in content based filtering. It's often the case where popular items would have better defined features, and older users well have better represented features.
 
-\textbf{Talk about latest music reccomendation system that uses it (recsys one)}
+\textbf{Novelty Problem - } This is when the user is recommended items too similar to the one there profile, an application would need some way of diversifying recommendations to overcome this.
 
-\section{Convoluted Networks}
+\textbf{Retrieving metadata - } Even though we have seen recent improvements in extracting meaningful meta data \citep{vall_feature-combination_2019} \citep{singh_novel_2022}. One uses this data in deep neural networks or hybrid models. We aren't yet at a point where we can obtain rich enough meta data to rely on Content Based Filtering alone.
+
+\textbf{Suggestions not opinionated- } It doesn't take into the account the opinions of users, only description of what the item is. This may lead to some poor quality recommendations.  
+
+
+\section{Diversity issue}
+
+Recommendation systems are used extensively by majority of spotify users. However, there are a subsection of users who, despite huge breakthroughs dont rely heavily on algorithmic means of discovering music. In 2020, there was a study done that found users with more diverse tastes would find music in non algoritmic ways \citep{anderson_algorithmic_2020}. This study also found state of the art reccomendation systems performed better with users with less diverse taste. and users who would gain a more diverse taste over time, would do so by exploring non algorithmic ways of finding music.
+
+A reason for this is because alogorithmic ways go above and beyond giving personalised suggestions, one can suffer from choice overload when using algorithmic ways to find music \citep{iyengar_rethinking_1999}. This may do with the lack of refinement when it comes to training models, lot of MRS dont focus on a specific type of person when training a model \citep{laplante_improving_2014}.
+
+A reason for this issue could be the way classification is handled in music reccomendation systems, a debate that is passed from generations \citep{moles_sociodynamique_2019} \citep{dimaggio_classification_1987} \citep{bourdieu_distinction_2010}. In the context of a reccomndation system, a genre is usually just treated as a "tag" and its social and cultural relevance is often pushed to the side when treated in such a way \citep{porcaro_diversity_2021}. The act of a machine understanding a intensely subjective concept as genre is one that is proven challenging \citep{nurnberger_survey_2014}. Vlegels attempts to overcome this by organise groupings based on user artist relationship, rather than artists genre \citep{vlegels_music_2017}.
+
+This problem itself has saw another rise in the market of "curation". Having professional spot interesting things and document them to consumers. With this comes the role in the music world of a DJ, who way before recommendation systems existed were doing just that. Recently we have seen attempts of integrating DJs somehow in the algorithmic world. This is partly motivated by how much a company can pedel a term like "curation" in the music world and see it as a necessity \citep{barna_perfect_2017}. One can see this in the rise of internet radio as well.
+
+Internet Radio is a strangely thriving industry which is expected to have an net worth of 9.2\$ billion \citep{market_research_future_internet_2022}. There are many different factors on why this resurgence has occurred on a platform that one could easily see die. The quoted figure would also include radio beyond the scope of music. But specifically in dance music centric radio has also received a huge rise \citep{gillett_how_2021}. It includes increased speeds in mobile data, and the choice of stations, but one can see the push for curation from leading companies in this field \citep{deane_media_apple_2020} \citep{nts_radio_nts_2023}.
+
+The closest integration we got with DJ's and the algorithmic centric streaming apps is Apple Musics Beats 1 Radio station where apart of the subscription service you got access to a radio station of the most popular artist and DJs in the western world broadcasting shows, providing entertaining commentary and selected musical recommendations. Another is spotifys curated playlists, and more specifically there track ID's series, where they get established DJs to make a huge ever changing playlist of songs they play out live. The only instance I found of combining the two is a medium article written by Daniel Chow where he made a recommendation system out of the many DJ mixes found on mixesDB which takes in a single song and looking through the dataset find similar songs \citep{chow_music_2020}. Within the context of a DJ set finding recommendationd from multple songs, or a whole other set is something that has been previously unexplored, and could provide with solutions with assuring a exciting level of diversity that is missed in many recommendation systems.
+
+
 \textbf{intro of how it works}
 
 \textbf{general history and music history}
