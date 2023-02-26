@@ -4,14 +4,39 @@
 
 \chapter{Hypothesis}
 
+The literature review showed the current machine learning advances in separation and classification that could aid a DJ greatly, but despite great advances in recommendation systems, lot of algorithmic ways of gathering suggestions do not handle the cultural significance of genre and style.
 
+With this being the case, the current state of the art for recommendation systems don't usually cater to the traits found in both professional and hobbiest DJs. In order to play out songs in this manner one usually has to go to great lengths to find a sizeable amount of music. Based on the research ran by Anderson, these group of people would certainly fall in the category of diverse.
+
+However the combination of having a diverse music taste but also a necessity to reach a certain quantity of songs to DJ, makes for a laborious of collecting or "digging". The term digging came from the pre digital era, where one would go to specific record stores to find music from esoteric places, with the higher likelihood of picking up something that could be emotionally resonant \citep{allen_djs_2021}.
+
+One would suspect the dawn of the digital era and the advances in recommendation systems, that digging would become obsolete as a given application knows that as a user you both enjoy and desire to find music that stems from those sort of places. But as mentioned in the Diversity Issue sub-section, these given attributes rely heavily on the cultural context surrounding a genre and it with it gives less desirable suggestions compared to manually finding music. 
+
+We see this problem be somewhat resolved with the popularity behind sites with bandcamp, that prides itself with regularly updated blog posts, and the option to examine other people collections. Allowing the user to openly "dig" more so than other music based platforms \citep{bandcamp_about_2023}.  Sites like bandcamp is a great resource to find interesting music from the comfort of whatever space you choose, but having an algorithm do it would be a lot more time efficient.
+
+As of writing, a recommendation system that attempts to mimic suggestions found from digging is yet to happen. But there is a way of adapting to what's publicly available to mimic the effect.
+
+\begin{enumerate}
+	\item \textbf{Spotify }- Find a DJ set on Spotify (not commonly available but labels like !K7 Music
+	releases DJ sets commercially as albums), add that to a playlist, and look at the"
+	Recommended based on the playlist". The main problem with this is that DJ sets on
+	Spotify are few and far between. One can only input a mix one’s heard from the radio or
+	a recorded live performance by finding the tracklist and adding the songs into a playlist.
+	The system also finds what other users are listening to, often giving song recommendations
+	that are usually quite popular and well-known. Spotify has a vast library of music, but a
+	sizeable chunk of music played on Spotify isn’t found on DJ sets.
+	
+	\item \textbf{SoundCloud }- When a DJ set gets uploaded to SoundCloud, it usually recommends other DJ sets on its " radio " when getting recommended songs is more desirable. The recommendation system is only limited to what is available on SoundCloud.
+	
+\end{enumerate}
+	
 The hypothesis is that the application will give song recommendations that are both stylistically
 suitable but aren’t necessarily popular. Its common for a DJ, having a diverse taste, to go into
 great lengths to find obscure and unknown songs. Therefore, not prioritising popularity is a
 desirable trait in a recommendation system for a DJ’s music consumption and knowledge, usually
 being more than the average consumer. Its a common trait in most music recommendation
 systems to prioritise popularity. Building a recommendation system for a dataset of DJ sets
-will hopefully give these suitable suggestions
+will hopefully give these suitable suggestions	
 
 A DJ set can also be described as musical recommendations curated by a person passionate
 enough about music to make selecting and playing songs their profession or a well-invested
@@ -19,35 +44,14 @@ hobby. This application should explore if creating a music recommendation system
 from archives of these personally selected songs would create a pool of more "human"
 suggestions than what Spotify or other streaming platforms recommends.
 
+Inspired by the training of a fader estimation paper \citep{kim_automatic_2017}, mixesdb.com is a website of archived DJ sets. With other 260,000 mixes on the site, using this as a dataset to train my model proved to be an excellent choice. As mentioned in chapter 2, Daniel Chow built a system that takes in a single song and outputs similar songs based on the mixesdb dataset \citep{chow_music_2020}. His code will provide the foundation as I implement multiple inputs and add an extra layer of validation.
+
 For simplicity sake, I won't use any deep learning implementation.
 
 My system will dish out a pool of reccomendation's through collaborative filtering (Alternating Least Sqaures will be used), and then audio features will be found through the api and the application will select the most similar songs to the input collection. 
 
 Spotify features gives a lot of information about the song (bpm, key, danciness, etc.). Through these many attributes, I will create a weighted vector thing prioritsing elements tbat are important for DJing (bpm, key, danciness, signature).
 
-
-
-\begin{figure}
-\centering
-\setlength{\unitlength}{2.4cm}
-\begin{picture}(5,4)
-\thicklines
-\put(1,0.5){\line(2,1){3}}
-\put(4,2){\line(-2,1){2}}
-\put(2,3){\line(-2,-5){1}}
-\put(0.7,0.3){$A$}
-\put(4.05,1.9){$B$}
-\put(1.7,2.95){$C$}
-\put(3.1,2.5){$a$}
-\put(1.3,1.7){$b$}
-\put(2.5,1.05){$c$}
-\put(0.3,3.5){$F=\sqrt{s(s-a)(s-b)(s-c)}$}
-\put(3.5,0.4){$\displaystyle
-s:=\frac{a+b+c}{2}$}
-\end{picture}
-\caption[This is also in the LoF]{This is a really really really really really really really really really really really really really really long caption. Well actually, it's not that long; two sentences seems quite reasonable.} 
-\label{fig:figure2}
-\end{figure}
 
 
 % note that \Blindocument has 5 numbered levels, despite setting secnumdepth above. I (and many style guides) would suggest using no more than 3 numbered levels (incl. the chapter), with the option of a fourth unnumbered level.

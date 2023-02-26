@@ -1,4 +1,4 @@
-\begin{thebibliography}{54}
+\begin{thebibliography}{71}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -12,6 +12,11 @@
 AIcrowd (2023): \enquote{{AIcrowd} {\textbar} {Spotify} {Million} {Playlist}
   {Dataset} {Challenge} {\textbar} {Challenges}},
   \urlprefix\url{https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge}.
+
+\bibitem[{Allen(2021)}]{allen_djs_2021}
+Allen, T. (2021): \enquote{{DJs} and the lost art of 'digging'},
+  \urlprefix\url{https://www.mrafterparty.com/djs-and-the-lost-art-of-digging/}.
+  Section: FEATURES.
 
 \bibitem[{Anderson et~al.(2020)Anderson, Maystre, Anderson, Mehrotra, and
   Lalmas}]{anderson_algorithmic_2020}
@@ -37,10 +42,20 @@ Avery, C. and Zeckhauser, R. (1997): \enquote{Recommender systems for
   evaluating computer messages}, \textit{Communications of the ACM}, 40(3),
   pp.\ignorespaces 88--89, \doi{10.1145/245108.245127}.
 
+\bibitem[{Bandcamp(2023)}]{bandcamp_about_2023}
+Bandcamp (2023): \enquote{About {Bandcamp}},
+  \urlprefix\url{https://bandcamp.com/about}.
+
 \bibitem[{Barna(2017)}]{barna_perfect_2017}
 Barna, E. (2017): \enquote{“{The} perfect guide in a crowded musical
   landscape:” {Online} music platforms and curatorship}, \textit{First
   Monday}, \doi{10.5210/fm.v22i4.6914}.
+
+\bibitem[{Bittner et~al.(2017)Bittner, Gu, Hernandez, Humphrey, Jehan, McCurry,
+  and Montecchio}]{bittner_automatic_2017}
+Bittner, R.~M., Gu, M., Hernandez, G., Humphrey, E.~J., Jehan, T., McCurry,
+  P.~H., and Montecchio, N. (2017): \enquote{{AUTOMATIC} {PLAYLIST}
+  {SEQUENCING} {AND} {TRANSITIONS}}, .
 
 \bibitem[{Bollen et~al.(2010)Bollen, Knijnenburg, Willemsen, and
   Graus}]{bollen_understanding_2010}
@@ -53,6 +68,16 @@ Bollen, D., Knijnenburg, B.~P., Willemsen, M.~C., and Graus, M. (2010):
 Bourdieu, P. and Nice, R. (2010): \textit{Distinction: {A} {Social} {Critique}
   of the {Judgement} of {Taste}}, London, UNITED KINGDOM: Taylor \& Francis
   Group.
+
+\bibitem[{Böck and Davies(2020)}]{bock_deconstruct_2020}
+Böck, S. and Davies, M. E.~P. (2020): \enquote{{DECONSTRUCT}, {ANALYSE},
+  {RECONSTRUCT}: {HOW} {TO} {IMPROVE} {TEMPO}, {BEAT}, {AND} {DOWNBEAT}
+  {ESTIMATION}}, .
+
+\bibitem[{Böck et~al.(2019)Böck, Davies, and Knees}]{bock_multi-task_2019}
+Böck, S., Davies, M. E.~P., and Knees, P. (2019): \enquote{{MULTI}-{TASK}
+  {LEARNING} {OF} {TEMPO} {AND} {BEAT}: {LEARNING} {ONE} {TO} {IMPROVE} {THE}
+  {OTHER}}, .
 
 \bibitem[{Casey et~al.(2008)Casey, Veltkamp, Goto, Leman, Rhodes, and
   Slaney}]{casey_content-based_2008}
@@ -120,6 +145,13 @@ Future, M.~R. (2022): \enquote{Internet {Radio} {Market} is {Expected} to
   {Report} by {Market} {Research} {Future} ({MRFR})},
   \urlprefix\url{https://www.globenewswire.com/news-release/2022/09/26/2522566/0/en/Internet-Radio-Market-is-Expected-to-Reach-USD-9-2-Billion-at-a-Healthy-CAGR-of-18-20-by-2030-Report-by-Market-Research-Future-MRFR.html}.
 
+\bibitem[{George et~al.(2022)George, Mary, and
+  George}]{george_development_2022}
+George, A., Mary, X.~A., and George, S.~T. (2022): \enquote{Development of an
+  intelligent model for musical key estimation using machine learning
+  techniques}, \textit{Multimedia Tools and Applications}, 81(14),
+  pp.\ignorespaces 19945--19964, \doi{10.1007/s11042-022-12432-y}.
+
 \bibitem[{Gillett(2021)}]{gillett_how_2021}
 Gillett, E. (2021): \enquote{How independent radio has thrived in the
   pandemic},
@@ -143,6 +175,13 @@ Goldberg, D., Nichols, D., Oki, B.~M., and Terry, D. (1992): \enquote{Using
 Han, J., Pei, J., and Kamber, M. (2006): \textit{Data {Mining}, {Southeast}
   {Asia} {Edition}}, Burlington, UNITED STATES: Elsevier Science \& Technology.
 
+\bibitem[{Hennequin et~al.(2020)Hennequin, Khlif, Voituret, and
+  Moussallam}]{hennequin_spleeter_2020}
+Hennequin, R., Khlif, A., Voituret, F., and Moussallam, M. (2020):
+  \enquote{Spleeter: a fast and efficient music source separation tool with
+  pre-trained models}, \textit{Journal of Open Source Software}, 5(50),
+  p.\ignorespaces 2154, \doi{10.21105/joss.02154}.
+
 \bibitem[{Isinkaye et~al.(2015)Isinkaye, Folajimi, and
   Ojokoh}]{isinkaye_recommendation_2015}
 Isinkaye, F.~O., Folajimi, Y.~O., and Ojokoh, B.~A. (2015):
@@ -156,6 +195,12 @@ Iyengar, S.~S. and Lepper, M.~R. (1999): \enquote{Rethinking the value of
   Personality and Social Psychology}, 76, pp.\ignorespaces 349--366,
   \doi{10.1037/0022-3514.76.3.349}. Place: US Publisher: American Psychological
   Association.
+
+\bibitem[{Jansson et~al.(2017)Jansson, Humphrey, Montecchio, Bittner, Kumar,
+  and Weyde}]{jansson_singing_2017}
+Jansson, A., Humphrey, E., Montecchio, N., Bittner, R., Kumar, A., and Weyde,
+  T. (2017): \enquote{Singing voice separation with deep {U}-{Net}
+  convolutional networks}, .
 
 \bibitem[{K et~al.(2006)K, Frankowski, and Riedl}]{k_you_2006}
 K, S., Frankowski, D., and Riedl, J. (2006): \enquote{Do {You} {Trust} {Your}
@@ -173,11 +218,27 @@ Kaminskas, M., Ricci, F., and Schedl, M. (2013): \enquote{Location-aware music
   {RecSys} '13, New York, NY, USA: Association for Computing Machinery,
   pp.\ignorespaces 17--24, \doi{10.1145/2507157.2507180}.
 
+\bibitem[{Kim et~al.(2017)Kim, Park, Park, Ha, Kwon, and
+  Nam}]{kim_automatic_2017}
+Kim, A., Park, S., Park, J., Ha, J.-W., Kwon, T., and Nam, J. (2017):
+  \textit{Automatic {DJ} {Mix} {Generation} {Using} {Highlight} {Detection}}.
+
+\bibitem[{Kirn(2023)}]{kirn_review_2023}
+Kirn, P. (2023): \enquote{In {Review}: {Serato} {Stems} · {Feature} {RA}},
+  \urlprefix\url{https://ra.co/features/4105}.
+
 \bibitem[{Koren et~al.(2009)Koren, Bell, and Volinsky}]{koren_matrix_2009}
 Koren, Y., Bell, R., and Volinsky, C. (2009): \enquote{Matrix {Factorization}
   {Techniques} for {Recommender} {Systems}}, \textit{Computer}, 42(8),
   pp.\ignorespaces 30--37, \doi{10.1109/MC.2009.263}. Conference Name:
   Computer.
+
+\bibitem[{Kumaraswamy(2022)}]{kumaraswamy_optimal_2022}
+Kumaraswamy, B. (2022): \enquote{Optimal classification of music genres based
+  on acoustic and visual features}, \textit{Concurrency and Computation:
+  Practice and Experience}, 34(23), p.\ignorespaces e7174,
+  \doi{10.1002/cpe.7174}. \_eprint:
+  https://onlinelibrary.wiley.com/doi/pdf/10.1002/cpe.7174.
 
 \bibitem[{Laplante(2014)}]{laplante_improving_2014}
 Laplante, A. (2014): \enquote{{IMPROVING} {MUSIC} {RECOMMENDER} {SYSTEMS}:
@@ -205,6 +266,11 @@ Media, D. and {2020} (2020): \enquote{Apple {Announces} {Apple} {Music} {Radio}
 \bibitem[{Moles(2019)}]{moles_sociodynamique_2019}
 Moles, A.~A. (2019): \textit{Sociodynamique de la culture}, De Gruyter Mouton,
   \doi{10.1515/9783111672403}. Publication Title: Sociodynamique de la culture.
+
+\bibitem[{Naomi(2023)}]{naomi_spotify_2023}
+Naomi (2023): \enquote{Spotify {Debuts} a {New} {AI} {DJ}, {Right} in {Your}
+  {Pocket}},
+  \urlprefix\url{https://newsroom.spotify.com/2023-02-22/spotify-debuts-a-new-ai-dj-right-in-your-pocket/}.
 
 \bibitem[{Porcaro et~al.(2021)Porcaro, Castillo, and
   Gómez}]{porcaro_diversity_2021}
@@ -238,12 +304,41 @@ Ricci, F., Rokach, L., Shapira, B., and Kantor, P.~B., eds. (2011):
   \textit{Recommender {Systems} {Handbook}}, Boston, MA: Springer US,
   \doi{10.1007/978-0-387-85820-3}.
 
+\bibitem[{Robinson and Brown(2023)}]{robinson_automated_2023}
+Robinson, K. and Brown, D. (2023): \enquote{Automated {Time}-frequency {Domain}
+  {Audio} {Crossfades} using {Graph} {Cuts}},
+  \urlprefix\url{http://arxiv.org/abs/2301.13380}. ArXiv:2301.13380 [cs, eess].
+
+\bibitem[{Ronneberger et~al.(2015)Ronneberger, Fischer, and
+  Brox}]{ronneberger_u-net_2015}
+Ronneberger, O., Fischer, P., and Brox, T. (2015): \enquote{U-{Net}:
+  {Convolutional} {Networks} for {Biomedical} {Image} {Segmentation}},
+  \doi{10.48550/arXiv.1505.04597},
+  \urlprefix\url{http://arxiv.org/abs/1505.04597}. ArXiv:1505.04597 [cs].
+
+\bibitem[{Saunders(2023)}]{saunders_soul_2023}
+Saunders, E. (2023): \enquote{De {La} {Soul}: {Classic} back catalogue finally
+  available for streaming}, \textit{BBC News}.
+
+\bibitem[{Sgouros et~al.(2022)Sgouros, Bousis, and
+  Mitianoudis}]{sgouros_efficient_2022}
+Sgouros, T., Bousis, A., and Mitianoudis, N. (2022): \enquote{An {Efficient}
+  {Short}-{Time} {Discrete} {Cosine} {Transform} and {Attentive} {MultiResUNet}
+  {Framework} for {Music} {Source} {Separation}}, \textit{IEEE Access}, 10,
+  pp.\ignorespaces 119448--119459, \doi{10.1109/ACCESS.2022.3221766}.
+  Conference Name: IEEE Access.
+
 \bibitem[{Shardanand and Maes(1995)}]{shardanand_social_1995}
 Shardanand, U. and Maes, P. (1995): \enquote{Social information filtering:
   algorithms for automating “word of mouth”}, in \textit{Proceedings of the
   {SIGCHI} conference on {Human} factors in computing systems - {CHI} '95},
   Denver, Colorado, United States: ACM Press, pp.\ignorespaces 210--217,
   \doi{10.1145/223904.223931}.
+
+\bibitem[{Sharma(2021)}]{sharma_audio_2021}
+Sharma, S. (2021): \enquote{Audio {Classification} {\textbar} {Introduction} to
+  {Audio} {Classification}},
+  \urlprefix\url{https://www.analyticsvidhya.com/blog/2021/06/introduction-to-audio-classification/}.
 
 \bibitem[{Singh et~al.(2022)Singh, Sajid, Yadav, Singh, and
   Saini}]{singh_novel_2022}

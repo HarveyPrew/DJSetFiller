@@ -14,53 +14,58 @@ A level-1 auxiliary file: BackMatter/BackMatter.aux
 The style file: iosrnew.bst.bst
 Database file #1: BackgroundReading.bib
 Warning--empty journal in anderson_racofi_2003
+Warning--empty journal in bittner_automatic_2017
+Warning--empty journal in bock_deconstruct_2020
+Warning--empty journal in bock_multi-task_2019
 Warning--empty booktitle in claypool_combining_1999
 Warning--empty pages in claypool_combining_1999
 Warning--empty journal in ferwerda_personality_nodate
+Warning--empty journal in jansson_singing_2017
+Warning--missing publisher in kim_automatic_2017
 Warning--empty journal in laplante_improving_2014
 Warning--empty booktitle in logan_music_2004
 Warning--empty pages in logan_music_2004
 Warning--empty journal in mcfee_hypergraph_2012
 Warning--empty booktitle in van_meteren_using_2000
-You've used 54 entries,
+You've used 71 entries,
             2968 wiz_defined-function locations,
-            1008 strings with 18936 characters,
-and the built_in function-call counts, 35413 in all, are:
-= -- 3039
-> -- 1383
-< -- 63
-+ -- 509
-- -- 445
-* -- 2865
-:= -- 5170
-add.period$ -- 116
-call.type$ -- 54
-change.case$ -- 422
-chr.to.int$ -- 55
-cite$ -- 63
-duplicate$ -- 2642
-empty$ -- 2656
-format.name$ -- 604
-if$ -- 7328
+            1100 strings with 22382 characters,
+and the built_in function-call counts, 44897 in all, are:
+= -- 3849
+> -- 1805
+< -- 76
++ -- 666
+- -- 583
+* -- 3611
+:= -- 6655
+add.period$ -- 154
+call.type$ -- 71
+change.case$ -- 557
+chr.to.int$ -- 72
+cite$ -- 85
+duplicate$ -- 3328
+empty$ -- 3314
+format.name$ -- 783
+if$ -- 9225
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 482
-newline$ -- 172
-num.names$ -- 225
-pop$ -- 1017
+missing$ -- 603
+newline$ -- 223
+num.names$ -- 293
+pop$ -- 1299
 preamble$ -- 1
-purify$ -- 360
+purify$ -- 474
 quote$ -- 0
-skip$ -- 1234
+skip$ -- 1561
 stack$ -- 0
-substring$ -- 1648
-swap$ -- 1433
-text.length$ -- 35
+substring$ -- 2012
+swap$ -- 1771
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 471
-warning$ -- 9
-while$ -- 262
+type$ -- 621
+warning$ -- 14
+while$ -- 323
 width$ -- 0
-write$ -- 647
-(There were 9 warnings)
+write$ -- 826
+(There were 14 warnings)
