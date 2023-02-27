@@ -152,21 +152,23 @@ def song_features_matrix(inital_suggestions):
     B = coo_matrix((plays, (song_nums, user_nums))).tocsr()
 
 
-def input_feature_vector(inital_suggestions):
+def filtered_df(inital_suggestions, io):
     df = inital_suggestions.filter(items=['song_nums', 'Type', 'danceability', 'energy', 'key', 'loudness',
                                           'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
                                           'valence', 'tempo', 'duration', 'time_signature'])
-    new_df = df[df["Type"] == "input"].drop(columns=['Type'])
+    new_df = df[df["Type"] == io].drop(columns=['Type'])
+    return new_df
+
+
+def input_feature_vector(inital_suggestions):
+    new_df = filtered_df(inital_suggestions, 'input')
     column_averages = new_df.drop('song_nums', axis=1).mean()
     averages_list = column_averages.tolist()
     return averages_list
 
 
 def output_feature_vectors(inital_suggestions):
-    df = inital_suggestions.filter(items=['song_nums', 'Type', 'danceability', 'energy', 'key', 'loudness',
-                                          'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
-                                          'valence', 'tempo', 'duration', 'time_signature'])
-    new_df = df[df["Type"] == "output"].drop(columns=['Type'])
+    new_df = filtered_df(inital_suggestions, 'output')
     result = {row['song_nums']: row.drop('song_nums').tolist() for _, row in new_df.iterrows()}
     return result
 
