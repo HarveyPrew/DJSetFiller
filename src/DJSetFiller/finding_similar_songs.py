@@ -159,3 +159,12 @@ def input_feature_vector(inital_suggestions):
     column_averages = new_df.drop('song_nums', axis=1).mean()
     averages_list = column_averages.tolist()
     return averages_list
+
+
+def output_feature_vector(inital_suggestions):
+    df = inital_suggestions.filter(items=['song_nums', 'Type', 'danceability', 'energy', 'key', 'loudness',
+                                          'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
+                                          'valence', 'tempo', 'duration', 'time_signature'])
+    new_df = df[df["Type"] == "output"].drop(columns=['Type'])
+    result = {row['song_nums']: row.drop('song_nums').tolist() for _, row in new_df.iterrows()}
+    return result

@@ -6,7 +6,8 @@ from DJSetFiller.finding_similar_songs import (
     multiple_song_input_reccomender,
     matrix_size,
     track_analysis_from_array,
-    input_feature_vector
+    input_feature_vector,
+    output_feature_vector,
 )
 
 
@@ -65,3 +66,10 @@ def test_average_input_vector():
     initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
     input_vector = input_feature_vector(initial_suggestions)
     assert input_vector is not None
+
+
+def test_output_vector():
+    song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
+    initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
+    output_vector = output_feature_vector(initial_suggestions)
+    assert output_vector is not None
