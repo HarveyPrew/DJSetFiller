@@ -1,10 +1,11 @@
+import beavis
+import pandas as pd
 from DJSetFiller.finding_similar_songs import (
     read_data_set,
     single_song_input_reccomender,
     multiple_song_input_reccomender,
     matrix_size,
-    track_analysis_from_array,
-    song_features_matrix
+    track_analysis_from_array
 )
 
 
@@ -51,7 +52,17 @@ def test_song_attribute():
 
     assert results is not None
 
+
 def test_matrix_returing():
     song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
-    
+    initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())  
+    assert initial_suggestions is not None
+
+
+def startswith_s(df, input_col, output_col):
+    df[output_col] = df[input_col].str.startswith("s")
+
+
+def test_df():
+    df = pd.DataFrame({"col1": [5, 2, 7, 6], "col2": [5, 2, 7, 6]})
+    beavis.assert_pd_column_equality(df, "col1", "col2")
