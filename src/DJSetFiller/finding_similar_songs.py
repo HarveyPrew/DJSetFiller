@@ -4,6 +4,7 @@ import pandas as pd
 import os
 from scipy.sparse import coo_matrix
 from implicit.als import AlternatingLeastSquares
+import numpy as np
 pd.options.mode.chained_assignment = None  # default='warn'
 
 
@@ -161,10 +162,21 @@ def input_feature_vector(inital_suggestions):
     return averages_list
 
 
-def output_feature_vector(inital_suggestions):
+def output_feature_vectors(inital_suggestions):
     df = inital_suggestions.filter(items=['song_nums', 'Type', 'danceability', 'energy', 'key', 'loudness',
                                           'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
                                           'valence', 'tempo', 'duration', 'time_signature'])
     new_df = df[df["Type"] == "output"].drop(columns=['Type'])
     result = {row['song_nums']: row.drop('song_nums').tolist() for _, row in new_df.iterrows()}
     return result
+
+
+def euclidean_distance(input_feature_vector, output_feature_vectors):
+    pointInput = np.array(input_feature_vector)
+    point2 = np.array(list(output_feature_vectors.values())[0])
+ 
+    # calculating Euclidean distance
+    # using linalg.norm()
+    dist = np.linalg.norm(pointInput - point2)
+
+    return dist

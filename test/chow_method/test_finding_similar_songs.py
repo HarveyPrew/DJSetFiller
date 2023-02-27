@@ -7,7 +7,8 @@ from DJSetFiller.finding_similar_songs import (
     matrix_size,
     track_analysis_from_array,
     input_feature_vector,
-    output_feature_vector,
+    output_feature_vectors,
+    euclidean_distance
 )
 
 
@@ -71,5 +72,14 @@ def test_average_input_vector():
 def test_output_vector():
     song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
-    output_vector = output_feature_vector(initial_suggestions)
-    assert output_vector is not None
+    output_vectors = output_feature_vectors(initial_suggestions)
+    assert output_vectors is not None
+
+
+def test_euclidean_distance():
+    song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
+    initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
+    input_vector = input_feature_vector(initial_suggestions)
+    output_vectors = output_feature_vectors(initial_suggestions)
+    ed = euclidean_distance(input_vector, output_vectors)
+    assert ed is not None
