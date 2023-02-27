@@ -9,7 +9,7 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 
 def read_data_set():
-    collab_df = pd.read_csv("data/dataset_reduced.csv")
+    collab_df = pd.read_csv("data/mixesdb_df_for_recs.csv")
 
     os.environ["MKL_NUM_THREADS"] = "1"
     return collab_df
@@ -92,7 +92,7 @@ def type_implementation(user_song_df, song_id_recs, rec_number, input_songs, typ
     return filtered_df
 
 
-def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
+def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=200):
 
     song_ids = []
     for id in input_songs:
