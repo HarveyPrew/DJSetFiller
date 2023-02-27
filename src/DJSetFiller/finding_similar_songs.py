@@ -199,7 +199,10 @@ def euclidean_distance(initial_suggestions):
 
     return ed_dict
 
+
 def reduced_similar_songs(initial_suggestions):
     ed = euclidean_distance(initial_suggestions)
-    best_song_num = min(ed, key=ed.get)
-    return best_song_num
+    best_song_num = int(min(ed, key=ed.get))
+    initalDf = initial_suggestions
+    final_df = initalDf.loc[initalDf["song_nums"] == best_song_num]
+    return final_df
