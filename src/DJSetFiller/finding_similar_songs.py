@@ -173,25 +173,27 @@ def output_feature_vectors(inital_suggestions):
     return result
 
 
-def euclidean_distance(input_feature_vector, output_feature_vectors):
-    pointInput = np.array(input_feature_vector)
+def euclidean_distance(initial_suggestions):
+    input = input_feature_vector(initial_suggestions)
+    output = output_feature_vectors(initial_suggestions)
+    pointInput = np.array(input)
     pointOutputs = []
 
-    for i in output_feature_vectors:
-        pointOutputs.append(np.array(list(output_feature_vectors[i])))
- 
+    for i in output:
+        pointOutputs.append(np.array(list(output[i])))
+
     distanceList = []
 
     for point in pointOutputs:
         distanceList.append(np.linalg.norm(pointInput - point))
 
-    ed_dict = output_feature_vectors
+    ed_dict = output
     z = 0
 
     for i in ed_dict:
         if (z == len(distanceList)):
             break
-    
+ 
         ed_dict[i] = distanceList[z]
         z += 1
 

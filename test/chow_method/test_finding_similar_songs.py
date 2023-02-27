@@ -62,24 +62,8 @@ def test_matrix_returing():
     assert initial_suggestions is not None
 
 
-def test_average_input_vector():
-    song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
-    input_vector = input_feature_vector(initial_suggestions)
-    assert input_vector is not None
-
-
-def test_output_vector():
-    song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
-    output_vectors = output_feature_vectors(initial_suggestions)
-    assert output_vectors is not None
-
-
 def test_euclidean_distance():
     song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
-    input_vector = input_feature_vector(initial_suggestions)
-    output_vectors = output_feature_vectors(initial_suggestions)
-    ed = euclidean_distance(input_vector, output_vectors)
+    ed = euclidean_distance(initial_suggestions)
     assert ed is not None
