@@ -149,3 +149,11 @@ def song_features_matrix(inital_suggestions):
 
     song_nums = inital_suggestions.song_nums
     B = coo_matrix((plays, (song_nums, user_nums))).tocsr()
+
+
+def input_feature_vector(inital_suggestions):
+    df = inital_suggestions.filter(items=['song_nums', 'Type', 'danceability', 'energy', 'key', 'loudness',
+                                          'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
+                                          'valence', 'tempo', 'duration', 'time_signature'])
+    new_df = df[df["Type"] == "input"]
+    return new_df
