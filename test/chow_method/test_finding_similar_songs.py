@@ -8,7 +8,8 @@ from DJSetFiller.finding_similar_songs import (
     track_analysis_from_array,
     input_feature_vector,
     output_feature_vectors,
-    euclidean_distance
+    euclidean_distance,
+    reduced_similar_songs
 )
 
 
@@ -67,3 +68,10 @@ def test_euclidean_distance():
     initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
     ed = euclidean_distance(initial_suggestions)
     assert ed is not None
+
+
+def test_smallest_ed():
+    song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
+    initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
+    best_song_num = reduced_similar_songs(initial_suggestions)
+    assert best_song_num is not None

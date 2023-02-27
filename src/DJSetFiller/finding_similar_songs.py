@@ -193,8 +193,13 @@ def euclidean_distance(initial_suggestions):
     for i in ed_dict:
         if (z == len(distanceList)):
             break
- 
+
         ed_dict[i] = distanceList[z]
         z += 1
 
     return ed_dict
+
+def reduced_similar_songs(initial_suggestions):
+    ed = euclidean_distance(initial_suggestions)
+    best_song_num = min(ed, key=ed.get)
+    return best_song_num
