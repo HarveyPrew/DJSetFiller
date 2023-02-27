@@ -183,4 +183,14 @@ def euclidean_distance(input_feature_vector, output_feature_vectors):
     for point in pointOutputs:
         distanceList.append(np.linalg.norm(pointInput - point))
 
-    return distanceList
+    ed_dict = output_feature_vectors
+    z = 0
+
+    for i in ed_dict:
+        if (z == len(distanceList)):
+            break
+    
+        ed_dict[i] = distanceList[z]
+        z += 1
+
+    return ed_dict
