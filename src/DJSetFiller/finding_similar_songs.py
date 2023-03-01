@@ -108,8 +108,8 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
     matrix = coo_matrix((plays, (user_nums, song_nums))).tocsr()
     model = AlternatingLeastSquares(factors=100)
     model.fit(matrix)
-    filtered_dfs = []
 
+    filtered_dfs = []
     i = 0
 
     for id in song_ids:
@@ -183,8 +183,6 @@ def euclidean_distance(initial_suggestions):
     for i in output:
         pointOutputs.append(list(output[i]))
 
-    distanceList = []
-
     scaler = StandardScaler().fit(pointOutputs)
     X_scaled = scaler.transform(pointOutputs).tolist()
 
@@ -192,10 +190,15 @@ def euclidean_distance(initial_suggestions):
 
     X_scaled.pop(-1)
 
+    distanceList = []
+
     for point in X_scaled:
         distanceList.append(np.linalg.norm(pointInput - np.array(point)))
 
     ed_dict = output
+
+    del ed_dict['input']
+
     z = 0
 
     for i in ed_dict:
