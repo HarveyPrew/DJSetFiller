@@ -75,5 +75,5 @@ def test_euclidean_distance():
 def test_smallest_ed():
     song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
-    best_song_num = reduced_similar_songs(initial_suggestions)
-    assert best_song_num is not None
+    best_song_num = reduced_similar_songs(initial_suggestions).to_dict()
+    assert best_song_num["song"] == {4: 'State Of Rave (Viers Remix)'}
