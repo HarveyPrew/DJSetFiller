@@ -3,3 +3,4 @@ scipy
 implicit
 spotipy
 beavis
+scikit-learn

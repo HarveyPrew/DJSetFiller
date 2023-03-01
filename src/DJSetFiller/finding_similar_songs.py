@@ -2,6 +2,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import pandas as pd
 import os
+from sklearn.preprocessing import StandardScaler
 from scipy.sparse import coo_matrix
 from implicit.als import AlternatingLeastSquares
 import numpy as np
@@ -9,7 +10,7 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 
 def read_data_set():
-    collab_df = pd.read_csv("data/mixesdb_df_for_recs.csv")
+    collab_df = pd.read_csv("data/dataset_reduced.csv")
 
     os.environ["MKL_NUM_THREADS"] = "1"
     return collab_df
@@ -92,7 +93,7 @@ def type_implementation(user_song_df, song_id_recs, rec_number, input_songs, typ
     return filtered_df
 
 
-def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=200):
+def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
 
     song_ids = []
     for id in input_songs:
@@ -155,7 +156,7 @@ def song_features_matrix(inital_suggestions):
 def filtered_df(inital_suggestions, io):
     df = inital_suggestions.filter(items=['song_nums', 'Type', 'danceability', 'energy', 'key', 'loudness',
                                           'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
-                                          'valence', 'tempo', 'duration', 'time_signature'])
+                                          'valence', 'tempo', 'time_signature'])
     new_df = df[df["Type"] == io].drop(columns=['Type'])
     return new_df
 
@@ -176,16 +177,23 @@ def output_feature_vectors(inital_suggestions):
 def euclidean_distance(initial_suggestions):
     input = input_feature_vector(initial_suggestions)
     output = output_feature_vectors(initial_suggestions)
-    pointInput = np.array(input)
+    output["input"] = input
     pointOutputs = []
 
     for i in output:
-        pointOutputs.append(np.array(list(output[i])))
+        pointOutputs.append(list(output[i]))
 
     distanceList = []
 
-    for point in pointOutputs:
-        distanceList.append(np.linalg.norm(pointInput - point))
+    scaler = StandardScaler().fit(pointOutputs)
+    X_scaled = scaler.transform(pointOutputs).tolist()
+
+    pointInput = np.array(X_scaled[-1])
+
+    X_scaled.pop(-1)
+
+    for point in X_scaled:
+        distanceList.append(np.linalg.norm(pointInput - np.array(point)))
 
     ed_dict = output
     z = 0

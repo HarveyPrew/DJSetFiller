@@ -1,4 +1,5 @@
 import beavis
+from io import StringIO
 import pandas as pd
 from DJSetFiller.finding_similar_songs import (
     read_data_set,
@@ -9,7 +10,8 @@ from DJSetFiller.finding_similar_songs import (
     input_feature_vector,
     output_feature_vectors,
     euclidean_distance,
-    reduced_similar_songs
+    reduced_similar_songs,
+    filtered_df
 )
 
 
