@@ -16,39 +16,6 @@ def read_data_set():
     return collab_df
 
 
-def single_song_input_reccomender(song_id, user_song_df, num_songs=5):
-
-    song_num = user_song_df[user_song_df.spotify_id == song_id].song_nums.values[0]
-
-    user_song_refined = user_song_df
-
-    plays = user_song_refined["size"]
-    user_nums = user_song_refined.user_nums
-    song_nums = user_song_refined.song_nums
-
-    B = coo_matrix((plays, (user_nums, song_nums))).tocsr()
-
-    model = AlternatingLeastSquares(factors=30)
-
-    model.fit(B)
-    songs_inds = model.similar_items(song_num, N=num_songs)
-    song_id_recs = songs_inds[0]
-
-    filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
-    filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
-
-    whole_df = track_analysis_from_pandas(filtered_df)
-    
-    return whole_df
-
-
-def run_function(song_id, user_song_df, num_songs=5):
-    try:
-        single_song_input_reccomender(song_id, user_song_df, num_songs=5)
-    except IndexError:
-        return "Programme not working"
-
-
 def matrix_size(user_song_df):
     plays = user_song_df["size"]
     user_nums = user_song_df.user_nums
@@ -93,17 +60,15 @@ def type_implementation(user_song_df, song_id_recs, rec_number, input_songs, typ
     return filtered_df
 
 
-def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
+def multiple_song_input_reccomender(input_songs, dataset, num_songs=5):
 
-    song_ids = []
+    song_ids = []   # input song ids get stored
     for id in input_songs:
-        song_ids.append(user_song_df[user_song_df.spotify_id == id].song_nums.values[0])
+        song_ids.append(dataset[dataset.spotify_id == id].song_nums.values[0])
 
-    user_song_refined = user_song_df
-
-    plays = user_song_refined["size"]
-    user_nums = user_song_refined.user_nums
-    song_nums = user_song_refined.song_nums
+    plays = dataset["size"]
+    user_nums = dataset.user_nums
+    song_nums = dataset.song_nums
 
     matrix = coo_matrix((plays, (user_nums, song_nums))).tocsr()
     model = AlternatingLeastSquares(factors=100)
@@ -114,7 +79,7 @@ def multiple_song_input_reccomender(input_songs, user_song_df, num_songs=5):
 
     for id in song_ids:
         filtered_dfs.append(
-            find_similar_songs(id, num_songs, model, user_song_df, i, input_songs[i])
+            find_similar_songs(id, num_songs, model, dataset, i, input_songs[i])
         )
         i += 1
 

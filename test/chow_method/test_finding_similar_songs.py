@@ -3,7 +3,6 @@ from io import StringIO
 import pandas as pd
 from DJSetFiller.finding_similar_songs import (
     read_data_set,
-    single_song_input_reccomender,
     multiple_song_input_reccomender,
     matrix_size,
     track_analysis_from_array,
@@ -18,14 +17,6 @@ from DJSetFiller.finding_similar_songs import (
 def test_find_db_exists():
     collab_df = read_data_set()
     assert collab_df is not None
-
-
-def test_function_working():
-    collabFilter = single_song_input_reccomender(
-        "5vXlU52ohBRZb1uUw4GPqA", read_data_set()
-    )
-
-    assert collabFilter is not None
 
 
 def test_size_is_found():
