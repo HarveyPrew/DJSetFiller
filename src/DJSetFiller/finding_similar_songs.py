@@ -38,7 +38,7 @@ def find_similar_songs(song_ids, num_songs, model, user_song_df, i, input_songs)
 
     song_id_recs = similar_song_generator(song_ids, num_songs, model)
     df_with_type = type_implementation(user_song_df, song_id_recs, rec_number, input_songs, type)
-    results = track_analysis_from_pandas(df_with_type)
+    results = track_analysis_from_spotify(df_with_type)
 
     return results
 
@@ -87,8 +87,9 @@ def multiple_song_input_reccomender(input_songs, dataset, num_songs=5):
     return results
 
 
-def track_analysis_from_pandas(filtered_df):
+def track_analysis_from_spotify(filtered_df):
     reccomendedSongs = filtered_df.reset_index()
+    
     auth_manager = SpotifyClientCredentials()
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
@@ -101,15 +102,6 @@ def track_analysis_from_pandas(filtered_df):
 
     features_plus_recs = pd.concat([reccomendedSongs, song_features], axis=1)
     return features_plus_recs
-
-
-def track_analysis_from_array(song_id):
-    auth_manager = SpotifyClientCredentials()
-    sp = spotipy.Spotify(auth_manager=auth_manager)
-
-    analysis = sp.audio_features(song_id)
-
-    return analysis
 
 
 def song_features_matrix(inital_suggestions):
