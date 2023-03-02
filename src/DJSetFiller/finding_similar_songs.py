@@ -60,12 +60,11 @@ def type_implementation(user_song_df, song_id_recs, rec_number, input_songs, typ
     return filtered_df
 
 
-def multiple_song_input_reccomender(input_songs, dataset, num_songs=5):
+def multiple_song_input_reccomender(input_song_uris, dataset, total_songs=7):
 
-    song_ids = []   # input song ids get stored
-    for id in input_songs:
-        song_ids.append(dataset[dataset.spotify_id == id].song_nums.values[0])
-
+    similar_songs_total = total_songs - len(input_song_uris)
+    input_songs_df = dataset[dataset['spotify_id'].isin(input_song_uris)].drop_duplicates(subset=['spotify_id'])
+    
     plays = dataset["size"]
     user_nums = dataset.user_nums
     song_nums = dataset.song_nums
@@ -74,22 +73,22 @@ def multiple_song_input_reccomender(input_songs, dataset, num_songs=5):
     model = AlternatingLeastSquares(factors=100)
     model.fit(matrix)
 
-    filtered_dfs = []
+    similar_songs_list = []
     i = 0
 
-    for id in song_ids:
-        filtered_dfs.append(
-            find_similar_songs(id, num_songs, model, dataset, i, input_songs[i])
+    for id in input_songs_df.index:
+        similar_songs_list.append(
+            find_similar_songs(input_songs_df['song_nums'][id], similar_songs_total, model, dataset, i, input_song_uris[i])
         )
         i += 1
 
-    results = pd.concat(filtered_dfs, axis=0).reset_index(drop=True)
+    results = pd.concat(similar_songs_list, axis=0).reset_index(drop=True)
     return results
 
 
 def track_analysis_from_spotify(filtered_df):
     reccomendedSongs = filtered_df.reset_index()
-    
+   
     auth_manager = SpotifyClientCredentials()
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
