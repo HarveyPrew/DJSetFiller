@@ -132,37 +132,32 @@ def output_feature_vectors(inital_suggestions):
 
 
 def euclidean_distance(initial_suggestions):
-    input = input_feature_vector(initial_suggestions)
-    output = output_feature_vectors(initial_suggestions)
-    output["input"] = input
+    input_vector = input_feature_vector(initial_suggestions)
+    all_vectors = output_feature_vectors(initial_suggestions)
+    all_vectors["input"] = input_vector
     pointOutputs = []
 
-    for i in output:
-        pointOutputs.append(list(output[i]))
+    for i in all_vectors:
+        pointOutputs.append(list(all_vectors[i]))
 
-    scaler = StandardScaler().fit(pointOutputs)
-    X_scaled = scaler.transform(pointOutputs).tolist()
+    scaled_vectors = scaler(pointOutputs)
+    scaled_input_vector = np.array(scaled_vectors[-1])
 
-    pointInput = np.array(X_scaled[-1])
+    scaled_vectors.pop(-1)
 
-    X_scaled.pop(-1)
+    ed_list = calculated_eds(scaled_vectors, scaled_input_vector)
 
-    distanceList = []
-
-    for point in X_scaled:
-        distanceList.append(np.linalg.norm(pointInput - np.array(point)))
-
-    ed_dict = output
+    ed_dict = all_vectors
 
     del ed_dict['input']
 
     z = 0
 
     for i in ed_dict:
-        if (z == len(distanceList)):
+        if (z == len(ed_list)):
             break
 
-        ed_dict[i] = distanceList[z]
+        ed_dict[i] = ed_list[z]
         z += 1
 
     return ed_dict
@@ -174,3 +169,19 @@ def reduced_similar_songs(initial_suggestions):
     initalDf = initial_suggestions
     final_df = initalDf.loc[initalDf["song_nums"] == best_song_num]
     return final_df
+
+
+def scaler(pointOutputs):
+    scaler = StandardScaler().fit(pointOutputs)
+    X_scaled = scaler.transform(pointOutputs).tolist()
+
+    return X_scaled
+
+
+def calculated_eds(scaled_vectors, scaled_input_vector):
+    ed_list = []
+
+    for point in scaled_vectors:
+        ed_list.append(np.linalg.norm(scaled_input_vector - np.array(point)))
+
+    return ed_list
