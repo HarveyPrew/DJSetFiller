@@ -57,8 +57,8 @@ def test_song_attribute():
 def test_matrix_returing():
     song_ids = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     initial_suggestions = multiple_song_input_reccomender(song_ids, read_data_set())
-    test = initial_suggestions.to_dict() 
-    assert test is not None
+    results = initial_suggestions.to_dict()
+    assert results['song'][0] == 'Lifted'
 
 
 def test_euclidean_distance():

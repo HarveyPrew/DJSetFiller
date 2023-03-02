@@ -83,7 +83,7 @@ def multiple_song_input_reccomender(input_songs, dataset, num_songs=5):
         )
         i += 1
 
-    results = pd.concat(filtered_dfs)
+    results = pd.concat(filtered_dfs, axis=0).reset_index(drop=True)
     return results
 
 
