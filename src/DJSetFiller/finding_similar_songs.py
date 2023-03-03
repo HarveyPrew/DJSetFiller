@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from scipy.sparse import coo_matrix
 from implicit.als import AlternatingLeastSquares
 import numpy as np
+
 pd.options.mode.chained_assignment = None  # default='warn'
 
 
@@ -31,13 +32,17 @@ def find_similar_songs(input_songs_df, num_songs, model, dataset):
     similar_songs = []
 
     for index, value in enumerate(input_songs_df.index):
-        input_song_nums = input_songs_df['song_nums'][value]
-        reccomended_song_nums = similar_song_generator(input_song_nums, num_songs, model)
+        input_song_nums = input_songs_df["song_nums"][value]
+        reccomended_song_nums = similar_song_generator(
+            input_song_nums, num_songs, model
+        )
 
         similar_songs_df = dataset[dataset.song_nums.isin(reccomended_song_nums)]
         similar_songs_df.drop_duplicates(subset=["spotify_id"], inplace=True)
         similar_songs_df["Type"] = "output"
-        similar_songs_df.loc[similar_songs_df['song_nums'] == input_song_nums, ["Type"]] = 'input'
+        similar_songs_df.loc[
+            similar_songs_df["song_nums"] == input_song_nums, ["Type"]
+        ] = "input"
         similar_songs_df["Recommendation Number"] = index
         similar_songs.append(similar_songs_df)
 
@@ -56,7 +61,9 @@ def similar_song_generator(song_ids, num_songs, model):
 def multiple_song_input_reccomender(input_song_uris, dataset, total_songs=7):
 
     similar_songs_total = total_songs - len(input_song_uris)
-    input_songs_df = dataset[dataset['spotify_id'].isin(input_song_uris)].drop_duplicates(subset=['spotify_id'])
+    input_songs_df = dataset[
+        dataset["spotify_id"].isin(input_song_uris)
+    ].drop_duplicates(subset=["spotify_id"])
 
     plays = dataset["size"]
     user_nums = dataset.user_nums
@@ -66,7 +73,9 @@ def multiple_song_input_reccomender(input_song_uris, dataset, total_songs=7):
     model = AlternatingLeastSquares(factors=100)
     model.fit(matrix)
 
-    songs_plus_features = find_similar_songs(input_songs_df, similar_songs_total, model, dataset)
+    songs_plus_features = find_similar_songs(
+        input_songs_df, similar_songs_total, model, dataset
+    )
 
     return songs_plus_features
 
@@ -82,7 +91,9 @@ def track_analysis_from_spotify(similar_songs_df):
     for id in reccomendedSongs.index:
         analysis += sp.audio_features(reccomendedSongs["spotify_id"][id])
 
-    song_features = pd.DataFrame.from_dict(analysis).drop(["id", "analysis_url", "track_href", "uri", "type"], axis=1)
+    song_features = pd.DataFrame.from_dict(analysis).drop(
+        ["id", "analysis_url", "track_href", "uri", "type"], axis=1
+    )
 
     features_plus_recs = pd.concat([reccomendedSongs, song_features], axis=1)
     return features_plus_recs
@@ -95,69 +106,76 @@ def song_features_matrix(inital_suggestions):
 
 
 def filtered_df(inital_suggestions, io):
-    df = inital_suggestions.filter(items=['song_nums', 'Type', 'danceability', 'energy', 'key', 'loudness',
-                                          'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
-                                          'valence', 'tempo', 'time_signature'])
-    new_df = df[df["Type"] == io].drop(columns=['Type'])
+    df = inital_suggestions.filter(
+        items=[
+            "song_nums",
+            "Type",
+            "danceability",
+            "energy",
+            "key",
+            "loudness",
+            "mode",
+            "speechiness",
+            "acousticness",
+            "instrumentalness",
+            "liveness",
+            "valence",
+            "tempo",
+            "time_signature",
+        ]
+    )
+    new_df = df[df["Type"] == io].drop(columns=["Type"])
     return new_df
 
 
 def input_feature_vector(inital_suggestions):
-    new_df = filtered_df(inital_suggestions, 'input')
-    column_averages = new_df.drop('song_nums', axis=1).mean()
+    new_df = filtered_df(inital_suggestions, "input")
+    column_averages = new_df.drop("song_nums", axis=1).mean()
     averages_list = column_averages.tolist()
     return averages_list
 
 
-def output_feature_vectors(inital_suggestions):
-    new_df = filtered_df(inital_suggestions, 'output')
-    result = {row['song_nums']: row.drop('song_nums').tolist() for _, row in new_df.iterrows()}
-    return result
+def feature_vectors_to_dict(inital_suggestions):
+    new_df = filtered_df(inital_suggestions, "output")
+    vector_dict = {
+        row["song_nums"]: row.drop("song_nums").tolist() for _, row in new_df.iterrows()
+    }
+
+    input_vector = input_feature_vector(inital_suggestions)
+    vector_dict["input"] = input_vector
+    return vector_dict
 
 
 def euclidean_distance(initial_suggestions):
-    input_vector = input_feature_vector(initial_suggestions)
-    all_vectors = output_feature_vectors(initial_suggestions)
-    all_vectors["input"] = input_vector
-    pointOutputs = []
-
-    for i in all_vectors:
-        pointOutputs.append(list(all_vectors[i]))
-
-    scaled_vectors = scaler(pointOutputs)
-    scaled_input_vector = np.array(scaled_vectors[-1])
-
-    scaled_vectors.pop(-1)
+    all_vectors_dict = feature_vectors_to_dict(initial_suggestions)
+    scaled_vectors = scaler(all_vectors_dict)
+    scaled_input_vector = np.array(scaled_vectors.pop(-1))
 
     ed_list = calculated_eds(scaled_vectors, scaled_input_vector)
 
-    ed_dict = all_vectors
-
-    del ed_dict['input']
-
-    z = 0
-
-    for i in ed_dict:
-        if (z == len(ed_list)):
-            break
-
-        ed_dict[i] = ed_list[z]
-        z += 1
+    ed_dict = {key: value for key, value in all_vectors_dict.items() if key != "input"}
+    ed_dict.update(zip(ed_dict.keys(), ed_list))
 
     return ed_dict
 
 
 def reduced_similar_songs(initial_suggestions):
     ed = euclidean_distance(initial_suggestions)
-    best_song_num = int(min(ed, key=ed.get))
-    initalDf = initial_suggestions
-    final_df = initalDf.loc[initalDf["song_nums"] == best_song_num]
+    best_song_nums = sorted(ed, key=ed.get)[:3]
+    initial_df = initial_suggestions
+    final_df = initial_df.loc[initial_df["song_nums"].isin(best_song_nums)]
     return final_df
 
 
-def scaler(pointOutputs):
-    scaler = StandardScaler().fit(pointOutputs)
-    X_scaled = scaler.transform(pointOutputs).tolist()
+def scaler(all_vectors_dict):
+
+    vectors_list = []
+
+    for i in all_vectors_dict:
+        vectors_list.append(list(all_vectors_dict[i]))
+
+    scaler = StandardScaler().fit(vectors_list)
+    X_scaled = scaler.transform(vectors_list).tolist()
 
     return X_scaled
 
