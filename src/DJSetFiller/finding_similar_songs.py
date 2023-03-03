@@ -27,18 +27,17 @@ def matrix_size(user_song_df):
     return modelSize, num_songs, sparsity
 
 
-def find_similar_songs(song_ids, num_songs, model, user_song_df, i, input_songs):
-    z = 0
-    rec_number = []
-    type = []
-    while z < num_songs:
-        rec_number.append(i)
-        type.append("output")
-        z += 1
+def find_similar_songs(input_songs_df, num_songs, model, dataset, i, id):
+    input_song = input_songs_df['song_nums'][id]
+    
+    song_id_recs = similar_song_generator(input_song, num_songs, model)
 
-    song_id_recs = similar_song_generator(song_ids, num_songs, model)
-    df_with_type = type_implementation(user_song_df, song_id_recs, rec_number, input_songs, type)
-    results = track_analysis_from_spotify(df_with_type)
+    similar_songs_df = dataset[dataset.song_nums.isin(song_id_recs)]
+    similar_songs_df.drop_duplicates(subset=["spotify_id"], inplace=True)
+    similar_songs_df["Type"] = "output"
+    similar_songs_df.loc[similar_songs_df['song_nums'] == input_song, ["Type"]] = 'input'
+    similar_songs_df["Reccomendation Number"] = i
+    results = track_analysis_from_spotify(similar_songs_df)
 
     return results
 
@@ -49,22 +48,21 @@ def similar_song_generator(song_ids, num_songs, model):
     return song_id_recs
 
 
-def type_implementation(user_song_df, song_id_recs, rec_number, input_songs, type):
-    filtered_df = user_song_df[user_song_df.song_nums.isin(song_id_recs)]
-    filtered_df.drop_duplicates(subset=["spotify_id"], inplace=True)
-    filtered_df["Reccomendation Number"] = rec_number
+def type_implementation(dataset, song_id_recs, rec_number, input_songs, type, input_songs_df):
+    similar_songs_df = dataset[dataset.song_nums.isin(song_id_recs)]
+    similar_songs_df.drop_duplicates(subset=["spotify_id"], inplace=True)
 
-    filtered_df["Type"] = type
-    filtered_df.loc[filtered_df["spotify_id"] == input_songs, "Type"] = "input"
-    filtered_df.sort_values("Type")
-    return filtered_df
+    similar_songs_df["Type"] = "output"
+    similar_songs_df.loc[similar_songs_df["spotify_id"] == input_songs, "Type"] = "input"
+    similar_songs_df.sort_values("Type")
+    return similar_songs_df
 
 
 def multiple_song_input_reccomender(input_song_uris, dataset, total_songs=7):
 
     similar_songs_total = total_songs - len(input_song_uris)
     input_songs_df = dataset[dataset['spotify_id'].isin(input_song_uris)].drop_duplicates(subset=['spotify_id'])
-    
+
     plays = dataset["size"]
     user_nums = dataset.user_nums
     song_nums = dataset.song_nums
@@ -78,7 +76,7 @@ def multiple_song_input_reccomender(input_song_uris, dataset, total_songs=7):
 
     for id in input_songs_df.index:
         similar_songs_list.append(
-            find_similar_songs(input_songs_df['song_nums'][id], similar_songs_total, model, dataset, i, input_song_uris[i])
+            find_similar_songs(input_songs_df, similar_songs_total, model, dataset, i, id)
         )
         i += 1
 
