@@ -13,6 +13,7 @@ from DJSetFiller.finding_similar_songs import (
     track_analysis_from_spotify,
     scaler,
     calculated_eds,
+    organise_test_input
 )
 
 
@@ -215,3 +216,9 @@ def test_calulate_ed():
     ed_list = calculated_eds(scaled_vectors, scaled_input_vector)
 
     assert ed_list == [2.4371070571105045, 5.074792132450041]
+
+
+def test_input_test():
+    input = organise_test_input()
+
+    assert input is not None
