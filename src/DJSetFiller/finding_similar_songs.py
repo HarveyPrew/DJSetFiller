@@ -11,7 +11,7 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 
 def read_data_set():
-    collab_df = pd.read_csv("data/dataset_reduced.csv")
+    collab_df = pd.read_csv("data/reduced/dataset_reduced.csv")
 
     os.environ["MKL_NUM_THREADS"] = "1"
     return collab_df
@@ -60,7 +60,6 @@ def similar_song_generator(song_ids, num_songs, model):
 
 def multiple_song_input_reccomender(input_song_uris, dataset, total_songs=7):
 
-    similar_songs_total = total_songs - len(input_song_uris)
     input_songs_df = dataset[
         dataset["spotify_id"].isin(input_song_uris)
     ].drop_duplicates(subset=["spotify_id"])
@@ -74,7 +73,7 @@ def multiple_song_input_reccomender(input_song_uris, dataset, total_songs=7):
     model.fit(matrix)
 
     songs_plus_features = find_similar_songs(
-        input_songs_df, similar_songs_total, model, dataset
+        input_songs_df, total_songs, model, dataset
     )
 
     return songs_plus_features
@@ -189,8 +188,8 @@ def calculated_eds(scaled_vectors, scaled_input_vector):
     return ed_list
 
 
-def organise_test_input():
-    input_df = pd.read_csv("data/input_test_set_reduced.csv")
+def csv_to_dict(filePath):
+    input_df = pd.read_csv(filePath)
     input_dict = {}
 
     for index, row in input_df.iterrows():
@@ -205,3 +204,13 @@ def organise_test_input():
         input_dict[dj_set].append(spotify_id)
     
     return input_dict
+
+
+def input_test_songs():
+    input_dict = csv_to_dict('data/input_test_set_reduced.csv')
+    return input_dict
+
+
+def organise_missing_songs():
+    missing_songs_dict = csv_to_dict('data/missing_songs_reduced.csv')
+    return missing_songs_dict

@@ -9,11 +9,11 @@ from DJSetFiller.finding_similar_songs import (
     feature_vectors_to_dict,
     euclidean_distance,
     reduced_similar_songs,
-    filtered_df,
     track_analysis_from_spotify,
     scaler,
     calculated_eds,
-    organise_test_input
+    input_test_songs,
+    organise_missing_songs
 )
 
 
@@ -44,7 +44,7 @@ def test_multiple_song_list():
     uri_list = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     results = multiple_song_input_reccomender(uri_list, read_data_set())
 
-    assert len(results) == 10
+    assert len(results) == 14
 
 
 def test_song_attribute():
@@ -70,7 +70,7 @@ def test_matrix_returing():
     uri_list = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     initial_suggestions = multiple_song_input_reccomender(uri_list, read_data_set())
     results = initial_suggestions.to_dict()
-    assert results["song"][0] == "Lifted"
+    assert results["song"][0] == "West Side"
 
 
 def test_euclidean_distance():
@@ -219,6 +219,12 @@ def test_calulate_ed():
 
 
 def test_input_test():
-    input = organise_test_input()
+    input = input_test_songs()
 
     assert input is not None
+
+
+def test_missing_songs():
+    missing_songs = organise_missing_songs()
+
+    assert missing_songs is not None
