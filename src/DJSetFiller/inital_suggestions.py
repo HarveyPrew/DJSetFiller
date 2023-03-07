@@ -66,3 +66,13 @@ def similar_song_generator(song_ids, num_songs, model):
     song_id_recs = songs_inds[0]
     return song_id_recs
 
+
+def matrix_size(user_song_df):
+    plays = user_song_df["size"]
+    user_nums = user_song_df.user_nums
+    song_nums = user_song_df.song_nums
+    B = coo_matrix((plays, (song_nums, user_nums))).tocsr()
+    modelSize = B.shape[0] * B.shape[1]
+    num_songs = len(B.nonzero()[0])
+    sparsity = 100 * (1 - (num_songs / modelSize))
+    return modelSize, num_songs, sparsity
