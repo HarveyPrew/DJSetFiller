@@ -70,7 +70,7 @@ def test_matrix_returing():
     uri_list = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     initial_suggestions = multiple_song_input_reccomender(uri_list, read_data_set())
     results = initial_suggestions.to_dict()
-    assert results["song"][0] == "West Side"
+    assert results["song"][0] == "Africa"
 
 
 def test_euclidean_distance():

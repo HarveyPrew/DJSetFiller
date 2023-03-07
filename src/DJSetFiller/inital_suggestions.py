@@ -31,7 +31,7 @@ def multiple_song_input_reccomender(input_song_uris, total_songs=7):
 
 
 def read_data_set():
-    collab_df = pd.read_csv("data/dataset_reduced.csv")
+    collab_df = pd.read_csv("data/reduced/dataset_reduced.csv")
 
     os.environ["MKL_NUM_THREADS"] = "1"
     return collab_df

@@ -207,10 +207,10 @@ def csv_to_dict(filePath):
 
 
 def input_test_songs():
-    input_dict = csv_to_dict('data/input_test_set_reduced.csv')
+    input_dict = csv_to_dict('data/rprecision_data/reduced/input_test_set_reduced.csv')
     return input_dict
 
 
 def organise_missing_songs():
-    missing_songs_dict = csv_to_dict('data/missing_songs_reduced.csv')
+    missing_songs_dict = csv_to_dict('data/rprecision_data/reduced/missing_songs_reduced.csv')
     return missing_songs_dict
