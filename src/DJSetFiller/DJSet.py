@@ -1,16 +1,6 @@
 class DJSet:
-    def __init__(self, path):
-        fileContents = ""
-        with open(path) as reader:
-            fileContents = reader.read()
+    def __init__(self):
+        return
 
-        if len(fileContents) == 0:
-            return
-
-        self.id = fileContents
-
-        self.recomendations = [
-            "[0:00:00] Azimuth - The Tunnel",
-            "[0:09:11] Conjunto Carcará - A Night In Tunisia",
-            "[0:11:26] As Sublimes - Mangueira é Cancáo",
-        ]
+    def calculate_r_precision(self):
+        return 0.5
