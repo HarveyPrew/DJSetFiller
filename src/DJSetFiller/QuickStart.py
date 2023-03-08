@@ -2,7 +2,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 
-def quickStart(id):
+def quick_start(id):
     auth_manager = SpotifyClientCredentials()
     sp = spotipy.Spotify(auth_manager=auth_manager)
 

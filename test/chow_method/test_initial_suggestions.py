@@ -13,13 +13,13 @@ def test_multiple_song_list():
 
 
 def test_find_db_exists():
-    collab_df = read_data_set()
+    collab_df = read_data_set("data/reduced/dataset_reduced.csv")
     collab_df_dict = collab_df.to_dict()
     assert len(collab_df_dict) == 10
 
 
 def test_size_is_found():
-    matrixSize, num_songs, sparsity = matrix_size(read_data_set())
+    matrixSize, num_songs, sparsity = matrix_size(read_data_set("data/reduced/dataset_reduced.csv"))
 
     assert matrixSize == 54
     assert num_songs == 26

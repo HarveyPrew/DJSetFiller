@@ -1,10 +1,10 @@
 from DJSetFiller.DJSet import DJSet
 
 
-def printReccomendations(path):
+def print_reccomendations(path):
     djset = DJSet(path)
     for r in djset.recomendations:
         print(r)
 
 
-printReccomendations("DJSetInput.txt")
+print_reccomendations("DJSetInput.txt")

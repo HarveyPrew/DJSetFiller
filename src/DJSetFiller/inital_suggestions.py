@@ -8,8 +8,8 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 
 def multiple_song_input_reccomender(input_song_uris, total_songs=7):
-
-    dataset = read_data_set()
+    ism = InitalSuggestionMethods("data/reduced/dataset_reduced.csv")
+    dataset = ism.data_set()
 
     input_songs_df = dataset[
         dataset["spotify_id"].isin(input_song_uris)
@@ -30,11 +30,11 @@ def multiple_song_input_reccomender(input_song_uris, total_songs=7):
     return songs_plus_features
 
 
-def read_data_set():
-    collab_df = pd.read_csv("data/reduced/dataset_reduced.csv")
+def read_data_set(path):
+    dataset_df = pd.read_csv(path)
 
     os.environ["MKL_NUM_THREADS"] = "1"
-    return collab_df
+    return dataset_df
 
 
 def find_similar_songs(input_songs_df, similar_songs_total, model, dataset):
@@ -76,3 +76,11 @@ def matrix_size(user_song_df):
     num_songs = len(B.nonzero()[0])
     sparsity = 100 * (1 - (num_songs / modelSize))
     return modelSize, num_songs, sparsity
+
+
+class InitalSuggestionMethods:
+    def __init__(self, path):
+        self.path = path
+
+    def data_set(self):
+        return read_data_set(self.path)
