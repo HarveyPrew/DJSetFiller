@@ -6,12 +6,18 @@ class DJSet:
         self.dj_set_id = dj_set_id
         self.missing_songs = set()
         self.input_songs = []
+        self.recommended_songs = set()
 
     def add_missing_song(self, song_id):
         self.missing_songs.add(song_id)
 
     def add_input_song(self, song_id):
         self.input_songs.append(song_id)
+    
+    def read_recommended_songs(self, recommended_songs):
+        recommended_songs.filter(items=['output'])
+        for value in recommended_songs.index:
+            self.recommended_songs.add(recommended_songs['spotify_id'][value])
 
     # R-precision is the number of retrieved relevant tracks divided by
     # the number of known relevant tracks (i.e., the number of withheld tracks)

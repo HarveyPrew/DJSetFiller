@@ -1,5 +1,6 @@
 from DJSetFiller.DJSet import DJSet
 from DJSetFiller.inital_suggestions import make_recommendations_for_dj_set
+from DJSetFiller.euclidean_distance import reduced_similar_songs
 
 
 def test_r_precision():
@@ -57,4 +58,7 @@ def test_generate_recommendations():
     dj_set = djsets[dj_set_id]
 
     initial_suggestions = make_recommendations_for_dj_set(dj_set, "data/rprecision_data/reduced/dataset_test_reduced.csv")
-    assert initial_suggestions is not None
+    reduced_suggestions = reduced_similar_songs(initial_suggestions)
+    dj_set.read_recommended_songs(reduced_suggestions)
+
+    assert len(dj_set.recommended_songs) == 3
