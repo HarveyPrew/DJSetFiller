@@ -21,40 +21,32 @@ class DJSet:
     # Number of songs we withheld for this DJ set.
     def number_of_known_relevant_tracks(self):
         return len(self.missing_songs)
-    
+
     def number_of_known_input_tracks(self):
         return len(self.input_songs)
 
+    def read_songs_from_csv(path, input_songs=True):
+        dj_sets = {}
+
+        raw_data = pd.read_csv(path)
+
+        for _, row in raw_data.iterrows():
+
+            dj_set_id = row["title + dj"]
+            song_id = row["spotify_id"]
+
+            if dj_set_id not in dj_sets:
+                dj_sets[dj_set_id] = DJSet(dj_set_id)
+
+            if input_songs:
+                dj_sets[dj_set_id].add_input_song(song_id)
+            else:
+                dj_sets[dj_set_id].add_missing_song(song_id)
+
+        return dj_sets
+
     def read_withheld_songs(path):
-        dj_sets = {}
+        return DJSet.read_songs_from_csv(path, False)
 
-        raw_data = pd.read_csv(path)
-
-        for _, row in raw_data.iterrows():
-
-            dj_set_id = row["title + dj"]
-            song_id = row["spotify_id"]
-
-            if dj_set_id not in dj_sets:
-                dj_sets[dj_set_id] = DJSet(dj_set_id)
-
-            dj_sets[dj_set_id].add_missing_song(song_id)
-
-        return dj_sets
-    
     def read_input_songs(path):
-        dj_sets = {}
-
-        raw_data = pd.read_csv(path)
-
-        for _, row in raw_data.iterrows():
-
-            dj_set_id = row["title + dj"]
-            song_id = row["spotify_id"]
-
-            if dj_set_id not in dj_sets:
-                dj_sets[dj_set_id] = DJSet(dj_set_id)
-
-            dj_sets[dj_set_id].add_input_song(song_id)
-
-        return dj_sets
+        return DJSet.read_songs_from_csv(path, True)
