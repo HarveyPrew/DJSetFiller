@@ -6,8 +6,8 @@ from DJSetFiller.inital_suggestions import (
 
 
 def test_multiple_song_list():
-    uri_list = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    results = make_recommendations_for_multiple_songs(uri_list)
+    songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
+    results = make_recommendations_for_multiple_songs(songs)
 
     assert len(results) == 14
 
