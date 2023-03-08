@@ -7,7 +7,7 @@ from DJSetFiller.spotify_analysis import track_analysis_from_spotify
 pd.options.mode.chained_assignment = None  # default='warn'
 
 
-def multiple_song_input_reccomender(input_song_uris, total_songs=7):
+def multiple_song_input_reccomender(input_song_uris, recommendations_per_song=6):
     ism = InitalSuggestionMethods("data/reduced/dataset_reduced.csv")
     dataset = ism.data_set()
 
@@ -24,7 +24,7 @@ def multiple_song_input_reccomender(input_song_uris, total_songs=7):
     model.fit(matrix)
 
     songs_plus_features = find_similar_songs(
-        input_songs_df, total_songs, model, dataset
+        input_songs_df, recommendations_per_song, model, dataset
     )
 
     return songs_plus_features
@@ -37,13 +37,13 @@ def read_data_set(path):
     return dataset_df
 
 
-def find_similar_songs(input_songs_df, similar_songs_total, model, dataset):
+def find_similar_songs(input_songs_df, recommendations_per_song, model, dataset):
     similar_songs = []
 
     for index, value in enumerate(input_songs_df.index):
         input_song_nums = input_songs_df["song_nums"][value]
         reccomended_song_nums = similar_song_generator(
-            input_song_nums, similar_songs_total, model
+            input_song_nums, recommendations_per_song, model
         )
 
         similar_songs_df = dataset[dataset.song_nums.isin(reccomended_song_nums)]
@@ -61,8 +61,9 @@ def find_similar_songs(input_songs_df, similar_songs_total, model, dataset):
     return songs_with_features
 
 
-def similar_song_generator(song_ids, num_songs, model):
-    songs_inds = model.similar_items(song_ids, N=num_songs)
+def similar_song_generator(song_ids, recommendations_per_song, model):
+    number_of_similar_items = recommendations_per_song + 1
+    songs_inds = model.similar_items(song_ids, N=number_of_similar_items)
     song_id_recs = songs_inds[0]
     return song_id_recs
 
