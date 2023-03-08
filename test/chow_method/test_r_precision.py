@@ -24,12 +24,14 @@ def test_number_of_known_relevant_tracks():
     )
 
 
-def test_read_withheld_songs():
-    expected_number_of_known_relevant_tracks = 3
+def test_read_songs():
+   
     dj_set_id = ' - ≈Åukasz Tomaszewski, ¬°MASH-UP!, Siriusmo, Lionza, Michael Mayer - COSMO Selektor 1692'
-    djsets = DJSet.read_withheld_songs("data/rprecision_data/reduced/missing_songs_reduced.csv")
+    djsets = DJSet.read_songs("data/rprecision_data/reduced/input_test_set_reduced.csv",
+                              "data/rprecision_data/reduced/missing_songs_reduced.csv")
     test_dj_set = djsets[dj_set_id]
 
+    expected_number_of_known_relevant_tracks = 3
     actual_number_of_known_relevant_tracks = test_dj_set.number_of_known_relevant_tracks()
 
     assert (
@@ -37,15 +39,8 @@ def test_read_withheld_songs():
         == actual_number_of_known_relevant_tracks
     )
 
-
-def test_read_input_songs():
     expected_number_of_known_input_tracks = 3
-    dj_set_id = ' - ≈Åukasz Tomaszewski, ¬°MASH-UP!, Siriusmo, Lionza, Michael Mayer - COSMO Selektor 6'
-    djsets = DJSet.read_input_songs("data/rprecision_data/reduced/input_test_set_reduced.csv")
-    test_dj_set = djsets[dj_set_id]
-
     actual_number_of_known_input_tracks = test_dj_set.number_of_known_input_tracks()
-
     assert (
         expected_number_of_known_input_tracks
         == actual_number_of_known_input_tracks
@@ -53,8 +48,9 @@ def test_read_input_songs():
 
 
 def test_generate_recommendations():
-    dj_set_id = ' - ≈Åukasz Tomaszewski, ¬°MASH-UP!, Siriusmo, Lionza, Michael Mayer - COSMO Selektor 6'
-    djsets = DJSet.read_input_songs("data/rprecision_data/reduced/input_test_set_reduced.csv")
+    dj_set_id = ' - ≈Åukasz Tomaszewski, ¬°MASH-UP!, Siriusmo, Lionza, Michael Mayer - COSMO Selektor 1692'
+    djsets = DJSet.read_songs("data/rprecision_data/reduced/input_test_set_reduced.csv",
+                              'data/rprecision_data/reduced/missing_songs_reduced.csv')
     dj_set = djsets[dj_set_id]
 
     initial_suggestions = make_recommendations_for_dj_set(dj_set, "data/rprecision_data/reduced/dataset_test_reduced.csv")
@@ -62,3 +58,17 @@ def test_generate_recommendations():
     dj_set.read_recommended_songs(reduced_suggestions)
 
     assert len(dj_set.recommended_songs) == 3
+
+
+def test_find_retrieved_relevant_songs():
+    dj_set_id = ' - ≈Åukasz Tomaszewski, ¬°MASH-UP!, Siriusmo, Lionza, Michael Mayer - COSMO Selektor 1692'
+    djsets = DJSet.read_songs("data/rprecision_data/reduced/input_test_set_reduced.csv",
+                              'data/rprecision_data/reduced/missing_songs_reduced.csv')
+    dj_set = djsets[dj_set_id]
+
+    initial_suggestions = make_recommendations_for_dj_set(dj_set, "data/rprecision_data/reduced/dataset_test_reduced.csv")
+    reduced_suggestions = reduced_similar_songs(initial_suggestions)
+    dj_set.read_recommended_songs(reduced_suggestions)
+    
+    known_relevant_songs = dj_set.find_relevant_recommended_songs()
+    assert known_relevant_songs is not None
