@@ -1,17 +1,15 @@
 from DJSetFiller.feature_vector_maker import (
     input_feature_vector,
     feature_vectors_to_dict,
-    scaler
+    scaler,
 )
 
-from DJSetFiller.inital_suggestions import (
-    multiple_song_input_reccomender
-)
+from DJSetFiller.inital_suggestions import make_recommendations_for_multiple_songs
 
 
 def test_input_vector():
     uri_list = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = multiple_song_input_reccomender(uri_list)
+    initial_suggestions = make_recommendations_for_multiple_songs(uri_list)
     output = input_feature_vector(initial_suggestions)
 
     assert output == [
@@ -32,7 +30,7 @@ def test_input_vector():
 
 def test_output_vector():
     uri_list = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = multiple_song_input_reccomender(uri_list)
+    initial_suggestions = make_recommendations_for_multiple_songs(uri_list)
     output = feature_vectors_to_dict(initial_suggestions)
 
     assert output[4.0][00] == 0.817

@@ -1,13 +1,13 @@
 from DJSetFiller.inital_suggestions import (
-    multiple_song_input_reccomender,
+    make_recommendations_for_multiple_songs,
     read_data_set,
-    matrix_size
+    matrix_size,
 )
 
 
 def test_multiple_song_list():
     uri_list = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    results = multiple_song_input_reccomender(uri_list)
+    results = make_recommendations_for_multiple_songs(uri_list)
 
     assert len(results) == 14
 
@@ -19,7 +19,9 @@ def test_find_db_exists():
 
 
 def test_size_is_found():
-    matrixSize, num_songs, sparsity = matrix_size(read_data_set("data/reduced/dataset_reduced.csv"))
+    matrixSize, num_songs, sparsity = matrix_size(
+        read_data_set("data/reduced/dataset_reduced.csv")
+    )
 
     assert matrixSize == 54
     assert num_songs == 26

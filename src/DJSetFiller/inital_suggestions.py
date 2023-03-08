@@ -7,7 +7,9 @@ from DJSetFiller.spotify_analysis import track_analysis_from_spotify
 pd.options.mode.chained_assignment = None  # default='warn'
 
 
-def multiple_song_input_reccomender(input_song_uris, recommendations_per_song=6):
+def make_recommendations_for_multiple_songs(
+    input_song_uris, recommendations_per_song=6
+):
     ism = InitalSuggestionMethods("data/reduced/dataset_reduced.csv")
     dataset = ism.data_set()
 
