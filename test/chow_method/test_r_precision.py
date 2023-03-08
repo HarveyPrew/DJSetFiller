@@ -35,4 +35,16 @@ def test_read_withheld_songs():
         == actual_number_of_known_relevant_tracks
     )
 
- 
+
+def test_read_input_songs():
+    expected_number_of_known_input_tracks = 3
+    dj_set_id = ' - ≈Åukasz Tomaszewski, ¬°MASH-UP!, Siriusmo, Lionza, Michael Mayer - COSMO Selektor 6'
+    djsets = DJSet.read_input_songs("data/rprecision_data/reduced/input_test_set_reduced.csv")
+    test_dj_set = djsets[dj_set_id]
+
+    actual_number_of_known_input_tracks = test_dj_set.number_of_known_input_tracks()
+
+    assert (
+        expected_number_of_known_input_tracks
+        == actual_number_of_known_input_tracks
+    )
