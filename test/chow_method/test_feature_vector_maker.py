@@ -8,8 +8,8 @@ from DJSetFiller.inital_suggestions import make_recommendations_for_multiple_son
 
 
 def test_input_vector():
-    uri_list = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = make_recommendations_for_multiple_songs(uri_list)
+    songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
+    initial_suggestions = make_recommendations_for_multiple_songs(songs, "data/reduced/dataset_reduced.csv")
     output = input_feature_vector(initial_suggestions)
 
     assert output == [
@@ -29,8 +29,8 @@ def test_input_vector():
 
 
 def test_output_vector():
-    uri_list = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = make_recommendations_for_multiple_songs(uri_list)
+    songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
+    initial_suggestions = make_recommendations_for_multiple_songs(songs, "data/reduced/dataset_reduced.csv")
     output = feature_vectors_to_dict(initial_suggestions)
 
     assert output[4.0][00] == 0.817

@@ -7,7 +7,7 @@ from DJSetFiller.inital_suggestions import (
 
 def test_multiple_song_list():
     songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    results = make_recommendations_for_multiple_songs(songs)
+    results = make_recommendations_for_multiple_songs(songs, "data/reduced/dataset_reduced.csv")
 
     assert len(results) == 14
 

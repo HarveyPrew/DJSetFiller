@@ -7,20 +7,24 @@ from DJSetFiller.spotify_analysis import track_analysis_from_spotify
 pd.options.mode.chained_assignment = None  # default='warn'
 
 
+def make_recommendations_for_dj_set(dj_set, model_path):
+    return make_recommendations_for_multiple_songs(dj_set.input_songs, model_path)
+
+
 def make_recommendations_for_multiple_songs(
-    input_song_uris, recommendations_per_song=6
+    input_song_ids, model_path, recommendations_per_song=6
 ):
-    model_data = read_data_set("data/reduced/dataset_reduced.csv")
+    model_data = read_data_set(model_path)
 
     input_songs_df = model_data[
-        model_data["spotify_id"].isin(input_song_uris)
+        model_data["spotify_id"].isin(input_song_ids)
     ].drop_duplicates(subset=["spotify_id"])
 
     plays = model_data["size"]
-    user_nums = model_data.user_nums
-    song_nums = model_data.song_nums
+    dj_id = model_data.dj_id
+    song_id = model_data.song_id
 
-    matrix = coo_matrix((plays, (user_nums, song_nums))).tocsr()
+    matrix = coo_matrix((plays, (dj_id, song_id))).tocsr()
     model = AlternatingLeastSquares(factors=100)
     model.fit(matrix)
 
@@ -42,16 +46,16 @@ def find_similar_songs(input_songs_df, recommendations_per_song, model, dataset)
     similar_songs = []
 
     for index, value in enumerate(input_songs_df.index):
-        input_song_nums = input_songs_df["song_nums"][value]
-        reccomended_song_nums = similar_song_generator(
-            input_song_nums, recommendations_per_song, model
+        input_song_id = input_songs_df["song_id"][value]
+        recommended_song_ids = similar_song_generator(
+            input_song_id, recommendations_per_song, model
         )
 
-        similar_songs_df = dataset[dataset.song_nums.isin(reccomended_song_nums)]
+        similar_songs_df = dataset[dataset.song_id.isin(recommended_song_ids)]
         similar_songs_df.drop_duplicates(subset=["spotify_id"], inplace=True)
         similar_songs_df["Type"] = "output"
         similar_songs_df.loc[
-            similar_songs_df["song_nums"] == input_song_nums, ["Type"]
+            similar_songs_df["song_id"] == input_song_id, ["Type"]
         ] = "input"
         similar_songs_df["Recommendation Number"] = index
         similar_songs.append(similar_songs_df)
@@ -71,9 +75,9 @@ def similar_song_generator(song_ids, recommendations_per_song, model):
 
 def matrix_size(user_song_df):
     plays = user_song_df["size"]
-    user_nums = user_song_df.user_nums
-    song_nums = user_song_df.song_nums
-    B = coo_matrix((plays, (song_nums, user_nums))).tocsr()
+    dj_id = user_song_df.dj_id
+    song_id = user_song_df.song_id
+    B = coo_matrix((plays, (song_id, dj_id))).tocsr()
     modelSize = B.shape[0] * B.shape[1]
     num_songs = len(B.nonzero()[0])
     sparsity = 100 * (1 - (num_songs / modelSize))

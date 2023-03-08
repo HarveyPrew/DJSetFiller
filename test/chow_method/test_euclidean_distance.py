@@ -9,14 +9,14 @@ from DJSetFiller.inital_suggestions import make_recommendations_for_multiple_son
 
 def test_euclidean_distance():
     songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = make_recommendations_for_multiple_songs(songs)
+    initial_suggestions = make_recommendations_for_multiple_songs(songs, "data/reduced/dataset_reduced.csv")
     ed = euclidean_distance(initial_suggestions)
     assert ed is not None
 
 
 def test_smallest_ed():
     songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = make_recommendations_for_multiple_songs(songs)
+    initial_suggestions = make_recommendations_for_multiple_songs(songs, "data/reduced/dataset_reduced.csv")
     best_songs = reduced_similar_songs(initial_suggestions)
     song_names = best_songs["song"].values.tolist()
     assert song_names is not None

@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 
 def input_feature_vector(inital_suggestions):
     new_df = vector_attributes(inital_suggestions, "input")
-    column_averages = new_df.drop("song_nums", axis=1).mean()
+    column_averages = new_df.drop("song_id", axis=1).mean()
     averages_list = column_averages.tolist()
     return averages_list
 
@@ -11,7 +11,7 @@ def input_feature_vector(inital_suggestions):
 def feature_vectors_to_dict(inital_suggestions):
     new_df = vector_attributes(inital_suggestions, "output")
     vector_dict = {
-        row["song_nums"]: row.drop("song_nums").tolist() for _, row in new_df.iterrows()
+        row["song_id"]: row.drop("song_id").tolist() for _, row in new_df.iterrows()
     }
 
     input_vector = input_feature_vector(inital_suggestions)
@@ -22,7 +22,7 @@ def feature_vectors_to_dict(inital_suggestions):
 def vector_attributes(inital_suggestions, io):
     df = inital_suggestions.filter(
         items=[
-            "song_nums",
+            "song_id",
             "Type",
             "danceability",
             "energy",

@@ -1,4 +1,5 @@
 from DJSetFiller.DJSet import DJSet
+from DJSetFiller.inital_suggestions import make_recommendations_for_dj_set
 
 
 def test_r_precision():
@@ -48,3 +49,12 @@ def test_read_input_songs():
         expected_number_of_known_input_tracks
         == actual_number_of_known_input_tracks
     )
+
+
+def test_generate_recommendations():
+    dj_set_id = ' - ≈Åukasz Tomaszewski, ¬°MASH-UP!, Siriusmo, Lionza, Michael Mayer - COSMO Selektor 6'
+    djsets = DJSet.read_input_songs("data/rprecision_data/reduced/input_test_set_reduced.csv")
+    dj_set = djsets[dj_set_id]
+
+    initial_suggestions = make_recommendations_for_dj_set(dj_set, "data/rprecision_data/reduced/dataset_test_reduced.csv")
+    assert initial_suggestions is not None
