@@ -10,23 +10,22 @@ pd.options.mode.chained_assignment = None  # default='warn'
 def make_recommendations_for_multiple_songs(
     input_song_uris, recommendations_per_song=6
 ):
-    ism = InitalSuggestionMethods("data/reduced/dataset_reduced.csv")
-    dataset = ism.data_set()
+    model_data = read_data_set("data/reduced/dataset_reduced.csv")
 
-    input_songs_df = dataset[
-        dataset["spotify_id"].isin(input_song_uris)
+    input_songs_df = model_data[
+        model_data["spotify_id"].isin(input_song_uris)
     ].drop_duplicates(subset=["spotify_id"])
 
-    plays = dataset["size"]
-    user_nums = dataset.user_nums
-    song_nums = dataset.song_nums
+    plays = model_data["size"]
+    user_nums = model_data.user_nums
+    song_nums = model_data.song_nums
 
     matrix = coo_matrix((plays, (user_nums, song_nums))).tocsr()
     model = AlternatingLeastSquares(factors=100)
     model.fit(matrix)
 
     songs_plus_features = find_similar_songs(
-        input_songs_df, recommendations_per_song, model, dataset
+        input_songs_df, recommendations_per_song, model, model_data
     )
 
     return songs_plus_features
@@ -79,11 +78,3 @@ def matrix_size(user_song_df):
     num_songs = len(B.nonzero()[0])
     sparsity = 100 * (1 - (num_songs / modelSize))
     return modelSize, num_songs, sparsity
-
-
-class InitalSuggestionMethods:
-    def __init__(self, path):
-        self.path = path
-
-    def data_set(self):
-        return read_data_set(self.path)
