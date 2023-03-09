@@ -60,6 +60,7 @@ def find_similar_songs_for_input_set(input_songs_df, recommendations_per_song, m
         similar_songs.append(similar_songs_df)
 
     similar_songs_list = pd.concat(similar_songs, axis=0).reset_index(drop=True)
+    similar_songs_list.drop_duplicates(subset=["spotify_id", "Type"], inplace=True)
 
     songs_with_features = track_analysis_from_spotify(similar_songs_list)
 

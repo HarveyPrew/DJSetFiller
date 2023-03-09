@@ -9,7 +9,7 @@ def test_multiple_song_list():
     songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     results = make_recommendations_for_multiple_songs(songs, "data/reduced/dataset_reduced.csv")
 
-    assert len(results) == 7
+    assert len(results) == 13
 
 
 def test_find_db_exists():
