@@ -22,7 +22,12 @@ class DJSet:
     # R-precision is the number of retrieved relevant tracks divided by
     # the number of known relevant tracks (i.e., the number of withheld tracks)
     def calculate_r_precision(self):
-        return 0.5
+        number_of_retrieved_relevant_tracks = self.number_of_relevant_recommended_songs()
+        number_of_known_relevant_tracks = self.number_of_known_relevant_tracks()
+
+        r_precision = number_of_retrieved_relevant_tracks / number_of_known_relevant_tracks
+
+        return r_precision
 
     # Number of songs we withheld for this DJ set.
     def number_of_known_relevant_tracks(self):
@@ -54,5 +59,5 @@ class DJSet:
 
         return dj_sets
     
-    def find_relevant_recommended_songs(self):
-        return self.recommended_songs & self.missing_songs
+    def number_of_relevant_recommended_songs(self):
+        return len(self.recommended_songs & self.missing_songs)
