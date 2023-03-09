@@ -4,7 +4,7 @@ import pandas as pd
 
 
 def track_analysis_from_spotify(similar_songs_df):
-    recommendedSongs = similar_songs_df
+    recommendedSongs = similar_songs_df.reset_index(drop=True)
 
     auth_manager = SpotifyClientCredentials()
     sp = spotipy.Spotify(auth_manager=auth_manager)
