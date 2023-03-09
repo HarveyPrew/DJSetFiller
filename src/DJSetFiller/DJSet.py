@@ -36,7 +36,7 @@ class DJSet:
 
         for _, row in raw_data.iterrows():
 
-            dj_set_id = row["title + dj"]
+            dj_set_id = row["set_name_plus_dj_id"]
             song_id = row["spotify_id"]
 
             if dj_set_id not in dj_sets:

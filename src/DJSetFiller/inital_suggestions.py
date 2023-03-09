@@ -20,7 +20,7 @@ def make_recommendations_for_multiple_songs(
         model_data["spotify_id"].isin(input_song_ids)
     ].drop_duplicates(subset=["spotify_id"])
 
-    plays = model_data["size"]
+    plays = model_data["dj_play_count"]
     dj_id = model_data.dj_id
     song_id = model_data.song_id
 
@@ -74,7 +74,7 @@ def similar_song_generator(song_ids, recommendations_per_song, model):
 
 
 def matrix_size(user_song_df):
-    plays = user_song_df["size"]
+    plays = user_song_df["dj_play_count"]
     dj_id = user_song_df.dj_id
     song_id = user_song_df.song_id
     B = coo_matrix((plays, (song_id, dj_id))).tocsr()

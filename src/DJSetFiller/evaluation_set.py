@@ -7,7 +7,7 @@ def csv_to_dict(filePath):
 
     for index, row in input_df.iterrows():
 
-        dj_set = row['title + dj']
+        dj_set = row['set_name_plus_dj_id']
         spotify_id = row['spotify_id']
 
         if dj_set not in input_dict:

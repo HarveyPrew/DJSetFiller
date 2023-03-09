@@ -16,7 +16,7 @@ def test_track_analysis_from_spotify():
         "set_title_split": {0: "West Side"},
         "dj_id": {0: 0},
         "song_id": {0: 17},
-        "size": {0: 1},
+        "dj_play_countsize": {0: 1},
     }
     test = pd.DataFrame.from_dict(dataset)
     results = track_analysis_from_spotify(test).to_dict()
