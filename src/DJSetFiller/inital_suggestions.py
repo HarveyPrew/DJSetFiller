@@ -28,7 +28,7 @@ def make_recommendations_for_multiple_songs(
     model = AlternatingLeastSquares(factors=100)
     model.fit(matrix)
 
-    songs_plus_features = find_similar_songs(
+    songs_plus_features = find_similar_songs_for_input_set(
         input_songs_df, recommendations_per_song, model, model_data
     )
 
@@ -42,12 +42,12 @@ def read_data_set(path):
     return dataset_df
 
 
-def find_similar_songs(input_songs_df, recommendations_per_song, model, dataset):
+def find_similar_songs_for_input_set(input_songs_df, recommendations_per_song, model, dataset):
     similar_songs = []
 
     for index, value in enumerate(input_songs_df.index):
         input_song_id = input_songs_df["song_id"][value]
-        recommended_song_ids = similar_song_generator(
+        recommended_song_ids = find_similar_songs_for_single_input(
             input_song_id, recommendations_per_song, model
         )
 
@@ -66,7 +66,7 @@ def find_similar_songs(input_songs_df, recommendations_per_song, model, dataset)
     return songs_with_features
 
 
-def similar_song_generator(song_ids, recommendations_per_song, model):
+def find_similar_songs_for_single_input(song_ids, recommendations_per_song, model):
     number_of_similar_items = recommendations_per_song + 1
     songs_inds = model.similar_items(song_ids, N=number_of_similar_items)
     song_id_recs = songs_inds[0]
