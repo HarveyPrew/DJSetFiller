@@ -1,4 +1,4 @@
-from DJSetFiller.prepare_evaluation_set import import_csv, sets_with_multiple_plays
+from DJSetFiller.prepare_evaluation_set import import_csv, find_sets_with_multiple_plays, select_ten_percent_of_sets
 
 
 def test_dataset_is_imported():
@@ -10,7 +10,12 @@ def test_dataset_is_imported():
 
 def test_filter_sets_with_multiple_plays():
     expected_row_amount = 26
-    actual_row_amount = len(sets_with_multiple_plays("data/rprecision_data/reduced/data_set_test_reduced.csv"))
+    actual_row_amount = len(find_sets_with_multiple_plays("data/rprecision_data/reduced/data_set_test_reduced.csv"))
 
     assert actual_row_amount == expected_row_amount
 
+
+def test_select_ten_percent_of_sets():
+    expected_row_amount = 8
+    actual_row_amount = len(select_ten_percent_of_sets("data/rprecision_data/reduced/data_set_test_reduced.csv"))
+    assert actual_row_amount == expected_row_amount
