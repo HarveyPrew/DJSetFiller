@@ -1,11 +1,24 @@
-﻿set_name_plus_dj_id,set_title,spotify_id,dj_name,dj_id,song_id,dj_play_count,total_play_count
-" - Pete Tong, &ME - Essential Selection - 4"," - Pete Tong, &ME - Essential Selection",18J5ysRi0tSRT9wDNZebNQ, &ME,4,1,1,2
-" - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3"," - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",1IfkBUVJa5pYekqCy48PAR, & Mattia Pompeo,3,2,1,2
-" - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3"," - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",1Ogi7wtckcp6SpLUfLfrx8, & Mattia Pompeo,3,3,1,2
-" - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3"," - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",1uRffkMxboDv3xxh7O1gfF, & Mattia Pompeo,3,4,1,3
-" - Pete Tong, &ME - Essential Selection - 4"," - Pete Tong, &ME - Essential Selection",235FqNR5gD4mkLx5wJs0YP, &ME,4,5,1,2
-" - Pete Tong, &ME - Essential Selection - 4"," - Pete Tong, &ME - Essential Selection",0OdFaWe1Tk0ndzR6MUC8E9, &ME,4,6,1,2
-" - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3"," - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",0qwa6Mm9oZWLhGitD2Jfnq, & Mattia Pompeo,3,7,1,2
-" - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3"," - AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",19Oe8EA6yWXU4iJ20gjmxy, & Mattia Pompeo,3,8,1,3
-" - Pete Tong, &ME - Essential Selection - 4"," - Pete Tong, &ME - Essential Selection",19Oe8EA6yWXU4iJ20gjmxy, &ME,4,8,1,3
-" - Pete Tong, &ME - Essential Selection - 4"," - Pete Tong, &ME - Essential Selection",1U4auXdbckJP6VQ7WauE8M, &ME,4,9,1,2
+set_name_plus_dj_id,set_title,spotify_id,dj_name,dj_id,song_id,dj_play_count,total_play_count
+"- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3","- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",1IfkBUVJa5pYekqCy48PAR,& Mattia Pompeo,3,2,1,2
+"- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3","- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",1Ogi7wtckcp6SpLUfLfrx8,& Mattia Pompeo,3,3,1,2
+"- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3","- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",1uRffkMxboDv3xxh7O1gfF,& Mattia Pompeo,3,4,1,2
+"- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3","- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",0qwa6Mm9oZWLhGitD2Jfnq,& Mattia Pompeo,3,7,1,2
+"- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019) - 3","- AFFKT, Alberto Sola, & Mattia Pompeo - Sincopat (Label Lovers 019)",19Oe8EA6yWXU4iJ20gjmxy,& Mattia Pompeo,3,8,1,2
+"- Pete Tong, &ME - Essential Selection - 4","- Pete Tong, &ME - Essential Selection",18J5ysRi0tSRT9wDNZebNQ,&ME,4,1,1,2
+"- Pete Tong, &ME - Essential Selection - 4","- Pete Tong, &ME - Essential Selection",235FqNR5gD4mkLx5wJs0YP,&ME,4,5,1,2
+"- Pete Tong, &ME - Essential Selection - 4","- Pete Tong, &ME - Essential Selection",0OdFaWe1Tk0ndzR6MUC8E9,&ME,4,6,1,2
+"- Pete Tong, &ME - Essential Selection - 4","- Pete Tong, &ME - Essential Selection",19Oe8EA6yWXU4iJ20gjmxy,&ME,4,8,1,2
+"- Pete Tong, &ME - Essential Selection - 4","- Pete Tong, &ME - Essential Selection",1U4auXdbckJP6VQ7WauE8M,&ME,4,9,1,1
+- (a)pendics.shuffle - Clubbingspain Podcast 222 - 5,- (a)pendics.shuffle - Clubbingspain Podcast 222,1bZwtaWLFXN0I6QTN0qivx,(a)pendics.shuffle,5,10,1,1
+- (a)pendics.shuffle - Clubbingspain Podcast 222 - 5,- (a)pendics.shuffle - Clubbingspain Podcast 222,2T8DwpYoyyFwVqCyRSrLqv,(a)pendics.shuffle,5,11,1,1
+- (a)pendics.shuffle - Decoded Magazine (DM093) - 5,- (a)pendics.shuffle - Decoded Magazine (DM093),0cLoF4CeSNw03dslVUWtpq,(a)pendics.shuffle,5,12,1,1
+- (a)pendics.shuffle - Decoded Magazine (DM093) - 5,- (a)pendics.shuffle - Decoded Magazine (DM093),18J5ysRi0tSRT9wDNZebNQ,(a)pendics.shuffle,5,1,1,2
+- (a)pendics.shuffle - Decoded Magazine (DM093) - 5,- (a)pendics.shuffle - Decoded Magazine (DM093),1IfkBUVJa5pYekqCy48PAR,(a)pendics.shuffle,5,2,1,2
+- (a)pendics.shuffle - Decoded Magazine (DM093) - 5,- (a)pendics.shuffle - Decoded Magazine (DM093),1Ogi7wtckcp6SpLUfLfrx8,(a)pendics.shuffle,5,3,1,2
+- (a)pendics.shuffle - Decoded Magazine (DM093) - 5,- (a)pendics.shuffle - Decoded Magazine (DM093),1uRffkMxboDv3xxh7O1gfF,(a)pendics.shuffle,5,4,1,2
+"X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, ) - 150","X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, )",3EXP5pJz9qjeGbORBMKHot,Annie Mac,150,13,1,1
+"X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, ) - 150","X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, )",3HpAlQLbyGQGUum5IfJPwj,Annie Mac,150,14,1,1
+"X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, ) - 150","X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, )",3Iw9Nr3rmMM7L4FjSV7DEB,Annie Mac,150,15,1,1
+"X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, ) - 150","X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, )",235FqNR5gD4mkLx5wJs0YP,Annie Mac,150,5,1,2
+"X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, ) - 150","X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, )",0OdFaWe1Tk0ndzR6MUC8E9,Annie Mac,150,6,1,2
+"X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, ) - 150","X - Julio Bashmore, Annie Mac, Four Tet, Kowton @ Glastonbury (Essential Mix, )",0qwa6Mm9oZWLhGitD2Jfnq,Annie Mac,150,7,1,2
