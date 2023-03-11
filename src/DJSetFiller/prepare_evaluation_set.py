@@ -1,7 +1,17 @@
 import pandas as pd
 
 
-def create_input_songs(missing_songs_df, test_sample): 
+def create_training_set(test_sample, dataset):
+    test_sample_keys = list(test_sample.columns.values)
+    dataset_index = dataset.set_index(test_sample_keys).index
+    test_sample_index = test_sample.set_index(test_sample_keys).index
+
+    # Removing rows from test sample that are also in missing songs
+    training_set_df = dataset[~dataset_index.isin(test_sample_index)].copy()
+    return training_set_df
+
+
+def create_input_songs(missing_songs_df, test_sample):
     missing_songs_keys = list(missing_songs_df.columns.values)
     test_sample_index = test_sample.set_index(missing_songs_keys).index
     missing_songs_index = missing_songs_df.set_index(missing_songs_keys).index
