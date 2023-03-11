@@ -1,6 +1,16 @@
 import pandas as pd
 
 
+def create_input_songs(missing_songs_df, test_sample): 
+    missing_songs_keys = list(missing_songs_df.columns.values)
+    test_sample_index = test_sample.set_index(missing_songs_keys).index
+    missing_songs_index = missing_songs_df.set_index(missing_songs_keys).index
+
+    # Removing rows from test sample that are also in missing songs
+    input_songs_df = test_sample[~test_sample_index.isin(missing_songs_index)].copy()
+    return input_songs_df
+
+
 def create_missing_songs(test_sample, unique_dj_sets):
     missing_songs = []
     for dj_set in unique_dj_sets:
@@ -10,14 +20,8 @@ def create_missing_songs(test_sample, unique_dj_sets):
         missing_songs.append(missing_songs_for_dj_set)
 
     missing_songs_df = pd.concat(missing_songs)
-    missing_songs_keys = list(missing_songs_df.columns.values)
-    test_sample_index = test_sample.set_index(missing_songs_keys).index
-    missing_songs_index = missing_songs_df.set_index(missing_songs_keys).index
 
-    # Removing rows from test sample that are also in missing songs
-    input_songs_df = test_sample[~test_sample_index.isin(missing_songs_index)].copy()
-
-    return missing_songs_df, input_songs_df
+    return missing_songs_df
 
 
 def select_ten_percent_of_sets(path):
