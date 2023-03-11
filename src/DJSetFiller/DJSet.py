@@ -7,6 +7,7 @@ class DJSet:
         self.missing_songs = set()
         self.input_songs = []
         self.recommended_songs = set()
+        self.r_precision = None
 
     def add_missing_song(self, song_id):
         self.missing_songs.add(song_id)
@@ -25,9 +26,9 @@ class DJSet:
         number_of_retrieved_relevant_tracks = self.number_of_relevant_recommended_songs()
         number_of_known_relevant_tracks = self.number_of_known_relevant_tracks()
 
-        r_precision = number_of_retrieved_relevant_tracks / number_of_known_relevant_tracks
+        self.r_precision = number_of_retrieved_relevant_tracks / number_of_known_relevant_tracks
 
-        return r_precision
+        return self.r_precision
 
     # Number of songs we withheld for this DJ set.
     def number_of_known_relevant_tracks(self):
