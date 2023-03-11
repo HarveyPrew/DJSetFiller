@@ -3,11 +3,13 @@ import pandas as pd
 
 def create_training_set(test_sample, dataset):
     training_set_df = remove_rows_in_x_from_y(test_sample, dataset)
+    training_set_df.to_csv('data/rprecision_data/reduced/training_set.csv', index=False)
     return training_set_df
 
 
 def create_input_songs(missing_songs_df, test_sample):
     input_songs_df = remove_rows_in_x_from_y(missing_songs_df, test_sample)
+    input_songs_df.to_csv('data/rprecision_data/reduced/input_songs.csv', index=False)
     return input_songs_df
 
 
@@ -30,6 +32,7 @@ def create_missing_songs(test_sample, unique_dj_sets):
         missing_songs.append(missing_songs_for_dj_set)
 
     missing_songs_df = pd.concat(missing_songs)
+    missing_songs_df.to_csv('data/rprecision_data/reduced/missing_songs.csv', index=False)
 
     return missing_songs_df
 
