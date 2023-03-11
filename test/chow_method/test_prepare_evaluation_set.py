@@ -27,8 +27,13 @@ def test_select_ten_percent_of_sets():
     assert unique_set is not None
 
 
-def test_create_missing_songs():
-    expected_row_amount = 2
+def test_create_missing_and_input_songs():
+    expected_row_amount_missing_songs = 2
     chosen_sets, unique_set = select_ten_percent_of_sets("data/rprecision_data/reduced/data_set_test_reduced.csv")
-    actual_row_amount = len(create_missing_songs(chosen_sets, unique_set))
-    assert actual_row_amount == expected_row_amount
+    missing_songs, input_songs = create_missing_songs(chosen_sets, unique_set)
+    actual_row_amount_missing_songs = len(missing_songs)
+    assert actual_row_amount_missing_songs == expected_row_amount_missing_songs
+
+    expected_row_amount_input_songs = 6
+    actual_row_amount_input_songs = len(input_songs)
+    assert actual_row_amount_input_songs == expected_row_amount_input_songs
