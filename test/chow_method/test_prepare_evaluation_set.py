@@ -21,12 +21,14 @@ def test_filter_sets_with_multiple_plays():
 
 def test_select_ten_percent_of_sets():
     expected_row_amount = 8
-    actual_row_amount = len(select_ten_percent_of_sets("data/rprecision_data/reduced/data_set_test_reduced.csv"))
+    chosen_sets, unique_set = select_ten_percent_of_sets("data/rprecision_data/reduced/data_set_test_reduced.csv")
+    actual_row_amount = len(chosen_sets)
     assert actual_row_amount == expected_row_amount
+    assert unique_set is not None
 
 
 def test_create_missing_songs():
-    expected_row_amount = 4
-    chosen_sets = select_ten_percent_of_sets("data/rprecision_data/reduced/data_set_test_reduced.csv")
-    actual_row_amount = len(create_missing_songs(chosen_sets))
+    expected_row_amount = 2
+    chosen_sets, unique_set = select_ten_percent_of_sets("data/rprecision_data/reduced/data_set_test_reduced.csv")
+    actual_row_amount = len(create_missing_songs(chosen_sets, unique_set))
     assert actual_row_amount == expected_row_amount
