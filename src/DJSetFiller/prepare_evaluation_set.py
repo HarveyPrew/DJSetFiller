@@ -1,6 +1,15 @@
 import pandas as pd
 
 
+def make_test_data(dataset_path):
+    dataset_df = import_csv(dataset_path)
+    test_sample, unique_dj_sets = select_ten_percent_of_sets(dataset_df)
+    missing_songs_df = create_missing_songs(test_sample, unique_dj_sets)
+    create_input_songs(missing_songs_df, test_sample)
+    create_training_set(test_sample, dataset_df)
+    return 0
+
+
 def create_training_set(test_sample, dataset):
     training_set_df = remove_rows_in_x_from_y(test_sample, dataset)
     training_set_df.to_csv('data/rprecision_data/reduced/training_set.csv', index=False)
@@ -37,8 +46,8 @@ def create_missing_songs(test_sample, unique_dj_sets):
     return missing_songs_df
 
 
-def select_ten_percent_of_sets(path):
-    sets_with_multiple_plays = find_sets_with_multiple_plays(path)
+def select_ten_percent_of_sets(dataset_df):
+    sets_with_multiple_plays = find_sets_with_multiple_plays(dataset_df)
     unique_dj_sets = sets_with_multiple_plays.drop_duplicates(subset='set_name_plus_dj_id').copy()
     percentage_of_sets = unique_dj_sets.sample(frac=0.333, replace=True, random_state=1)
     unique_dj_sets = percentage_of_sets['set_name_plus_dj_id'].tolist()
@@ -47,15 +56,13 @@ def select_ten_percent_of_sets(path):
     return test_sample, unique_dj_sets
 
 
-def find_sets_with_multiple_plays(path):
-    dataset = pd.read_csv(path)
-    sets_with_multiple_plays = dataset.query('total_play_count > 1')
+def find_sets_with_multiple_plays(dataset_df):
+
+    sets_with_multiple_plays = dataset_df.query('total_play_count > 5')
     return sets_with_multiple_plays
 
 
 def import_csv(path):
-    dataset = pd.read_csv(path)
-    return dataset
-
-
+    dataset_df = pd.read_csv(path)
+    return dataset_df
 

@@ -4,8 +4,13 @@ from DJSetFiller.prepare_evaluation_set import (
     select_ten_percent_of_sets,
     create_missing_songs,
     create_input_songs,
-    create_training_set
+    create_training_set,
+    make_test_data
     )
+
+
+def test_big_data_sets_are_made():
+    assert make_test_data('data/new_dataset2.csv') is not None
 
 
 def test_dataset_is_imported():

@@ -139,3 +139,8 @@ doc/progressReport/images/University_of_Surrey_coat_of_arms.pdf
 Pipfile.lock
 *.hdf
 src/DJSetFiller/spotifyConstants.py
+data/new_dataset.csv
+data/new_dataset2.csv
+data/rprecision_data/reduced/input_songs.csv
+data/rprecision_data/reduced/missing_songs.csv
+data/rprecision_data/reduced/training_set.csv
