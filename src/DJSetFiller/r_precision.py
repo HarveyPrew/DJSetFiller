@@ -14,7 +14,10 @@ def make_r_precision_calculations_for_evaluation_set(path):
     print("Number of DJ Sets - " + str(len(djsets)))
     model, model_data = create_model("data/rprecision_data/reduced/training_set.csv")
 
+    counter = 1
+
     for dj_set in djsets.values():
+        
         initial_suggestions = make_recommendations_for_dj_set(
             dj_set, model, model_data
         )
@@ -22,8 +25,10 @@ def make_r_precision_calculations_for_evaluation_set(path):
         dj_set.read_recommended_songs(reduced_suggestions)
 
         dj_set.calculate_r_precision()
+        print(str(counter), " out of ", str(len(djsets)) + " calculated")
+        counter += 1
 
     return djsets
 
 
-make_r_precision_calculations_for_evaluation_set('data/rprecision_data/reduced/data_set_test_reduced.csv')
+make_r_precision_calculations_for_evaluation_set('data/rprecision_data/reduced/semi_reduced_dataset.csv')
