@@ -2,6 +2,7 @@ from DJSetFiller.DJSet import DJSet
 from DJSetFiller.inital_suggestions import make_recommendations_for_dj_set, create_model
 from DJSetFiller.euclidean_distance import reduced_similar_songs
 from DJSetFiller.prepare_evaluation_set import make_test_data
+import pandas as pd
 
 
 def make_r_precision_calculations_for_evaluation_set(path):
@@ -15,6 +16,7 @@ def make_r_precision_calculations_for_evaluation_set(path):
     model, model_data = create_model("data/rprecision_data/reduced/training_set.csv")
 
     counter = 1
+    r_precision_list = []
 
     for dj_set in djsets.values():
 
@@ -30,9 +32,13 @@ def make_r_precision_calculations_for_evaluation_set(path):
               " Number of Input songs - ", str(len(dj_set.input_songs)),
               " Number of Missing songs - ", str(len(dj_set.missing_songs)),
               " R-precision - ", dj_set.r_precision)
+        
+        r_precision_list.append([len(dj_set.input_songs), len(dj_set.missing_songs), dj_set.r_precision])
         counter += 1
 
-    return djsets
+    r_precision_df = pd.DataFrame(r_precision_list, columns=['input_song_count', "missing_song_cout", "r_value"])
+    r_precision_df.to_pickle('data/r_precision_values.pickle')
+    return r_precision_df
 
 
 make_r_precision_calculations_for_evaluation_set('data/rprecision_data/reduced/semi_reduced_dataset.csv')
