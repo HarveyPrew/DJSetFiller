@@ -33,11 +33,11 @@ def make_r_precision_calculations_for_evaluation_set(path):
               " Number of Missing songs - ", str(len(dj_set.missing_songs)),
               " R-precision - ", dj_set.r_precision)
         
-        r_precision_list.append([len(dj_set.input_songs), len(dj_set.missing_songs), dj_set.r_precision])
+        r_precision_list.append([dj_set.dj_set_id, len(dj_set.input_songs), len(dj_set.missing_songs), dj_set.r_precision])
         counter += 1
 
-    r_precision_df = pd.DataFrame(r_precision_list, columns=['input_song_count', "missing_song_cout", "r_value"])
-    r_precision_df.to_pickle('data/r_precision_values.pickle')
+    r_precision_df = pd.DataFrame(r_precision_list, columns=['set_name', 'input_song_count', "missing_song_cout", "r_value"])
+    r_precision_df.to_csv('data/r_precision_values.csv', index=False)
     return r_precision_df
 
 
