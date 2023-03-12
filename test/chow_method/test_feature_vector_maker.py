@@ -4,12 +4,13 @@ from DJSetFiller.feature_vector_maker import (
     scaler,
 )
 
-from DJSetFiller.inital_suggestions import make_recommendations_for_multiple_songs
+from DJSetFiller.inital_suggestions import make_recommendations_for_multiple_songs, create_model
 
 
 def test_input_vector():
     songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = make_recommendations_for_multiple_songs(songs, "data/reduced/dataset_reduced.csv")
+    model, model_data = create_model("data/reduced/dataset_reduced.csv")
+    initial_suggestions = make_recommendations_for_multiple_songs(songs, model, model_data)
     output = input_feature_vector(initial_suggestions)
 
     assert output == [
@@ -30,7 +31,8 @@ def test_input_vector():
 
 def test_output_vector():
     songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    initial_suggestions = make_recommendations_for_multiple_songs(songs, "data/reduced/dataset_reduced.csv")
+    model, model_data = create_model("data/reduced/dataset_reduced.csv")
+    initial_suggestions = make_recommendations_for_multiple_songs(songs, model, model_data)
     output = feature_vectors_to_dict(initial_suggestions)
 
     assert output[4.0][00] == 0.817

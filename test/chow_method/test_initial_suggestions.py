@@ -2,14 +2,16 @@ from DJSetFiller.inital_suggestions import (
     make_recommendations_for_multiple_songs,
     read_data_set,
     matrix_size,
+    create_model
 )
 
 
 def test_multiple_song_list():
     songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    results = make_recommendations_for_multiple_songs(songs, "data/reduced/dataset_reduced.csv")
+    model, model_data = create_model("data/reduced/dataset_reduced.csv")
+    initial_suggestions = make_recommendations_for_multiple_songs(songs, model, model_data)
 
-    assert len(results) == 13
+    assert len(initial_suggestions) == 13
 
 
 def test_find_db_exists():

@@ -1,5 +1,5 @@
 from DJSetFiller.DJSet import DJSet
-from DJSetFiller.inital_suggestions import make_recommendations_for_dj_set
+from DJSetFiller.inital_suggestions import make_recommendations_for_dj_set, create_model
 from DJSetFiller.euclidean_distance import reduced_similar_songs
 from DJSetFiller.r_precision import make_r_precision_calculations_for_evaluation_set
 
@@ -56,9 +56,10 @@ def test_generate_recommendations():
         "data/rprecision_data/reduced/missing_songs_reduced.csv",
     )
     dj_set = djsets[dj_set_id]
+    model, model_data = create_model("data/rprecision_data/reduced/training_set_test_reduced.csv")
 
     initial_suggestions = make_recommendations_for_dj_set(
-        dj_set, "data/rprecision_data/reduced/training_set.csv"
+        dj_set, model, model_data
     )
     reduced_suggestions = reduced_similar_songs(initial_suggestions)
     dj_set.read_recommended_songs(reduced_suggestions)
@@ -73,9 +74,10 @@ def test_number_of_relevant_recommended_songs():
         "data/rprecision_data/reduced/missing_songs_reduced.csv",
     )
     dj_set = djsets[dj_set_id]
+    model, model_data = create_model("data/rprecision_data/reduced/training_set_test_reduced.csv")
 
     initial_suggestions = make_recommendations_for_dj_set(
-        dj_set, "data/rprecision_data/reduced/training_set_test_reduced.csv"
+        dj_set, model, model_data
     )
     reduced_suggestions = reduced_similar_songs(initial_suggestions)
     dj_set.read_recommended_songs(reduced_suggestions)
