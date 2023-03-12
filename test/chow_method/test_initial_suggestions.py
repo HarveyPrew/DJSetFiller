@@ -8,7 +8,7 @@ from DJSetFiller.inital_suggestions import (
 
 def test_multiple_song_list():
     songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
-    model, model_data = create_model("data/reduced/dataset_reduced.csv")
+    model, model_data = create_model('data/reduced/dataset_reduced.csv')
     initial_suggestions = make_recommendations_for_multiple_songs(songs, model, model_data)
 
     assert len(initial_suggestions) == 13

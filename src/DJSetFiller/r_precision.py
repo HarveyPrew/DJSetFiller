@@ -3,6 +3,8 @@ from DJSetFiller.inital_suggestions import make_recommendations_for_dj_set, crea
 from DJSetFiller.euclidean_distance import reduced_similar_songs
 from DJSetFiller.prepare_evaluation_set import make_test_data
 import pandas as pd
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
 
 def make_r_precision_calculations_for_evaluation_set(path):
@@ -18,10 +20,13 @@ def make_r_precision_calculations_for_evaluation_set(path):
     counter = 1
     r_precision_list = []
 
+    auth_manager = SpotifyClientCredentials()
+    sp = spotipy.Spotify(auth_manager=auth_manager)
+
     for dj_set in djsets.values():
 
         initial_suggestions = make_recommendations_for_dj_set(
-            dj_set, model, model_data
+            sp, dj_set, model, model_data
         )
         reduced_suggestions = reduced_similar_songs(initial_suggestions)
         dj_set.read_recommended_songs(reduced_suggestions)
@@ -29,10 +34,10 @@ def make_r_precision_calculations_for_evaluation_set(path):
         dj_set.calculate_r_precision()
         print(str(counter), " out of ", str(len(djsets)) + " calculated\n")
         print("Set name - ", dj_set.dj_set_id,
-              " Number of Input songs - ", str(len(dj_set.input_songs)),
-              " Number of Missing songs - ", str(len(dj_set.missing_songs)),
-              " R-precision - ", dj_set.r_precision)
-        
+              ", Number of Input songs: ", str(len(dj_set.input_songs)),
+              ", Number of Missing songs: ", str(len(dj_set.missing_songs)),
+              ", R-precision: ", dj_set.r_precision)
+
         r_precision_list.append([dj_set.dj_set_id, len(dj_set.input_songs), len(dj_set.missing_songs), dj_set.r_precision])
         counter += 1
 
@@ -41,4 +46,4 @@ def make_r_precision_calculations_for_evaluation_set(path):
     return r_precision_df
 
 
-make_r_precision_calculations_for_evaluation_set('data/rprecision_data/reduced/semi_reduced_dataset.csv')
+make_r_precision_calculations_for_evaluation_set('data/new_dataset2.csv')

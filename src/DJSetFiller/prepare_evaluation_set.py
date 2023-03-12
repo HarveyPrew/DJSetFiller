@@ -49,7 +49,7 @@ def create_missing_songs(test_sample, unique_dj_sets):
 def select_ten_percent_of_sets(dataset_df):
     sets_with_multiple_plays = find_sets_with_multiple_plays(dataset_df)
     unique_dj_sets = sets_with_multiple_plays.drop_duplicates(subset='set_name_plus_dj_id').copy()
-    percentage_of_sets = unique_dj_sets.sample(frac=0.333, replace=True, random_state=1)
+    percentage_of_sets = unique_dj_sets.sample(frac=0.1, replace=True, random_state=1)
     unique_dj_sets = percentage_of_sets['set_name_plus_dj_id'].tolist()
 
     test_sample = sets_with_multiple_plays[sets_with_multiple_plays['set_name_plus_dj_id'].isin(unique_dj_sets)].copy()

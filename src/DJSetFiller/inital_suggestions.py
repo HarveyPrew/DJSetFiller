@@ -7,12 +7,12 @@ from DJSetFiller.spotify_analysis import track_analysis_from_spotify
 pd.options.mode.chained_assignment = None  # default='warn'
 
 
-def make_recommendations_for_dj_set(dj_set, model, model_data):
-    return make_recommendations_for_multiple_songs(dj_set.input_songs, model, model_data)
+def make_recommendations_for_dj_set(sp, dj_set, model, model_data):
+    return make_recommendations_for_multiple_songs(sp, dj_set.input_songs, model, model_data)
 
 
 def make_recommendations_for_multiple_songs(
-    input_song_ids, model, model_data, recommendations_per_song=6
+    sp, input_song_ids, model, model_data, recommendations_per_song=50
 ):
 
     input_songs_df = model_data[
@@ -20,7 +20,7 @@ def make_recommendations_for_multiple_songs(
     ].drop_duplicates(subset=["spotify_id"])
 
     songs_plus_features = find_similar_songs_for_input_set(
-        input_songs_df, recommendations_per_song, model, model_data
+        sp, input_songs_df, recommendations_per_song, model, model_data
     )
 
     return songs_plus_features
@@ -46,7 +46,7 @@ def read_data_set(path):
     return dataset_df
 
 
-def find_similar_songs_for_input_set(input_songs_df, recommendations_per_song, model, dataset):
+def find_similar_songs_for_input_set(sp, input_songs_df, recommendations_per_song, model, dataset):
     similar_songs = []
 
     for index, value in enumerate(input_songs_df.index):
@@ -67,7 +67,7 @@ def find_similar_songs_for_input_set(input_songs_df, recommendations_per_song, m
     similar_songs_list.drop_duplicates(subset=["spotify_id", "Type"], inplace=True)
     similar_songs_list.drop_duplicates(subset=["spotify_id"], inplace=True)
 
-    songs_with_features = track_analysis_from_spotify(similar_songs_list)
+    songs_with_features = track_analysis_from_spotify(sp, similar_songs_list)
 
     return songs_with_features
 
