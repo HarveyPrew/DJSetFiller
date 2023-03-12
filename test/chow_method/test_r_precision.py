@@ -8,10 +8,10 @@ def test_r_precision():
         "data/rprecision_data/reduced/input_songs.csv",
         "data/rprecision_data/reduced/missing_songs.csv",
     )
-    
+
     for dj_set in djsets.values():
         initial_suggestions = make_recommendations_for_dj_set(
-            dj_set, "data/rprecision_data/reduced/training_set_test_reduced.csv"
+            dj_set, "data/rprecision_data/reduced/training_set.csv"
         )
         reduced_suggestions = reduced_similar_songs(initial_suggestions)
         dj_set.read_recommended_songs(reduced_suggestions)

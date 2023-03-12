@@ -53,13 +53,17 @@ def select_ten_percent_of_sets(dataset_df):
     unique_dj_sets = percentage_of_sets['set_name_plus_dj_id'].tolist()
 
     test_sample = sets_with_multiple_plays[sets_with_multiple_plays['set_name_plus_dj_id'].isin(unique_dj_sets)].copy()
+
     return test_sample, unique_dj_sets
 
 
 def find_sets_with_multiple_plays(dataset_df):
 
     sets_with_multiple_plays = dataset_df.query('total_play_count > 5')
-    return sets_with_multiple_plays
+    grouped = sets_with_multiple_plays.groupby('set_name_plus_dj_id').size()
+    result = grouped[grouped > 5]
+    result_df = sets_with_multiple_plays[sets_with_multiple_plays['set_name_plus_dj_id'].isin(result.index)]
+    return result_df
 
 
 def import_csv(path):

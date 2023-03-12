@@ -22,7 +22,8 @@ def test_dataset_is_imported():
 
 def test_filter_sets_with_multiple_plays():
     expected_row_amount = 26
-    actual_row_amount = len(find_sets_with_multiple_plays("data/rprecision_data/reduced/data_set_test_reduced.csv"))
+    dataset_df = import_csv("data/rprecision_data/reduced/data_set_test_reduced.csv")
+    actual_row_amount = len(find_sets_with_multiple_plays(dataset_df))
 
     assert actual_row_amount == expected_row_amount
 
@@ -62,3 +63,5 @@ def test_create_training_set():
     actual_row_amount_training_set = len(training_set_df)
 
     assert actual_row_amount_training_set == expected_row_amount_training_set
+
+
