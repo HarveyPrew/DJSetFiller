@@ -11,7 +11,7 @@ def make_r_precision_calculations_for_evaluation_set(path):
         "data/rprecision_data/reduced/input_songs.csv",
         "data/rprecision_data/reduced/missing_songs.csv",
     )
-
+    print("Number of DJ Sets - " + str(len(djsets)))
     model, model_data = create_model("data/rprecision_data/reduced/training_set.csv")
 
     for dj_set in djsets.values():
@@ -24,3 +24,6 @@ def make_r_precision_calculations_for_evaluation_set(path):
         dj_set.calculate_r_precision()
 
     return djsets
+
+
+make_r_precision_calculations_for_evaluation_set('data/rprecision_data/reduced/data_set_test_reduced.csv')
