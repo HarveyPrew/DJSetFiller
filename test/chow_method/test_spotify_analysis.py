@@ -1,6 +1,5 @@
-from DJSetFiller.spotify_analysis import (
-    track_analysis_from_spotify
-)
+import DJSetFiller.spotify_analysis as spotify
+
 import pandas as pd
 
 
@@ -18,9 +17,9 @@ def test_track_analysis_from_spotify():
         "song_id": {0: 17},
         "dj_play_countsize": {0: 1},
     }
+
     test = pd.DataFrame.from_dict(dataset)
-    results = track_analysis_from_spotify(test).to_dict()
+
+    results = spotify.api_client.get_spotify_features(test).to_dict()
 
     assert results["tempo"] == {0: 178.345}
-
-

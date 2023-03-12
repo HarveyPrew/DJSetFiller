@@ -5,7 +5,7 @@ from DJSetFiller.r_precision import make_r_precision_calculations_for_evaluation
 
 
 def test_r_precision():
-    djsets = make_r_precision_calculations_for_evaluation_set('data/rprecision_data/reduced/semi_reduced_dataset.csv')
+    djsets = make_r_precision_calculations_for_evaluation_set('data/new_dataset2.csv')
 
     assert djsets is not None
 

@@ -7,6 +7,7 @@ from DJSetFiller.euclidean_distance import (
 from DJSetFiller.inital_suggestions import make_recommendations_for_multiple_songs, create_model
 
 
+
 def test_euclidean_distance():
     songs = ["5vXlU52ohBRZb1uUw4GPqA", "5Zdmkal4CNnC5EY9qCSrMi"]
     model, model_data = create_model("data/reduced/dataset_reduced.csv")
