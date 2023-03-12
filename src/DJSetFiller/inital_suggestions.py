@@ -7,18 +7,27 @@ from DJSetFiller.spotify_analysis import track_analysis_from_spotify
 pd.options.mode.chained_assignment = None  # default='warn'
 
 
-def make_recommendations_for_dj_set(dj_set, model_path):
-    return make_recommendations_for_multiple_songs(dj_set.input_songs, model_path)
+def make_recommendations_for_dj_set(dj_set, model, model_data):
+    return make_recommendations_for_multiple_songs(dj_set.input_songs, model, model_data)
 
 
 def make_recommendations_for_multiple_songs(
-    input_song_ids, model_path, recommendations_per_song=6
+    input_song_ids, model, model_data, recommendations_per_song=6
 ):
-    model_data = read_data_set(model_path)
 
     input_songs_df = model_data[
         model_data["spotify_id"].isin(input_song_ids)
     ].drop_duplicates(subset=["spotify_id"])
+
+    songs_plus_features = find_similar_songs_for_input_set(
+        input_songs_df, recommendations_per_song, model, model_data
+    )
+
+    return songs_plus_features
+
+
+def create_model(model_path):
+    model_data = read_data_set(model_path)
 
     plays = model_data["dj_play_count"]
     dj_id = model_data.dj_id
@@ -27,12 +36,7 @@ def make_recommendations_for_multiple_songs(
     matrix = coo_matrix((plays, (dj_id, song_id))).tocsr()
     model = AlternatingLeastSquares(factors=100)
     model.fit(matrix)
-
-    songs_plus_features = find_similar_songs_for_input_set(
-        input_songs_df, recommendations_per_song, model, model_data
-    )
-
-    return songs_plus_features
+    return model, model_data
 
 
 def read_data_set(path):

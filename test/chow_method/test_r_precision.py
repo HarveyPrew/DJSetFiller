@@ -1,22 +1,11 @@
 from DJSetFiller.DJSet import DJSet
 from DJSetFiller.inital_suggestions import make_recommendations_for_dj_set
 from DJSetFiller.euclidean_distance import reduced_similar_songs
+from DJSetFiller.r_precision import make_r_precision_calculations_for_evaluation_set
 
 
 def test_r_precision():
-    djsets = DJSet.read_songs(
-        "data/rprecision_data/reduced/input_songs.csv",
-        "data/rprecision_data/reduced/missing_songs.csv",
-    )
-
-    for dj_set in djsets.values():
-        initial_suggestions = make_recommendations_for_dj_set(
-            dj_set, "data/rprecision_data/reduced/training_set.csv"
-        )
-        reduced_suggestions = reduced_similar_songs(initial_suggestions)
-        dj_set.read_recommended_songs(reduced_suggestions)
-
-        dj_set.calculate_r_precision()
+    djsets = make_r_precision_calculations_for_evaluation_set('data/rprecision_data/reduced/data_set_test_reduced.csv')
 
     assert djsets is not None
 
