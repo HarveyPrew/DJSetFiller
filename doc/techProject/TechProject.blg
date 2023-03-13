@@ -19,7 +19,7 @@ Warning--empty journal in bock_deconstruct_2020
 Warning--empty journal in bock_multi-task_2019
 Warning--empty booktitle in claypool_combining_1999
 Warning--empty pages in claypool_combining_1999
-Warning--empty journal in ferwerda_personality_nodate
+Warning--empty pages in ferwerda_personality_2015
 Warning--empty journal in jansson_singing_2017
 Warning--missing publisher in kim_automatic_2017
 Warning--empty journal in laplante_improving_2014
@@ -29,43 +29,43 @@ Warning--empty journal in mcfee_hypergraph_2012
 Warning--empty booktitle in van_meteren_using_2000
 You've used 71 entries,
             2968 wiz_defined-function locations,
-            1100 strings with 22382 characters,
-and the built_in function-call counts, 44897 in all, are:
-= -- 3849
+            1103 strings with 22597 characters,
+and the built_in function-call counts, 45012 in all, are:
+= -- 3854
 > -- 1805
-< -- 76
+< -- 77
 + -- 666
 - -- 583
-* -- 3611
-:= -- 6655
+* -- 3623
+:= -- 6663
 add.period$ -- 154
 call.type$ -- 71
 change.case$ -- 557
 chr.to.int$ -- 72
 cite$ -- 85
-duplicate$ -- 3328
-empty$ -- 3314
+duplicate$ -- 3344
+empty$ -- 3330
 format.name$ -- 783
-if$ -- 9225
+if$ -- 9252
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 603
+missing$ -- 608
 newline$ -- 223
 num.names$ -- 293
-pop$ -- 1299
+pop$ -- 1305
 preamble$ -- 1
 purify$ -- 474
 quote$ -- 0
-skip$ -- 1561
+skip$ -- 1564
 stack$ -- 0
 substring$ -- 2012
-swap$ -- 1771
-text.length$ -- 39
+swap$ -- 1783
+text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 621
 warning$ -- 14
 while$ -- 323
 width$ -- 0
-write$ -- 826
+write$ -- 829
 (There were 14 warnings)

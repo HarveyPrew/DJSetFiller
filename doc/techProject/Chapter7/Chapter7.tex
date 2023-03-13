@@ -20,6 +20,18 @@ With mixesdb.com growing in popularity each year, the continued growth of intern
 
 This only appears on a handful of mixes, but a time code along with the setlist could provide the foundations for a very helpful DJ tool. The act of a user inputting a song, and be able to hear instances of that song getting mixed in and out of could help speed up the learning process when they immediately have an audio reference of potentially effective mixing. With this being a forever growing hobby and career for the select who are lucky enough, the fact a system that works in this way is an oddity in the big data era we live in. 
 
+For testing there were a couple of ways I could've tested the application. 
+
+\subsection{Recommended Song Clicks}
+When you add songs to a Spotify playlists, 10 songs are recommended based on what's in the playlist. The user can refresh the list and it gives out 10 more similar songs. Recommended Songs clicks is the amount of refreshes before a missing track shows up. Here is the following equation.
+
+\begin{equation}
+	Clicks= \lfloor \frac {argmin_{i}  \{ R_{i} : R_{i} \in G | \} -1} { 10 } \rfloor
+\end{equation}
+
+
+\subsection{Spotify Features}
+Another form of testing will be to use the spotify features in conjunction with the spotify playlist. We will input 10 songs into both my application and a spotify playlists. Get the spotify features of both outputs and compare which ones are the most suitable.
  
 
 

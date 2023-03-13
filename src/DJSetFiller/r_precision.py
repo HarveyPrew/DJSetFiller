@@ -55,4 +55,4 @@ def make_r_precision_calculations_for_evaluation_set(path):
     return r_precision_df
 
 
-# make_r_precision_calculations_for_evaluation_set('data/new_dataset2.csv')
+make_r_precision_calculations_for_evaluation_set('data/new_dataset2.csv')

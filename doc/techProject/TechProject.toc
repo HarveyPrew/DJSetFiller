@@ -21,12 +21,16 @@
 \contentsline {section}{\numberline {3.2}BPM, key, genre classification}{12}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Automated Mixing}{13}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Hypothesis}{14}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Experiment}{16}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}R-Precision}{16}{subsection.5.0.1}%
-\contentsline {subsection}{\numberline {5.0.2}Recommended Song Clicks}{16}{subsection.5.0.2}%
-\contentsline {subsection}{\numberline {5.0.3}Spotify Features}{17}{subsection.5.0.3}%
-\contentsline {chapter}{\numberline {6}Results and Discussion}{18}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Further Work}{20}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Conclusions}{22}{chapter.8}%
+\contentsline {subsection}{\numberline {4.0.1}Application}{15}{subsection.4.0.1}%
+\contentsline {subsection}{\numberline {4.0.2}Initial Suggestions}{15}{subsection.4.0.2}%
+\contentsline {chapter}{\numberline {5}Experiment}{17}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Preparing Evaluation Set}{17}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}R-Precision}{19}{subsection.5.0.2}%
+\contentsline {chapter}{\numberline {6}Results and Discussion}{20}{chapter.6}%
+\contentsline {subsection}{\numberline {6.0.1}R-Precision Values}{20}{subsection.6.0.1}%
+\contentsline {chapter}{\numberline {7}Further Work}{22}{chapter.7}%
+\contentsline {subsection}{\numberline {7.0.1}Recommended Song Clicks}{23}{subsection.7.0.1}%
+\contentsline {subsection}{\numberline {7.0.2}Spotify Features}{23}{subsection.7.0.2}%
+\contentsline {chapter}{\numberline {8}Conclusions}{24}{chapter.8}%
 \renewcommand {\cftchappresnum }{Appendix~}
 \addtolength {\cftchapnumwidth }{1em}

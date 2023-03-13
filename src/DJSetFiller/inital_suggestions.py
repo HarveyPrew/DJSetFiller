@@ -36,7 +36,7 @@ def create_model(model_path):
     song_id = model_data.song_id
 
     matrix = coo_matrix((plays, (dj_id, song_id))).tocsr()
-    model = AlternatingLeastSquares(factors=100)
+    model = AlternatingLeastSquares(factors=80)
     model.fit(matrix)
     return model, model_data
 
