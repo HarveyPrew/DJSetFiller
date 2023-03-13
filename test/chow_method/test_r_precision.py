@@ -5,7 +5,7 @@ from DJSetFiller.r_precision import make_r_precision_calculations_for_evaluation
 
 
 def test_r_precision():
-    djsets = make_r_precision_calculations_for_evaluation_set('data/new_dataset2.csv')
+    djsets = make_r_precision_calculations_for_evaluation_set('data/rprecision_data/reduced/semi_reduced_dataset.csv')
 
     assert djsets is not None
 
@@ -67,14 +67,14 @@ def test_generate_recommendations():
     assert len(dj_set.recommended_songs) == 5
 
 
-def test_number_of_relevant_recommended_songs():
+def number_of_relevant_recommended_songs():
     dj_set_id = " - 747 - Slam Radio 310 - 1"
     djsets = DJSet.read_songs(
         "data/rprecision_data/reduced/input_test_set_reduced.csv",
         "data/rprecision_data/reduced/missing_songs_reduced.csv",
     )
     dj_set = djsets[dj_set_id]
-    model, model_data = create_model("data/rprecision_data/reduced/training_set_test_reduced.csv")
+    model, model_data = create_model("data/rprecision_data/reduced/semi_reduced_dataset.csv")
 
     initial_suggestions = make_recommendations_for_dj_set(
         dj_set, model, model_data

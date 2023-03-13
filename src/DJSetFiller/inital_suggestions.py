@@ -14,7 +14,7 @@ def make_recommendations_for_dj_set(dj_set, model, model_data):
 
 
 def make_recommendations_for_multiple_songs(
-    input_song_ids, model, model_data, recommendations_per_song=50
+    input_song_ids, model, model_data, recommendations_per_song=200
 ):
 
     input_songs_df = model_data[

@@ -11,7 +11,7 @@ def test_multiple_song_list():
     model, model_data = create_model('data/reduced/dataset_reduced.csv')
     initial_suggestions = make_recommendations_for_multiple_songs(songs, model, model_data)
 
-    assert len(initial_suggestions) == 13
+    assert len(initial_suggestions) == 16
 
 
 def test_find_db_exists():

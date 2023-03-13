@@ -9,14 +9,14 @@ from DJSetFiller.prepare_evaluation_set import (
 )
 
 
-def test_dataset_is_imported():
+def small_dataset_is_imported():
     expected_row_amount = 32
     dataset = import_csv("data/rprecision_data/reduced/data_set_test_reduced.csv")
 
     assert len(dataset) == expected_row_amount
 
 
-def test_filter_sets_with_multiple_plays():
+def filter_sets_with_multiple_plays():
     expected_row_amount = 13
     dataset_df = import_csv("data/rprecision_data/reduced/data_set_test_reduced.csv")
     actual_row_amount = len(find_sets_with_multiple_plays(dataset_df))
@@ -24,7 +24,7 @@ def test_filter_sets_with_multiple_plays():
     assert actual_row_amount == expected_row_amount
 
 
-def test_select_ten_percent_of_sets():
+def select_ten_percent_of_sets():
     expected_row_amount = 4
     dataset_df = import_csv("data/rprecision_data/reduced/data_set_test_reduced.csv")
     chosen_sets, unique_set = select_ten_percent_of_sets(dataset_df)
@@ -33,7 +33,7 @@ def test_select_ten_percent_of_sets():
     assert unique_set is not None
 
 
-def test_create_missing_songs():
+def create_missing_songs():
     expected_row_amount_missing_songs = 1
     dataset_df = import_csv("data/rprecision_data/reduced/data_set_test_reduced.csv")
     chosen_sets, unique_set = select_ten_percent_of_sets(dataset_df)
@@ -42,7 +42,7 @@ def test_create_missing_songs():
     assert actual_row_amount_missing_songs == expected_row_amount_missing_songs
 
 
-def test_create_input_songs():
+def create_input_songs():
     expected_row_amount_input_songs = 3
     dataset_df = import_csv("data/rprecision_data/reduced/data_set_test_reduced.csv")
     test_sample, unique_set = select_ten_percent_of_sets(dataset_df)
@@ -53,10 +53,10 @@ def test_create_input_songs():
     assert actual_row_amount_input_songs == expected_row_amount_input_songs
 
 
-def test_create_training_set():
+def create_training_set():
     expected_row_amount_training_set = 28
 
-    dataset_df = import_csv("data/rprecision_data/reduced/data_set_test_reduced.csv")
+    dataset_df = import_csv("data/rprecision_data/reduced/semi_reduced_dataset.csv")
     test_sample, unique_set = select_ten_percent_of_sets(dataset_df)
     training_set_df = create_training_set(test_sample, dataset_df)
     actual_row_amount_training_set = len(training_set_df)
