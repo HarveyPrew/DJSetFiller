@@ -44,14 +44,25 @@ hobby. This application should explore if creating a music recommendation system
 from archives of these personally selected songs would create a pool of more "human"
 suggestions than what Spotify or other streaming platforms recommends.
 
+\subsection{Application}
+
 Inspired by the training of a fader estimation paper \citep{kim_automatic_2017}, mixesdb.com is a website of archived DJ sets. With other 260,000 mixes on the site, using this as a dataset to train my model proved to be an excellent choice. As mentioned in chapter 2, Daniel Chow built a system that takes in a single song and outputs similar songs based on the mixesdb dataset \citep{chow_music_2020}. His code will provide the foundation as I implement multiple inputs and add an extra layer of validation.
 
 For simplicity sake, I won't use any deep learning implementation.
+
+\subsection{Initial Suggestions}
+The model is made using Alternating Least Squares
+
 
 My system will dish out a pool of reccomendation's through collaborative filtering (Alternating Least Sqaures will be used), and then audio features will be found through the api and the application will select the most similar songs to the input collection. 
 
 Spotify features gives a lot of information about the song (bpm, key, danciness, etc.). Through these many attributes, I will create a weighted vector thing prioritsing elements tbat are important for DJing (bpm, key, danciness, signature).
 
+\begin{figure}[H]
+	\includegraphics[scale=0.1]{images/application_app_flow}
+	\centering
+	\caption{Application flow of the application} 
+\end{figure}
 
 
 % note that \Blindocument has 5 numbered levels, despite setting secnumdepth above. I (and many style guides) would suggest using no more than 3 numbered levels (incl. the chapter), with the option of a fourth unnumbered level.
