@@ -28,9 +28,10 @@
 \contentsline {subsection}{\numberline {5.0.2}R-Precision}{19}{subsection.5.0.2}%
 \contentsline {chapter}{\numberline {6}Results and Discussion}{20}{chapter.6}%
 \contentsline {subsection}{\numberline {6.0.1}R-Precision Values}{20}{subsection.6.0.1}%
-\contentsline {chapter}{\numberline {7}Further Work}{22}{chapter.7}%
-\contentsline {subsection}{\numberline {7.0.1}Recommended Song Clicks}{23}{subsection.7.0.1}%
-\contentsline {subsection}{\numberline {7.0.2}Spotify Features}{23}{subsection.7.0.2}%
-\contentsline {chapter}{\numberline {8}Conclusions}{24}{chapter.8}%
+\contentsline {subsection}{\numberline {6.0.2}Varying input set length}{21}{subsection.6.0.2}%
+\contentsline {chapter}{\numberline {7}Further Work}{24}{chapter.7}%
+\contentsline {subsection}{\numberline {7.0.1}Recommended Song Clicks}{25}{subsection.7.0.1}%
+\contentsline {subsection}{\numberline {7.0.2}Spotify Features}{25}{subsection.7.0.2}%
+\contentsline {chapter}{\numberline {8}Conclusions}{26}{chapter.8}%
 \renewcommand {\cftchappresnum }{Appendix~}
 \addtolength {\cftchapnumwidth }{1em}

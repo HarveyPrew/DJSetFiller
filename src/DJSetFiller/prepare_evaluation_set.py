@@ -59,9 +59,9 @@ def select_ten_percent_of_sets(dataset_df):
 
 def find_sets_with_multiple_plays(dataset_df):
 
-    sets_with_multiple_plays = dataset_df.query('total_play_count > 2')
+    sets_with_multiple_plays = dataset_df.query('total_play_count > 5')
     grouped = sets_with_multiple_plays.groupby('set_name_plus_dj_id').size()
-    result = grouped[grouped > 20]
+    result = grouped[grouped > 7]
     result_df = sets_with_multiple_plays[sets_with_multiple_plays['set_name_plus_dj_id'].isin(result.index)]
     return result_df
 
