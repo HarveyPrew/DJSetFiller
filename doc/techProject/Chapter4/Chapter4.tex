@@ -94,5 +94,23 @@ Using both the input songs, and initital suggestions, using the spotify ID a var
 	
 \end{enumerate}
 
+These features provided great data to form vectors out of for each song, as they highlight attributes of a song which makes them unique. Attributes like tempo is especially helpful for improving the recommendations for DJ Sets, due to being the controlled variable when it comes to transition from one song to another.
+
+The input contains many songs, so for calculating euclidean distance, a mean vector is created from all the input song vectors. The vectors are then scaled. This step is crucial because some attributes work with different ranges, examples being loudness uses dB range and acousticness is from 0-1.
+
+Once these are found, euclidean distance between the each initially suggested songs vector and the input average vector is calculated. As discussed in chapter 2, euclidean distance is a way of measuring the distance between two vectors.
+
+\begin{equation}
+	d(x,y) = \sqrt{\sum _{i=1} ^{n}(x_{i} - y_{i})^{2}}
+\end{equation}
+
+For finding the vectors with the smallest distance between the mean input, this is a clear representation that a given song has similar spotify features attributes, therefore would be worthy suggestions based on the recommended songs.
+
+\begin{figure}[H]
+	\includegraphics[scale=0.1]{images/application_app_flow}
+	\centering
+	\caption{Application flow of the final suggestions part} 
+\end{figure}
+
 
 % note that \Blindocument has 5 numbered levels, despite setting secnumdepth above. I (and many style guides) would suggest using no more than 3 numbered levels (incl. the chapter), with the option of a fourth unnumbered level.

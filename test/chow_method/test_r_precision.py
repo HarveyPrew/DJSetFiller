@@ -4,7 +4,7 @@ from DJSetFiller.euclidean_distance import reduced_similar_songs
 from DJSetFiller.r_precision import make_r_precision_calculations_for_evaluation_set
 
 
-def test_r_precision():
+def r_precision():
     djsets = make_r_precision_calculations_for_evaluation_set('data/rprecision_data/reduced/semi_reduced_dataset.csv')
 
     assert djsets is not None

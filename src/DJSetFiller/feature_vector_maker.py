@@ -32,7 +32,6 @@ def vector_attributes(inital_suggestions, io):
             "speechiness",
             "acousticness",
             "instrumentalness",
-            "liveness",
             "valence",
             "tempo",
             "time_signature",

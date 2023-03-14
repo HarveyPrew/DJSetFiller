@@ -61,7 +61,7 @@ def find_sets_with_multiple_plays(dataset_df):
 
     sets_with_multiple_plays = dataset_df.query('total_play_count > 5')
     grouped = sets_with_multiple_plays.groupby('set_name_plus_dj_id').size()
-    result = grouped[grouped > 7]
+    result = grouped[grouped > 10]
     result_df = sets_with_multiple_plays[sets_with_multiple_plays['set_name_plus_dj_id'].isin(result.index)]
     return result_df
 

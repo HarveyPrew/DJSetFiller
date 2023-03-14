@@ -13,20 +13,7 @@ def test_input_vector():
     initial_suggestions = make_recommendations_for_multiple_songs(songs, model, model_data)
     output = input_feature_vector(initial_suggestions)
 
-    assert output == [
-        0.6145,
-        0.705,
-        2.5,
-        -9.8355,
-        0.0,
-        0.057800000000000004,
-        0.015175000000000001,
-        0.5955,
-        0.3855,
-        0.16165,
-        128.481,
-        4.0,
-    ]
+    assert output == [0.806, 0.572, 4.0, -11.081, 0.0, 0.0419, 0.00975, 0.912, 0.286, 123.01, 4.0]
 
 
 def test_output_vector():
