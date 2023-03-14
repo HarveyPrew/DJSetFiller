@@ -4,7 +4,7 @@ from DJSetFiller.feature_vector_maker import feature_vectors_to_dict, scaler
 
 def reduced_similar_songs(initial_suggestions):
     ed = euclidean_distance(initial_suggestions)
-    best_song_ids = sorted(ed, key=ed.get)[:100]
+    best_song_ids = sorted(ed, key=ed.get)[:5]
     initial_df = initial_suggestions
     final_df = initial_df.loc[initial_df["song_id"].isin(best_song_ids)]
     return final_df

@@ -6,7 +6,7 @@
 \chapter{Experiment}
 
 
-This part will answer the research question: 
+This part will plan out the answer for the research question: 
 \\
 \\
 \textit{Is the proposed method a suitable solution to automate recommendations of songs suitable for adding to a given DJ set?}.
@@ -14,12 +14,31 @@ This part will answer the research question:
 \\
 As explained in the hypothesis. I'm testing a music recommendation system that uses MixesDB as a dataset and see whether it garners appropriate results.
 
-The idea for the testing came from the million playlist dataset from Spotify \citep{aicrowd_aicrowd_2023}.  Where they both had the dataset (million untouched Spotify playlists) and the challenge dataset, which contained many modified playlists, showing how many missing songs are in each playlists.
+To evaluate the quality of a recommendation system, R-Precision is often used as a performance metric. In this context, the R-Precision value represents the proportion of relevant items retrieved in the top R recommended items for a given user. To assess the effectiveness of a recommendation system for DJ sets, the R-Precision values of various systems trained with the Spotify million playlist dataset were compared, with the top 10 scoring models having R-Precision values ranging from 0.21 to 0.22.
+
+It is important to note that there is a considerable difference in the number of DJ sets/playlists between the mixesDB dataset and the Spotify one. The mixesDB dataset contains over 9800 DJ sets, while the Spotify dataset contains 1,000,000 playlists. It is also essential to discuss the differences in definition of a playlist and a DJ set. A playlist being a collection of songs, regardless of cohesion or song count, while a DJ set is typically a seamless mix of songs that can vary in length from 8 hours to no less than 20 minutes.
+
+Given the differences in dataset size and task, aiming for an average R-Precision value of 0.19, slightly lower than the top-performing models, would be appropriate. This approach allows for a fair comparison between the different systems and considers the unique characteristics of the dataset and task at hand.
+\\
+\\
+\begin{equation}
+	R-Precision = \frac{|G\cap R_{1:|G|}|}{|G|}
+\end{equation}
+\\
+\\
+\subsection{R-Precision}
+The R-precision is the amount of found tracks that were originally in the mix divided by the number of known missing tracks.
+
+
+
+The average R-Precision got tested on varying latent factor values, and when the highest was found, the selection of input DJ sets was altered, choosing DJ sets with a higher amount of songs. This was done to further explore what size an input gets the best results.
+
+The idea for the testing came from the million playlist dataset from Spotify \citep{aicrowd_aicrowd_2023} that was used for the 2018 Recsys Convention. At this convention, competing teams would make a recommendation system out of the dataset, and the quality of the dataset was tested with a challenge dataset, which contained many modified playlists, showing how many missing songs are in each playlists.
 
 As the dataset utilized was obtained from mixesDB, it was necessary to devise a customized approach for the preparation of the evaluation set.
 
 \subsection{Preparing Evaluation Set}
-During the evaluation phase of the study conducted on the million playlist dataset, the quality of a given applications trained on this dataset was assessed through a range of methods that involved analysing both missing and recommended songs. In order to effectively compare different applications, it was essential to create a standardised evaluation set that incorporated aspects of the Spotify data set, which could show the applications that can recommend songs that were featured in the playlists originally.
+During the evaluation phase of the million playlist challenge, the quality of a given applications trained on this dataset was assessed through a range of methods that involved analysing both missing and recommended songs. In order to effectively compare different applications, it was essential to create a standardised evaluation set that incorporated aspects of the Spotify data set, which could show the applications that can recommend songs that were featured in the playlists originally.
 
 \begin{figure}[H]
 	\includegraphics[scale=0.5]{images/spotify_challenge_set}
@@ -29,7 +48,9 @@ During the evaluation phase of the study conducted on the million playlist datas
 
 The Spotify challenge set consisted of 10,000 playlists with varying numbers of input songs, ranging from 0 to 100 tracks. For each of these playlists, Spotify requested 500 track recommendations from the participating teams \citep{aicrowd_aicrowd_2023}. However, due to the relatively smaller scale of the dataset and difference between playlists and DJ sets under consideration, various aspects of this challenge set had to be downscaled to maintain the academic rigour of the study. For instance, the range of input songs was considerably narrower, as DJ sets typically have a minimum length of 10 tracks, compared to playlists that can have varying lengths.
 
-To ensure the feasibility of finding all songs in the evaluation set, an additional criterion was applied, whereby each song had to have a total play count of at least 5. Furthermore, the input and missing songs were divided in a standardized manner, with 20\% of the songs allocated as missing songs, and the remaining 80\% as input songs. Overall, the creation of the evaluation set was a crucial aspect of the study, ensuring that the assessment of the applications was based on a consistent and standardized evaluation framework.
+To ensure the feasibility of finding all songs in the evaluation set, an additional criterion was applied, whereby each song had to have a total play count of at least 5. Furthermore, the input and missing songs were divided in a standardized manner, with 20\% of the songs allocated as missing songs, and the remaining 80\% as input songs. Overall, the creation of the evaluation set was a crucial aspect of the study, ensuring that the assessment of the applications was based on a consistent and standardized evaluation framework. The output value for my application was also changed to 100 work better with the smaller dataset.
+
+The making of the evaluation set was coded in python using the pandas library, the code for this can be found on GitHub.
 
 \begin{figure}[H]
 	\includegraphics[scale=0.1]{images/evaluation_set_app_flow}
@@ -37,14 +58,7 @@ To ensure the feasibility of finding all songs in the evaluation set, an additio
 	\caption{Application flow of the creation of the evaluation set} 
 \end{figure}
 
+\subsection{Experiment Variables}
 
-\subsection{R-Precision}
-The first mean of testing would be finding the R-precision. The R-precision is the amount of found tracks that were originally in the mix divided by the number of known missing tracks.
-
-\begin{equation}
-	R-Precision = \frac{|G\cap R_{1:|G|}|}{|G|}
-\end{equation}
-
-The average R-Precision got tested on varying latent factor values, and when the highest is found, we alter the amount of songs in the input, to see what size an input gets the best results.
-
+As mentioned in the previous chapter, the proposed application utilizes the Alternating Least Squares algorithm to generate a preliminary set of suggestions. This algorithm is based on matrix factorization, where the latent factors are derived from the training dataset to identify similar songs. The selection of an appropriate value for latent factors is crucial in ensuring the optimal performance of the algorithm. A value that is too low may yield results that are too random, while a value that is too high may lead to an excessive focus on specific items. To identify the ideal value for latent factors, it is necessary to conduct an  investigation where the latent factors will be the independent variable, and the average R-precision value will be the dependent variable. Furthermore, an examination on how changes to the parameters of the evaluation set, particularly larger DJ sets, impact the R-Precision value. From there, the r-precision value  is then compared to the highest performing recommendation systems that use the Spotify Dataset, to see if the DJ set focused recommender can compare to industry standard algorithms.
 

@@ -1,6 +1,6 @@
-\contentsline {chapter}{List of Figures}{ii}{section*.4}%
-\contentsline {chapter}{List of Tables}{iii}{section*.6}%
-\contentsline {chapter}{Acknowledgements}{iv}{chapter*.8}%
+\contentsline {chapter}{List of Figures}{iii}{section*.4}%
+\contentsline {chapter}{List of Tables}{iv}{section*.6}%
+\contentsline {chapter}{Acknowledgements}{v}{chapter*.8}%
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
@@ -21,17 +21,20 @@
 \contentsline {section}{\numberline {3.2}BPM, key, genre classification}{12}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Automated Mixing}{13}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Hypothesis}{14}{chapter.4}%
-\contentsline {subsection}{\numberline {4.0.1}Application}{15}{subsection.4.0.1}%
-\contentsline {subsection}{\numberline {4.0.2}Initial Suggestions}{15}{subsection.4.0.2}%
-\contentsline {chapter}{\numberline {5}Experiment}{17}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Preparing Evaluation Set}{17}{subsection.5.0.1}%
-\contentsline {subsection}{\numberline {5.0.2}R-Precision}{19}{subsection.5.0.2}%
-\contentsline {chapter}{\numberline {6}Results and Discussion}{20}{chapter.6}%
-\contentsline {subsection}{\numberline {6.0.1}R-Precision Values}{20}{subsection.6.0.1}%
-\contentsline {subsection}{\numberline {6.0.2}Varying input set length}{21}{subsection.6.0.2}%
-\contentsline {chapter}{\numberline {7}Further Work}{24}{chapter.7}%
-\contentsline {subsection}{\numberline {7.0.1}Recommended Song Clicks}{25}{subsection.7.0.1}%
-\contentsline {subsection}{\numberline {7.0.2}Spotify Features}{25}{subsection.7.0.2}%
-\contentsline {chapter}{\numberline {8}Conclusions}{26}{chapter.8}%
+\contentsline {chapter}{\numberline {5}Application}{16}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Data set}{16}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Initial Suggestions}{16}{subsection.5.0.2}%
+\contentsline {subsection}{\numberline {5.0.3}Final Suggestions}{17}{subsection.5.0.3}%
+\contentsline {chapter}{\numberline {6}Experiment}{19}{chapter.6}%
+\contentsline {subsection}{\numberline {6.0.1}R-Precision}{20}{subsection.6.0.1}%
+\contentsline {subsection}{\numberline {6.0.2}Preparing Evaluation Set}{20}{subsection.6.0.2}%
+\contentsline {subsection}{\numberline {6.0.3}Experiment Variables}{22}{subsection.6.0.3}%
+\contentsline {chapter}{\numberline {7}Results and Discussion}{23}{chapter.7}%
+\contentsline {subsection}{\numberline {7.0.1}Varying input set length}{24}{subsection.7.0.1}%
+\contentsline {subsection}{\numberline {7.0.2}Comparing with industry standard models}{26}{subsection.7.0.2}%
+\contentsline {chapter}{\numberline {8}Further Work}{27}{chapter.8}%
+\contentsline {subsection}{\numberline {8.0.1}Recommended Song Clicks}{28}{subsection.8.0.1}%
+\contentsline {subsection}{\numberline {8.0.2}Spotify Features}{28}{subsection.8.0.2}%
+\contentsline {chapter}{\numberline {9}Conclusions}{29}{chapter.9}%
 \renewcommand {\cftchappresnum }{Appendix~}
 \addtolength {\cftchapnumwidth }{1em}

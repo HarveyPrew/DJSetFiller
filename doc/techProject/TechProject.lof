@@ -8,15 +8,17 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Matrix showing given ratings. \citep {celma_recommendation_2010}\relax }}{5}{figure.caption.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Application flow of the application\relax }}{16}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Screenshot of spotify challenge set. \citep {aicrowd_aicrowd_2023}\relax }}{18}{figure.caption.14}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Application flow of the creation of the evaluation set\relax }}{19}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Table showing a DJ Set in the dataset\relax }}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Application flow of the application\relax }}{17}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Scatter graph of average r-precision values with different latent factors\relax }}{21}{figure.caption.16}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Scatter graph of r-precision values latent factors as 80\relax }}{22}{figure.caption.17}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Scatter graph of r-precision values with latent factors as 80 pulling from larger DJ sets\relax }}{22}{figure.caption.18}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Top 10 Teams for RecSys 2018 and there given scores\relax }}{23}{figure.caption.19}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Screenshot of spotify challenge set. \citep {aicrowd_aicrowd_2023}\relax }}{20}{figure.caption.15}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Application flow of the creation of the evaluation set\relax }}{21}{figure.caption.16}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Scatter graph of average r-precision values with different latent factors\relax }}{24}{figure.caption.17}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Scatter graph of r-precision values latent factors as 80\relax }}{25}{figure.caption.18}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Scatter graph of r-precision values with latent factors as 80 pulling from larger DJ sets\relax }}{25}{figure.caption.19}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Top 10 Teams for RecSys 2018 and there given scores\relax }}{26}{figure.caption.20}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces This is also in the LoF}}{27}{figure.caption.20}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces This is also in the LoF}}{30}{figure.caption.21}%
