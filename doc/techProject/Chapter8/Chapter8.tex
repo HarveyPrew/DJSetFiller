@@ -4,30 +4,74 @@
 
 \chapter{Conclusions}
 
-Yoo whats happening.
+In Chapter 1 it was identified that a DJ set made dataset could provide better song recommendations to DJ-Set centric genres compared to industry standard models. Research in this field is limited, so a simple recommendation model built around a dataset fount on mixesDB was made and an investigation on its quality was conducted. The following research questions were proposed:
 
+\begin{enumerate}
+	\item \textit{What are effective methods for the automated recommendation of songs suitable
+		for adding to a given DJ set}
+	\item \textit{Is the proposed method a suitable solution to the above question?}
+	\item \textit{Can this application be further developed to solve other DJ tasks?}
+\end{enumerate}
 
+Chapter 2 answered Question 1 by establishing how recommendation systems worked, and the Diversity issue that baseline music recommendation systems struggle with. Chapter 3 answered Question 3 by analysing machine learning and deep learning advances and how it can be beneficial within the world of DJing. 
 
-\begin{figure}
-\centering
-\setlength{\unitlength}{2.4cm}
-\begin{picture}(5,4)
-\thicklines
-\put(1,0.5){\line(2,1){3}}
-\put(4,2){\line(-2,1){2}}
-\put(2,3){\line(-2,-5){1}}
-\put(0.7,0.3){$A$}
-\put(4.05,1.9){$B$}
-\put(1.7,2.95){$C$}
-\put(3.1,2.5){$a$}
-\put(1.3,1.7){$b$}
-\put(2.5,1.05){$c$}
-\put(0.3,3.5){$F=\sqrt{s(s-a)(s-b)(s-c)}$}
-\put(3.5,0.4){$\displaystyle
-s:=\frac{a+b+c}{2}$}
-\end{picture}
-\caption[This is also in the LoF]{This is a really really really really really really really really really really really really really really long caption. Well actually, it's not that long; two sentences seems quite reasonable.} 
-\label{fig:figure2}
-\end{figure}
+Chapter 4 then presents a Hypothesis that is drawn from the gaps in knowledge found in Chapter 1 and 2. Chapter 5 then presents an overview on how the proposed application works. Chapter 6 then answers the second research question through an experiment. Chapter 7 discusses the results, and chapter 8 discusses how the work can be taken futher.
+
+Section 8.1 will provide a summary on how each of the chapters answered the research questions.
+Section 8.2 will highlight the results found in and how it relates to the research questions proposed. Section 8.3 will describe the use of these results within the world of  recommendation systems and DJing. Section 8.4 will discuss the limitations of
+this  study and  further work that could be completed is suggested.
+
+\subsection{Findings of each chapter}
+The section summarieses how each chapter answers the research questions.
+
+Chapter 2 analysesd literature in regards to application systems and music taste to answer the follwing question: 
+
+\textit{What are effective methods for the automated recommendation of songs suitable
+	for adding to a given DJ set}
+
+It was concluded that despite advancements in deep learning has aided music recommendation systems, people with diverse music would often still find music in non-algoirthmic ways. And a dataset that borrowed specifically from listners with a diverse music taste has not been explored.
+
+The hypothesis goes onto highlight how this a problem that affects DJs specifically, and looked at ways of using industry standard models and draw the negative and positives.
+
+Chapter 3 then examines studys in machine learning to answer the research question:
+\\
+\\
+\textit{Can this application be further developed to solve other DJ tasks?}
+\\
+
+It goes onto discuss how advancements in source separation, classification and automatic mixing can be beneifited in the world of DJing, but theres a gap in research for recommendation systems aimed specifically at DJing.
+
+Once the gap in research was fully stated. An overview on how the proposed system was made. It's described how its built upon the work done by Daniel Chow to create a system that will work for a whole DJ sets, instead of just a single song. It's also explained how it should give more refined choice due to the use of audio features provided by the Spotify API. A few examples of DJ sets were inputted with a brief description on the findings as well as links provided.
+
+\subsection{Main Findings of the study}
+
+This section will go over the main discoveries of the paper and how it answers each of the research questions.
+
+\begin{enumerate}
+	\item \textit{What are effective methods for the automated recommendation of songs suitable
+		for adding to a given DJ set}
+\end{enumerate}
+
+As stated the most affective method would be to use the Spotify playlist continuer or the SoundCloud method, due to the performance of the proposed method not performing well on the given experiment. 
+
+\begin{enumerate}
+	\item \textit{Is the proposed method a suitable solution to the above question?}
+\end{enumerate}
+
+This question was answered with an experiment for calculating the models best R-Precision value and it was then compared with industry standard models. The optimal latent factor value was found initially and exploring whether larger DJ sets would work better with the model was done. It was concluded that working with larger DJ sets hindered the R-Precision value and when compared to competing models, it scored significantly lower. With the convention being nearly 5 years later, the proposed system would certainly not compete with technology currently used by companies like Spotify. However, with many areas of the experiment that could be improved, further research should still be explored around providing a use of an automated recommendation system specifically DJ Sets.
+
+\begin{enumerate}
+	\item \textit{Can this application be further developed to solve other DJ tasks?}
+\end{enumerate}
+
+Despite scoring low, the investigation provides insight on how using a concentrated dataset could better cater to specific audiences. A further developed update on this dataset could be beneficial in other areas of DJing as well. This only appears on a handful of mixes, but a time code along with the set list could provide the foundations for a very helpful DJ tool. The act of a user inputting a song, and be able to hear instances of that song getting mixed in and out of could help speed up the learning process when they immediately have an audio reference of effective mixing. One hope further research is done into the large extent of DJ sets available on the internet to alleviate barriers of difficulty to make DJing a more accessible pass time. 
+
+\subsection{Implications}
+This section will describe the implications of the data found in this investigation, with regard to the
+wider context of music recommendation systems and DJing.
+
+In the context of music recommendation systems, the data found is insignificant, but hopefully it will start a conversation around using focussed datasets to train algorithms aimed at certain audiences. This could potentially draw in audiences with an objectively diverse taste to find music in an algorithmic way.
+
+In the context of DJing the results also are nothing to behold. However, similar to the comment made about MRS, one hopes with the mass amount of data on the internet surrounding DJ sets, it will be made us of to algorithmically automate aspects surrounding the art, and to make the act of DJing more approachable to new comers. 
 
 % note that \Blindocument has 5 numbered levels, despite setting secnumdepth above. I (and many style guides) would suggest using no more than 3 numbered levels (incl. the chapter), with the option of a fourth unnumbered level.

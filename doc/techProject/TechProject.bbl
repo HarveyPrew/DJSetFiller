@@ -1,4 +1,4 @@
-\begin{thebibliography}{71}
+\begin{thebibliography}{72}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -292,6 +292,10 @@ Rentfrow, P.~J. and Gosling, S.~D. (2003): \enquote{The do re mi's of everyday
   \textit{Journal of Personality and Social Psychology}, 84, pp.\ignorespaces
   1236--1256, \doi{10.1037/0022-3514.84.6.1236}. Place: US Publisher: American
   Psychological Association.
+
+\bibitem[{Reynolds(2013)}]{reynolds_energy_2013}
+Reynolds, S. (2013): \textit{Energy {Flash}: {A} {Journey} {Through} {Rave}
+  {Music} and {Dance} {Culture}}, Faber \& Faber, main edition edn.
 
 \bibitem[{Ribecky et~al.(2021)Ribecky, Abeßer, and
   Lukashevich}]{ribecky_multi-input_2021}

@@ -22,7 +22,7 @@ def test_find_db_exists():
 
 def test_size_is_found():
     matrixSize, num_songs, sparsity = matrix_size(
-        read_data_set("data/reduced/dataset_reduced.csv")
+        read_data_set("data/new_dataset2.csv")
     )
 
     assert matrixSize == 54
