@@ -72,12 +72,38 @@ For finding the vectors with the smallest distance between the mean input, this 
 \end{figure}
 
 \subsection{Example Findings}
-To demonstrate the application in a non methodical way. A variety of DJ Set tracklists corresponding to different genres were used as inputs for the application. and spotify playlists of these recommendations can be found below.  Three different DJ sets: were used.
+To demonstrate the application in a non methodical way. A variety of DJ Set tracklists corresponding to different genres were used as inputs for the application. and spotify playlists of these recommendations can be found below.  Three different DJ sets were used.
+
+\begin{itemize}
+	\item \textbf{Rory Bowens, PLO Man, C3D-E, Brian Not Brian - The Slip, NTS Radio: } 
+	\begin{itemize}
+		\item \textbf{Genre:} New wave \& House
+		\item \textbf{Tracks available:} 3/21
+	\end{itemize}
+	\item \textbf{Moxie, Shanti Celeste, Chris Farrell - NTS Radio: } 
+	\begin{itemize}
+		\item \textbf{Genre:} Tech-House
+		\item \textbf{Tracks available:} 10/28
+	\end{itemize}
+	\item \textbf{Chimpo b2b L U C Y @ Keep Hush Live: Sherelle Presents:}
+	\begin{itemize}
+		\item \textbf{Genre:} Jungle \& Breaks
+		\item \textbf{Tracks available:} 8/21
+	\end{itemize}
+	
+\end{itemize}
+
+
+When going through the recommended songs, the BPMs of the output songs were observed to see if they were around the same range as the input songs. The songs were listened to see if stylistically they were similar to the input songs, and the source of the recommended songs were also observed.
+
+The Slip set performed okay. Expectations were low due to the small amount of tracks available. Two of them had a House style to them and one was Indie. The output songs were all house songs and none matched stylistically to the one indie song. However, all the BPM's were in a similar range around 110-120 BPM. The Moxie set performed very well. The input songs were all Tech-House songs which had a bit of a strange vibe and the output songs were that as well as some more disco centric tunes. BPM's were all very similar as well. The Keep Hush set also performed well. The BPM ranges were similar to the input songs and stylistically matched the input songs well. All the suggested tunes did not come from an eclectic mix of DJ Sets or DJs, in each batch of suggestions youd see songs either from the same mix or the same DJ. This is most likely due to the sparsity of the dataset. Links to each input and recommended DJ set can be found in the appendix.
+
+The intent of displaying this is more to show the application in action rather than dissecting the quality of its performance which is analysed in the Experiment chapter. A table of the input and recommended songs for the Moxi DJ set is shown below, and links to spotify playlists of the other two are provided
 
 \begin{center}
 	\begin{tabular}{ |c|} 
 		\hline
-		Moxie, Shanti Celeste, Chris Farrell - NTS Radio\\ 
+		\textbf{Moxie, Shanti Celeste, Chris Farrell - NTS Radio}\\ 
 		\hline \textbf{Input Songs}\\ 
 		\hline Escape Earth \textit{Gravity Well} \\ 
 		\hline Priori \textit{6thematic }\\
@@ -99,55 +125,24 @@ To demonstrate the application in a non methodical way. A variety of DJ Set trac
 		\hline Ian Pooley \textit{Swing Mode}\\
 		\hline Hashin \textit{Al-Naafyish (The Soul) - The "It's" About "Time" Remix}\\
 		\hline Synkro \textit{Look at Yourself}\\
-		\hline Awanto 3 \textit{Pregnant}\\
+		\hline Kapote \textit{Uhh Baby - Brame \& Hamo Remix}\\
 		\hline
 	\end{tabular}
 \end{center}
 
-\begin{tabular}{ |p{3cm}|}
-	\hline
-	\multicolumn{1}{|c|}{Moxie, Shanti Celeste, Chris Farrell - NTS Radio:} \\
-	\hline
-	\textbf{Input Songs}\\
-	\hline
-	Escape Earth - Gravity Well \\
-	Priori - 6thematic\\
-	Albania \\
-	Algeria \\
-	American Samoa\\
-	Andorra\\
-	Angola\\
-	\hline
-\end{tabular}
+\begin{center}
+	\begin{tabular}{ |c|} 
+		\hline
+		\textbf{Chimpo b2b L U C Y @ Keep Hush Live: Sherelle Presents:}\\ 
+		\hline \href{https://open.spotify.com/playlist/5bY204xBviDYYDBZQFHj6D?si=f6571fedce8f40c8}{Input Songs}\\
+		\hline \href{https://open.spotify.com/playlist/0a4NB3IakYdbjNZlUWrEPd?si=b6660a4adf1f4183}{Recommended Songs}\\
+		\hline \textbf{Rory Bowens, PLO Man, C3D-E, Brian Not Brian - The Slip, NTS Radio}\\ 
+		\hline \href{https://open.spotify.com/playlist/0i4DAcdhMWRwNui9dHnb1i?si=7ea9e25236d84162}{Input Songs}\\
+		\hline \href{https://open.spotify.com/playlist/3SMcwF0GxUtV4LuXKmvypt?si=6c0b136d8a104f80}{Recommended Songs}\\
+		\hline
+	\end{tabular}
+\end{center}
 
-\begin{itemize}
-	\item \textbf{Rory Bowens, PLO Man, C3D-E, Brian Not Brian - The Slip, NTS Radio: } 
-	\begin{itemize}
-		\item \textbf{Genre:} New wave \& House
-		\item \textbf{Tracks available:} 3/21
-		\item \textbf{Input Link:} \hyperlink{sdsd}{https://open.spotify.com/playlist/0i4DAcdhMWRwNui9dHnb1i?si=7acf6675d5c448cf}
-		\item \textbf{Output Link:} 3/21
-	\end{itemize}
-	\item \textbf{Moxie, Shanti Celeste, Chris Farrell - NTS Radio: } 
-	\begin{itemize}
-		\item \textbf{Genre:} Tech-House
-		\item \textbf{Tracks available:} 10/28
-		\item \textbf{Input Link:} 3/21
-		\item \textbf{Output Link:} 3/21
-	\end{itemize}
-	\item \textbf{Chimpo b2b L U C Y @ Keep Hush Live: Sherelle Presents:}
-	\begin{itemize}
-		\item \textbf{Genre:} Jungle \& Breaks
-		\item \textbf{Tracks available:} 8/
-		\item \textbf{Input Link:} 3/21
-		\item \textbf{Output Link:} 3/21
-	\end{itemize}
-	
-\end{itemize}
+\hyperbaseurl{https://open.spotify.com/playlist/5bY204xBviDYYDBZQFHj6D?si=164dde327256421d}
 
-When going through the recommended songs, the BPMs of the output songs were observed to see if they were around the same range as the input songs. The songs were listened to see if stylistically they were similar to the input songs, and the source of the recommended songs were also observed.
-
-The Slip set performed okay. Expectations were low due to the small amount of tracks available. Two of them had a House style to them and one was Indie. The output songs were all house songs and none matched stylistically to the one indie song. However, all the BPM's were in a similar range around 110-120 BPM. The Moxie set performed very well. The input songs were all Tech-House songs which had a bit of a strange vibe and the output songs were that as well as some more disco centric tunes. BPM's were all very similar as well. The Keep Hush set also performed well. The BPM ranges were similar to the input songs and stylistically matched the input songs well. All the suggested tunes did not come from an eclectic mix of DJ Sets or DJs, in each batch of suggestions youd see songs either from the same mix or the same DJ. This is most likely due to the sparsity of the dataset. Links to each input and recommended DJ set can be found in the appendix.
-
-The intent of displaying this is more to show the application in action rather than dissecting the quality of its performance which is analysed in the Experiment chapter.
 
