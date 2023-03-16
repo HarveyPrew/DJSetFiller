@@ -50,9 +50,10 @@ Collaborative filtering can be divided into the following types:
 
 \subsection{Explicit Feedback}
 
-\textit{Ringo} and many of the first music recommendation systems that use collaborative filtering uses explicit feedback for its data. Explicit feedback is when the system asks a user for some form of measurement about the likeability of said product. \citep{celma_recommendation_2010}
+\textit{Ringo} and many of the first music recommendation systems that use collaborative filtering uses explicit feedback for its data. Explicit feedback is when the system asks a user for some form of measurement about the likeability of said product. \citep{celma_recommendation_2010}. \textbf{\textit{TODO - Make less similar}}
 
 An example of explicit feedback being used is in the RACOFI (Rule-Applying Collaborative Filtering) system. Ratings are used to find recommendations through collaborative filtering and then the system applies logic rules to decipher the most suitable recommendations further \citep{anderson_racofi_2003}. Its added logic rules implicitly changes the user's previous ratings. Other recommendation systems started having similar rules including \textit{Indiscover} and Slope One \citep{celma_music_2010} \citep{lemire_slope_2007}.
+\textbf{\textit{TODO - Make less similar}}
 
 \subsection{Implicit Feedback}
 
@@ -78,19 +79,19 @@ There are many ways to calculate how similar two items, examples being cosine si
 		sim(i , j) = cos( \textbf{i}, \textbf{j} ) = \frac{ \textbf{ i }, \textbf{ j }}{ || i || * || j || } = \frac{ \sum_{ u \in U } r_{ u, i }, r_{ u, j }} { \sqrt{ \sum _{  u \in U } r^{2}_{ u , i}} \sqrt{ \sum _{  u \in U } r^{2}_{ u , j}}}
 \end{equation}
 
-Cosine similarity is not advised when comparing how similar recommendations are because users often have their own personal ranges when it comes to rating. Adjusted cosine similarity is good because it makes use of the users average ratings when deciphering similarities, the equation for adjusted cosine similarity is shown below.
+Cosine similarity is not advised for comparing how similar recommendations are because users often have their own personal ranges when it comes to rating. Adjusted cosine similarity is good because it makes use of the users average ratings when deciphering similarities, the equation for adjusted cosine similarity is shown below \textbf{\textit{TODO - Find a reference + Describe how it works}}.
 
 \begin{equation}
 	sim(i , j) = \frac{ \sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} ) ( r _{ u, j} - \bar{r} _{u} ) } { \sqrt{\sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} )^2} \sqrt{\sum_{ u \in U } ( r _{ u, j } - \bar{r} _{u} )^2}}
 \end{equation}
 
-Pearson correlation gives a coefficient value from 1 to -1, 1 showing strong correlation with a positive gradient, and -1 display effective correlation with a negative change.
+Pearson correlation gives a coefficient value from 1 to -1, 1 showing strong correlation with a positive gradient, and -1 shows strong correlation with a negative change. \textbf{\textit{TODO - find out or lose it}}
 
 \begin{equation}
 	sim(i , j) = \frac{ Cov( i, j) }{ \sigma _{i} \sigma _{j} } = \frac{ \sum _{ u \in U} ( r _{ u, i } - \bar{r} _{u} ) ( r _{ u, j} - \bar{r} _{u} ) } { \sqrt{\sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} )^2} \sqrt{\sum_{ u \in U } ( r _{ u, j } - \bar{r} _{u} )^2}}
 \end{equation}
 
-After the similarities are calculated, the next step is to predict how the user would rate the item in question. A way of doing this is calculated a weighted sum of the users previous item ratings. Allowing $ S^{k}(i;u)$ to equal the list of items i user u has rated, equation below shows how the predicted value is found.
+After the similarities are calculated, the next step is to predict how the user would rate the item in question. A way of doing this is to calculate a weighted sum of the user's previous item ratings. Allowing $ S^{k}(i;u)$ to equal the list of items i user u has rated, the equation below shows how the predicted value is found. \textbf{\textit{TODO - Whats happening}}
 
 \begin{equation}
 	\hat{r} _{u,i} = \frac{ \sum _{ j \in S^{k}(i;u)} sim(i , j) r _{u, j}}{\sum _{j \in S^{k}(i;u)} sim(i , j)}
@@ -101,7 +102,7 @@ After the similarities are calculated, the next step is to predict how the user 
 
 \subsection{User Based}
 
-User-Based Neighbourhood is when you look users who rate similar to see whether item i is similar to user u. Below shows an equation similar to the one above but instead we look through a list similar users.
+User-Based Neighbourhood is when you look for users who rate similar to see whether item i is similar to user u. Below shows an equation similar to the one above but instead we look through a list similar users.
 
 \begin{equation}
 	\hat{r} _{u,i} = \bar{r}_{u} + \frac{ \sum _{v \in S(u)^{k}} sim(u ,v) ( r_{v, i} - \bar{r}_{v})}{\sum _{v \in S(u)^{k}} sim(u , v)}
@@ -109,13 +110,21 @@ User-Based Neighbourhood is when you look users who rate similar to see whether 
 
 For one to calculate $sim(u , v)$, you'd use Pearson Correlation, Cosine similarity or matrix factorisation.
 
-Item based is when the system predict rating of user u for item i rooted from ratings of u for similar items to i. Similarity between two items are affirmed when multiple users rate them alike.
+Item based is when the system predict rating of user u for item i rooted from ratings of u for similar items to i. Similarity between two items are affirmed when multiple users rate them alike. \textbf{\textit{TODO - Make 2 sentences simpler to understand + Highlight difference in item based and user based better}}
 
+
+\textbf{\textit{TODO - Redo this}}
 \subsection{Matrix Factorisation}
 
-Matrix factorisation is when you take a sparse matrix and instead of storing each rating for each user, you store features that when multiplied can calculate the rating of said item by said user.
+\textbf{\textit{TODO - State what the problem is, whats in the matrix and what is a sparse matrix}}
 
-This is really useful for a sparse matrix, which is usually the case for most recommendation systems, because it shows information that the matrix alone doesnt. Because it factorises the users ratings from features, you can see trends on what groups of users likes and doesnt like. Because it reducing the dimensionality of a given matrix, matrix factorisation requires less processing power than other methods of finding similar items. 
+Matrix factorisation is when you take a sparse matrix and instead of storing each rating for each user, you store features that when multiplied together can calculate the rating of an item by a user.
+
+\textbf{\textit{TODO - Explain what features are}}
+
+This is really useful for a sparse matrix, which is usually the case for most recommendation systems, because it shows information that the matrix alone doesnt. Because it factorises the users ratings from features, you can see trends on what groups of users likes and doesnt like. Because it reduces the dimensionality of a given matrix, matrix factorisation requires less processing power than other methods of finding similar items. 
+
+\textbf{\textit{TODO - Explain to 5 year old, use simple language}}
 
 There are different ways of factorising a matrix. An example of one is Singular Value Decomposition (SVD). Heres the equation with U and V being the number of matrices for a given amount dimensions:
 
@@ -134,20 +143,24 @@ When the matrix is split up, the predicted rating can be calculated from the use
 Looking at the latent factors one can find  similar items using a cosine similarity.
 
 \subsection{Limitations}
-Despite being popular, there are a number of reasons why wouldn't use Collaborative filtering.
+Despite its popularity, Collaborative filtering has limitations as a recommendation method.
 
 \textbf{Sparse Data - }Not every user has listened to every song, far from it. This means in data sets, having a sparsity of around 98-99 \% is very common.
 
-\textbf{Grey sheep - }This is when a user has a unique taste not similar to a lot of other users, making it hard to stem recommendation's from. This a common problem with datasets that are very sparse \citep{claypool_combining_1999}.
+\textbf{Grey sheep - }This is when a user has a unique taste that is dissimilar to most other users, making it hard to stem recommendation's from. This is a common problem with datasets that are very sparse \citep{claypool_combining_1999}.
 
-\textbf{Cold Start - } When there is new users or items, theres little data associated with them so it makes it challanging to come up with suitable mendations based on either the said user or item. The term cold start refers to new items and the term refered to new users is called early raters \citep{avery_recommender_1997}.
+\textbf{Cold Start and Early Raters - } The term cold start refers to new items and the term referred to new users is called early raters \citep{avery_recommender_1997}. When there are new users or items, there is little data associated with them so it is challenging to come up with suitable recommendations based on either the user or item. 
 
-\textbf{Popularity Bias - } Another problem with Collaborative Filtering doesnt take into account any information about the item, only users interactions with it. This means that it has a bias towards popular items.
+\textbf{Popularity Bias - } Collaborative Filtering does not take into account information about the item, only user interactions with it. This means that it has a bias towards popular items.
 
-\textbf{Feedback loops - } When users interact with items that are recommended through CF, based on previous user item interactions, it strengthens the initial recommendations more and creates a loop \citep{sanchez-moreno_incorporating_2018}.
+\textbf{\textit{TO DO- Sort casing}}
+
+\textbf{Feedback loops - } When users interact with items that are recommended through Collaborative Filtering, based on previous user item interactions, it strengthens the initial recommendations more and creates a loop \citep{sanchez-moreno_incorporating_2018}.
 
 
-For neighbourhood-based, recommendation can either be user-based or item-based. The Ringo system is a good example of user based recommendation's, where it assesses the taste of a user for an item using the ratings of the item from different users. These users with similar rating trends are called neighbours. 
+\textbf{\textit{TO DO- Move back or delete}}
+
+For neighbourhood-based, recommendations can either be user-based or item-based. The Ringo system is a good example of user based recommendation's, where it assesses the taste of a user for an item using the ratings of the item from different users. These users with similar rating trends are called neighbours. 
 
 \textbf{Talk about latest music mendation system that uses it (recsys one)}
 \section{Content Based Filtering}

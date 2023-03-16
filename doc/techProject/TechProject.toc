@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {2.2.4}User Based}{6}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}Matrix Factorisation}{6}{subsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.2.6}Limitations}{7}{subsection.2.2.6}%
-\contentsline {section}{\numberline {2.3}Content Based Filtering}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Content Based Filtering}{8}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Limitations}{9}{subsection.2.3.1}%
 \contentsline {section}{\numberline {2.4}Diversity issue}{9}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Machine Learning used for DJing}{11}{chapter.3}%
