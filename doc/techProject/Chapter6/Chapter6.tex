@@ -1,66 +1,60 @@
 % !TEX root = ../TechProject.tex
 
-\graphicspath{{Chapter6/}}
+\graphicspath{{Chapter5/}}
 
-\chapter{Results and Discussion}
 
-This chapter provides analysis and discussion of the results from the experiment described
-in Chapter 5. The experiment sought to answer the question presented in Chapter 4.
+\chapter{Experiment}
+
+
+As explained in the hypothesis. a music recommendation system that uses MixesDB as a dataset was made. An experiment was ran to see if it garners appropriate results, and will help answer the following question:
 \\
 \\
 \textit{Is the proposed method a suitable solution to automate recommendations of songs suitable for adding to a given DJ set?}.
 \\
 
-Chapter 6.1 will present the appropriate latent factors to use on the dataset. Chapter 6.2 explores if varying the input DJ Set tracklist lengths could also improve the models R-Precision value.
+To evaluate the quality of a recommendation system, R-Precision is often used as a performance metric. 
+\\
 
-The following controlled variable was the list of DJ sets and the independent variable was the latent factors for making the ALS model. In the medium article, Chow used 50 latent factors \citep{chow_music_2020}. This was used as a reference point to make the range from 20 - 110 latent factors to experiment on.
+\section{R-Precision}
 
-The results indicate the performance of alternating least squares (ALS) algorithm in recommending items based on different number of latent factors. The average R-precision, a measure of the relevancy of recommended items to the user, was used to evaluate the algorithm's effectiveness across different latent factors.
+\begin{equation}
+	R-Precision = \frac{|G\cap R_{1:|G|}|}{|G|}
+\end{equation}
+\\\\
+The R-precision is the amount of found tracks that were originally in the mix divided by the number of known missing tracks.
 
-Figure 6.1 shows a scatter graph of the average R-precision over different latent factors. The analysis shows that the performance of the application varies significantly with the number of latent factors used. The highest average r-precision of 0.1207 was obtained when 80 latent factors were used, while the lowest value of 0.0774 was obtained when only 20 latent factors were used. However, the performance of the algorithm was not monotonically increasing or decreasing with the number of latent factors. For instance, there was a slight increase in average r-precision from 40 to 70 latent factors, but a decrease from 50 to 60 latent factors.. From 90 to 100 we see a significant decrease in the average r-value, which suggests that over-fitting is occurring.
+The idea for the testing came from the million playlist dataset from Spotify  that was used for the 2018 Recsys Convention\citep{aicrowd_aicrowd_2023}. At this convention, competing teams would make a recommendation system out of the dataset. To tests its quality, a challenge dataset, which contained many modified playlists, was used to test the models.
+
+It is important to note that there is a considerable difference in the number of DJ sets/playlists between the MixesDB dataset and the Spotify one. The MixesDB dataset contains over 9800 DJ sets, while the Spotify dataset contains 1,000,000 playlists. It is also essential to discuss the differences in definition of a playlist and a DJ set. A playlist being a collection of songs, regardless of cohesion or song count, while a DJ set is typically a seamless mix of songs that can vary in length from 8 hours to no less than 20 minutes.
+
+The top 10 scoring models from the convention have R-Precision values ranging from 0.21 to 0.22. Given the differences in dataset size and task, aiming for an average R-Precision value of 0.171, slightly lower than the top-performing models, would be appropriate. Achieving this value would rank the model within the top 30 models trained by members of the public on the given spotify dataset \citep{aicrowd_aicrowd_2023}. This approach allows for a fair comparison between the different systems and considers the unique characteristics of the dataset and task at hand. 
+
+As the dataset utilized with the proposed model was obtained from MixesDB, it was necessary to devise a customized approach for the preparation of the evaluation set.
+
+\section{Preparing Evaluation Set}
+During the evaluation phase of the million playlist challenge, the quality of a given applications trained on this dataset was assessed through a range of methods that involved analysing both missing and recommended songs. In order to effectively compare different applications, it was essential to create a standardised evaluation set that incorporated aspects of the Spotify data set, which could show the applications that can recommend songs that were featured in the playlists originally.
 
 \begin{figure}[H]
-	\includegraphics[scale=0.6]{images/average_r_over_latent}
+	\includegraphics[scale=0.5]{images/spotify_challenge_set}
 	\centering
-	\caption{Scatter graph of average r-precision values with different latent factors} 
+	\caption{Screenshot of spotify challenge set. \citep{aicrowd_aicrowd_2023}} 
 \end{figure}
 
-The results suggest that selecting an appropriate number of latent factors is crucial for the performance of ALS algorithm. Using too few latent factors can lead to poor recommendations, while using too many can lead to overfitting and poor generalization. Therefore, it is important to strike a balance between the number of latent factors and the algorithm's performance. Overall, the study provides insights into the performance of ALS algorithm with varying number of latent factors and highlights the importance of selecting the optimal number of factors for effective recommendation.
+The Spotify challenge set consisted of 10,000 playlists with varying numbers of input songs, ranging from 0 to 100 tracks. For each of these playlists, Spotify requested 500 track recommendations from the participating teams \citep{aicrowd_aicrowd_2023}. However, due to the relatively smaller scale of the dataset and difference between playlists and DJ sets under consideration, various aspects of this challenge set had to be downscaled to maintain the academic rigour of the study. For instance, the range of input songs was considerably narrower, as DJ sets typically have a minimum length of 10 tracks, compared to playlists that can have varying lengths.
 
-\subsection{Varying input set length}
-Given that an optimal latent factor value of 80 was determined, it is worth exploring whether the number of input songs has an impact on the r-precision. Increasing the size of the input set could potentially lead to enhancements in the accuracy of the model. The independent variable in this section is the evaluation set parameters and the dependent variable is the average r-precision value.
+To ensure the feasibility of finding all songs in the evaluation set, an additional criterion was applied, whereby each song had to have a total play count of at least 5. This value was chosen to ensure that each song in the set would likely be found in the training set. Furthermore, the input and missing songs were divided in a standardized manner, with 20\% of the songs allocated as missing songs, and the remaining 80\% as input songs. Overall, the creation of the evaluation set was a crucial aspect of the study, ensuring that the assessment of the applications was based on a consistent and standardized evaluation framework. The output value for the application was also changed to 100 work better with the smaller dataset.
 
-In Figure 6.2, a scatter graph illustrates the r-precision values of each DJ set when the number of latent factors was set to 80. The graph reveals that the majority of the sets scored a value of zero, indicating that the recommendation system did not perform well for these sets. The highest score observed was 0.8, which suggests that the system provided a reasonably accurate recommendation for that particular set.
-
-However, as the number of input songs in the DJ sets increased beyond 30, there were relatively fewer results available, but none of the DJ sets had an r-precision value of zero. This finding suggests that the recommendation system improved in its ability to provide accurate recommendations for sets with a larger number of input songs.
-
+The making of the evaluation set was coded in python using the pandas library, the code for this can be found on GitHub\footnote{\url{https://github.com/HarveyPrew/DJSetFiller/blob/main/src/DJSetFiller/prepare_evaluation_set.py}}.
+\\
 \begin{figure}[H]
-	\includegraphics[scale=0.6]{images/80_little_sets}
+	\includegraphics[scale=0.1]{images/evaluation_set_app_flow}
 	\centering
-	\caption{Scatter graph of r-precision values latent factors as 80} 
+	\caption{Application flow of the creation of the evaluation set} 
 \end{figure}
 
+\section{Experiment Variables}
 
-When observing the changes in latent factors, the evaluation set was pulling from DJ sets that had 10 songs or more, and to include sets where each song has a total play count greater than 5. To  focus in on larger DJ sets, the total play count was lowered to 2 and then filtering on just DJ sets with over 20 songs.
+As mentioned in chapter 5, the proposed application utilizes the ALS algorithm to generate a preliminary set of suggestions. This algorithm is based on matrix factorization, where the latent factors are derived from the training dataset to identify similar songs. The selection of an appropriate value for latent factors is crucial in ensuring the optimal performance of the algorithm. A value that is too low may yield results that are too random, while a value that is too high may lead to an excessive focus on specific items. To identify the ideal value for latent factors, it is necessary to conduct an  investigation where the latent factors will be the independent variable, and the average R-precision value will be the dependent variable. Furthermore, an examination on how changes to the parameters of the evaluation set, particularly larger DJ sets, impact the R-Precision value. From there, the R-precision value  is then compared to the highest performing recommendation systems that use the Spotify Dataset, to see if the DJ set focused recommender can compare to industry standard algorithms.
 
-The study conducted an investigation on the impact of input set size on r-precision values using a latent factor value of 80. The results were presented in Figure 6.3, revealing that the majority of DJ sets had an r-precision value of zero, with no significant increase in precision, even with an increased amount of input songs. The highest r-precision value observed in this scenario was 0.6, and the average r-precision value was measured at 0.0865, suggesting that the application does not achieve higher levels of accuracy with an increase in input set size. These findings highlight the limited impact of larger input sets on the overall performance of the model.
+The average R-Precision got tested on varying latent factor values, and when the highest was found, the selection of input DJ sets was altered, choosing DJ sets with a higher amount of songs. This was done to further explore what size an input gets the best results. The experiment was ran on a 16GB 2020 MacBookPro.
 
-\begin{figure}[H]
-	\includegraphics[scale=0.6]{images/80_big_sets}
-	\centering
-	\caption{Scatter graph of r-precision values with latent factors as 80 pulling from larger DJ sets} 
-\end{figure}
-
-
-\subsection{Comparing with industry standard models}
-
-The concept of calculating an R-precision value was introduced in the RecSys 2018 Spotify playlist dataset, where participants were tasked with building music recommendation systems for a given playlist. Normalised Discounted Cumulative Gain and Recommended Song Clicks were also used to measure the applications quality. In this regard, Figure 6.4 illustrates the highest-performing teams in the said convention. The maximum average value attained by the application in question was 0.1207, which is significantly lower compared to the top 10 values. The dataset and challenge was eventually made open to the public, and compared to the results found on the leader-board, the application would've ranked 46th. 
-
-It's low ranking suggests that the proposed method is not a suitable solution for finding valid recommendations for a given DJ set, due to the low average r-precision value when a collection of DJ sets were inputted.
-\begin{figure}[H]
-	\hspace*{-1cm} 
-	\includegraphics[scale=0.6]{images/recsys_scores}
-	\caption{Top 10 Teams for RecSys 2018 and there given scores} 
-\end{figure}
-
-% note that \Blindocument has 5 numbered levels, despite setting secnumdepth above. I (and many style guides) would suggest using no more than 3 numbered levels (incl. the chapter), with the option of a fourth unnumbered level.

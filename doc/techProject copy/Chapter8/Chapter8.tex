@@ -1,0 +1,115 @@
+% !TEX root = ../TechProject.tex
+
+\graphicspath{{Chapter7/}}
+
+\chapter{Conclusions and Further Work} 
+
+In Chapter 1 it was identified that a DJ set made dataset could provide better song recommendations to DJ-Set centric genres compared to industry standard models. Research in this field is limited, so a simple recommendation model built around a dataset fount on mixesDB was made and an investigation on its quality was conducted. The following research questions were proposed:
+
+\begin{enumerate}
+	\item \textit{What are effective methods for the automated recommendation of songs suitable
+		for adding to a given DJ set}
+	\item \textit{Is the proposed method a suitable solution to the above question?}
+	\item \textit{Can this application be further developed to solve other DJ tasks?}
+\end{enumerate}
+
+Chapter 2 answered Question 1 by establishing how recommendation systems worked, and the Diversity issue that baseline music recommendation systems struggle with. Chapter 3 answered Question 3 by analysing machine learning and deep learning advances and how it can be beneficial within the world of DJing. 
+
+Chapter 4 then presents a Hypothesis that is drawn from the gaps in knowledge found in Chapter 1 and 2. Chapter 5 then presents an overview on how the proposed application works. Chapter 6 then answers the second research question through an experiment. Chapter 7 discusses the results, and chapter 8 discusses how the work can be taken futher.
+
+Section 8.1 will provide a summary on how each of the chapters answered the research questions.
+Section 8.2 will highlight the results found in and how it relates to the research questions proposed. Section 8.3 will describe the use of these results within the world of  recommendation systems and DJing. Section 8.4 will discuss the limitations of
+this  study and  further work that could be completed is suggested.
+
+\subsection{Findings of each chapter}
+The section summarieses how each chapter answers the research questions.
+
+Chapter 2 analysesd literature in regards to application systems and music taste to answer the follwing question: 
+
+\textit{What are effective methods for the automated recommendation of songs suitable
+	for adding to a given DJ set}
+
+It was concluded that despite advancements in deep learning has aided music recommendation systems, people with diverse music would often still find music in non-algoirthmic ways. And a dataset that borrowed specifically from listners with a diverse music taste has not been explored.
+
+The hypothesis goes onto highlight how this a problem that affects DJs specifically, and looked at ways of using industry standard models and draw the negative and positives.
+
+Chapter 3 then examines studys in machine learning to answer the research question:
+\\
+\\
+\textit{Can this application be further developed to solve other DJ tasks?}
+\\
+
+It goes onto discuss how advancements in source separation, classification and automatic mixing can be beneifited in the world of DJing, but theres a gap in research for recommendation systems aimed specifically at DJing.
+
+Once the gap in research was fully stated. An overview on how the proposed system was made. It's described how its built upon the work done by Daniel Chow to create a system that will work for a whole DJ sets, instead of just a single song. It's also explained how it should give more refined choice due to the use of audio features provided by the Spotify API. A few examples of DJ sets were inputted with a brief description on the findings as well as links provided.
+
+\subsection{Main Findings of the study}
+
+This section will go over the main discoveries of the paper and how it answers each of the research questions.
+
+\begin{enumerate}
+	\item \textit{What are effective methods for the automated recommendation of songs suitable
+		for adding to a given DJ set}
+\end{enumerate}
+
+As stated the most affective method would be to use the Spotify playlist continuer or the SoundCloud method, due to the performance of the proposed method not performing well on the given experiment. 
+
+\begin{enumerate}
+	\item \textit{Is the proposed method a suitable solution to the above question?}
+\end{enumerate}
+
+This question was answered with an experiment for calculating the models best R-Precision value and it was then compared with industry standard models. The optimal latent factor value was found initially and exploring whether larger DJ sets would work better with the model was done. It was concluded that working with larger DJ sets hindered the R-Precision value and when compared to competing models, it scored significantly lower. With the convention being nearly 5 years later, the proposed system would certainly not compete with technology currently used by companies like Spotify. However, with many areas of the experiment that could be improved, further research should still be explored around providing a use of an automated recommendation system specifically DJ Sets.
+
+\begin{enumerate}
+	\item \textit{Can this application be further developed to solve other DJ tasks?}
+\end{enumerate}
+
+Despite scoring low, the investigation provides insight on how using a concentrated dataset could better cater to specific audiences. A further developed update on this dataset could be beneficial in other areas of DJing as well. This only appears on a handful of mixes, but a time code along with the set list could provide the foundations for a very helpful DJ tool. The act of a user inputting a song, and be able to hear instances of that song getting mixed in and out of could help speed up the learning process when they immediately have an audio reference of effective mixing. One hope further research is done into the large extent of DJ sets available on the internet to alleviate barriers of difficulty to make DJing a more accessible pass time. 
+
+\subsection{Implications}
+This section will describe the implications of the data found in this investigation, with regard to the
+wider context of music recommendation systems and DJing.
+
+In the context of music recommendation systems, the data found is insignificant, but hopefully it will start a conversation around using focussed datasets to train algorithms aimed at certain audiences. This could potentially draw in audiences with an objectively diverse taste to find music in an algorithmic way.
+
+In the context of DJing the results also are nothing to behold. However, similar to the comment made about MRS, one hopes with the mass amount of data on the internet surrounding DJ sets, it will be made us of to algorithmically automate aspects surrounding the art, and to make the act of DJing more approachable to new comers. 
+
+\subsection{Further Work}
+
+A recomendation system that pulls from a dataset of exclusively DJ sets was proposed to see whether it gathers more suitable solutions compared to the current industry standard models available. 
+
+The Spotify features play a big role on furthering down the similar songs to limit ones that have the most similar attributes to the input songs, allowing them to be easily incorporated into a DJ set. This proved helpful on cherry picking which were the best songs, however it did limit the scope of the application a fair bit. 
+
+Despite Apple Music, Spotify, and the other leading subscription based streaming platforms having a huge library, there are a lot of songs, especially ones surrounding DJ sets that cannot be found on these platforms. Reasons for this is the elusive nature surrounding sub cultures that incorporates DJing in a significant way. It's very common for some artist to only release content on only physical formats like Vinyl. This is motivated by a fear of opening up there culture to a majority subset, that may risk of tainting a pure experience created from a select number of people. Another reason for this is the cost of sample clearance. More so than other genres (aside from Rap), sampling plays a huge role in dance music. Early instances of DJ-set orientated genres like house and techno were build on incorporating drum machines into old disco and soul records \citep{reynolds_energy_2013}. Favourable stylistic features aside, this creates a problem where the shareholders of the given samples are lawfully given the opportunity to sue a given artists a great sum of money for using there given work without permission. This means a huge amount of DJ set centric genres, pre the Digital Age has had issues being made commercially available, a highly reported instance of this is De La Souls 30 year long quest on gaining back there highly regarded musical output from the late 80's and 90's \citep{saunders_soul_2023}.
+
+This inadvertently hinders the proposed recommendation system because it can only input and suggest songs that are also available on Spotify. Future work can use this website to scrape data from both Spotify and YouTube, which contains a huge amount of fan uploaded songs that aren't available on standard streaming platforms. Scraping data from services like Band-Camp would also help to populate the dataset further. Combining the software used to examine the Spotify features on the given audio from YouTube and other platforms would be beneficial for it to further mirror the proposed system, however doing this would certainly require a huge amount of processing power, which the 2020 16GB MacBook Pro the application was made in would not be able to handle.
+
+A potential option that could've been implemented is for the user to be able to control the recommendation process more than just choosing the input songs. It's believable that there is a scenario where a user would appreciate the initial pool of recommendation just as much as the refined selection.
+
+Despite being objectively outdated in a world where deep learning is the zeitgeist, using collaborative filtering as the basis of the model felt appropriate due to its continued usage in modern systems. The purpose of the experiment was more to see whether a dataset of this context could provide better recommendation than systems that use datasets from users who on average listen to music in a much  more casual manner. All this being said, adapting the model to use deep learning with this dataset would've been a great opportunity to see whether an improved model would show more desirable recommendation.
+
+With mixesdb.com growing in popularity each year, the continued growth of internet radio, and the growth of DJ mix companies like Boiler Room, one hopes to see further exploration in using this dataset to cater to other DJ related tasks as it continues to be added with better archiving. With a sparsity of 99.98\% it does make sense why this would underperform on the given experiment, and hopefully with a more thorough dataset another exploration into seeing whether a dataset this specific for certain genres would be more beneficial compared to models trained on more casual listeners. 
+
+There was opportunities where the Spotify features euclidean distance filtering could've been implemented better. An example being was adding weights to certain attributes. An example being prioritizing songs at a certain BPM or key. The weighting for key could've been explored to an interesting length, by prioritising the same key but also the relative major/minor or subdominant or dominant keys.
+
+Another adjustment that could've been made to the euclidean distance part of the code is only finding an average input vector with songs  in the input that have similar Spotify features. A problem with having one outlier song is that it could disproportion the input average and spoil the quality of the songs recommended. This problem could be resolved by ignoring outlier songs, find euclidean distances with the outlier songs and pool from the outliers suggestions sparingly in the final batch.
+
+For testing there were several ways the application could've been assessed. 
+
+\subsection{Recommended Song Clicks}
+When you add songs to a Spotify playlists, 10 songs are recommended based on what's in the playlist. The user can refresh the list and it gives out 10 more similar songs. Recommended Songs clicks is the amount of refreshes before a missing track shows up. Here is the following equation.
+
+\begin{equation}
+	Clicks= \lfloor \frac {argmin_{i}  \{ R_{i} : R_{i} \in G | \} -1} { 10 } \rfloor
+\end{equation}
+
+
+\subsection{Spotify Features}
+Another form of testing will be to use the Spotify features in conjunction with the Spotify playlist. We will input 10 songs into both my application and a Spotify playlists. Get the Spotify features of both outputs and compare which ones are the most suitable.
+
+\subsection{Spectrogram Analysis}
+With the dataset being linked to Spotify, a 30 second clip for each song is accessible. Assess the spectrograms of the input songs compared to the output songs would've given further insight if the songs suggested were appropriate.
+
+\subsection{Listening Tests}
+Gathering members of the public and getting them to listen to snippets of a given DJ set and compare the applications suggestions and industry standard suggestions would've given further insight on the subjective quality of the application.
+% note that \Blindocument has 5 numbered levels, despite setting secnumdepth above. I (and many style guides) would suggest using no more than 3 numbered levels (incl. the chapter), with the option of a fourth unnumbered level.

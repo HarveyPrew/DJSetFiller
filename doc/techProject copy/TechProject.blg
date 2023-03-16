@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: TechProject.aux
+A level-1 auxiliary file: FrontMatter/FrontMatter.aux
+A level-1 auxiliary file: Chapter1/Chapter1.aux
+A level-1 auxiliary file: Chapter2/Chapter2.aux
+A level-1 auxiliary file: Chapter3/Chapter3.aux
+A level-1 auxiliary file: Chapter4/Chapter4.aux
+A level-1 auxiliary file: Chapter5/Chapter5.aux
+A level-1 auxiliary file: Chapter6/Chapter6.aux
+A level-1 auxiliary file: Chapter7/Chapter7.aux
+A level-1 auxiliary file: BackMatter/BackMatter.aux
+The style file: iosrnew.bst.bst
+Database file #1: BackgroundReading.bib
+Warning--empty journal in anderson_racofi_2003
+Warning--empty journal in bittner_automatic_2017
+Warning--empty journal in bock_deconstruct_2020
+Warning--empty journal in bock_multi-task_2019
+Warning--empty booktitle in claypool_combining_1999
+Warning--empty pages in claypool_combining_1999
+Warning--empty pages in ferwerda_personality_2015
+Warning--empty journal in jansson_singing_2017
+Warning--missing publisher in kim_automatic_2017
+Warning--empty journal in laplante_improving_2014
+Warning--empty booktitle in logan_music_2004
+Warning--empty pages in logan_music_2004
+Warning--empty journal in mcfee_hypergraph_2012
+Warning--empty booktitle in van_meteren_using_2000
+You've used 72 entries,
+            2968 wiz_defined-function locations,
+            1107 strings with 22713 characters,
+and the built_in function-call counts, 45416 in all, are:
+= -- 3884
+> -- 1815
+< -- 78
++ -- 670
+- -- 586
+* -- 3651
+:= -- 6730
+add.period$ -- 155
+call.type$ -- 72
+change.case$ -- 563
+chr.to.int$ -- 73
+cite$ -- 86
+duplicate$ -- 3377
+empty$ -- 3369
+format.name$ -- 787
+if$ -- 9334
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 616
+newline$ -- 226
+num.names$ -- 297
+pop$ -- 1321
+preamble$ -- 1
+purify$ -- 479
+quote$ -- 0
+skip$ -- 1577
+stack$ -- 0
+substring$ -- 2023
+swap$ -- 1796
+text.length$ -- 40
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 627
+warning$ -- 14
+while$ -- 326
+width$ -- 0
+write$ -- 840
+(There were 14 warnings)

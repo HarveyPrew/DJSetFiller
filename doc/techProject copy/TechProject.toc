@@ -1,0 +1,46 @@
+\contentsline {chapter}{List of Figures}{iii}{section*.4}%
+\contentsline {chapter}{List of Tables}{iv}{section*.6}%
+\contentsline {chapter}{Acknowledgements}{v}{chapter*.8}%
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Machine Learning used in Music Recommendation Systems}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}The need for music recommendation systems}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Collaborative filtering}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Explicit Feedback}{4}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Implicit Feedback}{4}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Item-Based Neighbourhood }{4}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}User Based}{6}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Matrix Factorisation}{6}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Limitations}{7}{subsection.2.2.6}%
+\contentsline {section}{\numberline {2.3}Content Based Filtering}{7}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Limitations}{9}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Diversity issue}{9}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Machine Learning used for DJing}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Source Separation}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}BPM, key, genre classification}{11}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Automated Mixing}{12}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Hypothesis}{13}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Application}{15}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Data set}{15}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Initial Suggestions}{15}{subsection.5.0.2}%
+\contentsline {subsection}{\numberline {5.0.3}Final Suggestions}{16}{subsection.5.0.3}%
+\contentsline {subsection}{\numberline {5.0.4}Example Findings}{19}{subsection.5.0.4}%
+\contentsline {chapter}{\numberline {6}Experiment}{20}{chapter.6}%
+\contentsline {section}{\numberline {6.1}R-Precision}{20}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Preparing Evaluation Set}{21}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Experiment Variables}{22}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Results and Discussion}{24}{chapter.7}%
+\contentsline {subsection}{\numberline {7.0.1}Varying input set length}{25}{subsection.7.0.1}%
+\contentsline {subsection}{\numberline {7.0.2}Comparing with industry standard models}{27}{subsection.7.0.2}%
+\contentsline {chapter}{\numberline {8}Conclusions and Further Work}{28}{chapter.8}%
+\contentsline {subsection}{\numberline {8.0.1}Findings of each chapter}{28}{subsection.8.0.1}%
+\contentsline {subsection}{\numberline {8.0.2}Main Findings of the study}{29}{subsection.8.0.2}%
+\contentsline {subsection}{\numberline {8.0.3}Implications}{30}{subsection.8.0.3}%
+\contentsline {subsection}{\numberline {8.0.4}Further Work}{30}{subsection.8.0.4}%
+\contentsline {subsection}{\numberline {8.0.5}Recommended Song Clicks}{32}{subsection.8.0.5}%
+\contentsline {subsection}{\numberline {8.0.6}Spotify Features}{32}{subsection.8.0.6}%
+\contentsline {subsection}{\numberline {8.0.7}Spectrogram Analysis}{32}{subsection.8.0.7}%
+\contentsline {subsection}{\numberline {8.0.8}Listening Tests}{32}{subsection.8.0.8}%
+\renewcommand {\cftchappresnum }{Appendix~}
+\addtolength {\cftchapnumwidth }{1em}
