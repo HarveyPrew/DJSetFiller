@@ -9,7 +9,6 @@ A level-1 auxiliary file: Chapter4/Chapter4.aux
 A level-1 auxiliary file: Chapter5/Chapter5.aux
 A level-1 auxiliary file: Chapter6/Chapter6.aux
 A level-1 auxiliary file: Chapter7/Chapter7.aux
-A level-1 auxiliary file: Chapter8/Chapter8.aux
 A level-1 auxiliary file: BackMatter/BackMatter.aux
 The style file: iosrnew.bst.bst
 Database file #1: BackgroundReading.bib
@@ -29,7 +28,7 @@ Warning--empty journal in mcfee_hypergraph_2012
 Warning--empty booktitle in van_meteren_using_2000
 You've used 72 entries,
             2968 wiz_defined-function locations,
-            1108 strings with 22734 characters,
+            1107 strings with 22713 characters,
 and the built_in function-call counts, 45416 in all, are:
 = -- 3884
 > -- 1815

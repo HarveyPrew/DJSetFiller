@@ -4,20 +4,18 @@
 
 \chapter{Results and Discussion}
 
-This chapter will provide analysis and discussion of the results from the experiment described
+This chapter provides analysis and discussion of the results from the experiment described
 in Chapter 5. The experiment sought to answer the question presented in Chapter 4.
 \\
 \\
 \textit{Is the proposed method a suitable solution to automate recommendations of songs suitable for adding to a given DJ set?}.
 \\
-\\
 
+Chapter 6.1 will present the appropriate latent factors to use on the dataset. Chapter 6.2 explores if varying the input DJ Set tracklist lengths could also improve the models R-Precision value.
 
-Chapter 6.1 will present the appropriate latent factors to use on the dataset. In Chapter 6.2 then to see how varying the input DJ Set tracklist lengths could also improve reccomended songs.
+The following controlled variable was the list of DJ sets and the independent variable was the latent factors for making the ALS model. In the medium article, Chow used 50 latent factors \citep{chow_music_2020}. This was used as a reference point to make the range from 20 - 110 latent factors to experiment on.
 
-The following controlled variable was the list of DJ sets and the independent variable was the latent factors for making the ALS model. n the medium article, Chow used 50 latent factors \citep{chow_music_2020}. This was used as a reference point to make the range from 20 - 110 latent factors to experiment on.
-
-The results indicate the performance of alternating least squares (ALS) algorithm in recommending items based on different number of latent factors. The average r-precision, a measure of the relevancy of recommended items to the user, was used to evaluate the algorithm's effectiveness across different latent factors.
+The results indicate the performance of alternating least squares (ALS) algorithm in recommending items based on different number of latent factors. The average R-precision, a measure of the relevancy of recommended items to the user, was used to evaluate the algorithm's effectiveness across different latent factors.
 
 Figure 6.1 shows a scatter graph of the average R-precision over different latent factors. The analysis shows that the performance of the application varies significantly with the number of latent factors used. The highest average r-precision of 0.1207 was obtained when 80 latent factors were used, while the lowest value of 0.0774 was obtained when only 20 latent factors were used. However, the performance of the algorithm was not monotonically increasing or decreasing with the number of latent factors. For instance, there was a slight increase in average r-precision from 40 to 70 latent factors, but a decrease from 50 to 60 latent factors.. From 90 to 100 we see a significant decrease in the average r-value, which suggests that over-fitting is occurring.
 
