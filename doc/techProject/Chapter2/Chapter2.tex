@@ -9,9 +9,9 @@ In this chapter Ill be answering the research question:
 \textit{What are effective methods for the automated recommendation of songs suitable for adding to a given DJ set} 
 
 \section{The need for music recommendation systems}
-Spotify, SoundCloud, Apple Music and other streaming services gives one access to a library of tens of millions songs. Music Recommendation systems are excellent at fitting a users preference whilst incorporating some level of filtering of an overwhelming amount of songs \citep{bollen_understanding_2010}. 
+Spotify, SoundCloud, Apple Music and other streaming services gives one access to a library of tens of millions songs. Music Recommendation systems are excellent at fitting a user's preference whilst incorporating some level of filtering of an overwhelming amount of songs \citep{bollen_understanding_2010}. 
 
-Music recommendation systems study users habits and taste, and with that information give out suitable recommendations. This aids the listener to discover new songs or artists they otherwise would not have found.
+Music recommendation systems study the habits and tastes of users, and with that information give out suitable recommendations. This aids the listener to discover new songs or artists they otherwise would not have found.
 
 With this potential, a well made recommendation system could be a make or break for choosing one stream service from another. For this reason a lot of research gets put into recommendation systems as an attempt to retain engagement. 
 
@@ -19,9 +19,9 @@ With this potential, a well made recommendation system could be a make or break 
  
  A necessity for making a recommendation system suited for a type of product is taking into consideration the common place attributes of the product. Music lends itself to having a specific method due to short duration and high emotional connection. A recommendation system that uses these attributes to its advantage will be more successful than ones that don't.
 
-\section{Collaborative Filtering}
+\section{Collaborative filtering}
 
-Collaborative Filtering guesses users taste by looking at similar user-item connections. Using an explicit example, if a user rates something highly, it can provide similar suggestions from looking at other users ratings \citep{celma_recommendation_2010}.
+Collaborative filtering guesses a user's taste by looking at similar user-item connections. Using an explicit example, if a user rates something highly, it can provide similar suggestions from looking at the ratings of other users\citep{celma_recommendation_2010}.
 
 \begin{figure}[H]
 	\includegraphics[scale=0.65]{images/collaborative_filtering}
@@ -32,11 +32,18 @@ Collaborative Filtering guesses users taste by looking at similar user-item conn
 
 Collaborative filtering works by taking a matrix of users and items where some form of interaction is measured. Examples of interaction's could be plays of a song, rating of a movie/product or screen time on an app. In figure 2.1, i represents items, and u is users.
 
-The first known use of collaborative filtering is with Goldberg's Tapestry system, a mailing list filter where users collectively decide which type of emails get the most importance \citep{goldberg_using_1992}. The first instance of collaborative filtering being used was with a music based system called \textit{Ringo} where users would enter in music they rated and would get recommendation's pulled from similar users \citep{shardanand_social_1995}. 
+The first known use of collaborative filtering is with Goldberg's Tapestry system, a mailing list filter where users collectively decide which type of emails get the most importance \citep{goldberg_using_1992}. The first instance of collaborative filtering being used for music recommendations was in a system called \textit{Ringo} where users would rate music (album, songs, artists, etc.) and get recommendations pulled from similar users \citep{shardanand_social_1995}. 
 
-Despite evaluations in deep learning and neural networks. Collaborative Filtering is still used today in the state of art reccomendation systems. The winner of recsys playlist continuer challenger in 2018 used a combination of collaborative filtering and deep learning in there submitted model \citep{volkovs_two-stage_2018}.
+Despite the prevalence of deep learning and neural networks, collaborative filtering is still used in today's state of the art recommendation systems. The winner of the 2018  RecSys Playlist Continuer Challenge used a combination of collaborative filtering and deep learning in their model \citep{volkovs_two-stage_2018}.
 
-Collaborative filtering can be divided into three types:
+Collaborative filtering can be divided into the following types:
+
+\begin{enumerate}
+	\item Explicit Feedback
+	\item Implicit Feedback
+	\item Item Based
+	\item User Based
+\end{enumerate}
 
 
 
@@ -45,21 +52,19 @@ Collaborative filtering can be divided into three types:
 
 \textit{Ringo} and many of the first music recommendation systems that use collaborative filtering uses explicit feedback for its data. Explicit feedback is when the system asks a user for some form of measurement about the likeability of said product. \citep{celma_recommendation_2010}
 
-An example of explicit feedback being used is in the RACOFI (Rule-Applying Collaborative Filtering) system. Ratings are used to find recommendations through collaborative filtering and then the application apply logic rules to decipher the most suitable recommendations further.\citep{anderson_racofi_2003}. Its added logic rules implicitly changes the users previous ratings. Other reccomendation systems start having similar rules including \textit{Indiscover} and Slope One \citep{celma_music_2010} \citep{lemire_slope_2007}.
+An example of explicit feedback being used is in the RACOFI (Rule-Applying Collaborative Filtering) system. Ratings are used to find recommendations through collaborative filtering and then the system applies logic rules to decipher the most suitable recommendations further \citep{anderson_racofi_2003}. Its added logic rules implicitly changes the user's previous ratings. Other recommendation systems started having similar rules including \textit{Indiscover} and Slope One \citep{celma_music_2010} \citep{lemire_slope_2007}.
 
 \subsection{Implicit Feedback}
 
-Recommendation systems that take only implicit feedback will focus on what the listener interacts with, rather than asking it for its opinion on the said content. The main reason implicit feedback is frowned upon is using this method doesn't give a scale of enjoyability of the content, in the context of music, just whether the user listened to said song or artist how many times. An example of this with Spotify is if another person uses there account or if they left a device on autoplay as well on mute. However, collecting implicit data is a lot easier because it just requires engagement with the said application to get valuable information. 
+Recommendation systems that take only implicit feedback will focus on what the listener interacts with, rather than asking them for their opinion of the content. The main reason implicit feedback is frowned upon is that using this method doesn't give a scale of enjoyability of the content, in the context of music, just whether the user listened to said song or artist how many times. Spotify is an example of this, if another person uses their account or if they left a device on autoplay as well on mute. However, collecting implicit data is a lot easier because it just requires engagement with the said application to get valuable information. 
 
-There is also a lot to be found with implicit data. In 2018, a music recommendation system took the time in the day which users listened to music and gained successful results \citep{sanchez-moreno_incorporating_2018}. Takama et al took this a step further including time as well as data, nationality and content features found through spotify \citep{takama_context-aware_2021} 
+There is also a lot to be found with implicit data. In 2018, a music recommendation system produced effective recommendations derived from the time of day in which users listened to music \citep{sanchez-moreno_incorporating_2018}. Takama et al took this a step further by using time of day as well as, nationality and content features found through Spotify \citep{takama_context-aware_2021} 
 
-The two different approaches used for data finding with Collaborative Filtering is Item-based Neighbourhood or User-based neighbourhood. 
-
-\subsection{Item Based}
+\subsection{Item-Based Neighbourhood }
 
 \textbf{Talk about the definitions and examples of these things \citep{ricci_recommender_2011}}
 
-Item-Based Neighbourhood is when similarites for a given item is found based on the users previous item ratings. Below shows a matrix with ratings from  $u_{2}, u_{i}$ and $u_{m-1}$. For finding similarities between $i_{i}$ and $i_{k}$, we only take $u_{2}$ and  $u_{i}$ into consideration when using item based neighbourhood because they have rated both item $i_{i}$ and $i_{k}$.  
+Item-Based Neighbourhood is when similarites for a given item is found based on the user's previous item ratings. Below shows a matrix with ratings from  $u_{2}, u_{i}$ and $u_{m-1}$. For finding similarities between $i_{i}$ and $i_{k}$, we only take $u_{2}$ and  $u_{i}$ into consideration when using item based neighbourhood because they have rated both item $i_{i}$ and $i_{k}$.  
 
 \begin{figure}[H]
 	\includegraphics[scale=0.65]{images/neigbourhood_based}
@@ -67,13 +72,13 @@ Item-Based Neighbourhood is when similarites for a given item is found based on 
 	\caption{Matrix showing given ratings. \citep{celma_recommendation_2010}} 
 \end{figure}
 
-There are many ways to calculate how similar two items, examples being cosine similarity, Pearson correlation or adjusted cosine,. For Cosine similarity, the inner product space is taken into account for calculating its similarity, it can be described with the following equation.
+There are many ways to calculate how similar two items, examples being cosine similarity, Pearson correlation or adjusted cosine similarity. For cosine similarity, the inner product space is taken into account by calculating its similarity, it can be described with the following equation.
 
 \begin{equation}
 		sim(i , j) = cos( \textbf{i}, \textbf{j} ) = \frac{ \textbf{ i }, \textbf{ j }}{ || i || * || j || } = \frac{ \sum_{ u \in U } r_{ u, i }, r_{ u, j }} { \sqrt{ \sum _{  u \in U } r^{2}_{ u , i}} \sqrt{ \sum _{  u \in U } r^{2}_{ u , j}}}
 \end{equation}
 
-Cosine similarity is not advised in this scenario because users usually have there own personal rangers when it comes to rating. Adjusted cosine similarity is good because it makes use of the users average rating when deciphering similarities, equation is shown below.
+Cosine similarity is not advised when comparing how similar recommendations are because users often have their own personal ranges when it comes to rating. Adjusted cosine similarity is good because it makes use of the users average rating when deciphering similarities, equation is shown below.
 
 \begin{equation}
 	sim(i , j) = \frac{ \sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} ) ( r _{ u, j} - \bar{r} _{u} ) } { \sqrt{\sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} )^2} \sqrt{\sum_{ u \in U } ( r _{ u, j } - \bar{r} _{u} )^2}}
@@ -110,7 +115,7 @@ Item based is when the system predict rating of user u for item i rooted from ra
 
 Matrix factorisation is when you take a sparse matrix and instead of storing each rating for each user, you store features that when multiplied can calculate the rating of said item by said user.
 
-This is really useful for a sparse matrix, which is usually the case for most reccomendation systems, because it shows information that the matrix alone doesnt. Because it factorises the users ratings from features, you can see trends on what groups of users likes and doesnt like. Because it reducing the dimensionality of a given matrix, matrix factorisation requires less processing power than other methods of finding similar items. 
+This is really useful for a sparse matrix, which is usually the case for most recommendation systems, because it shows information that the matrix alone doesnt. Because it factorises the users ratings from features, you can see trends on what groups of users likes and doesnt like. Because it reducing the dimensionality of a given matrix, matrix factorisation requires less processing power than other methods of finding similar items. 
 
 There are different ways of factorising a matrix. An example of one is Singular Value Decomposition (SVD). Heres the equation with U and V being the number of matrices for a given amount dimensions:
 
@@ -135,7 +140,7 @@ Despite being popular, there are a number of reasons why wouldn't use Collaborat
 
 \textbf{Grey sheep - }This is when a user has a unique taste not similar to a lot of other users, making it hard to stem recommendation's from. This a common problem with datasets that are very sparse \citep{claypool_combining_1999}.
 
-\textbf{Cold Start - } When there is new users or items, theres little data associated with them so it makes it challanging to come up with suitable reccomendations based on either the said user or item. The term cold start refers to new items and the term refered to new users is called early raters \citep{avery_recommender_1997}.
+\textbf{Cold Start - } When there is new users or items, theres little data associated with them so it makes it challanging to come up with suitable mendations based on either the said user or item. The term cold start refers to new items and the term refered to new users is called early raters \citep{avery_recommender_1997}.
 
 \textbf{Popularity Bias - } Another problem with Collaborative Filtering doesnt take into account any information about the item, only users interactions with it. This means that it has a bias towards popular items.
 
@@ -144,7 +149,7 @@ Despite being popular, there are a number of reasons why wouldn't use Collaborat
 
 For neighbourhood-based, recommendation can either be user-based or item-based. The Ringo system is a good example of user based recommendation's, where it assesses the taste of a user for an item using the ratings of the item from different users. These users with similar rating trends are called neighbours. 
 
-\textbf{Talk about latest music reccomendation system that uses it (recsys one)}
+\textbf{Talk about latest music mendation system that uses it (recsys one)}
 \section{Content Based Filtering}
 
 Content Based Filtering works by looking at the characteristics of a given item and see if it matches the preference of the user. Recommendations do not stem from what other users interact with, it only stems from the given information about the item. Its based on finding information about the item and filtering \citep{casey_content-based_2008}, and within the context of music, it recommends songs that has similar information to what the user already enjoys \citep{aucouturier_music_2002} \citep{logan_music_2004}. Theres been a lot of research on extracting the componenets of an audio file of music \citep{ribecky_multi-input_2021} \citep{zhao_musical_2022}. Recent developments have shown successful extractions of genre and structure with the MusicBERT Model \citep{zhu_musicbert_2021}. It's found that midi extraction from songs can aid to give better solutions for less popular songs, helping eliminate the cold start problem \citep{yadav_improved_2022}.
@@ -177,7 +182,7 @@ When the attributes aren't measured numericlly, one uses a delta function. When 
 	d(x,y) = \omega \sum _{ i = 1 } ^{ n } \delta (x _{i}, y _{i})
 \end{equation}
 
-Content Based Filtering overcomes the problems CF has of being able to rate items that previously havent had any ratings. Its also able to adapt to any changes in the users preference quickly \citep{isinkaye_recommendation_2015}. For users who dont want to share there data they can get suitable reccomendations as well \citep{k_you_2006}.
+Content Based Filtering overcomes the problems CF has of being able to rate items that previously havent had any ratings. Its also able to adapt to any changes in the users preference quickly \citep{isinkaye_recommendation_2015}. For users who dont want to share there data they can get suitable mendations as well \citep{k_you_2006}.
 
 Another methods of comparing includes Clustering. Clustering is when one  groups a collection of data objects, so that some objects clustered together are very similar, while other clustered objects are not alike. Similarity is then evaluated based on chosen parameters \citep{ferretti_clustering_2018}. A popular algorithm is the k-mean cluster where each cluster is representerd by a mean value of the object \citep{han_data_2006}. A recent system that uses clustering uses a altered version to k clustering to limit the randomness in suggestion you usually get with this method \citep{chang_personalized_2017}.
 
@@ -195,11 +200,11 @@ The cold start and grey sheep problem also occur in content based filtering. It'
 
 \section{Diversity issue}
 
-Recommendation systems are used extensively by majority of spotify users. However, there are a subsection of users who, despite huge breakthroughs dont rely heavily on algorithmic means of discovering music. In 2020, there was a study done that found users with more diverse tastes would find music in non algoritmic ways \citep{anderson_algorithmic_2020}. This study also found state of the art reccomendation systems performed better with users with less diverse taste. and users who would gain a more diverse taste over time, would do so by exploring non algorithmic ways of finding music.
+Recommendation systems are used extensively by majority of spotify users. However, there are a subsection of users who, despite huge breakthroughs dont rely heavily on algorithmic means of discovering music. In 2020, there was a study done that found users with more diverse tastes would find music in non algoritmic ways \citep{anderson_algorithmic_2020}. This study also found state of the art mendation systems performed better with users with less diverse taste. and users who would gain a more diverse taste over time, would do so by exploring non algorithmic ways of finding music.
 
 A reason for this is because alogorithmic ways go above and beyond giving personalised suggestions, one can suffer from choice overload when using algorithmic ways to find music \citep{iyengar_rethinking_1999}. This may do with the lack of refinement when it comes to training models, lot of MRS dont focus on a specific type of person when training a model \citep{laplante_improving_2014}.
 
-A reason for this issue could be the way classification is handled in music reccomendation systems, a debate that is passed from generations \citep{moles_sociodynamique_2019} \citep{dimaggio_classification_1987} \citep{bourdieu_distinction_2010}. In the context of a reccomndation system, a genre is usually just treated as a "tag" and its social and cultural relevance is often pushed to the side when treated in such a way \citep{porcaro_diversity_2021}. The act of a machine understanding a intensely subjective concept as genre is one that is proven challenging \citep{nurnberger_survey_2014}. Vlegels attempts to overcome this by organise groupings based on user artist relationship, rather than artists genre \citep{vlegels_music_2017}.
+A reason for this issue could be the way classification is handled in music mendation systems, a debate that is passed from generations \citep{moles_sociodynamique_2019} \citep{dimaggio_classification_1987} \citep{bourdieu_distinction_2010}. In the context of a mndation system, a genre is usually just treated as a "tag" and its social and cultural relevance is often pushed to the side when treated in such a way \citep{porcaro_diversity_2021}. The act of a machine understanding a intensely subjective concept as genre is one that is proven challenging \citep{nurnberger_survey_2014}. Vlegels attempts to overcome this by organise groupings based on user artist relationship, rather than artists genre \citep{vlegels_music_2017}.
 
 This problem itself has saw another rise in the market of "curation". Having professional spot interesting things and document them to consumers. With this comes the role in the music world of a DJ, who way before recommendation systems existed were doing just that. Recently we have seen attempts of integrating DJs somehow in the algorithmic world. This is partly motivated by how much a company can pedel a term like "curation" in the music world and see it as a necessity \citep{barna_perfect_2017}. One can see this in the rise of internet radio as well.
 

@@ -6,15 +6,15 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Machine Learning used in Music Recommendation Systems}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}The need for music recommendation systems}{2}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Collaborative Filtering}{3}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Explicit Feedback}{3}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.2}Collaborative filtering}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Explicit Feedback}{4}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Implicit Feedback}{4}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Item Based}{4}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}User Based}{5}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.3}Item-Based Neighbourhood }{4}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}User Based}{6}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}Matrix Factorisation}{6}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}Limitations}{6}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.6}Limitations}{7}{subsection.2.2.6}%
 \contentsline {section}{\numberline {2.3}Content Based Filtering}{7}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Limitations}{8}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Limitations}{9}{subsection.2.3.1}%
 \contentsline {section}{\numberline {2.4}Diversity issue}{9}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Machine Learning used for DJing}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Source Separation}{11}{section.3.1}%
