@@ -33,14 +33,14 @@
 \contentsline {chapter}{\numberline {7}Results and Discussion}{24}{chapter.7}%
 \contentsline {subsection}{\numberline {7.0.1}Varying input set length}{25}{subsection.7.0.1}%
 \contentsline {subsection}{\numberline {7.0.2}Comparing with industry standard models}{27}{subsection.7.0.2}%
-\contentsline {chapter}{\numberline {8}Further Work}{28}{chapter.8}%
-\contentsline {subsection}{\numberline {8.0.1}Recommended Song Clicks}{29}{subsection.8.0.1}%
-\contentsline {subsection}{\numberline {8.0.2}Spotify Features}{30}{subsection.8.0.2}%
-\contentsline {subsection}{\numberline {8.0.3}Spectrogram Analysis}{30}{subsection.8.0.3}%
-\contentsline {subsection}{\numberline {8.0.4}Listening Tests}{30}{subsection.8.0.4}%
-\contentsline {chapter}{\numberline {9}Conclusions}{31}{chapter.9}%
-\contentsline {subsection}{\numberline {9.0.1}Findings of each chapter}{31}{subsection.9.0.1}%
-\contentsline {subsection}{\numberline {9.0.2}Main Findings of the study}{32}{subsection.9.0.2}%
-\contentsline {subsection}{\numberline {9.0.3}Implications}{33}{subsection.9.0.3}%
+\contentsline {chapter}{\numberline {8}Conclusions and Further Work}{28}{chapter.8}%
+\contentsline {subsection}{\numberline {8.0.1}Findings of each chapter}{28}{subsection.8.0.1}%
+\contentsline {subsection}{\numberline {8.0.2}Main Findings of the study}{29}{subsection.8.0.2}%
+\contentsline {subsection}{\numberline {8.0.3}Implications}{30}{subsection.8.0.3}%
+\contentsline {subsection}{\numberline {8.0.4}Further Work}{30}{subsection.8.0.4}%
+\contentsline {subsection}{\numberline {8.0.5}Recommended Song Clicks}{32}{subsection.8.0.5}%
+\contentsline {subsection}{\numberline {8.0.6}Spotify Features}{32}{subsection.8.0.6}%
+\contentsline {subsection}{\numberline {8.0.7}Spectrogram Analysis}{32}{subsection.8.0.7}%
+\contentsline {subsection}{\numberline {8.0.8}Listening Tests}{32}{subsection.8.0.8}%
 \renewcommand {\cftchappresnum }{Appendix~}
 \addtolength {\cftchapnumwidth }{1em}
