@@ -29,43 +29,43 @@ Warning--empty journal in mcfee_hypergraph_2012
 Warning--empty booktitle in van_meteren_using_2000
 You've used 75 entries,
             2968 wiz_defined-function locations,
-            1122 strings with 23367 characters,
-and the built_in function-call counts, 46555 in all, are:
-= -- 3991
-> -- 1845
-< -- 81
+            1123 strings with 23459 characters,
+and the built_in function-call counts, 46802 in all, are:
+= -- 4022
+> -- 1844
+< -- 82
 + -- 684
 - -- 595
-* -- 3722
-:= -- 6930
-add.period$ -- 162
+* -- 3735
+:= -- 6952
+add.period$ -- 163
 call.type$ -- 75
-change.case$ -- 582
+change.case$ -- 583
 chr.to.int$ -- 76
 cite$ -- 89
-duplicate$ -- 3467
-empty$ -- 3457
+duplicate$ -- 3488
+empty$ -- 3475
 format.name$ -- 799
-if$ -- 9557
+if$ -- 9618
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 629
+missing$ -- 632
 newline$ -- 235
-num.names$ -- 309
-pop$ -- 1354
+num.names$ -- 308
+pop$ -- 1359
 preamble$ -- 1
 purify$ -- 494
 quote$ -- 0
-skip$ -- 1613
+skip$ -- 1626
 stack$ -- 0
-substring$ -- 2063
-swap$ -- 1828
-text.length$ -- 40
+substring$ -- 2096
+swap$ -- 1845
+text.length$ -- 41
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 654
+type$ -- 657
 warning$ -- 14
-while$ -- 335
+while$ -- 338
 width$ -- 0
-write$ -- 871
+write$ -- 873
 (There were 14 warnings)

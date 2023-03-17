@@ -52,10 +52,6 @@ Collaborative filtering can be divided into the following types:
 
  Explicit feedback is when the system asks a user for some form of measurement about the likeability of said product \citep{celma_recommendation_2010}. The RACOFI (Rule-Applying Collaborative Filtering) system uses explicit feedback. Collaborative filtering with ratings finds initial recommendations. Then the system applies logic rules to decipher further the most suitable recommendations \citep{anderson_racofi_2003}.  Its added logic rules implicitly change the user’s previous ratings. Other recommendation systems started having similar rules, including \textit{Indiscover} and Slope One \citep{celma_music_2010} \citep{lemire_slope_2007}. \textit{Ringo} and many of the first music recommendation systems that use collaborative filtering use explicit feedback for their data. 
 
-
-
-\textbf{\textit{TODO - Make less similar}}
-
 \subsection{Implicit Feedback}
 
 Recommendation systems that take only implicit feedback will focus on what the listener interacts with, rather than asking them for their opinion of the content. The main reason implicit feedback is frowned upon is that using this method doesn't give a scale of enjoyability of the content, in the context of music, just whether the user listened to said song or artist how many times. Spotify is an example of this, if another person uses their account or if they left a device on autoplay as well on mute. However, collecting implicit data is a lot easier because it just requires engagement with the said application to get valuable information. 
@@ -64,7 +60,7 @@ There is also a lot to be found with implicit data. In 2018, a music recommendat
 
 \subsection{Item-Based Neighbourhood }
 
-Item-Based Neighbourhood is when similarites for a given item is found based on the user's previous item ratings. Similarities are found through calculating the similarity and then calculating the prediction. Below shows a matrix with ratings from  $u_{2}, u_{i}$ and $u_{m-1}$. For finding similarities between $i_{i}$ and $i_{k}$, we only take $u_{2}$ and  $u_{i}$ into consideration when using item based neighbourhood because they have rated both item $i_{i}$ and $i_{k}$.  
+Item-Based Neighbourhood is when similarities for a given item is found based on the user's previous item ratings. Similarities are found through calculating the similarity among the item ratings and then calculating the prediction of a given items rating. Below shows a matrix with ratings from  $u_{2}, u_{i}$ and $u_{m-1}$. For finding similarities between $i_{i}$ and $i_{k}$, we only take $u_{2}$ and  $u_{i}$ into consideration when using item based neighbourhood because they have rated both item $i_{i}$ and $i_{k}$.  
 
 \begin{figure}[H]
 	\includegraphics[scale=0.65]{images/neigbourhood_based}
@@ -78,26 +74,27 @@ There are many ways to calculate how similar two items, examples being cosine si
 		sim(i , j) = cos( \textbf{i}, \textbf{j} ) = \frac{ \textbf{ i }, \textbf{ j }}{ || i || * || j || } = \frac{ \sum_{ u \in U } r_{ u, i }, r_{ u, j }} { \sqrt{ \sum _{  u \in U } r^{2}_{ u , i}} \sqrt{ \sum _{  u \in U } r^{2}_{ u , j}}}
 \end{equation}
 
-Cosine similarity is not advised for comparing how similar recommendations are because users often have their own personal ranges when it comes to rating. Adjusted cosine similarity is good because it makes use of the users average ratings when deciphering similarities, the equation for adjusted cosine similarity is shown below \textbf{\textit{TODO - Find a reference + Describe how it works}}.
+Cosine similarity is not advised for comparing how similar recommendations are because users often have their own personal ranges when it comes to rating. Adjusted cosine similarity is good because it subtracts the users average from each co-rated pair, this handles users personal ranges appropriately \citep{sarwar_item-based_2001}. The equation for adjusted cosine similarity is shown below.
 
 \begin{equation}
 	sim(i , j) = \frac{ \sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} ) ( r _{ u, j} - \bar{r} _{u} ) } { \sqrt{\sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} )^2} \sqrt{\sum_{ u \in U } ( r _{ u, j } - \bar{r} _{u} )^2}}
 \end{equation}
 
-Pearson correlation gives a coefficient value from 1 to -1, 1 showing strong correlation with a positive gradient, and -1 shows strong correlation with a negative change. \textbf{\textit{TODO - find out or lose it}}
-
-\begin{equation}
-	sim(i , j) = \frac{ Cov( i, j) }{ \sigma _{i} \sigma _{j} } = \frac{ \sum _{ u \in U} ( r _{ u, i } - \bar{r} _{u} ) ( r _{ u, j} - \bar{r} _{u} ) } { \sqrt{\sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} )^2} \sqrt{\sum_{ u \in U } ( r _{ u, j } - \bar{r} _{u} )^2}}
-\end{equation}
-
-After the similarities are calculated, the next step is to predict how the user would rate the item in question. A way of doing this is to calculate a weighted sum of the user's previous item ratings. Allowing $ S^{k}(i;u)$ to equal the list of items i user u has rated, the equation below shows how the predicted value is found. \textbf{\textit{TODO - Whats happening}}
+Once similarities of the users previous ratings are calculated, the next step is to predict how the user would rate the item in question. A way of doing this is to calculate a weighted sum of the user's previous item ratings. Calculating the weighted sum predicts how the user would rate the given item based on the ratings of similar items. Weighted sum is scaled to ensure the predicted rating is in an appropriate range\citep{sarwar_item-based_2001}. Allowing $ S^{k}(i;u)$ to equal the list of items i user u has rated, the equation below shows how the predicted value is found. \textbf{\textit{TODO - Whats happening}}
 
 \begin{equation}
 	\hat{r} _{u,i} = \frac{ \sum _{ j \in S^{k}(i;u)} sim(i , j) r _{u, j}}{\sum _{j \in S^{k}(i;u)} sim(i , j)}
 \end{equation}
+\\
+\\
+\\
+Another way of predicting a rating is using Regression. Predictions are made with the same equation as weighted sum, but approximate values based on a linear regression model are used instead of "raw" rating values. Allowing target items be \textit{i} and similar item N by $R_{i}$ and $R_{N}$, the linear regression model is displayed below \citep{sarwar_item-based_2001}.
 
+\begin{equation}
+	\bar{R'} _{N} = \alpha \bar{R}_{i} + \beta + \varepsilon
+\end{equation}
 
-
+Parameters of the regression model ($\alpha , \beta$) are found by going through the rating vector pairs, and $\varepsilon$ is the error of the model \citep{sarwar_item-based_2001}.
 
 \subsection{User Based}
 

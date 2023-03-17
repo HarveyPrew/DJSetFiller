@@ -316,12 +316,6 @@ Ribecky, S., Abeßer, J., and Lukashevich, H. (2021): \enquote{Multi-input
   \doi{10.48550/arXiv.2111.01710},
   \urlprefix\url{http://arxiv.org/abs/2111.01710}. ArXiv:2111.01710 [cs, eess].
 
-\bibitem[{Ricci et~al.(2011)Ricci, Rokach, Shapira, and
-  Kantor}]{ricci_recommender_2011}
-Ricci, F., Rokach, L., Shapira, B., and Kantor, P.~B., eds. (2011):
-  \textit{Recommender {Systems} {Handbook}}, Boston, MA: Springer US,
-  \doi{10.1007/978-0-387-85820-3}.
-
 \bibitem[{Roberts(2020)}]{roberts_anti-spotify_2020}
 Roberts, R. (2020): \enquote{The anti-{Spotify}: {How} online music company
   {Bandcamp} became the toast of the {COVID} age},
@@ -339,6 +333,13 @@ Ronneberger, O., Fischer, P., and Brox, T. (2015): \enquote{U-{Net}:
   {Convolutional} {Networks} for {Biomedical} {Image} {Segmentation}},
   \doi{10.48550/arXiv.1505.04597},
   \urlprefix\url{http://arxiv.org/abs/1505.04597}. ArXiv:1505.04597 [cs].
+
+\bibitem[{Sarwar et~al.(2001)Sarwar, Karypis, Konstan, and
+  Riedl}]{sarwar_item-based_2001}
+Sarwar, B., Karypis, G., Konstan, J., and Riedl, J. (2001): \enquote{Item-based
+  collaborative filtering recommendation algorithms}, in \textit{Proceedings of
+  the 10th international conference on {World} {Wide} {Web}}, Hong Kong Hong
+  Kong: ACM, pp.\ignorespaces 285--295, \doi{10.1145/371920.372071}.
 
 \bibitem[{Saunders(2023)}]{saunders_soul_2023}
 Saunders, E. (2023): \enquote{De {La} {Soul}: {Classic} back catalogue finally
