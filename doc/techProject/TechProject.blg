@@ -13,7 +13,6 @@ A level-1 auxiliary file: Chapter8/Chapter8.aux
 A level-1 auxiliary file: BackMatter/BackMatter.aux
 The style file: iosrnew.bst.bst
 Database file #1: BackgroundReading.bib
-Warning--I didn't find a database entry for "deane_media_apple_2020"
 Warning--empty journal in anderson_racofi_2003
 Warning--empty journal in bittner_automatic_2017
 Warning--empty journal in bock_deconstruct_2020
@@ -28,45 +27,45 @@ Warning--empty booktitle in logan_music_2004
 Warning--empty pages in logan_music_2004
 Warning--empty journal in mcfee_hypergraph_2012
 Warning--empty booktitle in van_meteren_using_2000
-You've used 79 entries,
+You've used 78 entries,
             2968 wiz_defined-function locations,
-            1145 strings with 24458 characters,
-and the built_in function-call counts, 48460 in all, are:
-= -- 4180
+            1139 strings with 24380 characters,
+and the built_in function-call counts, 48229 in all, are:
+= -- 4153
 > -- 1876
-< -- 87
-+ -- 698
+< -- 86
++ -- 697
 - -- 604
-* -- 3838
-:= -- 7229
-add.period$ -- 172
-call.type$ -- 79
-change.case$ -- 607
-chr.to.int$ -- 80
-cite$ -- 93
-duplicate$ -- 3621
-empty$ -- 3613
-format.name$ -- 808
-if$ -- 9957
+* -- 3833
+:= -- 7174
+add.period$ -- 170
+call.type$ -- 78
+change.case$ -- 602
+chr.to.int$ -- 79
+cite$ -- 92
+duplicate$ -- 3601
+empty$ -- 3595
+format.name$ -- 811
+if$ -- 9916
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 651
-newline$ -- 247
-num.names$ -- 324
-pop$ -- 1398
+missing$ -- 652
+newline$ -- 244
+num.names$ -- 320
+pop$ -- 1396
 preamble$ -- 1
-purify$ -- 513
+purify$ -- 509
 quote$ -- 0
-skip$ -- 1683
+skip$ -- 1676
 stack$ -- 0
-substring$ -- 2178
-swap$ -- 1901
+substring$ -- 2167
+swap$ -- 1899
 text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 693
+type$ -- 681
 warning$ -- 14
-while$ -- 353
+while$ -- 350
 width$ -- 0
-write$ -- 916
-(There were 15 warnings)
+write$ -- 907
+(There were 14 warnings)

@@ -1,4 +1,4 @@
-\begin{thebibliography}{79}
+\begin{thebibliography}{78}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -68,6 +68,11 @@ Bollen, D., Knijnenburg, B.~P., Willemsen, M.~C., and Graus, M. (2010):
 Bourdieu, P. and Nice, R. (2010): \textit{Distinction: {A} {Social} {Critique}
   of the {Judgement} of {Taste}}, London, UNITED KINGDOM: Taylor \& Francis
   Group.
+
+\bibitem[{Brewster and Broughton(2014)}]{brewster_last_2014}
+Brewster, B. and Broughton, F. (2014): \textit{Last {Night} a {DJ} {Saved} {My}
+  {Life}: {The} {History} of the {Disc} {Jockey}}, Open Road + Grove/Atlantic.
+  Google-Books-ID: MxTnBAAAQBAJ.
 
 \bibitem[{Böck and Davies(2020)}]{bock_deconstruct_2020}
 Böck, S. and Davies, M. E.~P. (2020): \enquote{{DECONSTRUCT}, {ANALYSE},
@@ -160,11 +165,6 @@ George, A., Mary, X.~A., and George, S.~T. (2022): \enquote{Development of an
   intelligent model for musical key estimation using machine learning
   techniques}, \textit{Multimedia Tools and Applications}, 81(14),
   pp.\ignorespaces 19945--19964, \doi{10.1007/s11042-022-12432-y}.
-
-\bibitem[{Gillett(2021)}]{gillett_how_2021}
-Gillett, E. (2021): \enquote{How independent radio has thrived in the
-  pandemic},
-  \urlprefix\url{https://djmag.com/longreads/how-independent-radio-has-thrived-pandemic}.
 
 \bibitem[{Gillhofer and Schedl(2015)}]{gillhofer_iron_2015}
 Gillhofer, M. and Schedl, M. (2015): \enquote{Iron {Maiden} {While} {Jogging},
@@ -285,10 +285,6 @@ Moles, A.~A. (2019): \textit{Sociodynamique de la culture}, De Gruyter Mouton,
 Naomi (2023): \enquote{Spotify {Debuts} a {New} {AI} {DJ}, {Right} in {Your}
   {Pocket}},
   \urlprefix\url{https://newsroom.spotify.com/2023-02-22/spotify-debuts-a-new-ai-dj-right-in-your-pocket/}.
-
-\bibitem[{NTS(2023)}]{nts_nts_2023}
-NTS (2023): \enquote{{NTS} {\textbar} {Don}'t {Assume}},
-  \urlprefix\url{https://www.nts.live/supporters}.
 
 \bibitem[{Percival(2011)}]{percival_music_2011}
 Percival, J.~M. (2011): \enquote{Music {Radio} and the {Record} {Industry}:
