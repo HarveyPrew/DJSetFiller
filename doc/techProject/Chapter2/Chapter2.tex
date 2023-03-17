@@ -104,36 +104,43 @@ User-Based Neighbourhood is when you look for users who rate similar to see whet
 	\hat{r} _{u,i} = \bar{r}_{u} + \frac{ \sum _{v \in S(u)^{k}} sim(u ,v) ( r_{v, i} - \bar{r}_{v})}{\sum _{v \in S(u)^{k}} sim(u , v)}
 \end{equation}
 
-For one to calculate $sim(u , v)$, you'd use Pearson Correlation, Cosine similarity or matrix factorisation.
+For one to calculate $sim(u , v)$, you'd use pearson correlation, cosine similarity or matrix factorisation.
 
-\textbf{\textit{TODO - Redo this}}
 \subsection{Matrix Factorisation}
 
-\textbf{\textit{TODO - State what the problem is, whats in the matrix and what is a sparse matrix}}
+\begin{figure}[H]
+	\includegraphics[scale=0.45]{images/matrix_factorisation_example}
+	\centering
+	\caption{A Movie Rating example of matrix factorisation  \citep{httpsdevelopersgooglecom_matrix_2023}} 
+	\label{fig:figure}
+\end{figure}
 
-Matrix factorisation is when you take a sparse matrix and instead of storing each rating for each user, you store features that when multiplied together can calculate the rating of an item by a user.
+When one had a matrix of plays for a given user for a given song, matrix factorisation can be used to find recommended songs. Matrix factorisation allows one to translate the matrix into vectors of factors of the user item rating patterns \citep{koren_matrix_2009}. Figure 2.3 sees this in action, where latent factors are used to approximate and predict users ratings of movies.
 
-\textbf{\textit{TODO - Explain what features are}}
+\begin{figure}[H]
+	\includegraphics[scale=0.45]{images/latent_factors}
+	\centering
+	\caption{What latent factor values can tell us about user/item interactions \citep{httpsdevelopersgooglecom_matrix_2023}} 
+	\label{fig:figure}
+\end{figure}
 
-This is really useful for a sparse matrix, which is usually the case for most recommendation systems, because it shows information that the matrix alone doesnt. Because it factorises the users ratings from features, you can see trends on what groups of users likes and doesnt like. Because it reduces the dimensionality of a given matrix, matrix factorisation requires less processing power than other methods of finding similar items. 
+This is useful for a sparse matrix (when most user/item interactions is zero), because it shows information that the matrix alone does not.  One can see trends of preference within the latent factors. Because it reduces the dimensionality of a given matrix, matrix factorisation requires less processing power than methods that search through the raw matrix. 
 
-\textbf{\textit{TODO - Explain to 5 year old, use simple language}}
-
-There are different ways of factorising a matrix. An example of one is Singular Value Decomposition (SVD). Heres the equation with U and V being the number of matrices for a given amount dimensions:
+There are different ways of factorising a matrix. An example of one is Singular Value Decomposition (SVD). Heres the equation with $(n\cdot k)U$ and $(m\cdot k)V$ matrices for k number of dimensions,  where M is the approximated matrix:
 
 \begin{equation}
 	M = U \sum V ^{T}
 \end{equation}
 
-Theres other means to compute M. Least Squares, uses a computational safe way to make sure M doesnt go to off from its original value, whilst stochastic gradient repetitively uses random bits of data to approximate U and V \citep{koren_matrix_2009}. 
+Theres other means to compute M. Alternating Least Squares, uses a computational safe way to make sure M doesnt go to off from its original value. It works by alternating between estimating U and V until it reaches closely to the value of M. Stochastic gradient repetitively uses random bits of data to approximate U and V \citep{koren_matrix_2009}. 
 
 When the matrix is split up, the predicted rating can be calculated from the user and item feature vectors. 
 
 \begin{equation}
 	\hat{r} _{u,i} = U _{u} . V _{i}^{T} = \sum_{f=0}^{k} U_{u,f} V_{f, i}
 \end{equation}
-
-Looking at the latent factors one can find  similar items using a cosine similarity.
+\\
+Looking at the latent factors one can find  similar items using a cosine similarity. When working with sparse data, its favourable to use Alternating Least Squares because of its greater potential for parallelisation \citep{koren_matrix_2009}.
 
 \subsection{Limitations}
 Despite its popularity, Collaborative filtering has limitations as a recommendation method.
@@ -144,7 +151,7 @@ Despite its popularity, Collaborative filtering has limitations as a recommendat
 
 \textbf{Cold Start and Early Raters - } The term cold start refers to new items and the term referred to new users is called early raters \citep{avery_recommender_1997}. When there are new users or items, there is little data associated with them so it is challenging to come up with suitable recommendations based on either the user or item. 
 
-\textbf{Popularity Bias - } Collaborative Filtering does not take into account information about the item, only user interactions with it. This means that it has a bias towards popular items.
+\textbf{Popularity Bias - } Collaborative filtering does not take into account information about the item, only user interactions with it. This means that it has a bias towards popular items.
 
 \textbf{\textit{TO DO- Sort casing}}
 
@@ -155,14 +162,13 @@ Despite its popularity, Collaborative filtering has limitations as a recommendat
 
 For neighbourhood-based, recommendations can either be user-based or item-based. The Ringo system is a good example of user based recommendation's, where it assesses the taste of a user for an item using the ratings of the item from different users. These users with similar rating trends are called neighbours. 
 
-\textbf{Talk about latest music mendation system that uses it (recsys one)}
 \section{Content Based Filtering}
 
 Content Based Filtering works by looking at the characteristics of a given item and see if it matches the preference of the user. Recommendations do not stem from what other users interact with, it only stems from the given information about the item. Its based on finding information about the item and filtering \citep{casey_content-based_2008}, and within the context of music, it recommends songs that has similar information to what the user already enjoys \citep{aucouturier_music_2002} \citep{logan_music_2004}. Theres been a lot of research on extracting the componenets of an audio file of music \citep{ribecky_multi-input_2021} \citep{zhao_musical_2022}. Recent developments have shown successful extractions of genre and structure with the MusicBERT Model \citep{zhu_musicbert_2021}. It's found that midi extraction from songs can aid to give better solutions for less popular songs, helping eliminate the cold start problem \citep{yadav_improved_2022}.
 
-Early uses of content based filtering were text based, because of its ease of information extraction, An example of this is the PRES system \citep{van_meteren_using_2000}. But now with advances in machine learning, more complex formats can be used for extraction like images or audio. Models like "Xception" have proven successful at extracting audio features from songs \citep{chollet_xception_2017} \citep{singh_robustness_2022}.
+Early uses of content based filtering were text based, because of its ease of information extraction, An example of this is the PRES system \citep{van_meteren_using_2000}. Machine learning has enabled extraction for complex formats like images or audio. Models like "Xception" have proven successful at extracting audio features from songs \citep{chollet_xception_2017} \citep{singh_robustness_2022}.
 
-When finding similar items with CB, it simply looks at how similar the attributes of each items is, without introducing any subjective factor, like user behaviour, into its decision making. Thinking of an item being a vector made of its defined values of attributes, we can find the distance between each item. Its common to have these values be numerical. Common ways of caluclating the distance is Euclidean, Manhattan, Chebychev, cosine distance for vectors, and Mahalanobis distance.
+Content based filtering looks at how similar the attributes of each items is when finding recommendations. It's decision making doesn't use subjective factors, like user behaviour. Thinking of an item being a vector made of its defined values of attributes, we can find the distance between each item. Its common to have these values be numerical. Common ways of caluclating the distance is Euclidean, Manhattan, Chebychev, cosine distance for vectors, and Mahalanobis distance.
 
 \begin{equation}
 	d(x,y) = \sqrt{\sum _{i=1} ^{n}(x_{i} - y_{i})^{2}}
