@@ -50,9 +50,10 @@ Collaborative filtering can be divided into the following types:
 
 \subsection{Explicit Feedback}
 
-\textit{Ringo} and many of the first music recommendation systems that use collaborative filtering uses explicit feedback for its data. Explicit feedback is when the system asks a user for some form of measurement about the likeability of said product. \citep{celma_recommendation_2010}. \textbf{\textit{TODO - Make less similar}}
+ Explicit feedback is when the system asks a user for some form of measurement about the likeability of said product \citep{celma_recommendation_2010}. The RACOFI (Rule-Applying Collaborative Filtering) system uses explicit feedback. Collaborative filtering with ratings finds initial recommendations. Then the system applies logic rules to decipher further the most suitable recommendations \citep{anderson_racofi_2003}.  Its added logic rules implicitly change the user’s previous ratings. Other recommendation systems started having similar rules, including \textit{Indiscover} and Slope One \citep{celma_music_2010} \citep{lemire_slope_2007}. \textit{Ringo} and many of the first music recommendation systems that use collaborative filtering use explicit feedback for their data. 
 
-An example of explicit feedback being used is in the RACOFI (Rule-Applying Collaborative Filtering) system. Ratings are used to find recommendations through collaborative filtering and then the system applies logic rules to decipher the most suitable recommendations further \citep{anderson_racofi_2003}. Its added logic rules implicitly changes the user's previous ratings. Other recommendation systems started having similar rules including \textit{Indiscover} and Slope One \citep{celma_music_2010} \citep{lemire_slope_2007}.
+
+
 \textbf{\textit{TODO - Make less similar}}
 
 \subsection{Implicit Feedback}
@@ -63,9 +64,7 @@ There is also a lot to be found with implicit data. In 2018, a music recommendat
 
 \subsection{Item-Based Neighbourhood }
 
-\textbf{Talk about the definitions and examples of these things \citep{ricci_recommender_2011}}
-
-Item-Based Neighbourhood is when similarites for a given item is found based on the user's previous item ratings. Below shows a matrix with ratings from  $u_{2}, u_{i}$ and $u_{m-1}$. For finding similarities between $i_{i}$ and $i_{k}$, we only take $u_{2}$ and  $u_{i}$ into consideration when using item based neighbourhood because they have rated both item $i_{i}$ and $i_{k}$.  
+Item-Based Neighbourhood is when similarites for a given item is found based on the user's previous item ratings. Similarities are found through calculating the similarity and then calculating the prediction. Below shows a matrix with ratings from  $u_{2}, u_{i}$ and $u_{m-1}$. For finding similarities between $i_{i}$ and $i_{k}$, we only take $u_{2}$ and  $u_{i}$ into consideration when using item based neighbourhood because they have rated both item $i_{i}$ and $i_{k}$.  
 
 \begin{figure}[H]
 	\includegraphics[scale=0.65]{images/neigbourhood_based}
@@ -102,16 +101,13 @@ After the similarities are calculated, the next step is to predict how the user 
 
 \subsection{User Based}
 
-User-Based Neighbourhood is when you look for users who rate similar to see whether item i is similar to user u. Below shows an equation similar to the one above but instead we look through a list similar users.
+User-Based Neighbourhood is when you look for users who rate similar to see whether item i is similar to user u. This differs from Item Based because User Based skips calculating similarity of co-rated items \citep{pinela_recommender_2017}. Below shows an equation similar to the one above but instead we look through a list similar users.
 
 \begin{equation}
 	\hat{r} _{u,i} = \bar{r}_{u} + \frac{ \sum _{v \in S(u)^{k}} sim(u ,v) ( r_{v, i} - \bar{r}_{v})}{\sum _{v \in S(u)^{k}} sim(u , v)}
 \end{equation}
 
 For one to calculate $sim(u , v)$, you'd use Pearson Correlation, Cosine similarity or matrix factorisation.
-
-Item based is when the system predict rating of user u for item i rooted from ratings of u for similar items to i. Similarity between two items are affirmed when multiple users rate them alike. \textbf{\textit{TODO - Make 2 sentences simpler to understand + Highlight difference in item based and user based better}}
-
 
 \textbf{\textit{TODO - Redo this}}
 \subsection{Matrix Factorisation}

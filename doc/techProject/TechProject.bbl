@@ -1,4 +1,4 @@
-\begin{thebibliography}{72}
+\begin{thebibliography}{75}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -185,6 +185,12 @@ Hennequin, R., Khlif, A., Voituret, F., and Moussallam, M. (2020):
   pre-trained models}, \textit{Journal of Open Source Software}, 5(50),
   p.\ignorespaces 2154, \doi{10.21105/joss.02154}.
 
+\bibitem[{https://research.atspotify.com/machine
+  learning/(2023)}]{httpsresearchatspotifycommachine-learning_machine_2023}
+https://research.atspotify.com/machine learning/ (2023): \enquote{Machine
+  {Learning}},
+  \urlprefix\url{https://research.atspotify.com/machine-learning/}.
+
 \bibitem[{Isinkaye et~al.(2015)Isinkaye, Folajimi, and
   Ojokoh}]{isinkaye_recommendation_2015}
 Isinkaye, F.~O., Folajimi, Y.~O., and Ojokoh, B.~A. (2015):
@@ -275,6 +281,11 @@ Naomi (2023): \enquote{Spotify {Debuts} a {New} {AI} {DJ}, {Right} in {Your}
   {Pocket}},
   \urlprefix\url{https://newsroom.spotify.com/2023-02-22/spotify-debuts-a-new-ai-dj-right-in-your-pocket/}.
 
+\bibitem[{Pinela(2017)}]{pinela_recommender_2017}
+Pinela, C. (2017): \enquote{Recommender {Systems} — {User}-{Based} and
+  {Item}-{Based} {Collaborative} {Filtering}},
+  \urlprefix\url{https://medium.com/@cfpinela/recommender-systems-user-based-and-item-based-collaborative-filtering-5d5f375a127f}.
+
 \bibitem[{Porcaro et~al.(2021)Porcaro, Castillo, and
   Gómez}]{porcaro_diversity_2021}
 Porcaro, L., Castillo, C., and Gómez, E. (2021): \enquote{Diversity by
@@ -310,6 +321,12 @@ Ribecky, S., Abeßer, J., and Lukashevich, H. (2021): \enquote{Multi-input
 Ricci, F., Rokach, L., Shapira, B., and Kantor, P.~B., eds. (2011):
   \textit{Recommender {Systems} {Handbook}}, Boston, MA: Springer US,
   \doi{10.1007/978-0-387-85820-3}.
+
+\bibitem[{Roberts(2020)}]{roberts_anti-spotify_2020}
+Roberts, R. (2020): \enquote{The anti-{Spotify}: {How} online music company
+  {Bandcamp} became the toast of the {COVID} age},
+  \urlprefix\url{https://www.latimes.com/entertainment-arts/music/story/2020-09-22/bandcamp-anti-spotify-streaming}.
+  Section: Music.
 
 \bibitem[{Robinson and Brown(2023)}]{robinson_automated_2023}
 Robinson, K. and Brown, D. (2023): \enquote{Automated {Time}-frequency {Domain}
