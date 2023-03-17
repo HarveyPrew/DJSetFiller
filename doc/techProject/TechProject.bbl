@@ -1,4 +1,4 @@
-\begin{thebibliography}{77}
+\begin{thebibliography}{78}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -126,6 +126,12 @@ DiMaggio, P. (1987): \enquote{Classification in {Art}}, \textit{American
   Sociological Review}, 52(4), pp.\ignorespaces 440--455,
   \doi{10.2307/2095290}. Publisher: [American Sociological Association, Sage
   Publications, Inc.].
+
+\bibitem[{DMS(2020)}]{dms_apple_2020}
+DMS (2020): \enquote{Apple {Announces} {Apple} {Music} {Radio} {Streaming}
+  {Stations}},
+  \urlprefix\url{https://deanemediasolutions.com/apple-announces-apple-music-radio-streaming-stations/}.
+  Section: BREAKING NEWS.
 
 \bibitem[{Ferretti(2018)}]{ferretti_clustering_2018}
 Ferretti, S. (2018): \enquote{Clustering of {Musical} {Pieces} {Through}
@@ -271,12 +277,6 @@ Logan, B. (2004): \enquote{Music {Recommendation} from {Song} {Sets}.} .
 McFee, B. and Lanckriet, G. (2012): \enquote{{HYPERGRAPH} {MODELS} {OF}
   {PLAYLIST} {DIALECTS}}, .
 
-\bibitem[{Media and {2020}(2020)}]{deane_media_apple_2020}
-Media, D. and {2020} (2020): \enquote{Apple {Announces} {Apple} {Music} {Radio}
-  {Streaming} {Stations}},
-  \urlprefix\url{https://deanemediasolutions.com/apple-announces-apple-music-radio-streaming-stations/}.
-  Section: BREAKING NEWS.
-
 \bibitem[{Moles(2019)}]{moles_sociodynamique_2019}
 Moles, A.~A. (2019): \textit{Sociodynamique de la culture}, De Gruyter Mouton,
   \doi{10.1515/9783111672403}. Publication Title: Sociodynamique de la culture.
@@ -285,6 +285,12 @@ Moles, A.~A. (2019): \textit{Sociodynamique de la culture}, De Gruyter Mouton,
 Naomi (2023): \enquote{Spotify {Debuts} a {New} {AI} {DJ}, {Right} in {Your}
   {Pocket}},
   \urlprefix\url{https://newsroom.spotify.com/2023-02-22/spotify-debuts-a-new-ai-dj-right-in-your-pocket/}.
+
+\bibitem[{Percival(2011)}]{percival_music_2011}
+Percival, J.~M. (2011): \enquote{Music {Radio} and the {Record} {Industry}:
+  {Songs}, {Sounds}, and {Power}}, \textit{Popular Music and Society}, 34(4),
+  pp.\ignorespaces 455--473, \doi{10.1080/03007766.2011.601598}. Publisher:
+  Routledge \_eprint: https://doi.org/10.1080/03007766.2011.601598.
 
 \bibitem[{Pinela(2017)}]{pinela_recommender_2017}
 Pinela, C. (2017): \enquote{Recommender {Systems} — {User}-{Based} and
