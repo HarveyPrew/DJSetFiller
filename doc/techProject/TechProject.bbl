@@ -1,4 +1,4 @@
-\begin{thebibliography}{78}
+\begin{thebibliography}{79}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -286,6 +286,10 @@ Naomi (2023): \enquote{Spotify {Debuts} a {New} {AI} {DJ}, {Right} in {Your}
   {Pocket}},
   \urlprefix\url{https://newsroom.spotify.com/2023-02-22/spotify-debuts-a-new-ai-dj-right-in-your-pocket/}.
 
+\bibitem[{NTS(2023)}]{nts_nts_2023}
+NTS (2023): \enquote{{NTS} {\textbar} {Don}'t {Assume}},
+  \urlprefix\url{https://www.nts.live/supporters}.
+
 \bibitem[{Percival(2011)}]{percival_music_2011}
 Percival, J.~M. (2011): \enquote{Music {Radio} and the {Record} {Industry}:
   {Songs}, {Sounds}, and {Power}}, \textit{Popular Music and Society}, 34(4),
@@ -303,10 +307,6 @@ Porcaro, L., Castillo, C., and Gómez, E. (2021): \enquote{Diversity by
   {Design} in {Music} {Recommender} {Systems}}, \textit{Transactions of the
   International Society for Music Information Retrieval}, 4(1),
   pp.\ignorespaces 114--126, \doi{10.5334/tismir.106}.
-
-\bibitem[{Radio(2023)}]{nts_radio_nts_2023}
-Radio, N. (2023): \enquote{{NTS} {\textbar} {Don}'t {Assume}},
-  \urlprefix\url{https://www.nts.live/supporters}.
 
 \bibitem[{Rentfrow and Gosling(2003)}]{rentfrow_re_2003}
 Rentfrow, P.~J. and Gosling, S.~D. (2003): \enquote{The do re mi's of everyday
@@ -390,9 +390,15 @@ Singh, Y. and Biswas, A. (2022): \enquote{Robustness of musical features on
   with Applications}, 199, p.\ignorespaces 116879,
   \doi{10.1016/j.eswa.2022.116879}.
 
-\bibitem[{Spotify(2020)}]{spotify_spotify_2020}
-Spotify (2020): \enquote{Spotify {Users} {Have} {Spent} {Over} 2.3 {Billion}
-  {Hours} {Streaming} {Discover} {Weekly} {Playlists} {Since} 2015},
+\bibitem[{Spotify(2020{\natexlab{a}})}]{spotify_introducing_2020}
+Spotify (2020{\natexlab{a}}): \enquote{Introducing track {IDs}: {Co}-{Curated}
+  {Playlists} {From} the {World}’s {Leading} {DJs}},
+  \urlprefix\url{https://newsroom.spotify.com/2020-08-06/introducing-track-ids-co-curated-playlists-from-the-worlds-leading-djs/}.
+
+\bibitem[{Spotify(2020{\natexlab{b}})}]{spotify_spotify_2020}
+Spotify (2020{\natexlab{b}}): \enquote{Spotify {Users} {Have} {Spent} {Over}
+  2.3 {Billion} {Hours} {Streaming} {Discover} {Weekly} {Playlists} {Since}
+  2015},
   \urlprefix\url{https://newsroom.spotify.com/2020-07-09/spotify-users-have-spent-over-2-3-billion-hours-streaming-discover-weekly-playlists-since-2015/}.
 
 \bibitem[{Sturm(2014)}]{nurnberger_survey_2014}
