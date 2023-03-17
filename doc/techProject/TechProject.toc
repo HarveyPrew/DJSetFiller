@@ -15,7 +15,8 @@
 \contentsline {subsection}{\numberline {2.2.6}Limitations}{8}{subsection.2.2.6}%
 \contentsline {section}{\numberline {2.3}Content Based Filtering}{8}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Limitations}{10}{subsection.2.3.1}%
-\contentsline {section}{\numberline {2.4}Diversity issue}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Clustering}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Diversity issue}{10}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Machine Learning used for DJing}{12}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Source Separation}{12}{section.3.1}%
 \contentsline {section}{\numberline {3.2}BPM, key, genre classification}{12}{section.3.2}%
