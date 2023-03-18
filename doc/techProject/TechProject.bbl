@@ -1,4 +1,4 @@
-\begin{thebibliography}{88}
+\begin{thebibliography}{90}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -115,6 +115,16 @@ Chang, H.-Y., Huang, S.-C., and Wu, J.-H. (2017): \enquote{A personalized music
   recommendation system based on electroencephalography feedback},
   \textit{Multimedia Tools and Applications}, 76(19), pp.\ignorespaces
   19523--19542, \doi{10.1007/s11042-015-3202-4}.
+
+\bibitem[{Chen et~al.(2022)Chen, Hsu, Liao, Ramírez, Mitsufuji, and
+  Yang}]{chen_automatic_2022}
+Chen, B.-Y., Hsu, W.-H., Liao, W.-H., Ramírez, M. A.~M., Mitsufuji, Y., and
+  Yang, Y.-H. (2022): \enquote{Automatic {DJ} {Transitions} with
+  {Differentiable} {Audio} {Effects} and {Generative} {Adversarial}
+  {Networks}}, in \textit{{ICASSP} 2022 - 2022 {IEEE} {International}
+  {Conference} on {Acoustics}, {Speech} and {Signal} {Processing} ({ICASSP})},
+  pp.\ignorespaces 466--470, \doi{10.1109/ICASSP43922.2022.9746663}. ISSN:
+  2379-190X.
 
 \bibitem[{Chesters(2017)}]{chesters_history_2017}
 Chesters, A. (2017): \enquote{History of the {Pioneer} {CDJ} ({DJ} {CD}
@@ -268,6 +278,11 @@ Kaminskas, M., Ricci, F., and Schedl, M. (2013): \enquote{Location-aware music
 Kim, A., Park, S., Park, J., Ha, J.-W., Kwon, T., and Nam, J. (2017):
   \enquote{Automatic {DJ} {Mix} {Generation} {Using} {Highlight} {Detection}},
   .
+
+\bibitem[{Kim et~al.(2022)Kim, Yang, and Nam}]{kim_joint_2022}
+Kim, T., Yang, Y.-H., and Nam, J. (2022): \enquote{Joint {Estimation} of
+  {Fader} and {Equalizer} {Gains} of {DJ} {Mixers} {Using} {Convex}
+  {Optimization}}, , p.\ignorespaces~8.
 
 \bibitem[{Kirn(2023)}]{kirn_review_2023}
 Kirn, P. (2023): \enquote{In {Review}: {Serato} {Stems} · {Feature} {RA}},
