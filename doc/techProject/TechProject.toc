@@ -22,32 +22,32 @@
 \contentsline {section}{\numberline {3.1}Source Separation}{13}{section.3.1}%
 \contentsline {section}{\numberline {3.2}BPM, key, genre classification}{13}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Automated Mixing}{14}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Summary}{14}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Hypothesis}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Summary}{16}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Application}{17}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Data set}{17}{subsection.5.0.1}%
-\contentsline {subsection}{\numberline {5.0.2}Initial Suggestions}{17}{subsection.5.0.2}%
-\contentsline {subsection}{\numberline {5.0.3}Final Suggestions}{18}{subsection.5.0.3}%
-\contentsline {subsection}{\numberline {5.0.4}Example Findings}{21}{subsection.5.0.4}%
-\contentsline {section}{\numberline {5.1}Summary}{22}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Experiment}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}R-Precision}{23}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Preparing Evaluation Set}{24}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Experiment Variables}{25}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Summary}{26}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Results and Discussion}{27}{chapter.7}%
-\contentsline {subsection}{\numberline {7.0.1}Varying input set length}{28}{subsection.7.0.1}%
-\contentsline {subsection}{\numberline {7.0.2}Comparing with industry standard models}{30}{subsection.7.0.2}%
-\contentsline {section}{\numberline {7.1}Summary}{30}{section.7.1}%
-\contentsline {chapter}{\numberline {8}Conclusions and Further Work}{31}{chapter.8}%
-\contentsline {subsection}{\numberline {8.0.1}Findings of each chapter}{31}{subsection.8.0.1}%
-\contentsline {subsection}{\numberline {8.0.2}Main Findings of the study}{32}{subsection.8.0.2}%
-\contentsline {subsection}{\numberline {8.0.3}Implications}{33}{subsection.8.0.3}%
-\contentsline {subsection}{\numberline {8.0.4}Further Work}{33}{subsection.8.0.4}%
-\contentsline {subsection}{\numberline {8.0.5}Recommended Song Clicks}{35}{subsection.8.0.5}%
-\contentsline {subsection}{\numberline {8.0.6}Spotify Features}{35}{subsection.8.0.6}%
-\contentsline {subsection}{\numberline {8.0.7}Spectrogram Analysis}{35}{subsection.8.0.7}%
-\contentsline {subsection}{\numberline {8.0.8}Listening Tests}{35}{subsection.8.0.8}%
+\contentsline {section}{\numberline {3.4}Summary}{15}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Hypothesis}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Summary}{17}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Application}{18}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Data set}{18}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Initial Suggestions}{18}{subsection.5.0.2}%
+\contentsline {subsection}{\numberline {5.0.3}Final Suggestions}{19}{subsection.5.0.3}%
+\contentsline {subsection}{\numberline {5.0.4}Example Findings}{22}{subsection.5.0.4}%
+\contentsline {section}{\numberline {5.1}Summary}{23}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Experiment}{24}{chapter.6}%
+\contentsline {section}{\numberline {6.1}R-Precision}{24}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Preparing Evaluation Set}{25}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Experiment Variables}{26}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Summary}{27}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Results and Discussion}{28}{chapter.7}%
+\contentsline {subsection}{\numberline {7.0.1}Varying input set length}{29}{subsection.7.0.1}%
+\contentsline {subsection}{\numberline {7.0.2}Comparing with industry standard models}{31}{subsection.7.0.2}%
+\contentsline {section}{\numberline {7.1}Summary}{31}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Conclusions and Further Work}{32}{chapter.8}%
+\contentsline {subsection}{\numberline {8.0.1}Findings of each chapter}{32}{subsection.8.0.1}%
+\contentsline {subsection}{\numberline {8.0.2}Main Findings of the study}{33}{subsection.8.0.2}%
+\contentsline {subsection}{\numberline {8.0.3}Implications}{34}{subsection.8.0.3}%
+\contentsline {subsection}{\numberline {8.0.4}Further Work}{34}{subsection.8.0.4}%
+\contentsline {subsection}{\numberline {8.0.5}Recommended Song Clicks}{36}{subsection.8.0.5}%
+\contentsline {subsection}{\numberline {8.0.6}Spotify Features}{36}{subsection.8.0.6}%
+\contentsline {subsection}{\numberline {8.0.7}Spectrogram Analysis}{36}{subsection.8.0.7}%
+\contentsline {subsection}{\numberline {8.0.8}Listening Tests}{36}{subsection.8.0.8}%
 \renewcommand {\cftchappresnum }{Appendix~}
 \addtolength {\cftchapnumwidth }{1em}

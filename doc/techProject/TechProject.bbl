@@ -1,4 +1,4 @@
-\begin{thebibliography}{85}
+\begin{thebibliography}{86}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -284,6 +284,14 @@ Kumaraswamy, B. (2022): \enquote{Optimal classification of music genres based
 \bibitem[{Laplante(2014)}]{laplante_improving_2014}
 Laplante, A. (2014): \enquote{{IMPROVING} {MUSIC} {RECOMMENDER} {SYSTEMS}:
   {WHAT} {CAN} {WE} {LEARN} {FROM} {RESEARCH} {ON} {MUSIC} {TASTES}?} .
+
+\bibitem[{Lea et~al.(2017)Lea, Flynn, Vidal, Reiter, and
+  Hager}]{lea_temporal_2017}
+Lea, C., Flynn, M.~D., Vidal, R., Reiter, A., and Hager, G.~D. (2017):
+  \enquote{Temporal {Convolutional} {Networks} for {Action} {Segmentation} and
+  {Detection}}, in \textit{2017 {IEEE} {Conference} on {Computer} {Vision} and
+  {Pattern} {Recognition} ({CVPR})}, Honolulu, HI: IEEE, pp.\ignorespaces
+  1003--1012, \doi{10.1109/CVPR.2017.113}.
 
 \bibitem[{Lemire and Maclachlan(2007)}]{lemire_slope_2007}
 Lemire, D. and Maclachlan, A. (2007): \enquote{Slope {One} {Predictors} for
