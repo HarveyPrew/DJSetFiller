@@ -1,4 +1,4 @@
-\begin{thebibliography}{91}
+\begin{thebibliography}{94}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -334,6 +334,10 @@ Mirjalili, S. and Lewis, A. (2016): \enquote{The {Whale} {Optimization}
   {Algorithm}}, \textit{Advances in Engineering Software}, 95, pp.\ignorespaces
   51--67, \doi{10.1016/j.advengsoft.2016.01.008}.
 
+\bibitem[{MixesDB(2023)}]{mixesdb_main_2023}
+MixesDB (2023): \enquote{Main {Page}},
+  \urlprefix\url{//www.mixesdb.com/w/Main_Page}.
+
 \bibitem[{Moles(2019)}]{moles_sociodynamique_2019}
 Moles, A.~A. (2019): \textit{Sociodynamique de la culture}, De Gruyter Mouton,
   \doi{10.1515/9783111672403}. Publication Title: Sociodynamique de la culture.
@@ -474,6 +478,11 @@ Spotify (2020{\natexlab{b}}): \enquote{Spotify {Users} {Have} {Spent} {Over}
   2015},
   \urlprefix\url{https://newsroom.spotify.com/2020-07-09/spotify-users-have-spent-over-2-3-billion-hours-streaming-discover-weekly-playlists-since-2015/}.
 
+\bibitem[{Spotify(2023)}]{spotify_web_2023}
+Spotify (2023): \enquote{Web {API} {Reference} {\textbar} {Spotify} for
+  {Developers}},
+  \urlprefix\url{https://developer.spotify.com/documentation/web-api/reference/}.
+
 \bibitem[{Sturm(2014)}]{nurnberger_survey_2014}
 Sturm, B.~L. (2014): \enquote{A {Survey} of {Evaluation} in {Music} {Genre}
   {Recognition}}, in A.~Nürnberger, S.~Stober, B.~Larsen, and M.~Detyniecki,
@@ -549,6 +558,15 @@ Zheleva, E., Guiver, J., Mendes~Rodrigues, E., and Milić-Frayling, N. (2010):
   \textit{Proceedings of the 19th international conference on {World} wide
   web}, {WWW} '10, New York, NY, USA: Association for Computing Machinery,
   pp.\ignorespaces 1019--1028, \doi{10.1145/1772690.1772794}.
+
+\bibitem[{Zhou et~al.(2008)Zhou, Wilkinson, Schreiber, and
+  Pan}]{zhou_large-scale_2008}
+Zhou, Y., Wilkinson, D., Schreiber, R., and Pan, R. (2008):
+  \enquote{Large-{Scale} {Parallel} {Collaborative} {Filtering} for the
+  {Netflix} {Prize}}, in R.~Fleischer and J.~Xu, eds., \textit{Algorithmic
+  {Aspects} in {Information} and {Management}}, Lecture {Notes} in {Computer}
+  {Science}, Berlin, Heidelberg: Springer, pp.\ignorespaces 337--348,
+  \doi{10.1007/978-3-540-68880-8_32}.
 
 \bibitem[{Zhu et~al.(2021)Zhu, Niu, Fu, and Wang}]{zhu_musicbert_2021}
 Zhu, H., Niu, Y., Fu, D., and Wang, H. (2021): \enquote{{MusicBERT}: {A}
