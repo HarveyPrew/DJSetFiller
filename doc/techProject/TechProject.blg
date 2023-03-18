@@ -21,51 +21,52 @@ Warning--empty booktitle in claypool_combining_1999
 Warning--empty pages in claypool_combining_1999
 Warning--empty pages in ferwerda_personality_2015
 Warning--empty journal in jansson_singing_2017
-Warning--missing publisher in kim_automatic_2017
+Warning--empty booktitle in kim_automatic_2017
+Warning--empty pages in kim_automatic_2017
 Warning--empty journal in laplante_improving_2014
 Warning--empty booktitle in logan_music_2004
 Warning--empty pages in logan_music_2004
 Warning--empty journal in mcfee_hypergraph_2012
 Warning--empty booktitle in van_meteren_using_2000
-You've used 78 entries,
+You've used 80 entries,
             2968 wiz_defined-function locations,
-            1139 strings with 24380 characters,
-and the built_in function-call counts, 48229 in all, are:
-= -- 4153
-> -- 1876
-< -- 86
-+ -- 697
-- -- 604
-* -- 3833
-:= -- 7174
-add.period$ -- 170
-call.type$ -- 78
-change.case$ -- 602
-chr.to.int$ -- 79
-cite$ -- 92
-duplicate$ -- 3601
-empty$ -- 3595
-format.name$ -- 811
-if$ -- 9916
+            1147 strings with 24742 characters,
+and the built_in function-call counts, 49033 in all, are:
+= -- 4219
+> -- 1896
+< -- 88
++ -- 705
+- -- 610
+* -- 3885
+:= -- 7309
+add.period$ -- 174
+call.type$ -- 80
+change.case$ -- 614
+chr.to.int$ -- 81
+cite$ -- 95
+duplicate$ -- 3668
+empty$ -- 3668
+format.name$ -- 819
+if$ -- 10076
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 652
-newline$ -- 244
-num.names$ -- 320
-pop$ -- 1396
+missing$ -- 663
+newline$ -- 250
+num.names$ -- 328
+pop$ -- 1428
 preamble$ -- 1
-purify$ -- 509
+purify$ -- 519
 quote$ -- 0
-skip$ -- 1676
+skip$ -- 1704
 stack$ -- 0
-substring$ -- 2167
-swap$ -- 1899
+substring$ -- 2191
+swap$ -- 1919
 text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 681
-warning$ -- 14
-while$ -- 350
+type$ -- 699
+warning$ -- 15
+while$ -- 356
 width$ -- 0
-write$ -- 907
-(There were 14 warnings)
+write$ -- 927
+(There were 15 warnings)

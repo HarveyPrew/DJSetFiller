@@ -1,4 +1,4 @@
-\begin{thebibliography}{78}
+\begin{thebibliography}{80}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -110,6 +110,11 @@ Chang, H.-Y., Huang, S.-C., and Wu, J.-H. (2017): \enquote{A personalized music
   recommendation system based on electroencephalography feedback},
   \textit{Multimedia Tools and Applications}, 76(19), pp.\ignorespaces
   19523--19542, \doi{10.1007/s11042-015-3202-4}.
+
+\bibitem[{Chesters(2017)}]{chesters_history_2017}
+Chesters, A. (2017): \enquote{History of the {Pioneer} {CDJ} ({DJ} {CD}
+  {Decks}) \& “{Forgotten} {Child}”, the {DMP}-555},
+  \urlprefix\url{https://adamch.com/history-of-the-pioneer-cdj/}.
 
 \bibitem[{Chollet(2017)}]{chollet_xception_2017}
 Chollet, F. (2017): \enquote{Xception: {Deep} {Learning} with {Depthwise}
@@ -241,7 +246,8 @@ Kaminskas, M., Ricci, F., and Schedl, M. (2013): \enquote{Location-aware music
 \bibitem[{Kim et~al.(2017)Kim, Park, Park, Ha, Kwon, and
   Nam}]{kim_automatic_2017}
 Kim, A., Park, S., Park, J., Ha, J.-W., Kwon, T., and Nam, J. (2017):
-  \textit{Automatic {DJ} {Mix} {Generation} {Using} {Highlight} {Detection}}.
+  \enquote{Automatic {DJ} {Mix} {Generation} {Using} {Highlight} {Detection}},
+  .
 
 \bibitem[{Kirn(2023)}]{kirn_review_2023}
 Kirn, P. (2023): \enquote{In {Review}: {Serato} {Stems} · {Feature} {RA}},
@@ -285,6 +291,11 @@ Moles, A.~A. (2019): \textit{Sociodynamique de la culture}, De Gruyter Mouton,
 Naomi (2023): \enquote{Spotify {Debuts} a {New} {AI} {DJ}, {Right} in {Your}
   {Pocket}},
   \urlprefix\url{https://newsroom.spotify.com/2023-02-22/spotify-debuts-a-new-ai-dj-right-in-your-pocket/}.
+
+\bibitem[{Partridge(2010)}]{partridge_dub_2010}
+Partridge, C. (2010): \textit{Dub in {Babylon}: understanding the evolution and
+  significance of dub reggae in {Jamaica} and {Britain} from {King} {Tubby} to
+  post-punk}, Equinox Pub.
 
 \bibitem[{Percival(2011)}]{percival_music_2011}
 Percival, J.~M. (2011): \enquote{Music {Radio} and the {Record} {Industry}:
