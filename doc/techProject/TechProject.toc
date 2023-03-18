@@ -24,7 +24,10 @@
 \contentsline {section}{\numberline {3.3}Automated Mixing}{14}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Summary}{15}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Hypothesis}{16}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Summary}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.1}Literature Review Conclusions}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Algorithmic ways of obtaining recommendations from a DJ set}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Hypothesis proposal}{17}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Summary}{17}{section.4.4}%
 \contentsline {chapter}{\numberline {5}Application}{18}{chapter.5}%
 \contentsline {subsection}{\numberline {5.0.1}Data set}{18}{subsection.5.0.1}%
 \contentsline {subsection}{\numberline {5.0.2}Initial Suggestions}{18}{subsection.5.0.2}%
