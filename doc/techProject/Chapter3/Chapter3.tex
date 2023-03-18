@@ -13,11 +13,10 @@
 This chapter answers the following research question:
 \\
 
-\textit{Is the proposed method a suitable solution for the automated recommendation of songs suitable for adding to a given DJ set?} 
+\textit{Can the proposed method be further developed to solve other DJ tasks?} 
 \\
 \\
 DJing is a practice that has been the backbone of many sub cultures since the late 60s \citep{brewster_last_2014}. DJing has contributed to the evolution of various genres like Disco, Reggae, and the many forms of electronic dance music \citep{partridge_dub_2010} \citep{reynolds_energy_2013}. DJing traditionally involves two turntables and to transition from one song to another in a stylised or fluid manner. As the rise of digital audio happened within the 1990s saw the creation of CDJ's, and with it the introduction of mixing tool software's such as Pioneers rekordbox. Mixing tool software's makes use of music information retrieval techniques to lower the difficulty of organising and preparing for a DJ set \citep{kim_automatic_2017}. 
-
 
 Music Information Retrieval is based on finding and compartmentalising the various aspects of music, including rhythm, timbre and melody \citep{orio_music_2006}. Different implementations of music information retrieval varies from source separation and beat tracking. These tasks involve machine learning and deep learning algorithms, and are now fully embedded in DJ software's \citep{rekordbox_rekordbox_2020}. 
 
@@ -44,7 +43,9 @@ Despite increased popularity with deep learning, traditional machine learning te
 
 With tempo detection, Temporal Convolutional Networks is used effectively \citep{bock_deconstruct_2020}. Temporal Convolutional Networks is a hierarchy of temporal convolutions which can perform accurate detection and segmentation \citep{lea_temporal_2017}. The model was first used for tempo detection in 2019 \citep{bock_multi-task_2019}. The main breakthrough was the application also calculated the up beat and down beat, and through exploring both, each tasks saw increased accuracy from learning from the other \citep{bock_deconstruct_2020}. When revisited in 2020, it was found that incorporating an extra dilation rate to each layer of the model gave more accurate results. Knowing the tempo of a given song is one of the main draws of CDJs over vinyl turntables, so further developments in tempo detection will inevitably find itself implemented in DJ software's.
 
-As the case for the BPM and key, the advancement of genre classification has had some significant contirbutions in recent years. The most recent signification is a model that uses short-time fourier transform, pitch, timbre and NMF feautres are extracted from a given piece of audio, which is then fed through a deep belief neural network and a Wale Integreated SnO algorithm \citep{kumaraswamy_optimal_2022}. Advancements in genre classification would be helpful within the DJ world as it would help the organisation of playlists for a given DJ.
+As the case for the BPM and key, recent advancements in genre classification can be found. The most recent signification is a model that extracts short-time fourier transform, pitch, timbre and modified non-negative matrix factorisation features from a given piece of audio. These extractions are then fed through a deep belief neural network and optimised with a Wale Integreated sea lion algorithm \citep{kumaraswamy_optimal_2022}. Deep belief network is a generative model that uses stacks of restrictive Boltzmann machines (RBM) in its architecture \citep{canuma_what_2022}. The whale integrated sea lion algorithm is a nature inspired meta-heuristic optimisation algorithm that is good for advanced searches \citep{mirjalili_whale_2016}. Advancements in genre classification would be helpful within the DJ world as it would help the organisation of playlists for a given DJ.
+
+A similar case to separation, it's unrealistic that the proposed method could compete with the classification methods discussed. However, further development could allow it to archive shows that use specific songs, providing audio examples of the inputted songs being mixed.
 
 \section{Automated Mixing}
 As well the advances of classification and separation that will aid a DJ, there are an equal amount of advances that could replace them. In February 2023, Spotify began unravelling its brand new DJ feature, combining situational music recommending accompanied by an AI generated host, mimicking the role of a personal broadcast DJ \citep{naomi_spotify_2023}. Within the research world, there have been advances on not just the mimiking of a human DJ's dialogue, but also the way in which a human would transition from one song to the next.

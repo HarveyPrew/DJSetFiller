@@ -1,4 +1,4 @@
-\begin{thebibliography}{86}
+\begin{thebibliography}{88}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -83,6 +83,11 @@ Böck, S. and Davies, M. E.~P. (2020): \enquote{{DECONSTRUCT}, {ANALYSE},
 Böck, S., Davies, M. E.~P., and Knees, P. (2019): \enquote{{MULTI}-{TASK}
   {LEARNING} {OF} {TEMPO} {AND} {BEAT}: {LEARNING} {ONE} {TO} {IMPROVE} {THE}
   {OTHER}}, .
+
+\bibitem[{Canuma(2022)}]{canuma_what_2022}
+Canuma, P. (2022): \enquote{What {Are} {RBMs}, {Deep} {Belief} {Networks} and
+  {Why} {Are} {They} {Important} to {Deep} {Learning}?}
+  \urlprefix\url{https://medium.com/swlh/what-are-rbms-deep-belief-networks-and-why-are-they-important-to-deep-learning-491c7de8937a}.
 
 \bibitem[{Casey et~al.(2008)Casey, Veltkamp, Goto, Leman, Rhodes, and
   Slaney}]{casey_content-based_2008}
@@ -305,6 +310,11 @@ Logan, B. (2004): \enquote{Music {Recommendation} from {Song} {Sets}.} .
 \bibitem[{McFee and Lanckriet(2012)}]{mcfee_hypergraph_2012}
 McFee, B. and Lanckriet, G. (2012): \enquote{{HYPERGRAPH} {MODELS} {OF}
   {PLAYLIST} {DIALECTS}}, .
+
+\bibitem[{Mirjalili and Lewis(2016)}]{mirjalili_whale_2016}
+Mirjalili, S. and Lewis, A. (2016): \enquote{The {Whale} {Optimization}
+  {Algorithm}}, \textit{Advances in Engineering Software}, 95, pp.\ignorespaces
+  51--67, \doi{10.1016/j.advengsoft.2016.01.008}.
 
 \bibitem[{Moles(2019)}]{moles_sociodynamique_2019}
 Moles, A.~A. (2019): \textit{Sociodynamique de la culture}, De Gruyter Mouton,
