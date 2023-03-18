@@ -29,9 +29,18 @@ As with most machine learning models, a rich dataset is essential for an applica
 
 
 \section{BPM, key, genre classification}
-Briefly touched upon in context based filtering, Audio classification is the building of metadata surrounding a piece of audio by analyzing it \citep{sharma_audio_2021}. As well as proving useful for finding similar songs, audio classification models is used extensively in DJ softwares for calculating tempo, key and other musical attributes.
 
-For key detection, standard machine learning techniques proves powerful enough. The Support Vector Machine proposed by George et. al had an accuracy value of 91.49\% and performed better compared to previous papers \citep{george_development_2022}. Having key information is essential within DJing because assuring the keys either match or modulate functionally assures fluidity in the transition. 
+\begin{figure}[H]
+	\hspace*{-1.9cm}
+	\includegraphics[scale=0.7]{images/rekordbox}
+	\centering
+	\caption{Playlist in rekordbox showing calculated BPM's and keys \citep{rekordbox_rekordbox_2023}} 
+\end{figure}
+
+
+As mentioned in context based filtering, Audio classification involves retrieving metadata from analysing an audio file \citep{sharma_audio_2021}. Context based filtering show its use for finding similar songs, but audio classification models is also used in DJ software's for calculating tempo, key and other musical attributes.
+
+Despite increased popularity with deep learning, traditional machine learning techniques proves powerful enough for key detection. The Support Vector Machine proposed by George et. al had an accuracy value of 91.49\% and performed better compared to previous papers \citep{george_development_2022}. Support Vector Machine works well due its use of the kernel track and being able to handle linearity and non-linearity in data effectively \citep{hofmann_support_2006}. Having key information is essential within DJing because assuring the keys either match or modulate functionally assures fluidity in the transition. 
 
 With tempo detection, the current state of the art makes use of Temporal Convolutional Networks to estimate the tempo, as well the up and down beat \citep{bock_deconstruct_2020}. The foundation of the model was explored previously \citep{bock_multi-task_2019}, but found that incorporating an extra dilation rate to each layer of the model gave more accurate results. Knowing the tempo of a given song is one of the main draws of CDJs over vinyl turntables, so further developments in tempo detection will inevitably find itself implemented in DJ software's.
 

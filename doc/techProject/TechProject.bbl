@@ -1,4 +1,4 @@
-\begin{thebibliography}{83}
+\begin{thebibliography}{85}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -196,6 +196,11 @@ Hennequin, R., Khlif, A., Voituret, F., and Moussallam, M. (2020):
   pre-trained models}, \textit{Journal of Open Source Software}, 5(50),
   p.\ignorespaces 2154, \doi{10.21105/joss.02154}.
 
+\bibitem[{Hofmann(2006)}]{hofmann_support_2006}
+Hofmann, M. (2006): \enquote{Support vector machines-kernels and the kernel
+  trick}, \textit{Notes}, 26(3), pp.\ignorespaces 1--16. Publisher: University
+  of Bamberg Bamberg, Germany.
+
 \bibitem[{https://developers.google.com(2023)}]{httpsdevelopersgooglecom_matrix_2023}
 https://developers.google.com (2023): \enquote{Matrix {Factorization}
   {\textbar} {Machine} {Learning}},
@@ -335,6 +340,10 @@ Porcaro, L., Castillo, C., and Gómez, E. (2021): \enquote{Diversity by
 rekordbox (2020): \enquote{rekordbox update (ver. 6.0.1) brings enhanced
   functions},
   \urlprefix\url{https://rekordbox.com/en/2020/05/rekordbox-update-ver-601/}.
+
+\bibitem[{rekordbox(2023)}]{rekordbox_rekordbox_2023}
+rekordbox (2023): \enquote{rekordbox - {DJ} {Software}},
+  \urlprefix\url{https://rekordbox.com/en/}.
 
 \bibitem[{Rentfrow and Gosling(2003)}]{rentfrow_re_2003}
 Rentfrow, P.~J. and Gosling, S.~D. (2003): \enquote{The do re mi's of everyday
