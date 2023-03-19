@@ -48,7 +48,11 @@
 \thispagestyle{empty}
 \setcounter{page}{2}
 
-This is my abstract.
+Music recommendation systems are used to filter out the vast amount of commercially available music to a digestible and personable amount. Recommendation systems have seen great improvement in recent time due to advances in deep learning. However recommendation systems are still not used heavily by listeners with a diverse music taste. This is evident with the continued popularity in internet radio and desire for "curation" found in streaming services. DJ's would find themselves in this diverse category and with the amount "digging" needed to prepare a DJ set, an algorithmic way of preparing a DJ set is desirable. With the vast amount of DJ sets available on the internet, its proposed that training a recommendation system on DJ sets could resolve this issue, as well as other DJ related tasks.
+
+A model is proposed that is trained on DJ sets found on the website \textit{MixesDB}, a database for DJ sets. It makes use of a matrix factorization algorithm called alternating least squares. Audio features found from the \textit{Spotify} API is then used to filter out suggestions further. 
+
+Its hoped that when inputting DJ sets, it would be able to compete well with top performing models. An experiment is conducted that tests the R-Precision of the application, an evaluation metric that is used for the million playlist \textit{Spotify} challenge. An evaluation set is made and the parameters for obtaining the highest average R-precision was investigated. When compared to the top performing models, the model underperformed significantly. It's thought that the sparsity of the dataset is the main contribution to it's results.  
 
 %%%%%%%%%%%%%%%%% ACTUAL FRONT MATTER %%%%%%%%%%%%%%%%%
 \frontmatter
@@ -68,7 +72,7 @@ This is my abstract.
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{List of Tables}
-\listoftables
+
 
 \setlength{\parskip}{1ex plus 0.2ex minus 0.2ex} % set paragraph spacing
 
@@ -76,4 +80,4 @@ This is my abstract.
 
 \chapter{Acknowledgements}
 
-Thanks to Christos for the encouragement and advice whilst doing this. Thank you to my parents and my friends for always being loving and compassionate. Thank you to Malibu for soundtracking a huge majority of the put into this.
+Thanks to Christos for the encouragement and advice whilst doing this. Thank you to my parents and my friends for always being loving and compassionate. Thank you to Malibu for sound-tracking a huge majority of the put into this.
