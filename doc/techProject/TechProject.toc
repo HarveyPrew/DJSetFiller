@@ -40,9 +40,10 @@
 \contentsline {section}{\numberline {6.3}Experiment Variables}{27}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Summary}{27}{section.6.4}%
 \contentsline {chapter}{\numberline {7}Results and Discussion}{28}{chapter.7}%
-\contentsline {subsection}{\numberline {7.0.1}Varying input set length}{29}{subsection.7.0.1}%
-\contentsline {subsection}{\numberline {7.0.2}Comparing with industry standard models}{31}{subsection.7.0.2}%
-\contentsline {section}{\numberline {7.1}Summary}{31}{section.7.1}%
+\contentsline {section}{\numberline {7.1}Latent Factors}{28}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Varying input set length}{29}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Comparing with industry standard models}{31}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Summary}{31}{section.7.4}%
 \contentsline {chapter}{\numberline {8}Conclusions and Further Work}{32}{chapter.8}%
 \contentsline {subsection}{\numberline {8.0.1}Findings of each chapter}{32}{subsection.8.0.1}%
 \contentsline {subsection}{\numberline {8.0.2}Main Findings of the study}{33}{subsection.8.0.2}%

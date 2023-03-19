@@ -5,17 +5,16 @@
 \chapter{Results and Discussion}
 
 This chapter provides analysis and discussion of the results from the experiment described
-in Chapter 5. The experiment sought to answer the question presented in Chapter 4.
+in Chapter 6. The experiment sought to answer the question presented in Chapter 5.
 \\
 \\
 \textit{Is the proposed method a suitable solution to automate recommendations of songs suitable for adding to a given DJ set?}.
 \\
 
-Chapter 6.1 will present the appropriate latent factors to use on the dataset. Chapter 6.2 explores if varying the input DJ Set tracklist lengths could also improve the models R-Precision value.
+Chapter 7.1 will present the appropriate latent factors to use on the dataset. Chapter 7.2 explores if varying the input DJ Set tracklist lengths could also improve the models R-Precision value.
 
-The following controlled variable was the list of DJ sets and the independent variable was the latent factors for making the ALS model. In the medium article, Chow used 50 latent factors \citep{chow_music_2020}. This was used as a reference point to make the range from 20 - 110 latent factors to experiment on.
-
-The results indicate the performance of alternating least squares (ALS) algorithm in recommending items based on different number of latent factors. The average R-precision, a measure of the relevancy of recommended items to the user, was used to evaluate the algorithm's effectiveness across different latent factors.
+\section{Latent Factors}
+The controlled variable is the list of input DJ sets and the independent variable was the number of latent factors for the alternating least squares part of the model. In the medium article, Chow used 50 latent factors \citep{chow_music_2020}. This was used as a reference point to make the range from 20 - 110 latent factors to experiment on. R-precision is the dependant variable.
 
 Figure 6.1 shows a scatter graph of the average R-precision over different latent factors. The analysis shows that the performance of the application varies significantly with the number of latent factors used. The highest average r-precision of 0.1207 was obtained when 80 latent factors were used, while the lowest value of 0.0774 was obtained when only 20 latent factors were used. However, the performance of the algorithm was not monotonically increasing or decreasing with the number of latent factors. For instance, there was a slight increase in average r-precision from 40 to 70 latent factors, but a decrease from 50 to 60 latent factors.. From 90 to 100 we see a significant decrease in the average r-value, which suggests that over-fitting is occurring.
 
@@ -25,10 +24,10 @@ Figure 6.1 shows a scatter graph of the average R-precision over different laten
 	\caption{Scatter graph of average r-precision values with different latent factors} 
 \end{figure}
 
-The results suggest that selecting an appropriate number of latent factors is crucial for the performance of ALS algorithm. Using too few latent factors can lead to poor recommendations, while using too many can lead to overfitting and poor generalization. Therefore, it is important to strike a balance between the number of latent factors and the algorithm's performance. Overall, the study provides insights into the performance of ALS algorithm with varying number of latent factors and highlights the importance of selecting the optimal number of factors for effective recommendation.
+The results suggest that selecting an appropriate number of latent factors is crucial for the performance of the proposed model. It's evident too few latent factors and too many latent factors affect the performance of the model. Therefore, it is important to strike a balance between the number of latent factors and the algorithm's performance. Overall, the study provides insights into the performance of the alternating least squares aspect of the model and highlights the importance of selecting the optimal number of factors for effective recommendation.
 
-\subsection{Varying input set length}
-Given that an optimal latent factor value of 80 was determined, it is worth exploring whether the number of input songs has an impact on the r-precision. Increasing the size of the input set could potentially lead to enhancements in the accuracy of the model. The independent variable in this section is the evaluation set parameters and the dependent variable is the average r-precision value.
+\section{Varying input set length}
+Given that an optimal latent factor value of 80 was determined, it is worth the change in r-precision with the number of input songs in a DJ set. Increasing the the input set size could potentially improve the models accuracy, due to having more missing songs to pick from. The independent variable in this section is the evaluation set parameters and the dependent variable is the average r-precision value.
 
 In Figure 6.2, a scatter graph illustrates the r-precision values of each DJ set when the number of latent factors was set to 80. The graph reveals that the majority of the sets scored a value of zero, indicating that the recommendation system did not perform well for these sets. The highest score observed was 0.8, which suggests that the system provided a reasonably accurate recommendation for that particular set.
 
@@ -52,14 +51,14 @@ The study conducted an investigation on the impact of input set size on r-precis
 \end{figure}
 
 
-\subsection{Comparing with industry standard models}
+\section{Comparing with industry standard models}
 
-The concept of calculating an R-precision value was introduced in the RecSys 2018 Spotify playlist dataset, where participants were tasked with building music recommendation systems for a given playlist. Normalised Discounted Cumulative Gain and Recommended Song Clicks were also used to measure the applications quality. In this regard, Figure 6.4 illustrates the highest-performing teams in the said convention. The maximum average value attained by the application in question was 0.1207, which is significantly lower compared to the top 10 values. The dataset and challenge was eventually made open to the public, and compared to the results found on the leader-board, the application would've ranked 46th. 
+	The concept of calculating an R-precision value was introduced in the RecSys 2018 Spotify playlist dataset, where participants were tasked with building music recommendation systems for a given playlist. Normalised Discounted Cumulative Gain and Recommended Song Clicks were also used to measure the applications quality. In this regard, Figure 6.4 illustrates the highest-performing teams in the said convention. The maximum average value attained by the application in question was 0.1207, which is significantly lower compared to the top 10 values. The dataset and challenge was eventually made open to the public, and compared to the results found on the leader-board, the application would've ranked 46th. 
 
 It's low ranking suggests that the proposed method is not a suitable solution for finding valid recommendations for a given DJ set, due to the low average r-precision value when a collection of DJ sets were inputted.
 \begin{figure}[H]
-	\hspace*{-1cm} 
-	\includegraphics[scale=0.6]{images/recsys_scores}
+	\hspace*{-0.5cm} 
+	\includegraphics[scale=0.55]{images/recsys_scores}
 	\caption{Top 10 Teams for RecSys 2018 and there given scores} 
 \end{figure}
 
