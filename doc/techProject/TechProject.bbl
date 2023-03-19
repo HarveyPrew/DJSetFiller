@@ -1,4 +1,4 @@
-\begin{thebibliography}{95}
+\begin{thebibliography}{98}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -334,6 +334,11 @@ Mirjalili, S. and Lewis, A. (2016): \enquote{The {Whale} {Optimization}
   {Algorithm}}, \textit{Advances in Engineering Software}, 95, pp.\ignorespaces
   51--67, \doi{10.1016/j.advengsoft.2016.01.008}.
 
+\bibitem[{MixesDB(2015)}]{mixesdb_2015-01-02_2015}
+MixesDB (2015): \enquote{2015-01-02 - {Floating} {Points} \& {Four} {Tet} @
+  {Plastic} {People} {Closing} {Party}, {London}},
+  \urlprefix\url{//www.mixesdb.com/w/2015-01-02_-_Floating_Points_%26_Four_Tet_@_Plastic_People_Closing_Party,_London}.
+
 \bibitem[{MixesDB(2023)}]{mixesdb_main_2023}
 MixesDB (2023): \enquote{Main {Page}},
   \urlprefix\url{//www.mixesdb.com/w/Main_Page}.
@@ -341,6 +346,11 @@ MixesDB (2023): \enquote{Main {Page}},
 \bibitem[{Moles(2019)}]{moles_sociodynamique_2019}
 Moles, A.~A. (2019): \textit{Sociodynamique de la culture}, De Gruyter Mouton,
   \doi{10.1515/9783111672403}. Publication Title: Sociodynamique de la culture.
+
+\bibitem[{Morey(2013)}]{morey_copyright_2013}
+Morey, J. (2013): \enquote{Copyright {Management} and its {Effect} on the
+  {Sampling} {Practice} of {UK} {Dance} {Music} {Producers}}, \textit{IASPM
+  Journal}, 3(1), pp.\ignorespaces 48--62, \doi{10.5429/589}. Number: 1.
 
 \bibitem[{Naomi(2023)}]{naomi_spotify_2023}
 Naomi (2023): \enquote{Spotify {Debuts} a {New} {AI} {DJ}, {Right} in {Your}
@@ -537,6 +547,10 @@ Wang, X., Rosenblum, D., and Wang, Y. (2012): \enquote{Context-aware mobile
   music recommendation for daily activities}, in \textit{Proceedings of the
   20th {ACM} international conference on {Multimedia}}, Nara Japan: ACM,
   pp.\ignorespaces 99--108, \doi{10.1145/2393347.2393368}.
+
+\bibitem[{Wheeler(2020)}]{wheeler_gentrification_2020}
+Wheeler, S. (2020): \enquote{The gentrification of jungle},
+  \urlprefix\url{https://mixmag.net/feature/the-gentrification-of-jungle}.
 
 \bibitem[{Yadav et~al.(2022)Yadav, Kumar~Singh, and Pal}]{yadav_improved_2022}
 Yadav, N., Kumar~Singh, A., and Pal, S. (2022): \enquote{Improved

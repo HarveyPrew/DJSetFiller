@@ -29,45 +29,45 @@ Warning--empty booktitle in logan_music_2004
 Warning--empty pages in logan_music_2004
 Warning--empty journal in mcfee_hypergraph_2012
 Warning--empty booktitle in van_meteren_using_2000
-You've used 95 entries,
+You've used 98 entries,
             2968 wiz_defined-function locations,
-            1235 strings with 28128 characters,
-and the built_in function-call counts, 58268 in all, are:
-= -- 5008
-> -- 2284
-< -- 105
-+ -- 852
-- -- 738
-* -- 4607
-:= -- 8714
-add.period$ -- 208
-call.type$ -- 95
-change.case$ -- 735
-chr.to.int$ -- 96
-cite$ -- 111
-duplicate$ -- 4348
-empty$ -- 4337
-format.name$ -- 979
-if$ -- 11957
+            1251 strings with 28717 characters,
+and the built_in function-call counts, 59605 in all, are:
+= -- 5135
+> -- 2314
+< -- 109
++ -- 866
+- -- 747
+* -- 4695
+:= -- 8931
+add.period$ -- 215
+call.type$ -- 98
+change.case$ -- 754
+chr.to.int$ -- 99
+cite$ -- 114
+duplicate$ -- 4454
+empty$ -- 4444
+format.name$ -- 991
+if$ -- 12230
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 785
-newline$ -- 295
-num.names$ -- 390
-pop$ -- 1693
+missing$ -- 801
+newline$ -- 304
+num.names$ -- 402
+pop$ -- 1725
 preamble$ -- 1
-purify$ -- 621
+purify$ -- 636
 quote$ -- 0
-skip$ -- 2013
+skip$ -- 2060
 stack$ -- 0
-substring$ -- 2594
-swap$ -- 2276
-text.length$ -- 50
+substring$ -- 2658
+swap$ -- 2323
+text.length$ -- 51
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 834
+type$ -- 861
 warning$ -- 16
-while$ -- 425
+while$ -- 437
 width$ -- 0
-write$ -- 1097
+write$ -- 1130
 (There were 16 warnings)
