@@ -1,4 +1,4 @@
-\begin{thebibliography}{94}
+\begin{thebibliography}{95}
 \newcommand{\enquote}[1]{`#1'}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -544,6 +544,13 @@ Yadav, N., Kumar~Singh, A., and Pal, S. (2022): \enquote{Improved
   music recommendation system}, \textit{Computational Intelligence}, 38(4),
   pp.\ignorespaces 1232--1257, \doi{10.1111/coin.12501}. \_eprint:
   https://onlinelibrary.wiley.com/doi/pdf/10.1111/coin.12501.
+
+\bibitem[{Zamani et~al.(2019)Zamani, Schedl, Lamere, and
+  Chen}]{zamani_analysis_2019}
+Zamani, H., Schedl, M., Lamere, P., and Chen, C.-W. (2019): \enquote{An
+  {Analysis} of {Approaches} {Taken} in the {ACM} {RecSys} {Challenge} 2018 for
+  {Automatic} {Music} {Playlist} {Continuation}},
+  \urlprefix\url{http://arxiv.org/abs/1810.01520}. ArXiv:1810.01520 [cs].
 
 \bibitem[{Zhao and Wang(2022)}]{zhao_musical_2022}
 Zhao, Z. and Wang, H. (2022): \enquote{Musical {Instrument} {Classification}

@@ -31,7 +31,7 @@ Given that an optimal latent factor value of 80 was determined, it is worth the 
 
 In Figure 6.2, a scatter graph illustrates the r-precision values of each DJ set when the number of latent factors was set to 80. The graph reveals that the majority of the sets scored a value of zero, indicating that the recommendation system did not perform well for these sets. The highest score observed was 0.8, which suggests that the system provided a reasonably accurate recommendation for that particular set.
 
-However, as the number of input songs in the DJ sets increased beyond 30, there were relatively fewer results available, but none of the DJ sets had an r-precision value of zero. This finding suggests that the recommendation system improved in its ability to provide accurate recommendations for sets with a larger number of input songs.
+However, as the number of input songs in the DJ sets increased beyond 30, there was relatively fewer results available, but none of the DJ sets had an r-precision value of zero. This finding suggests that the recommendation system improved in its ability to provide accurate recommendations for sets with a larger number of input songs.
 
 \begin{figure}[H]
 	\includegraphics[scale=0.6]{images/80_little_sets}
@@ -42,7 +42,7 @@ However, as the number of input songs in the DJ sets increased beyond 30, there 
 
 When observing the changes in latent factors, the evaluation set was pulling from DJ sets that had 10 songs or more, and to include sets where each song has a total play count greater than 5. To  focus in on larger DJ sets, the total play count was lowered to 2 and then filtering on just DJ sets with over 20 songs.
 
-The study conducted an investigation on the impact of input set size on r-precision values using a latent factor value of 80. The results were presented in Figure 6.3, revealing that the majority of DJ sets had an r-precision value of zero, with no significant increase in precision, even with an increased amount of input songs. The highest r-precision value observed in this scenario was 0.6, and the average r-precision value was measured at 0.0865, suggesting that the application does not achieve higher levels of accuracy with an increase in input set size. These findings highlight the limited impact of larger input sets on the overall performance of the model.
+Figure 7.3 shows the impact of input set size change on r-precision values, still using a latent factor value of 80. The results reveals  that the majority of DJ sets still had an r-precision value of zero. The highest r-precision value observed in this scenario was 0.6, and the average r-precision value was measured at 0.0865, suggesting that the application does not achieve higher levels of accuracy with an increase in input set size. These findings highlight the limited impact of larger input sets on the overall performance of the model.
 
 \begin{figure}[H]
 	\includegraphics[scale=0.6]{images/80_big_sets}
@@ -53,15 +53,15 @@ The study conducted an investigation on the impact of input set size on r-precis
 
 \section{Comparing with industry standard models}
 
-	The concept of calculating an R-precision value was introduced in the RecSys 2018 Spotify playlist dataset, where participants were tasked with building music recommendation systems for a given playlist. Normalised Discounted Cumulative Gain and Recommended Song Clicks were also used to measure the applications quality. In this regard, Figure 6.4 illustrates the highest-performing teams in the said convention. The maximum average value attained by the application in question was 0.1207, which is significantly lower compared to the top 10 values. The dataset and challenge was eventually made open to the public, and compared to the results found on the leader-board, the application would've ranked 46th. 
+	The concept of calculating an R-precision value was introduced in the RecSys 2018 Spotify playlist dataset, where participants were tasked with building music recommendation systems for a given playlist. Normalised Discounted Cumulative Gain and Recommended Song Clicks were also used to measure the applications quality. Figure 6.4 illustrates the highest-performing teams in the said convention. The maximum average value attained by the application in question was 0.1207, which is significantly lower compared to the top 10 values. The dataset and challenge was eventually made open to the public, and compared to the results found on the leader-board, the application would've ranked 46th. 
 
 It's low ranking suggests that the proposed method is not a suitable solution for finding valid recommendations for a given DJ set, due to the low average r-precision value when a collection of DJ sets were inputted.
 \begin{figure}[H]
 	\hspace*{-0.5cm} 
 	\includegraphics[scale=0.55]{images/recsys_scores}
-	\caption{Top 10 Teams for RecSys 2018 and there given scores} 
+	\caption{Top 10 Teams for RecSys 2018 and there given scores \citep{zamani_analysis_2019}} 
 \end{figure}
 
 \section{Summary}
-\textbf{\textit{Write a summary}}
+Two experiments were conducted. First was finding the highest average r-precision value, through changing the latent factors used in the alternating least squares part of the model. After the latent factor value that obtained the highest r-precision value was found, the input song count of the DJ sets was changed. This didn't improve the average r-precision value. The highest scoring average r-precision value was compared with the top performing models of the \textit{RecSys} 2018 convention. The proposed model scored considerably lower. 
 % note that \Blindocument has 5 numbered levels, despite setting secnumdepth above. I (and many style guides) would suggest using no more than 3 numbered levels (incl. the chapter), with the option of a fourth unnumbered level.
