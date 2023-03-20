@@ -8,7 +8,16 @@
 
 Inspired by the training data from a fader estimation investigation, \textit{MixesDB} is a website of archived DJ sets \citep{kim_automatic_2017}. With over 260,000 mixes on the site, using this as a dataset to train the model proved to be an excellent choice \citep{mixesdb_main_2023}.
  
- The application made is a two stage Music Recommendation system trained on DJ sets found on \textit{MixesDB}. A collaborative filtering algorithm, alternating least squares is used to gather initial suggestions. Then audio features provided by the Spotify API will be used to create vectors to further refine the selection. The best songs are selected by using euclidean distance, a way of measuring distances between vectors.
+ The application made is a two stage Music Recommendation system trained on DJ sets found on \textit{MixesDB}. A collaborative filtering algorithm, alternating least squares is used to gather initial suggestions. Then audio features provided by the Spotify API will be used to create vectors to further refine the selection. The best songs are selected by using euclidean distance, a way of measuring distances between vectors. 
+ 
+ It was coded using a 2020 16GB MacBook Pro in \textit{Python} and the following libraries were used:
+ \begin{itemize}
+ 	\item \textit{pandas:} Used for managing the dataset.
+ 	\item \textit{implicit:} Its alternating least squares function was used for the initial suggestions.
+ 	\item \textit{spotipy:} Used to access audio features from the Spotify API.
+ 	\item \textit{scipy:} It's euclidean distance function was used for the final suggestions.
+ 	\item \textit{Pytest:} Used for unit-testing.
+	\end{itemize}
  
  As mentioned in Chapter 2, Daniel Chow built a system that takes in a single song and outputs similar songs based on the \textit{MixesDB} dataset \citep{chow_music_2020}. His code will provide foundation, that is extended by the addition of multiple inputs and an extra layer of recommendation filtering.
 
@@ -26,7 +35,7 @@ As in Daniel Chows method, the initial suggestions part of the model is made usi
 
 A model is made from the dataset, then input list of songs is processed. The alternating least squares algorithm is ran for each song to find other similar songs. The number of recommended song suggestions for each song was set to 200, to assure a large amount of similar songs are used in the refinement stage.
 \begin{figure}[H]{\noindent\ignorespaces}
-	\includegraphics[scale=0.1]{images/application_app_flow}
+	\includegraphics[scale=0.09]{images/application_app_flow}
 	\centering
 	\caption{A flow diagram of the application} 
 \end{figure}
