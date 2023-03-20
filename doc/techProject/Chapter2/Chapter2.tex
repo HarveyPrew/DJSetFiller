@@ -98,7 +98,7 @@ Parameters of the regression model ($\alpha , \beta$) are found by going through
 
 \subsection{User Based}
 
-User-Based Neighbourhood is when you look for users who rate similar to see whether item i is similar to user u. This differs from Item Based because User Based skips calculating similarity of co-rated items \citep{pinela_recommender_2017}. Below shows an equation similar to the one above but instead we look through a list similar users.
+User-Based Neighbourhood is when you look for users who rate similarly to see whether item i is similar to user u. This differs from Item Based because User Based skips calculating similarity of co-rated items \citep{pinela_recommender_2017}. Below shows an equation similar to the one above but instead it sums a list similar users.
 
 \begin{equation}
 	\hat{r} _{u,i} = \bar{r}_{u} + \frac{ \sum _{v \in S(u)^{k}} sim(u ,v) ( r_{v, i} - \bar{r}_{v})}{\sum _{v \in S(u)^{k}} sim(u , v)}
@@ -115,7 +115,7 @@ For one to calculate $sim(u , v)$, you'd use pearson correlation, cosine similar
 	\label{fig:figure}
 \end{figure}
 
-When one had a matrix of plays for a given user for a given song, matrix factorisation can be used to find recommended songs. Matrix factorisation allows one to translate the matrix into vectors of factors of the user item rating patterns \citep{koren_matrix_2009}. Figure 2.3 sees this in action, where latent factors are used to approximate and predict users ratings of movies.
+When one has a matrix of plays for a given user for a given song, matrix factorisation can be used to find recommended songs. Matrix factorisation allows one to translate the matrix into vectors of factors of the user item rating patterns \citep{koren_matrix_2009}. Figure 2.3 and 2.4 illustrates how, where latent factors (products used to factorise matrix) are used to approximate and predict users ratings of movies.
 
 \begin{figure}[H]
 	\includegraphics[scale=0.45]{images/latent_factors}
@@ -126,30 +126,27 @@ When one had a matrix of plays for a given user for a given song, matrix factori
 
 This is useful for a sparse matrix (when most user/item interactions is zero), because it shows information that the matrix alone does not.  One can see trends of preference within the latent factors. Because it reduces the dimensionality of a given matrix, matrix factorisation requires less processing power than methods that search through the raw matrix. 
 
-There are different ways of factorising a matrix. An example of one is Singular Value Decomposition (SVD). Heres the equation with $(n\cdot k)U$ and $(m\cdot k)V$ matrices for k number of dimensions,  where M is the approximated matrix:
+There are different ways of factorising a matrix. An example of one is Singular Value Decomposition (SVD). Heres the equation with $U$ and $V$ matrices for k number of dimensions,  where M is the approximated matrix:
 
 \begin{equation}
 	M = U \sum V ^{T}
 \end{equation}
 
-Theres other means to compute M. Alternating Least Squares, uses a computational safe way to make sure M doesnt go to off from its original value. It works by alternating between estimating U and V until it reaches closely to the value of M. Stochastic gradient repetitively uses random bits of data to approximate U and V \citep{koren_matrix_2009}. 
+Alternating Least Squares, is a computational safe way to calculate M. It works by alternating between estimating the U and V matrices until it reaches closely to the value of M. Stochastic gradient (another method for calculating M) repetitively uses random bits of data to approximate U and V \citep{koren_matrix_2009}. 
 
 When the matrix is split up, the predicted rating can be calculated from the user and item feature vectors. 
 
-\begin{equation}
-	\hat{r} _{u,i} = U _{u} . V _{i}^{T} = \sum_{f=0}^{k} U_{u,f} V_{f, i}
-\end{equation}
-\\
+
 Looking at the latent factors one can find  similar items using a cosine similarity. When working with sparse data, its favourable to use Alternating Least Squares because of its greater potential for parallelisation \citep{koren_matrix_2009}.
 
 \subsection{Limitations}
 Despite its popularity, Collaborative filtering has limitations as a recommendation method.
 
-\textbf{Sparse Data - }Not every user has listened to every song, far from it. This means in data sets, having a sparsity of around 98-99 \% is very common.
+\textbf{Sparse Data - }Not every user has listened to every song. This means in data sets, having a sparsity of around 98-99 \% is very common.
 
 \textbf{Grey sheep - }This is when a user has a unique taste that is dissimilar to most other users, making it hard to stem recommendation's from. This is a common problem with datasets that are very sparse \citep{claypool_combining_1999}.
 
-\textbf{Cold Start and Early Raters - } The term cold start refers to new items and the term referred to new users is called early raters \citep{avery_recommender_1997}. When there are new users or items, there is little data associated with them so it is challenging to come up with suitable recommendations based on either the user or item. 
+\textbf{Cold Start and Early Raters - } The term cold start refers to new items whilst early raters refers to new user \citep{avery_recommender_1997}. When there are new users or items, there is little data associated with them so it is challenging to come up with suitable recommendations based on either the user or item. 
 
 \textbf{Popularity Bias - } Collaborative filtering does not take into account information about the item, only user interactions with it. This means that it has a bias towards popular items.
 
@@ -157,13 +154,13 @@ Despite its popularity, Collaborative filtering has limitations as a recommendat
 
 \section{Content Based Filtering}
 
-Content Based Filtering works by looking at the characteristics of a given item and see if it matches the preference of the user. Recommendations stem from the given information about the item, not what other users interact with. Items information is found and then it filters \citep{casey_content-based_2008}. Music recommendation systems stem from information surrounding the users taste \citep{aucouturier_music_2002} \citep{logan_music_2004}. 
+Content Based Filtering works by looking at the characteristics of a given item and see if it matches the preference of the user. Recommendations stem from the given information about the item, not what other users interact with. Item's information is found and then is used to find similar items\citep{casey_content-based_2008}. Music recommendation systems stem from song information that aligns with the users taste \citep{aucouturier_music_2002} \citep{logan_music_2004}. 
 
-Early uses of content based filtering were text based, because of its ease of information extraction, An example of this is the PRES system \citep{van_meteren_using_2000}. Machine learning has enabled extraction for complex formats like images or audio. Models like "Xception" have proven successful at extracting audio features from songs \citep{chollet_xception_2017} \citep{singh_robustness_2022}.
+Early uses of content based filtering were text based, because of its ease of information extraction, An example of this is the PRES system \citep{van_meteren_using_2000}. Machine learning has enabled extraction of information from complex formats like images or audio. Models like "Xception" have proven successful at extracting audio features from songs \citep{chollet_xception_2017} \citep{singh_robustness_2022}.
 
-There has been a lot of research on extracting the components of an audio file of music \citep{ribecky_multi-input_2021} \citep{zhao_musical_2022}. Recent developments have shown successful extractions of genre and structure with the MusicBERT Model \citep{zhu_musicbert_2021}. It's found that midi extraction from songs can aid to give better solutions for less popular songs, helping eliminate the cold start problem \citep{yadav_improved_2022}.
+There has been a lot of research on extracting musical components from an audio file \citep{ribecky_multi-input_2021} \citep{zhao_musical_2022}. Recent developments have shown successful extractions of genre and structure with the MusicBERT Model \citep{zhu_musicbert_2021}. It's found that midi extraction from songs can aid to give better solutions for less popular songs, helping eliminate the cold start problem \citep{yadav_improved_2022}.
 
-Content based filtering looks at how similar the attributes of each items is when finding recommendations. It's decision making doesn't use subjective factors, like user behaviour. An item is used as a vector made of its defined values of attributes, where the distance between other items can be found. Its common to have these values be numerical. Distance can be calculated using Euclidean, Manhattan, Chebyshev, cosine distance and Mahalanobis distance. With two feature vectors equalling $x$ and $y$, equations are found below.
+Content based filtering looks at how similar the attributes of each item is when finding recommendations. It's decision making doesn't use subjective factors, like user behaviour. An item is used as a vector made of its defined values of attributes, where the distance between other items can be found. Distance can be calculated using Euclidean, Manhattan, Chebyshev, cosine distance and Mahalanobis distance. With two feature vectors equalling $x$ and $y$, equations are found below.
 \\
 \\
 \textbf{Euclidean Distance:}
@@ -194,27 +191,27 @@ A delta function is used when attributes aren't measured numerically. When two a
 	d(x,y) = \omega \sum _{ i = 1 } ^{ n } \delta (x _{i}, y _{i})
 \end{equation}
 
-Content based filtering overcomes the problems collaborative filtering has of being able to rate items that previously haven't had any ratings. Its also able to adapt to any changes in the users preference quickly \citep{isinkaye_recommendation_2015}. For users who don't want to share there data they can get suitable recommendations as well \citep{k_you_2006}.
+Content based filtering overcomes the problems collaborative filtering has of being able to rate items that previously haven't had any ratings. Its also able to adapt to any changes in the users preference quickly \citep{isinkaye_recommendation_2015}. For users who don't want to share their data they can get suitable recommendations as well \citep{k_you_2006}.
 
 \subsection{Limitations}
 The cold start and grey sheep problem also occur in content based filtering. Popular items usually have better defined features, and older users have better represented features.
 
-\textbf{Novelty Problem - } This is when the user is recommended items too similar to the one there profile, an application would need some way of diversifying recommendations to overcome this.
+\textbf{Novelty Problem - } This is when the user is recommended items too similar to the one they already have, an application would need some way of diversifying recommendations to overcome this.
 
-\textbf{Retrieving metadata - } Despite recent improvements in extracting meaningful meta data \citep{vall_feature-combination_2019} \citep{singh_novel_2022}. This data is used in only deep neural networks or hybrid models. Obtaining rich enough meta data to rely on Content Based Filtering alone is still not reliable.
+\textbf{Retrieving metadata - } Despite recent improvements in extracting musical information \citep{vall_feature-combination_2019} \citep{singh_novel_2022}. This data is used in mainly in deep neural networks or hybrid models. Obtaining rich enough meta data to rely on Content Based Filtering alone is still not reliable.
 
-\textbf{Suggestions not opinionated- } It doesn't take into the account the opinions of users, only description of what the item is. This may lead to some poor quality recommendations that only observing features would gloss over \citep{celma_recommendation_2010}.  
+\textbf{Suggestions not opinionated- } It doesn't take into the account the opinions of users, only description of what the item is. This may lead to some poor quality recommendations that only relying on observing features would obtain \citep{celma_recommendation_2010}.  
 
 \section{Clustering}
 
-Another methods of finding similar items is Clustering. Clustering is when one  groups a collection of data objects, so that some objects clustered together are very similar, while other clustered objects are not alike. Similarity is then evaluated based on chosen parameters \citep{ferretti_clustering_2018}. A popular algorithm is the k-mean cluster where each cluster is representerd by a mean value of the object \citep{han_data_2006}. A recent system that uses clustering uses a altered version to k clustering to limit the randomness in suggestion you usually get with this method \citep{chang_personalized_2017}.
+Another method of finding similar items is Clustering. Clustering is when one  groups a collection of data objects, so that some objects clustered together are very similar, while other clustered objects are not alike. Similarity is then evaluated based on chosen parameters \citep{ferretti_clustering_2018}. A popular algorithm is the k-mean cluster where each cluster is representerd by a mean value of the object \citep{han_data_2006}. A model that uses an altered version of k clustering limits the randomness in the suggestion this method generates \citep{chang_personalized_2017}.
 
 
 \section{Diversity issue}
 
-Recommendation systems are used extensively by majority of Spotify users \citep{spotify_spotify_2020}. However, there are a subsection of users who, despite huge breakthroughs, don't rely on algorithmic means of discovering music. In 2020, a study done found that users with more diverse tastes would find music in non algorithmic ways \citep{anderson_algorithmic_2020}. Users with less diverse taste relied more heavily on modern day recommendation systems. Users who would gain a more diverse taste over time, would do so by exploring non algorithmic ways of finding music.
+Recommendation systems are used extensively by the majority of Spotify users \citep{spotify_spotify_2020}. However, there are a subsection of users who, despite huge breakthroughs, don't rely on algorithmic means of discovering music. In 2020, a study done found that users with more diverse tastes would find music in non algorithmic ways \citep{anderson_algorithmic_2020}. Users with less diverse taste relied on algorithms for recommendations. Users who's taste became more diverse, occurred from non algorithmic ways of finding music.
 
-A reason for this is because algorithmic ways go above and beyond giving personalised suggestions, one can suffer from choice overload when using algorithmic ways to find music \citep{iyengar_rethinking_1999}. This may do with the lack of refinement when it comes to training models, lots of music recommendation systems don't focus on a specific type of person when training a model \citep{laplante_improving_2014}.
+A reason for this is the quantity of recommendations given, potentially causing choice overload \citep{iyengar_rethinking_1999}. This may do with the lack of refinement when it comes to training models, lots of music recommendation systems don't focus on a specific type of person when training a model \citep{laplante_improving_2014}.
 
 A reason for this issue could be due to the classification is handled in music, a debate that is passed from generations \citep{moles_sociodynamique_2019} \citep{dimaggio_classification_1987} \citep{bourdieu_distinction_2010}. In the context of a recommendation system, a genre being treated as a "tag" usually pushes its social and cultural relevance to the side \citep{porcaro_diversity_2021}. The act of a machine understanding a concept as subjective as genre is one that is proven challenging \citep{nurnberger_survey_2014}. Vlegels attempts to overcome this by organise groupings based on user artist relationship, rather than a artists genre \citep{vlegels_music_2017}.
 
