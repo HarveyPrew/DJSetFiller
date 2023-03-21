@@ -80,7 +80,7 @@ Cosine similarity is not advised for comparing how similar recommendations are b
 	sim(i , j) = \frac{ \sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} ) ( r _{ u, j} - \bar{r} _{u} ) } { \sqrt{\sum_{ u \in U } ( r _{ u, i } - \bar{r} _{u} )^2} \sqrt{\sum_{ u \in U } ( r _{ u, j } - \bar{r} _{u} )^2}}
 \end{equation}
 
-Once similarities of the users previous ratings are calculated, the next step is to predict how the user would rate the item in question. A way of doing this is to calculate a weighted sum of the user's previous item ratings. Calculating the weighted sum predicts how the user would rate the given item based on the ratings of similar items. Weighted sum is scaled to ensure the predicted rating is in an appropriate range\citep{sarwar_item-based_2001}. Allowing $ S^{k}(i;u)$ to equal the list of items i user u has rated, the equation below shows how the predicted value is found. \textbf{\textit{TODO - Whats happening}}
+Once similarities of the users previous ratings are calculated, the next step is to predict how the user would rate the item in question. A way of doing this is to calculate a weighted sum of the user's previous item ratings. Calculating the weighted sum predicts how the user would rate the given item based on the ratings of similar items. Weighted sum is scaled to ensure the predicted rating is in an appropriate range\citep{sarwar_item-based_2001}. Allowing $ S^{k}(i;u)$ to equal the list of items i user u has rated, the equation below shows how the predicted value is found.
 
 \begin{equation}
 	\hat{r} _{u,i} = \frac{ \sum _{ j \in S^{k}(i;u)} sim(i , j) r _{u, j}}{\sum _{j \in S^{k}(i;u)} sim(i , j)}
