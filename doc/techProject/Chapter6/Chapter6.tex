@@ -13,21 +13,18 @@ As explained in the hypothesis. a music recommendation system that uses MixesDB 
 \\
 
 To evaluate the quality of a recommendation system, R-Precision is often used as a performance metric. 
-\\
 
 \section{R-Precision}
 
 \begin{equation}
 	R-Precision = \frac{|G\cap R_{1:|G|}|}{|G|}
 \end{equation}
-\\\\
 R-precision is the amount of found tracks that were originally in the mix divided by the number of known missing tracks. This is shown in the equation in 6.1 allowing $G$ to be the set of missing songs, and $R$ to be the set of recommanded songs.
 
-R-Precision was used in the 2018 Recsys Convention idea for testing submissions for the million playlist challenge dataset from Spotify \citep{aicrowd_aicrowd_2023}. At this convention, competing teams built recommendation system trained with the \textit{Spotify} dataset. To tests its quality, a challenge dataset, which contained many modified playlists, was used to test the models.
+R-Precision was used in the 2018 Recsys Convention idea for testing submissions for the million playlist challenge dataset from Spotify \citep{aicrowd_aicrowd_2023}. At this convention, competing teams built recommendation system trained with the Spotify dataset. To tests its quality, a challenge dataset, which contained many modified playlists, was used to test the models.
 
 It is important to note the considerable difference in the number of DJ sets/playlists between the MixesDB and the Spotify dataset. The MixesDB dataset contains over 9800 DJ sets, while the Spotify dataset contains 1,000,000 playlists. The differences between playlists and DJ sets is worth mentioning as well. A playlist being a collection of songs, regardless of cohesion or song count, while a DJ set is typically a seamless mix of songs that can vary in length from 8 hours to no less than 20 minutes.
-\\
-\\
+
 The top 10 scoring models from the convention have R-Precision values ranging from 0.21 to 0.22. Given the differences in dataset size and task, aiming for an average R-Precision value of 0.171, slightly lower than the top-performing models, would be appropriate. Achieving this value would rank the model within the top 30 models trained by members of the public on the given Spotify dataset \citep{aicrowd_aicrowd_2023}. This approach allows for a fair comparison between the different systems and considers the unique characteristics of the dataset and task at hand. 
 
 As the dataset utilized with the proposed model was obtained from MixesDB, a customized approach for the preparation of the evaluation set was conducted.
@@ -54,10 +51,10 @@ The making of the evaluation set was coded in \textit{Python} using the \textit{
 	\centering
 	\caption{Application flow of the creation of the evaluation set} 
 \end{figure}
-
+\break
 \section{Experiment Variables}
 
-As mentioned in chapter 5, the proposed application utilises the alternating least squares algorithm to generate an initial set of suggestions. This algorithm is based on matrix factorization, where the latent factors are derived from the training dataset to identify similar songs. The selection of an appropriate value for latent factors is crucial in ensuring the optimal performance of the algorithm. A low latent factor value may yield random results , while a value that is too high may lead to over-fitting \citep{zhou_large-scale_2008}. To identify the ideal value for latent factors, it is necessary to conduct an  investigation where the latent factors will be the independent variable, and the average R-precision value will be the dependent variable. 
+As mentioned in chapter 5, the proposed application utilises the alternating least squares algorithm to generate an initial set of suggestions. This algorithm is based on matrix factorization, where the latent factors are derived from the training dataset to identify similar songs. The selection of an appropriate value for latent factors is crucial in ensuring the optimal performance of the algorithm. A low latent factor value may yield random results, while a value that is too high may lead to over-fitting \citep{zhou_large-scale_2008}. To identify the ideal value for latent factors, it is necessary to conduct an  investigation where the latent factors will be the independent variable, and the average R-precision value will be the dependent variable. 
 
 Once the best R-precision value is obtained, an examination on how changes to the size of the input DJ sets, impact the R-Precision value. From there, the R-precision value is then compared to the highest performing recommendation systems that use the Spotify Dataset, to see if the DJ set focused recommender can compare to industry standard models.
 
