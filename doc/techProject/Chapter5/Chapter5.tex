@@ -31,14 +31,15 @@ The data was scraped from MixesDB using Selenium \citep{chow_music_2020}. The tr
 
 
 \section{Initial Suggestions}
-As in Daniel Chows method, the initial suggestions part of the model is made using alternating least squares, a matrix factorisation algorithm that was made popular by the Netflix Prize award \citep{zhou_large-scale_2008}. As explained in Chapter 2, this method is good for two reasons. It provides a computationally efficient way of handling a dataset, and it splits the DJ song matrix to its latent factors. The latent factor values reveal trends in between songs and DJs.
-
-A model is made from the dataset, then input list of songs is processed. The alternating least squares algorithm is ran for each song to find other similar songs. The number of recommended song suggestions for each song was set to 200, to assure a large amount of similar songs are used in the refinement stage.
 \begin{figure}[H]{\noindent\ignorespaces}
 	\includegraphics[scale=0.09]{images/application_app_flow}
 	\centering
 	\caption{A flow diagram of the application} 
 \end{figure}
+As in Daniel Chows method, the initial suggestions part of the model is made using alternating least squares, a matrix factorisation algorithm that was made popular by the Netflix Prize award \citep{zhou_large-scale_2008}. As explained in Chapter 2, this method is good for two reasons. It provides a computationally efficient way of handling a dataset, and it splits the DJ song matrix to its latent factors. The latent factor values reveal trends in between songs and DJs.
+
+A model is made from the dataset, then input list of songs is processed. The alternating least squares algorithm is ran for each song to find other similar songs. The number of recommended song suggestions for each song was set to 200, to assure a large amount of similar songs are used in the refinement stage.
+
 
 \section{Final Suggestions}
 To add an extra layer of filtering, the Spotify API is used to further explore which songs are the most similar.
@@ -51,7 +52,7 @@ Using both the input songs, and initial suggestions, the Spotify API provides au
 	\item \textbf{energy} - A measurement of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. A heavy metal track would score high, but a Bach prelude would score low. Attributes include dynamic range, perceived loudness, timbre, onset rate, and general entropy will dictate this value. 1.0 is highly energetic.
 	\item \textbf{instrumentalness} - Predicts whether a track contains no spoken vocals. Songs scoring 1 likely have no vocals. Values above 0.5 represent instrumental tracks.
 	\item \textbf{key} - The tracks key uses the following notation 0 = C, 1 = C$\sharp$/D$\flat$, 2 = D. If key cannot be detected then value is set to -1.
-	\item \textbf{loudness} - Loudness of a given track in dB
+	\item \textbf{loudness} - Loudness of a given track in dB.
 	\item \textbf{tempo} - The beats per minute of a given track.
 	\item \textbf{time\_signature} - Time signature with the following notation, 3 = 3/4, 4= 4/4, 5 = 5/4.
 	\item \textbf{speechiness} - Detects if a song has spoken word, audio books would score 1 and values ranging from 0.3-0.6 would be combination of music and speech.
@@ -97,12 +98,10 @@ To spot-check the application in a non methodical way, a variety of DJ Set track
 When going through the recommended songs, the BPMs of the output songs were observed to see if they were around the same range as the input songs. The songs were listened to see if stylistically they were similar to the input songs, and the source of the recommended songs were also observed.
 
 \begin{itemize}
-	\item The Slip set performed okay. Expectations were low due to the small amount of tracks available. Two of them had a House style to them and one was Indie. The output songs were all House songs and none matched stylistically to the one indie song. However, all the BPM's were in a similar range around 110-120 BPM.
+	\item The Slip set performed okay. Expectations were low due to the small amount of tracks available. Two of the input songs had a House style to them and one was Indie. The recommended songs were all House songs and none matched stylistically to the one indie song. However, all the BPM's were in a similar range around 110-120 BPM.
 	\item The Moxie set performed very well. The input songs were all Tech-House songs and the output songs were that as well with a couple of more disco inspired tunes. BPM's were all very similar as well.  
 	\item The Keep Hush set also gave good results. The BPM ranges were similar to the input songs and stylistically matched the input songs well. 
 \end{itemize}
-
- 
 
 All the suggested tunes did not come from an eclectic mix of DJ Sets or DJs, in each batch of suggestions a lot of songs were either from the same mix or the same DJ. 
 
