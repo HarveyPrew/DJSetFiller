@@ -6,7 +6,7 @@
 \chapter{Experiment}
 
 
-As explained in the hypothesis. a music recommendation system that uses \textit{MixesDB} as a dataset was made. An experiment was ran to see if it garners appropriate results, and will help answer the following question:
+As explained in the hypothesis. a music recommendation system that uses MixesDB as a dataset was made. An experiment was ran to see if it garners appropriate results, and will help answer the following question:
 \\
 \\
 \textit{Is the proposed method a suitable solution to automate recommendations of songs suitable for adding to a given DJ set?}.
@@ -23,14 +23,14 @@ To evaluate the quality of a recommendation system, R-Precision is often used as
 \\\\
 R-precision is the amount of found tracks that were originally in the mix divided by the number of known missing tracks. This is shown in the equation in 6.1 allowing $G$ to be the set of missing songs, and $R$ to be the set of recommanded songs.
 
-R-Precision was used in the 2018 \textit{Recsys} Convention idea for testing submissions for the million playlist challenge dataset from \textit{Spotify} \citep{aicrowd_aicrowd_2023}. At this convention, competing teams built recommendation system trained with the \textit{Spotify} dataset. To tests its quality, a challenge dataset, which contained many modified playlists, was used to test the models.
+R-Precision was used in the 2018 Recsys Convention idea for testing submissions for the million playlist challenge dataset from Spotify \citep{aicrowd_aicrowd_2023}. At this convention, competing teams built recommendation system trained with the \textit{Spotify} dataset. To tests its quality, a challenge dataset, which contained many modified playlists, was used to test the models.
 
-It is important to note the considerable difference in the number of DJ sets/playlists between the \textit{MixesDB} and the \textit{Spotify} dataset. The \textit{MixesDB} dataset contains over 9800 DJ sets, while the Spotify dataset contains 1,000,000 playlists. The differences between playlists and DJ sets is worth mentioning as well. A playlist being a collection of songs, regardless of cohesion or song count, while a DJ set is typically a seamless mix of songs that can vary in length from 8 hours to no less than 20 minutes.
+It is important to note the considerable difference in the number of DJ sets/playlists between the MixesDB and the Spotify dataset. The MixesDB dataset contains over 9800 DJ sets, while the Spotify dataset contains 1,000,000 playlists. The differences between playlists and DJ sets is worth mentioning as well. A playlist being a collection of songs, regardless of cohesion or song count, while a DJ set is typically a seamless mix of songs that can vary in length from 8 hours to no less than 20 minutes.
 \\
 \\
-The top 10 scoring models from the convention have R-Precision values ranging from 0.21 to 0.22. Given the differences in dataset size and task, aiming for an average R-Precision value of 0.171, slightly lower than the top-performing models, would be appropriate. Achieving this value would rank the model within the top 30 models trained by members of the public on the given \textit{Spotify} dataset \citep{aicrowd_aicrowd_2023}. This approach allows for a fair comparison between the different systems and considers the unique characteristics of the dataset and task at hand. 
+The top 10 scoring models from the convention have R-Precision values ranging from 0.21 to 0.22. Given the differences in dataset size and task, aiming for an average R-Precision value of 0.171, slightly lower than the top-performing models, would be appropriate. Achieving this value would rank the model within the top 30 models trained by members of the public on the given Spotify dataset \citep{aicrowd_aicrowd_2023}. This approach allows for a fair comparison between the different systems and considers the unique characteristics of the dataset and task at hand. 
 
-As the dataset utilized with the proposed model was obtained from \textit{MixesDB}, a customized approach for the preparation of the evaluation set was conducted.
+As the dataset utilized with the proposed model was obtained from MixesDB, a customized approach for the preparation of the evaluation set was conducted.
 
 \section{Preparing Evaluation Set}
 During the evaluation phase of the million playlist challenge, the quality of a given applications trained on this dataset was assessed through a range of methods that involved analysing both missing and recommended songs. In order to effectively compare different applications, it was essential to create a standardised evaluation set that incorporated aspects of the Spotify data set, to show if a submitted applications could recommend songs that were featured in the original playlist.
@@ -64,7 +64,7 @@ Once the best R-precision value is obtained, an examination on how changes to th
 The experiment was ran on a 16GB 2020 MacBookPro.
 
 \section{Summary}
-An overview of the \textit{Spotify} challenge set was given. The changes that had to be made to create a challenge set out of the \textit{MixesDB} dataset was explained. It was  shown how the evaluation set was made. 
+An overview of the Spotify challenge set was given. The changes that had to be made to create a challenge set out of the MixesDB dataset was explained. It was  shown how the evaluation set was made. 
 
-The description on the test plan was shown. The initial independent variable was latent factors, and then the input DJ set size. The experiment will be concluded with a comparision in R-Precision scores with top performing models trained on the \textit{Spotify} dataset.
+The description on the test plan was shown. The initial independent variable was latent factors, and then the input DJ set size. The experiment will be concluded with a comparision in R-Precision scores with top performing models trained on the Spotify dataset.
 
