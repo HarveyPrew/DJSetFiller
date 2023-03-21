@@ -29,14 +29,14 @@ It's evident too few latent factors and too many latent factors affect the perfo
 \section{Varying input set length}
 Given that an optimal latent factor value of 80 was determined, it is worth seeing if r-precision changes with the number of input songs in a DJ set. Increasing the the input set size could potentially improve the models accuracy, due to having more missing songs to pick from. The independent variable in this section is the evaluation set parameters and the dependent variable is the average r-precision value.
 
-In Figure 6.2, a scatter graph illustrates the r-precision values of each DJ set when the number of latent factors was set to 80. The graph reveals that the majority of the sets scored a value of zero, indicating that the recommendation system did not perform well for these sets. The highest score observed was 0.8, which suggests that the system provided a reasonably accurate recommendation for that particular set.
+In Figure 7	.2, a scatter graph illustrates the r-precision values of each DJ set when the number of latent factors was set to 80. The graph reveals that the majority of the sets scored a value of zero, indicating that the recommendation system did not perform well for these sets. The highest score observed was 0.8, which suggests that the system provided a reasonably accurate recommendation for that particular set.
 
 However, as the number of input songs in the DJ sets increased beyond 30, there was relatively fewer results available, but none of the DJ sets had an r-precision value of zero. This finding suggests that the recommendation system improved in its ability to provide accurate recommendations for sets with a larger number of input songs.
 
 \begin{figure}[H]
 	\includegraphics[scale=0.6]{images/80_little_sets}
 	\centering
-	\caption{Scatter graph of r-precision values latent factors as 80} 
+	\caption{Scatter graph of r-precision values with latent factors as 80} 
 \end{figure}
 
 
@@ -53,7 +53,7 @@ Figure 7.3 shows the impact of input set size change on r-precision values, stil
 
 \section{Comparing with industry standard models}
 
-	The concept of calculating an R-precision value was introduced in the RecSys 2018 Spotify playlist dataset, where participants were tasked with building music recommendation systems for a given playlist. Normalised Discounted Cumulative Gain and Recommended Song Clicks were also used to measure the applications quality. Figure 6.4 illustrates the highest-performing teams in the said convention. The maximum average value attained by the application in question was 0.1207, which is significantly lower compared to the top 10 values. The dataset and challenge was eventually made open to the public, and compared to the results found on the leader-board, the application would've ranked 46th. 
+	The concept of calculating an R-precision value was introduced in the RecSys 2018 Spotify playlist dataset, where participants were tasked with building music recommendation systems for a given playlist. Normalised Discounted Cumulative Gain and Recommended Song Clicks were also used to measure the applications quality. Figure 7.4 illustrates the highest-performing teams in the said convention. The maximum average value attained by the application in question was 0.1207, which is significantly lower compared to the top 10 values. The dataset and challenge was eventually made open to the public, and compared to the results found on the leader-board, the application would've ranked 46th. 
 
 It's low ranking suggests that the proposed method is not a suitable solution for finding valid recommendations for a given DJ set, due to the low average r-precision value when a collection of DJ sets were inputted.
 \begin{figure}[H]
