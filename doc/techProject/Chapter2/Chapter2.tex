@@ -9,13 +9,13 @@ This chapter will answer the following research question:
 \textit{What are effective methods for the automated recommendation of songs suitable for adding to a given DJ set?} 
 
 \section{The need for music recommendation systems}
-Spotify, SoundCloud, Apple Music and other streaming services gives one access to a library of tens of millions songs. Music Recommendation systems are excellent at fitting a user's preference whilst incorporating some level of filtering of an overwhelming amount of songs \citep{bollen_understanding_2010}. 
+Spotify, SoundCloud, Apple Music and other streaming services give one access to a library of tens of millions songs. Music Recommendation systems are excellent at fitting a user's preference whilst incorporating some level of filtering of an overwhelming amount of songs \citep{bollen_understanding_2010}. 
 
 Music recommendation systems study the habits and tastes of users, and with that information give out suitable recommendations. This aids the listener to discover new songs or artists they otherwise would not have found.
 
 With this potential, a well made recommendation system could be a make or break for choosing one streaming service from another. For this reason a lot of research gets put into recommendation systems as an attempt to retain engagement. 
 
- With recommending music, a lot of sub conscious factors come into play on what a user wants to listen to at a given time. This can range from characteristics and mood of the listener, to what they get up to in day-to-day life \citep{ferwerda_personality_2015, rentfrow_re_2003, gillhofer_iron_2015, wang_context-aware_2012}.  The users environment can have an affect as well \citep{kaminskas_location-aware_2013}. Observing a user made playlists also can reveal a lot on what groups of songs work for suited situations \citep{zheleva_statistical_2010, mcfee_hypergraph_2012}.
+ With recommending music, a lot of sub conscious factors come into play on what a user wants to listen to at a given time. This can range from characteristics and mood of the listener, to what they get up to in day-to-day life \citep{ferwerda_personality_2015, rentfrow_re_2003, gillhofer_iron_2015, wang_context-aware_2012}.  The users environment can have an affect as well \citep{kaminskas_location-aware_2013}. Observing a user made playlists also can reveal a lot on what groups of songs work for particular situations \citep{zheleva_statistical_2010, mcfee_hypergraph_2012}.
  
  A necessity for making a recommendation system suited for a type of product is taking into consideration the common place attributes of the product. Music lends itself to having a specific method due to short duration and high emotional connection. A recommendation system that uses these attributes to its advantage will be more successful than ones that don't.
 
@@ -60,7 +60,7 @@ There is also a lot to be found with implicit data. In 2018, a music recommendat
 
 \subsection{Item-Based Neighbourhood }
 
-Item-based neighbourhood is when similarities for a given item is found based on the user's previous item ratings. Its when one calculates the similarity among the item ratings and calculates the prediction of a given items rating. Figure 2.2 shows a matrix with ratings from  $u_{2}, u_{i}$ and $u_{m-1}$. For finding similarities between $i_{i}$ and $i_{k}$, we only take $u_{2}$ and  $u_{i}$ into consideration when using item based neighbourhood because they have rated both item $i_{i}$ and $i_{k}$.  
+Item-based neighbourhood is when similarities for a given item are found based on the user's previous item ratings. First one calculates the similarity among the item's ratings and then the prediction of a given items rating is calculated. Figure 2.2 shows a matrix with ratings from  $u_{2}, u_{i}$ and $u_{m-1}$. For finding similarities between $i_{i}$ and $i_{k}$, we only take $u_{2}$ and  $u_{i}$ into consideration when using item based neighbourhood because they have rated both item $i_{i}$ and $i_{k}$.  
 
 \begin{figure}[H]
 	\includegraphics[scale=0.65]{images/neigbourhood_based}
@@ -115,7 +115,7 @@ As mentioned previously, pearson correlation, cosine similarity can be used to c
 	\label{fig:figure}
 \end{figure}
 
-When one has a matrix of plays for a each user and song, matrix factorisation can be used to find recommended songs. Matrix factorisation processes the matrix into 2 vectors. These vectors are from factors of the user item rating patterns \citep{koren_matrix_2009}. Figure 2.3 and 2.4 illustrates how, where latent factors (products used to factorise matrix) are used to approximate and predict users ratings of movies. 
+When one has a matrix of plays for each user and song, matrix factorisation can be used to find recommended songs. Matrix factorisation processes the matrix into 2 vectors. These vectors are from factors of the user item rating patterns \citep{koren_matrix_2009}. Figure 2.3 and 2.4 illustrates how, where latent factors (products used to factorise matrix) are used to approximate and predict users ratings of movies. 
 
 \begin{figure}[H]
 	\includegraphics[scale=0.45]{images/latent_factors}
@@ -124,7 +124,7 @@ When one has a matrix of plays for a each user and song, matrix factorisation ca
 	\label{fig:figure}
 \end{figure}
 
-This is useful for a sparse matrix (when most user/item interactions is zero), because it shows information that the matrix alone does not.  One can see trends of preference within the latent factors. Because it reduces the dimensionality of a given matrix. Matrix factorisation also requires less processing power than methods that search through the raw matrix. 
+This is useful for a sparse matrix (when most user/item interactions are zero), because it shows information that the matrix alone does not.  One can see trends of preference within the latent factors. Because it reduces the dimensionality of a given matrix. Matrix factorisation also requires less processing power than methods that search through the raw matrix. 
 
 There are different ways of factorising a matrix. An example of one is Singular Value Decomposition (SVD). Equation 2.6 shows this with $U$ and $V$ matrices for a given number of dimensions,  where M is the approximated matrix:
 
@@ -213,7 +213,7 @@ Recommendation systems are used extensively by the majority of Spotify users \ci
 
 A reason for this is the small amount of listeners who have a diverse taste, lots of music recommendation systems don't focus on a specific type of person when training a model \citep{laplante_improving_2014}.
 
-It's argued that the way classification is handled in music could also be a reason \citep{porcaro_diversity_2021}. A debate that is passed from generations \citep{moles_sociodynamique_2019, dimaggio_classification_1987, bourdieu_distinction_2010}. In the context of a recommendation system, a genre being treated as a "tag" usually pushes its social and cultural relevance to the side \citep{porcaro_diversity_2021}. The act of a machine understanding a concept as subjective as genre is one that has proven challenging \citep{nurnberger_survey_2014}. Vlegels attempts to overcome this by organise groupings based on user artist relationship, rather than an artists genre \citep{vlegels_music_2017}.
+It's argued that the way classification is handled in music could also be a reason \citep{porcaro_diversity_2021}. The classification of music is a debate that has been passed from generations \citep{moles_sociodynamique_2019, dimaggio_classification_1987, bourdieu_distinction_2010}. In the context of a recommendation system, a genre being treated as a "tag" usually pushes its social and cultural relevance to the side \citep{porcaro_diversity_2021}. The act of a machine understanding a concept as subjective as genre is one that has proven challenging \citep{nurnberger_survey_2014}. Vlegels attempts to overcome this by organise groupings based on user artist relationship, rather than an artists genre \citep{vlegels_music_2017}.
 
 This problem existing could be a reason for the continued need for "curation", the act of having a professional spot interesting things and document them to consumers \citep{barna_perfect_2017}. With this comes the role of a DJ, whom before recommendation systems existed, were doing just that \citep{percival_music_2011}. 
 

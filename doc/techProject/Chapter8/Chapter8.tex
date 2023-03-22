@@ -28,7 +28,7 @@ Chapter 2 analysed literature in regards to application systems and music taste 
 \textit{What are effective methods for the automated recommendation of songs suitable
 	for adding to a given DJ set}
 
-It was concluded that despite recent improvments in music recommendation systems, people with diverse music would often still find music in non-algoirthmic ways. And a dataset that borrowed specifically from listeners with a diverse music taste has not been explored fully.
+It was concluded that despite recent improvments in music recommendation systems, people with diverse music would often still find music in non-algoirthmic ways. A dataset that borrowed specifically from listeners with a diverse music taste has not been explored fully.
 
 The hypothesis goes onto highlight how this  is a problem that affects DJs specifically.
 \\
@@ -47,7 +47,7 @@ An experiment was then proposed to attempt to answer the following research ques
 \\
 \textit{Is the proposed method a suitable solution for the automated recommendation of songs suitable for adding to a given DJ set?}
 
-An evaluation set was made, and the models best scoring average R-precision value was found. Then it was compared with top performing models and it scored significantly lower. Highlighting that it's not a suitable solution for automating recommendations for a DJ set.
+An evaluation set was made, and the models best scoring average R-precision value was found, then it was compared with top performing models. The proposed model scored significantly lower. Highlighting that it's not a suitable solution for automating recommendations for a DJ set.
 
 \section{Main Findings of the study}
 
@@ -75,26 +75,26 @@ This only appears on a handful of mixes on MixesDB, but a time code along with t
 A recommendation system that pulls from a dataset of exclusively DJ sets was proposed to see whether it gathers more suitable solutions compared to the current industry standard models available. 
 
 \subsection{Application}
-Despite being an objectively outdated method, using collaborative filtering as the basis of the model felt appropriate due to its continued usage in modern systems. The investigations purpose was more to test the quality of recommendations being pulled from a refined dataset rather than a larger, more general dataset. All this being said, adapting the model to use deep learning with this dataset would've been a great opportunity to see whether an improved model would show more desirable recommendations.
+Despite being an objectively outdated method, using collaborative filtering as the basis of the model felt appropriate due to its continued usage in modern systems. The investigations purpose was more to test the quality of recommendations being pulled from a refined dataset rather than a larger, more general dataset. All this being said, adapting the model to use deep learning with this dataset would have been a great opportunity to see whether an improved model would show more desirable recommendations.
 
 A potential implementation was to enable user control of the recommendation process more than just choosing the input songs. It's a believable scenario where a user would appreciate the initial pool of recommendation as much as the refined selection.
 
 The Spotify features play a big role in refining down the similar songs to those that have the most similar attributes to the input songs, allowing them to be easily incorporated into a DJ set. This proved helpful in cherry picking the best songs. 
 
-The vectors used for euclidean distance could've been implemented better, for example, adding weights to certain attributes, such as prioritising songs at a certain BPM or key. The weighting for key could've been explored to an interesting length, by prioritising the same key but also the relative major/minor or subdominant or dominant keys.
+The vectors used for euclidean distance could have been implemented better, for example, adding weights to certain attributes, such as prioritising songs at a certain BPM or key. The weighting for key could have been explored to an interesting length, by prioritising the same key but also the relative major/minor or subdominant or dominant keys.
 
-Improvements could have been made for finding an average input vector with the Spotify features. The issue being one outlier input song could disproportion the input average and spoil the quality of the songs recommended. An example being input songs with vastly different BPM's. Ignoring outlier songs when making an input average could resolve this. Initially suggested songs most similar to the outlier input songs could then be used sparingly in the final batch.
+Improvements could have been made for finding an average input vector with the Spotify features. The issue being one outlier input song could disproportion the input average and spoil the quality of the songs recommended. An example being input songs with vastly different BPM's. Ignoring outlier songs when making an input average could resolve this. A way of still using the outlier songs is by comparing them separately, and output those recommended songs sparingly.
 
 For testing there were several ways the application could have been assessed further:
 \begin{itemize}
 	
 \item \textbf{Recommended Song Clicks:} With \textit{Spotify} playlists, 10 songs are recommended based on what's in the playlist. The user can refresh the list and it gives out 10 more similar songs. Recommended Songs clicks is the amount of refreshes before a missing track shows up.
 
-\item \textbf{Spotify Features:} Testing with Spotify features in conjunction with the Spotify playlist could've been done. One could input 10 songs into both the  application and a Spotify playlists. Get the Spotify features of both outputs and compare which ones are the most suitable.
+\item \textbf{Spotify Features:} Testing with Spotify features in conjunction with the Spotify playlist could have been done. One could input 10 songs into both the  application and a Spotify playlists. Get the Spotify features of both outputs and compare which ones are the most suitable.
 
-\item \textbf{Spectrogram Analysis} With the dataset being linked to Spotify, a 30 second clip for each song is accessible. Assessing the input and recommended songs spectrograms would've given further insight if the songs suggested were appropriate.
+\item \textbf{Spectrogram Analysis} With the dataset being linked to Spotify, a 30 second clip for each song is accessible. Assessing the input and recommended songs spectrograms would have given further insight if the songs suggested were appropriate.
 
-\item \textbf{Listening Tests:} Gathering members of the public and getting them to listen to snippets of a given DJ set and compare the applications suggestions and industry standard suggestions would've given further insight on the subjective quality of the application.
+\item \textbf{Listening Tests:} Gathering members of the public and getting them to listen to snippets of a given DJ set and compare the applications suggestions and industry standard suggestions would have given further insight on the subjective quality of the application.
 \end{itemize}
 
 \subsection{Dataset}
