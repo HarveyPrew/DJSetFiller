@@ -7,22 +7,22 @@
 \chapter{Application}
 
 Inspired by the training data from a fader estimation investigation, MixesDB is a website of archived DJ sets \citep{kim_automatic_2017}. With over 260,000 mixes on the site, using this as a dataset to train the model proved to be an excellent choice \citep{mixesdb_main_2023}.
- 
- The application made is a two stage Music Recommendation system trained on DJ sets found on MixesDB. A collaborative filtering algorithm, alternating least squares is used to gather initial suggestions. Then audio features provided by the Spotify API will be used to create vectors to further refine the selection. The best songs are selected by using euclidean distance, a way of measuring distances between vectors. 
- 
- It was coded using a 2020 16GB MacBook Pro in \textit{Python} and the following libraries were used:
- \begin{itemize}
- 	\item \textit{pandas:} Used for managing the dataset.
- 	\item \textit{implicit:} Its alternating least squares function was used for the initial suggestions.
- 	\item \textit{spotipy:} Used to access audio features from the Spotify API.
- 	\item \textit{scipy:} It's euclidean distance function was used for the final suggestions.
- 	\item \textit{Pytest:} Used for unit-testing.
-	\end{itemize}
- 
- As mentioned in Chapter 2, Daniel Chow built a system that takes in a single song and outputs similar songs based on the MixesDB dataset \citep{chow_music_2020}. His code will provide foundation, that is extended by the addition of multiple inputs and an extra layer of recommendation filtering.
+
+The application is a two-stage Music Recommendation system trained on DJ sets found on MixesDB. First, a collaborative filtering algorithm, alternating least squares is used to gather initial suggestions. Then, the audio features the Spotify API provides will be used to create vectors to refine the selection further. The best songs are selected using euclidean distance to measure the distance between vectors. 
+
+It was coded using a 2020 16GB MacBook Pro in \textit{Python}, and the following libraries were used:
+\begin{itemize}
+	\item \textit{pandas:} Used for managing the dataset.
+	\item \textit{implicit:} Its alternating least squares function was used for the initial suggestions.
+	\item \textit{spotipy:} Used to access audio features from the Spotify API.
+	\item \textit{scipy:} Its euclidean distance function was used for the final suggestions.
+	\item \textit{Pytest:} Used for unit-testing.
+\end{itemize}
+
+As mentioned in Chapter 2, Daniel Chow built a system that takes in a single song and outputs similar songs based on the MixesDB dataset \citep{chow_music_2020}. His code will provide the foundation extended by adding multiple inputs and an extra layer of recommendation filtering.
 
 \section{Data set}
-The data was scraped from MixesDB using Selenium \citep{chow_music_2020}. The tracks in a given DJ Set which had a corresponding Spotify link were stored with a given user ID for the DJ.  In cases where a single DJ set included multiple DJs, the set was considered as belonging to all the DJs involved, and the corresponding songs were linked to each DJ's user ID. The data set only has DJ sets up to 2020, the year Daniel Chow wrote the article. The dataset has approximately 9900 DJ sets and 99100 songs. Figure 5.1 shows a DJ set from the dataset.
+The data was scraped from MixesDB using Selenium \citep{chow_music_2020}. The tracks in a given DJ Set, which had a corresponding Spotify link, were stored with a given user ID for the DJ. In cases where a single DJ set included multiple DJs, the set was considered as belonging to all the DJs involved, and the corresponding songs were linked to each DJ's user ID. The data set only has DJ sets up to 2020, the year Daniel Chow wrote the article. The dataset has approximately 9900 DJ sets and 99100 songs. Figure 5.1 shows a DJ set from the dataset.
 \begin{figure}[H]
 	\includegraphics[scale=0.4]{images/dataset}
 	\centering
@@ -36,44 +36,44 @@ The data was scraped from MixesDB using Selenium \citep{chow_music_2020}. The tr
 	\centering
 	\caption{A flow diagram of the application} 
 \end{figure}
-As in Daniel Chows method, the initial suggestions part of the model is made using alternating least squares, a matrix factorisation algorithm that was made popular by the Netflix Prize award \citep{zhou_large-scale_2008}. As explained in Chapter 2, this method is good for two reasons. It provides a computationally efficient way of handling a dataset, and it splits the DJ song matrix to its latent factors. The latent factor values reveal trends in between songs and DJs.
+As in Daniel Chow's method, the initial suggestions part of the model is made using alternating least squares. The Netflix Prize award made this matrix factorisation algorithm popular \citep{zhou_large-scale_2008}. As explained in Chapter 2, this method is suitable for two reasons. It provides a computationally efficient way of handling a dataset and splits the DJ song matrix into its latent factors. The latent factor values reveal trends between songs and DJs.
 
-A model is made from the dataset, then input list of songs is processed. The alternating least squares algorithm is ran for each song to find other similar songs. The number of recommended song suggestions for each song was set to 200, to assure a large amount of similar songs are used in the refinement stage.
+A model is made from the dataset, and then the input list of songs is processed. Next, the alternating least squares algorithm is run for each song to find other similar songs. The number of recommended song suggestions for each song was set to 200 to ensure that many similar songs are used in the refinement stage.
 
 
 \section{Final Suggestions}
-To add an extra layer of filtering, the Spotify API is used to further explore which songs are the most similar.
+To add an extra filtering layer, the Spotify API is used to explore further which songs are the most similar.
 
-Using both the input songs, and initial suggestions, the Spotify API provides audio features for each song. The features used are shown below \citep{spotify_web_2023}:
+The Spotify API provides audio features for each song using both the input songs and initial suggestions. The features used are shown below \citep{spotify_web_2023}:
 
 \begin{enumerate}
-	\item \textbf{acousticness} - A measure on how acoustic the song sounds, the range is from 0 - 1 with 1 being definitely acoustic and 0 being not acoustic at all.
-	\item \textbf{danceability} - Measurement on how suitable a track is for dancing based on tempo, rhythmic features and overall regularity. 1.0 is most danceable. 
-	\item \textbf{energy} - A measurement of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. A heavy metal track would score high, but a Bach prelude would score low. Attributes include dynamic range, perceived loudness, timbre, onset rate, and general entropy will dictate this value. 1.0 is highly energetic.
+	\item \textbf{acousticness} - A measure of how acoustic the song sounds, the range is from 0 - 1, with 1 being definitely acoustic and 0 being not acoustic at all.
+	\item \textbf{danceability} - Measurement of how suitable a track is for dancing based on tempo, rhythmic features and overall regularity. 1.0 is the most danceable. 
+	\item \textbf{energy} - A measurement of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. A heavy metal track would score high, but a Bach prelude would score low. Attributes, including dynamic range, perceived loudness, timbre, onset rate, and general entropy, will dictate this value. 1.0 is highly energetic.
 	\item \textbf{instrumentalness} - Predicts whether a track contains no spoken vocals. Songs scoring 1 likely have no vocals. Values above 0.5 represent instrumental tracks.
-	\item \textbf{key} - The tracks key uses the following notation 0 = C, 1 = C$\sharp$/D$\flat$, 2 = D. If key cannot be detected then value is set to -1.
+	\item \textbf{key} - The tracks key uses the following notation 0 = C, 1 = C$\sharp$/D$\flat$, 2 = D. If the key cannot be detected, then the value is set to -1.
 	\item \textbf{loudness} - Loudness of a given track in dB.
 	\item \textbf{tempo} - The beats per minute of a given track.
 	\item \textbf{time\_signature} - Time signature with the following notation, 3 = 3/4, 4= 4/4, 5 = 5/4.
-	\item \textbf{speechiness} - Detects if a song has spoken word, audio books would score 1 and values ranging from 0.3-0.6 would be combination of music and speech.
-	\item \textbf{valence} - A measurement of how happy sounding a song is. With scores of 1 being extremely positive.
+	\item \textbf{speechiness} - Detects if a song has spoken word, audiobooks would score 1 and values ranging from 0.3-0.6 would be a combination of music and speech.
+	\item \textbf{valence} - A measurement of how happy-sounding a song is. With scores of 1 being extremely positive.
 	
 \end{enumerate}
 
-These features provided great data to form vectors out of for each song, as they highlight attributes of a song which makes them unique. Attributes like tempo is especially helpful for improving the recommendations for DJ Sets, due to being the controlled variable when it comes to transition from one song to another.
+These features provided great data to form vectors for each song, as they highlight attributes of a song which makes them unique. Attributes like tempo are beneficial for improving the recommendations for DJ sets due to being the controlled variable when transitioning from one song to another.
 
-As the input contains many songs, multiple steps are required to calculate euclidean distance. A mean vector is created from all the input song vectors. The vectors are then scaled. This step is crucial because some attributes work with different ranges, examples being loudness using dB range and acousticness is from 0-1.
+As the input contains many songs, multiple steps are required to calculate euclidean distance. A mean vector is created from all the input song vectors. The vectors are then scaled. This step is crucial because some attributes work with different ranges, such as loudness using the dB range and acousticness from 0-1.
 
-Once these are found, euclidean distance between each initially suggested songs vector and the input average vector is calculated. As discussed in chapter 2, euclidean distance is a way of measuring the distance between two vectors, an equation is show at 5.1, allowing $x_{i}$ and $y_{i}$ to be two song vectors.
+Once these are found, the euclidean distance between each initially suggested song vector and the average input vector is calculated. As discussed in chapter 2, euclidean distance is a way of measuring the distance between two vectors. An equation is shown at 5.1, allowing $x_{i}$ and $y_{i}$ to be two song vectors.
 
 \begin{equation}
 	d(x,y) = \sqrt{\sum _{i=1} ^{n}(x_{i} - y_{i})^{2}}
 \end{equation}
 
-For finding the vectors with the smallest distance between the mean input, this is a clear representation that a given song has similar Spotify features attributes, therefore would be a worthy suggestion based on the recommended songs.
+For finding the vectors with the smallest distance between the mean input, this clearly represents that a given song has similar Spotify feature attributes. Therefore would be a worthy suggestion based on the recommended songs.
 
 \section{Example Findings}
-To spot-check the application in a non methodical way, a variety of DJ Set tracklists corresponding to different genres were used as inputs for the application.  Three different DJ sets were used:
+To spot-check the application in a non-methodical way, various DJ Set tracklists corresponding to different genres were used as inputs. Three different DJ sets were used:
 
 \begin{itemize}
 	\item \textbf{Rory Bowens, PLO Man, C3D-E, Brian Not Brian - The Slip, NTS Radio: } 
@@ -95,17 +95,17 @@ To spot-check the application in a non methodical way, a variety of DJ Set track
 \end{itemize}
 
 
-When going through the recommended songs, the BPMs of the output songs were observed to see if they were around the same range as the input songs. The songs were listened to see if stylistically they were similar to the input songs, and the source of the recommended songs were also observed.
+When going through the recommended songs, the BPMs of the output songs were observed to see if they were around the same range as the input songs. The songs were listened to see if stylistically they were similar to the input songs, and the source of the recommended songs was also observed.
 
 \begin{itemize}
-	\item The Slip set performed okay. Expectations were low due to the small amount of tracks available. Two of the input songs had a House style to them and one was Indie. The recommended songs were all House songs and none matched stylistically to the one indie song. However, all the BPM's were in a similar range around 110-120 BPM.
-	\item The Moxie set performed very well. The input songs were all Tech-House songs and the output songs were that as well with a couple of more disco inspired tunes. BPM's were all very similar as well.  
+	\item The Slip set performed okay. Expectations were low due to the small number of tracks available. Two input songs had a House style, and one was Indie. The recommended songs were all House songs, and none matched stylistically to the one indie song. However, all the BPMs were in a similar range around 110-120 BPM.
+	\item The Moxie set performed very well. The input songs were all Tech-House songs, and the output songs were that as well, with a couple of more disco-inspired tunes. BPMs were all very similar as well.  
 	\item The Keep Hush set also gave good results. The BPM ranges were similar to the input songs and stylistically matched the input songs well. 
 \end{itemize}
 
-All the suggested tunes did not come from an eclectic mix of DJ Sets or DJs, in each batch of suggestions a lot of songs were either from the same mix or the same DJ. 
+All the suggested tunes did not come from an eclectic mix of DJ Sets or DJs. In each batch of suggestions, many songs were either from the same mix or the same DJ. 
 
-The intent of the spot checking is to show the application in action rather than dissecting the quality of its performance which is analysed in the Experiment chapter. A table of the input and recommended songs for the Moxie DJ set is shown in the table below.
+The spot-checking intended to show the application in action rather than to dissect the quality of its performance, which is analysed in the Experiment chapter. A table of the input and recommended songs for the Moxie DJ set is shown in the table below.
 \\
 \\
 \\
@@ -141,6 +141,6 @@ The intent of the spot checking is to show the application in action rather than
 
 
 \section{Summary}
-An overview of the proposed application was given. The first part described the alternating least squares method that is borrowed from Daniel Chow's model. Then the audio features found through the Spotify API was explained, and how it was used to form vectors. These vectors were then used to filter through the recommendations further. Spot checking was done showing suitable recommendations.
+An overview of the proposed application was given. The first part described the alternating least squares method borrowed from Daniel Chow's model. Then the audio features found through the Spotify API were explained, and how it was used to form vectors. These vectors were then used to filter through the recommendations further. Finally, spot checking was done, showing suitable recommendations.
 
 
