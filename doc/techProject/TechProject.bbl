@@ -1,4 +1,4 @@
-\begin{thebibliography}{97}
+\begin{thebibliography}{99}
 \newcommand{\enquote}[1]{\textit{#1}}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -185,6 +185,11 @@ George, A., Mary, X.~A., and George, S.~T. (2022): \enquote{Development of an
   intelligent model for musical key estimation using machine learning
   techniques}, \textit{Multimedia Tools and Applications}, 81(14),
   pp.\ignorespaces 19945--19964, \doi{10.1007/s11042-022-12432-y}.
+
+\bibitem[{Gillett(2021)}]{gillett_how_2021}
+Gillett, E. (2021): \enquote{How independent radio has thrived in the
+  pandemic},
+  \urlprefix\url{https://djmag.com/longreads/how-independent-radio-has-thrived-pandemic}.
 
 \bibitem[{Gillhofer and Schedl(2015)}]{gillhofer_iron_2015}
 Gillhofer, M. and Schedl, M. (2015): \enquote{Iron {Maiden} {While} {Jogging},
@@ -455,6 +460,10 @@ Shardanand, U. and Maes, P. (1995): \enquote{Social information filtering:
 Sharma, S. (2021): \enquote{Audio {Classification} {\textbar} {Introduction} to
   {Audio} {Classification}},
   \urlprefix\url{https://www.analyticsvidhya.com/blog/2021/06/introduction-to-audio-classification/}.
+
+\bibitem[{similarweb(2023)}]{similarweb_mixesdbcom_2023}
+similarweb (2023): \enquote{mixesdb.com {Traffic} {Analytics} \& {Market}
+  {Share}}, \urlprefix\url{https://www.similarweb.com/website/mixesdb.com/}.
 
 \bibitem[{Singh et~al.(2022)Singh, Sajid, Yadav, Singh, and
   Saini}]{singh_novel_2022}

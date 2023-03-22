@@ -13,6 +13,8 @@ A level-1 auxiliary file: Chapter8/Chapter8.aux
 A level-1 auxiliary file: BackMatter/BackMatter.aux
 The style file: iosrnew.bst.bst
 Database file #1: BackgroundReading.bib
+Warning--I didn't find a database entry for "nts_2023"
+Warning--I didn't find a database entry for "zhang2020alleviating"
 Warning--empty journal in anderson_racofi_2003
 Warning--empty journal in bittner_automatic_2017
 Warning--empty journal in bock_deconstruct_2020
@@ -29,45 +31,45 @@ Warning--empty booktitle in logan_music_2004
 Warning--empty pages in logan_music_2004
 Warning--empty journal in mcfee_hypergraph_2012
 Warning--empty booktitle in van_meteren_using_2000
-You've used 97 entries,
+You've used 99 entries,
             2968 wiz_defined-function locations,
-            1246 strings with 28559 characters,
-and the built_in function-call counts, 58882 in all, are:
-= -- 5063
-> -- 2294
-< -- 107
-+ -- 859
-- -- 741
-* -- 4640
-:= -- 8834
-add.period$ -- 212
-call.type$ -- 97
-change.case$ -- 746
-chr.to.int$ -- 98
-cite$ -- 113
-duplicate$ -- 4400
-empty$ -- 4391
-format.name$ -- 980
-if$ -- 12073
+            1258 strings with 28888 characters,
+and the built_in function-call counts, 59620 in all, are:
+= -- 5131
+> -- 2314
+< -- 109
++ -- 867
+- -- 747
+* -- 4686
+:= -- 8966
+add.period$ -- 216
+call.type$ -- 99
+change.case$ -- 758
+chr.to.int$ -- 100
+cite$ -- 115
+duplicate$ -- 4458
+empty$ -- 4449
+format.name$ -- 988
+if$ -- 12217
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 792
-newline$ -- 301
-num.names$ -- 398
-pop$ -- 1711
+missing$ -- 800
+newline$ -- 307
+num.names$ -- 406
+pop$ -- 1733
 preamble$ -- 1
-purify$ -- 630
+purify$ -- 640
 quote$ -- 0
-skip$ -- 2030
+skip$ -- 2054
 stack$ -- 0
-substring$ -- 2612
-swap$ -- 2289
+substring$ -- 2636
+swap$ -- 2309
 text.length$ -- 50
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 852
+type$ -- 870
 warning$ -- 16
-while$ -- 431
+while$ -- 437
 width$ -- 0
-write$ -- 1117
-(There were 16 warnings)
+write$ -- 1137
+(There were 18 warnings)

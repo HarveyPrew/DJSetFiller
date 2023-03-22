@@ -1,5 +1,4 @@
 \contentsline {chapter}{List of Figures}{iii}{section*.4}%
-\contentsline {chapter}{Bibliography}{iv}{section*.6}%
 \contentsline {chapter}{Acknowledgements}{iv}{chapter*.7}%
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
@@ -53,3 +52,4 @@
 \contentsline {section}{\numberline {8.4}Implications}{36}{section.8.4}%
 \renewcommand {\cftchappresnum }{Appendix~}
 \addtolength {\cftchapnumwidth }{1em}
+\contentsline {chapter}{Bibliography}{37}{section*.22}%
